@@ -101,3 +101,33 @@ header nav i{
 .subtitle{
     font-size: 1em;
 }
+
+/* TABLET */
+@media screen and (min-width:768px) {
+    #hamburgerBtn{
+        display: none;
+    }
+
+}
+
+/* DESKTOP */
+@media screen and  (min-width: 992px) {
+
+  /* --- Tus estilos de escritorio van aquí --- */
+
+  body {
+    font-size: 16px;
+    background-color: aqua;
+  }
+
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .columna {
+    float: left;
+    width: 50%;
+  }
+
+}
