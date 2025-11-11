@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Jersey+10&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  font-family: "DM Sans", sans-serif;
+  box-sizing: content-box;
+  padding: 0;
+  margin: 0;
+  text-indent: -75;
+}
+
+body {
+  background-color: var(--bodyGray);
+}
+
+:root {
+  /* COLOR VALUES */
+  --Black: #0e0e0e;
+  --White: #ededed;
+  --Gray: #626262;
+  --bodyGray: #ebebeb;
+}
+
+/* HEADER */
+header {
+  width: 100%;
+}
+
+header nav {
+  padding-top: 5%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+header nav i {
+  font-size: 2.5em;
+  padding: 4%;
+}
+
+.Title #titlep1 {
+  text-align: right;
+  font-size: 5em;
+  color: var(--Black);
+  font-weight: 800;
+  padding: 0%;
+  line-height: 75%;
+}
+
+.Title {
+  margin-right: 5%;
+}
+
+.Title .desc {
+  padding-top: 7%;
+  padding-right: 2%;
+  text-align: right;
+  font-size: 1em;
+  padding-left: 0%;
+  text-indent: 1em;
+  font-weight: 400;
+}
+
+#desk{
+    display: none;
+}
+
+/* intro section */
+.stats {
+  width: 100%;
+  margin-top: 10%;
+  padding: 0% 2%;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-areas: "review    guests  services";
+}
+
+.review {
+  grid-area: review;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-right: 1px solid black;
+}
+
+.guests {
+  grid-area: guests;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-right: 1px solid black;
+}
+
+.services {
+  grid-area: services;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.introIMG img {
+  width: 40vh;
+  height: max-content;
+  padding: 2%;
+}
+
+.introIMG {
+  margin-top: 12%;
+  width: 100%;
+  padding: 0% 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.number {
+  font-size: 1.5em;
+}
+
+.subtitle {
+  font-size: 1em;
+}
+
+/* TABLET */
+@media screen and (min-width: 768px) {
+  * {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+  }
+
+  #hamburgerBtn {
+    display: none;
+  }
+
+  #desk {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 2%;
+    margin-bottom: 10%;
+  }
+
+  #desk ul {
+    display: flex;
+    list-style: none;
+    margin-right: 20%;
+    text-decoration: none;
+  }
+
+  #desk ul li {
+    padding: 6%;
+    text-decoration: none;
+  }
+
+  #desk ul li a {
+    text-decoration: none;
+    color: var(--Black);
+    font-weight: 300;
+  }
+
+  .text a {
+    text-decoration: none;
+    color: var(--White);
+  }
+
+  /* BUTTON */
+  #desk .whatsBtn i {
+    font-size: 1.5em;
+  }
+
+  #desk .whatsBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: var(--Black);
+    color: var(--White);
+    padding: 1%;
+    border-radius: 10px;
+    width: 22%;
+    gap: 10px;
+    font-weight: bold;
+    font-size:.9em;
+  }
+
+  .stats {
+    width: 100%;
+    margin-top: 10%;
+    padding: 0% 0%;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-areas: "review    guests  services";
+  }
+}
+
+/* DESKTOP section */
+@media screen and (min-width: 992px) {
+  /* --- Tus estilos de escritorio van aquí --- */
+
+  body {
+    font-size: 16px;
+    background-color: aqua;
+  }
+
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .columna {
+    float: left;
+    width: 50%;
+  }
+}
