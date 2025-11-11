@@ -52,6 +52,7 @@ header nav i{
 .stats{
     width: 100%;
     margin-top: 10%;
+    padding: 0% 2%;
     display: grid;
     grid-template-columns: repeat(3,auto);
     grid-template-areas: "review    guests  services";
@@ -82,11 +83,14 @@ header nav i{
 }
 
 .introIMG img{
-    width: 45vh;
+    width: 40vh;
+    height: max-content;
+    padding: 2%;
 }
 .introIMG{
-    margin-top: 15%;
+    margin-top: 12%;
     width: 100%;
+    padding: 0% 0%;
     display: flex;
     justify-content: center;
     align-items: center;
