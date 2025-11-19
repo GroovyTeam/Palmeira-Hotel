@@ -4,6 +4,7 @@
   --White: #ededed;
   --Gray: #626262;
   --bodyGray: #ebebeb;
+  --placeholdercolor:#e0e0e0;
 }
 * {
   margin: 0;
@@ -70,7 +71,6 @@ nav .fa-bars {
   margin-bottom: 4%;
 }
 .desc {
-  text-align:justify;
   width: 100%;
   padding:1%;
   color: var(--Gray);
@@ -126,59 +126,53 @@ nav .fa-bars {
     justify-content: space-around;
     flex-direction: column;
     gap: 5%;
+    padding: 5%;
 
 
 }
 .TitleContact{
     text-align: center;
     width: 100%;
+    
 }
 .TitleContact h2{
     font-weight: 900;
+    letter-spacing: -2px;
+    
+    
 }
 .Name, .LastName, .Email, .Number{
     width: 70vw;
     background-color: none;
 }
-#name{
-    background-color: black;
+#name, #last, #email, #number {
+    background-color: var(--Black);
     border-radius: 5.5px;
     height: 6vw;
     width: 100%;
     padding: 2.5% 0% 2.5% 1.5%;
 }
-#last{
-    background-color: black;
-    border-radius: 5.5px;
-    height: 6vw;
-    width: 100%;
-    padding: 2.5% 0px 2.5% 1.5%; 
-}
-#email{
-    background-color: black;
-    border-radius: 5.5px;
-    height: 6vw;
-    width: 100%;
-    padding: 2.5% 0px 2.5% 1.5%;
-}
-#number{
-    background-color: black;
-    border-radius: 5.5px;
-    height: 6vw;
-    width: 100%;
-    padding: 2.5% 0px 2.5% 1.5%;
-}
+
 #button{
     margin-top: 1.5%;
     border-radius: 5.5px;
     width: 100%;
-    background-color:white ;
-    color: black;
+    background-color:var(--White) ;
+    color: var(--Black);
+    font-weight:900;
+    border: 2.5px solid var(--Black);
+    padding: 2%;
+
+}
+.ButtonSend{
+    margin: 2.5% 0% 40%;
 }
 input::placeholder{
     padding: 3%;
-    color:white;
+    color:var(--placeholdercolor);
+    font-weight: lighter;
 }
 input{
+    outline-color: #94e790;
     color: white;
 }
