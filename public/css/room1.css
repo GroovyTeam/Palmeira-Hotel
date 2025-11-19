@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Jersey+10&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    font-family: "DM Sans", sans-serif;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12% 10%;
+    
+}
+nav i{
+    font-size: 1em;
+    color: white;
+    background-color: black;
+    padding: 4%;
+    border-radius: 15%;
+
+}
+.ImgRoom img{
+    height: 60vw;
+}
+.ImgRoom{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-father{
+    display: flex;
+    align-items:center;
+    justify-content: space-around;
+    flex-direction: column;
+    gap: 1%;
+    padding: 5%;
+}
+.title{
+    text-align:left ;
+    width: 100%;
+    margin-top: 3%;   
+}
+.title h1{
+    font-weight:900;
+}
+.cost{
+    text-align: left;
+    width: 100%;
+}
+.desc{
+    text-align: left;
+    width: 100%;
+    padding: 3%;
+
+}
