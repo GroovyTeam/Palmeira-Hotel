@@ -6,6 +6,8 @@
   --bodyGray: #ebebeb;
   --placeholdercolor:#e0e0e0;
 }
+
+/* MOBILE DEVELOPMENT */
 * {
   margin: 0;
   padding: 0;
@@ -59,14 +61,14 @@ nav .fa-bars {
 }
 .title h1 {
   font-weight: 900;
-  font-size: 2.2em;
+  font-size: 2.1em;
   letter-spacing:-2px;
 }
 .cost {
   text-align: left;
   width: 100%;
   color: var(--Gray);
-  font-size: 1.5em;
+  font-size: 1.4em;
   margin-top: -2%;
   margin-bottom: 4%;
 }
@@ -75,7 +77,7 @@ nav .fa-bars {
   padding:1%;
   color: var(--Gray);
   font-weight:400;
-  font-size: 1.2em;
+  font-size: 1.3em;
   line-height: 20px;
   letter-spacing: 1px;
 }
@@ -121,14 +123,13 @@ nav .fa-bars {
 }
 /* Aqui inicia el relleno de informacion para que se contacte con el personal del hotel  */
 .container-father2{ 
-    display:grid;
+   display: flex;
     align-items: center;
-    justify-content: space-around;
     flex-direction: column;
-    gap: 5%;
-    padding: 5%;
-
-
+    justify-content: center;
+    padding: 5% 0%;
+    width: 100%;
+    height: fit-content;
 }
 .TitleContact{
     text-align: center;
@@ -138,41 +139,118 @@ nav .fa-bars {
 .TitleContact h2{
     font-weight: 900;
     letter-spacing: -2px;
-    
-    
+    font-size: 2em;
 }
 .Name, .LastName, .Email, .Number{
-    width: 70vw;
+    width: 85%;
     background-color: none;
+    margin-top: 6%;
 }
 #name, #last, #email, #number {
     background-color: var(--Black);
     border-radius: 5.5px;
     height: 6vw;
     width: 100%;
-    padding: 2.5% 0% 2.5% 1.5%;
+    padding: 5% 0%;
 }
 
 #button{
-    margin-top: 1.5%;
+    margin-top: 10%;
     border-radius: 5.5px;
-    width: 100%;
+    width: 85%;
     background-color:var(--White) ;
     color: var(--Black);
     font-weight:900;
     border: 2.5px solid var(--Black);
-    padding: 2%;
+    padding: 1.5% 0%;
 
 }
 .ButtonSend{
-    margin: 2.5% 0% 40%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+    width: 100%;
 }
 input::placeholder{
-    padding: 3%;
     color:var(--placeholdercolor);
     font-weight: lighter;
 }
 input{
     outline-color: #94e790;
     color: white;
+    font-size: 1.1em;
+    text-indent: 4%;
+}
+.tablet{
+  display: none;
+}
+.desk{
+  display: none;
+}
+/* TABLET DEVELOPMENT */
+@media screen and (min-width:768px) {
+    body{
+    }
+    .tablet{
+      display: block;
+    }
+    #hamburgerBtn {
+    display: none;
+  }
+
+  #desk {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 2%;
+    margin-bottom: 10%;
+  }
+
+  #desk ul {
+    display: flex;
+    list-style: none;
+    margin-right: 20%;
+    text-decoration: none;
+  }
+
+  #desk ul li {
+    padding: 6%;
+    text-decoration: none;
+  }
+
+  #desk ul li a {
+    text-decoration: none;
+    color: var(--Black);
+    font-weight: 300;
+  }
+
+  .text a {
+    text-decoration: none;
+    color: var(--White);
+  }
+  
+  /* BUTTON */
+  #desk .whatsBtn i {
+    font-size: 1.5em;
+  }
+
+  #desk .whatsBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: var(--Black);
+    color: var(--White);
+    padding: 1%;
+    border-radius: 10px;
+    width: 22%;
+    gap: 10px;
+    font-weight: bold;
+    font-size:.9em;
+  }
+  .mobile{
+    display: none;
+  }
+  .
 }
