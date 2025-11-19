@@ -1,60 +1,123 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Jersey+10&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --Black: #0e0e0e;
+  --White: #ededed;
+  --Gray: #626262;
+  --bodyGray: #ebebeb;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+  font-family: "DM Sans", sans-serif;
+}
+body {
+  background-color: var(--bodyGray);
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7.5% 9%;
+}
+nav .fa-reply {
+  font-size: 1.2em;
+  color: white;
+  background-color: black;
+  padding: 3%;
+  border-radius: 15%;
+}
+nav .fa-bars {
+  font-size: 2em;
+}
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: content-box;
-    font-family: "DM Sans", sans-serif;
+.ImgRoom img {
+  height: 50vw;
+  border-radius: 25px;
 }
-nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12% 10%;
-    
+.ImgRoom {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-nav i{
-    font-size: 1em;
-    color: white;
-    background-color: black;
-    padding: 4%;
-    border-radius: 15%;
+.container-father {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  gap: 1%;
+  padding: 0% 6%;
+  margin-top: 5%;
 
 }
-.ImgRoom img{
-    height: 60vw;
+.title {
+  text-align: left;
+  width: 100%;
+  margin-top: 1%;
 }
-.ImgRoom{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.title h1 {
+  font-weight: 900;
+  font-size: 2.2em;
+  letter-spacing:-2px;
 }
-.container-father{
-    display: flex;
-    align-items:center;
-    justify-content: space-around;
-    flex-direction: column;
-    gap: 1%;
-    padding: 5%;
+.cost {
+  text-align: left;
+  width: 100%;
+  color: var(--Gray);
+  font-size: 1.5em;
+  margin-top: -2%;
+  margin-bottom: 4%;
 }
-.title{
-    text-align:left ;
-    width: 100%;
-    margin-top: 3%;   
+.desc {
+  text-align:justify;
+  width: 100%;
+  padding:1%;
+  color: var(--Gray);
+  font-weight:400;
+  font-size: 1.2em;
+  line-height: 20px;
+  letter-spacing: 1px;
 }
-.title h1{
-    font-weight:900;
-}
-.cost{
-    text-align: left;
-    width: 100%;
-}
-.desc{
-    text-align: left;
-    width: 100%;
-    padding: 3%;
 
+/* SLIDER */
+.slider-container {
+  width: 100%;
+  max-width: 340px; /* Ancho máximo del slider */
+  margin: 0 auto ;
+  overflow: hidden; /* **Oculta los elementos que no caben** */
+  position: relative;
+}
+
+.slider {
+  display: flex; /* Mantiene los items uno al lado del otro */
+  transition: transform 0.5s ease-in-out; /* Animación de desplazamiento */
+  /* El ancho total debe ser: (Número de slides * 100%) */
+  width: 300%;
+}
+
+.slide-item {
+  min-width: 33.33%; /* Ancho de cada slide (100% / 3 slides) */
+  box-sizing: border-box;
+  height: 24vh; /* Altura del slider */
+  border-radius: 25px;
+  padding: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-item:nth-child(1) {
+  background-image: url(/public/img/room1.jpeg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.slide-item:nth-child(2) {
+  background-color: #33ff57;
+}
+.slide-item:nth-child(3) {
+  background-color: #3357ff;
 }
 /* Aqui inicia el relleno de informacion para que se contacte con el personal del hotel  */
 .container-father2{ 
