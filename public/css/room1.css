@@ -369,7 +369,7 @@ input{
   margin-bottom: 15%;
 }
 #ZONE .form .name #Names,#apellidos {
-  background-color:#0e0e0e;
+  background-color:var(--Black);
   width:50%;
   padding:1.3%;
   border-radius: 10px;
@@ -380,7 +380,7 @@ input{
 }
 #ZONE .form #correo, #phone{
   width: 100%;
-  background-color: #0e0e0e;
+  background-color: var(--Black);
   border-radius: 10px;
   padding:1.3%;
   font-weight: 600;
@@ -402,5 +402,274 @@ input{
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: var(--White);
 }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* PC DEVELOPMENT */
+@media screen and (min-width:1024px) {
+
+
+    .navtablet{
+      width: 100%;
+      display: block;
+
+    }
+      .mobile{
+    display: none;
+  }
+    #hamburgerBtn {
+    display: none;
+  }
+
+.tablet  #desk {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;  
+    padding: 0.5% 0%;
+  }
+
+  .tablet #desk ul {
+    display: flex;
+    list-style: none;
+    margin-right: 30%;
+    text-decoration: none;
+  }
+
+  .tablet #desk ul li {
+    padding: 6%;
+    text-decoration: none;
+  }
+
+  .tablet #desk ul li a {
+    text-decoration: none;
+    color: var(--Black);
+    font-weight: 300;
+  }
+
+  .text a {
+    text-decoration: none;
+    color: var(--White);
+  }
+  
+  /* BUTTON */
+  #desk .whatsBtn i {
+    font-size: 1.5em;
+  }
+
+  #desk .whatsBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: var(--Black);
+    color: var(--White);
+    padding: 1%;
+    border-radius: 10px;
+    width: 22%;
+    gap: 10px;
+    font-weight: bold;
+    font-size:.9em;
+  }
+
+  /* ARTICLE */
+  .desk{
+    display:flex;
+    width: 100%;
+    padding: 0%;
+    height: auto;
+    margin-top: 2.5%;
+  }
+  .desk .leftZone{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 2%;
+  }
+  .desk .leftZone .Title{
+    width: 100%;
+    font-size: 2.1em;
+  }
+  .desk .leftZone .Title h1{
+    padding-left: 4%;
+  }
+
+  .desk .leftZone .cost p{
+    margin-left: 5%;
+    font-size: 1.3em;
+  }
+  .desk .leftZone .desc{
+    padding: 0%;
+  }
+  .desk .leftZone .desc p{
+    padding: 0% 5%;
+    font-size: .7em;
+  }
+/* SLIDER */
+.slider-container {
+  width: 100%;
+ /* Ancho máximo del slider */
+  margin: 0 auto ;
+  overflow: hidden; /* **Oculta los elementos que no caben** */
+  position: relative;
+}
+
+.slider {
+  display: flex; /* Mantiene los items uno al lado del otro */
+  transition: transform 0.5s ease-in-out; /* Animación de desplazamiento */
+  /* El ancho total debe ser: (Número de slides * 100%) */
+  width: 300%;
+}
+
+.slide-item {
+  min-width: 33.33%; /* Ancho de cada slide (100% / 3 slides) */
+  box-sizing: border-box;
+  height: 30vh; /* Altura del slider */
+  border-radius: 25px;
+  padding: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-item:nth-child(1) {
+  background-image: url(/public/img/room1.jpeg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position:center;
+  
+}
+.slide-item:nth-child(2) {
+  background-color: #33ff57;
+}
+.slide-item:nth-child(3) {
+  background-color: #3357ff;
+}
+#ZONE{
+  padding:0% 2%;
+  /* Lo agregue para que estuviera a la par del icono de reservar o whats */
+  margin-right: 20px;
+}
+
+#ZONE .formTitle{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6%;
+  letter-spacing: -2px;
+  font-weight: 900;
+}
+#ZONE .formTitle h1{
+  width: 100%;
+  text-align: center;
+  font-size: 2.9em;
+
+}
+
+#ZONE .form{
+  margin-top: 10%;
+}
+#ZONE .form .name{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 10%;
+}
+#ZONE .form .name #Names,#apellidos {
+  background-color:var(--Black);
+  width:50%;
+  padding:1.9%;
+  border-radius: 10px;
+  font-weight: 600;
+}
+#ZONE .form .button{
+  width: 100%;
+}
+#ZONE .form #correo, #phone{
+  width: 100%;
+  background-color: var(--Black);
+  border-radius: 10px;
+  padding:1.9%;
+  font-weight: 600;
+}
+#ZONE .form ,#Btn{
+  width: 100%;
+  padding: 1.3%;
+  background-color: var(--White);
+  color: var(--Black);
+  border-radius: 10px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+#ZONE .form .name #Names{
+  margin-right: 3%;
+}
+#ZONE .form .correo,.numero,.button{
+  margin-bottom: 13.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--White);
+}
+
   }
