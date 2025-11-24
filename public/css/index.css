@@ -125,8 +125,6 @@ header nav i {
 }
 
 /* Service section */
-.container-father1 {
-}
 
 .ServTop {
   display: flex;
@@ -250,7 +248,7 @@ header nav i {
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin: 1.5%;
+  margin: 0.5%;
   margin-bottom: 6%;
 
 }
