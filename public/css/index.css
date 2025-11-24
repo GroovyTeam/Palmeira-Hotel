@@ -61,8 +61,8 @@ header nav i {
   font-weight: 400;
 }
 
-#desk{
-    display: none;
+#desk {
+  display: none;
 }
 
 /* intro section */
@@ -123,6 +123,179 @@ header nav i {
 .subtitle {
   font-size: 1em;
 }
+
+/* Service section */
+.container-father1 {
+}
+
+.ServTop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: justify;
+  width: 100%;
+}
+
+.title1 {
+  font-weight: bold;
+  font-size: 1em;
+  margin: 4%;
+  margin-top: 7%;
+}
+
+.ServDesc {
+  padding: 0% 9.5%;
+  font-weight: 400;
+}
+
+.ServIMG {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0% 0%;
+  margin-top: 10%;
+}
+
+.ServIMG img {
+  width: 37vh;
+  height: 47vw;
+  display: block;
+  border-radius: 30px;
+}
+
+.Servunder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+}
+
+.yoga {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.iconyoga svg {
+  width: 7vh;
+  height: 15vw;
+  margin-top: 15%;
+}
+
+.TitleYoga {
+  font-weight: 800;
+}
+
+.DescYoga {
+  text-align: center;
+  margin: 4% 8%;
+  margin-top: 1%;
+}
+
+.restaurant{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.iconrestaurant svg {
+  width: 7vh;
+  height: 15vw;
+  margin-top: 15%;
+}
+
+.Titlerestaurant {
+  font-weight: 800;
+  text-align: center;
+}
+
+.DescRestaurant {
+  text-align: center;
+  margin: 4% 8%;
+  margin-top: 1%;
+}
+
+.clean{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.iconclean svg {
+  width: 7vh;
+  height: 15vw;
+  margin-top: 15%;
+}
+
+.TitleClean {
+  font-weight: 800;
+}
+
+.DescClean {
+  text-align: center;
+  margin: 4% 8%;
+  margin-top: 1%;
+}
+
+.BtnTalk{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 1.5%;
+  margin-bottom: 6%;
+
+}
+.containerwhats{
+  background-color: var(--Black);
+  display: flex;
+  justify-content: left;
+  margin: 3.8%;
+}
+.containerwhats i{
+  font-size: 2.4vh;
+}
+
+.containertalk{
+  background-color: var(--Black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1% 6% 1%;
+  border-radius: 4px;
+}
+
+#btntalk{
+  background-color: var(--Black);
+  border: var(--Black);
+  color: var(--White);
+  font-weight: bold;
+  font-size: 1em;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* TABLET */
 @media screen and (min-width: 768px) {
@@ -185,7 +358,7 @@ header nav i {
     width: 22%;
     gap: 10px;
     font-weight: bold;
-    font-size:.9em;
+    font-size: 0.9em;
   }
 
   .stats {
