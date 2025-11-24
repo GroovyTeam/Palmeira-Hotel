@@ -2,12 +2,14 @@
 
 * {
   font-family: "DM Sans", sans-serif;
-  box-sizing: content-box;
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
-  text-indent: -75;
 }
-
+html{
+  margin: 0;
+  padding: 0;
+}
 body {
   background-color: var(--bodyGray);
 }
@@ -40,9 +42,9 @@ header nav i {
 
 .Title #titlep1 {
   text-align: right;
-  font-size: 5em;
+  font-size: 5.5em;
   color: var(--Black);
-  font-weight: 800;
+  font-weight:bolder;
   padding: 0%;
   line-height: 75%;
 }
@@ -124,29 +126,33 @@ header nav i {
   font-size: 1em;
 }
 
+
+
+
 /* Service section */
-.container-father1 {
-}
 
 .ServTop {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  text-align: justify;
   width: 100%;
 }
 
-.title1 {
+.title1{
   font-weight: bold;
   font-size: 1em;
   margin: 4%;
-  margin-top: 7%;
+  letter-spacing: -2px;
 }
 
 .ServDesc {
-  padding: 0% 9.5%;
-  font-weight: 400;
+  width: 100%;
+}
+.ServDesc p{
+font-weight: 400;
+width: 100%;
+font-size:1.3em;
 }
 
 .ServIMG {
@@ -154,7 +160,6 @@ header nav i {
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 0% 0%;
   margin-top: 10%;
 }
 
@@ -170,7 +175,6 @@ header nav i {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  text-align: center;
   width: 100%;
 }
 
@@ -281,6 +285,7 @@ header nav i {
   font-size: 1em;
   
 }
+
 
 
 
