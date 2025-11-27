@@ -60,7 +60,7 @@ nav .fa-bars {
   margin-top: 1%;
 }
 .title h1 {
-  font-weight: 900;
+  font-weight: 700;
   font-size: 2.1em;
   letter-spacing:-2px;
 }
@@ -137,7 +137,7 @@ nav .fa-bars {
     
 }
 .TitleContact h2{
-    font-weight: 900;
+    font-weight: 700;
     letter-spacing: -2px;
     font-size: 2em;
 }
@@ -160,7 +160,7 @@ nav .fa-bars {
     width: 85%;
     background-color:var(--White) ;
     color: var(--Black);
-    font-weight:900;
+    font-weight:700;
     border: 2.5px solid var(--Black);
     padding: 1.5% 0%;
 
