@@ -12,7 +12,7 @@
   margin: 0;
   padding: 0;
   box-sizing: content-box;
-  font-family: "DM Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 body {
   background-color: var(--bodyGray);
@@ -516,12 +516,12 @@ input{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
+    flex-direction: row ;
     background-color: var(--Black);
     color: var(--White);
-    padding: 1%;
+    padding: 0.8%;
     border-radius: 10px;
-    width: 22%;
+    width: 14%;
     gap: 10px;
     font-weight: bold;
     font-size:.9em;
@@ -613,19 +613,19 @@ input{
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 6%;
   letter-spacing: -2px;
-  font-weight: 900;
+  font-weight: bold;
+  margin-bottom: 0%;
 }
 #ZONE .formTitle h1{
   width: 100%;
   text-align: center;
-  font-size: 2.9em;
+  font-size: 3.2em;
 
 }
 
 #ZONE .form{
-  margin-top: 10%;
+  margin-top: 0%;
 }
 #ZONE .form .name{
   width: 100%;
@@ -633,7 +633,7 @@ input{
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  margin-bottom: 10%;
+  margin-bottom: 6%;
 }
 #ZONE .form .name #Names,#apellidos {
   background-color:var(--Black);
@@ -658,14 +658,14 @@ input{
   background-color: var(--White);
   color: var(--Black);
   border-radius: 10px;
-    font-weight: 700;
-    letter-spacing: -1px;
+  font-weight: 700;
+  letter-spacing: -1px;
 }
 #ZONE .form .name #Names{
   margin-right: 3%;
 }
 #ZONE .form .correo,.numero,.button{
-  margin-bottom: 13.5%;
+  margin-bottom: 6%;
   display: flex;
   justify-content: center;
   align-items: center;
