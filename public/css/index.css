@@ -6,16 +6,13 @@
   padding: 0;
   margin: 0;
 }
-html {
-  margin: 0;
-  padding: 0;
-}
+html,
 body {
-  background-color: var(--bodyGray);
+  overflow-x: hidden;
 }
 
 :root {
-  /* COLOR VALUES */
+  
   --Black: #0e0e0e;
   --White: #ededed;
   --Gray: #626262;
@@ -42,12 +39,11 @@ header nav i {
 
 .Title #titlep1 {
   position: relative;
-  top:-45px;
+  top: -45px;
   text-align: right;
   font-size: 4.6em;
   color: var(--Black);
   font-weight: bolder;
-  padding: 0%;
   line-height: 85%;
   letter-spacing: -5px;
 }
@@ -57,14 +53,13 @@ header nav i {
   padding: 0% 4%;
 }
 
-
 .desc {
   position: relative;
   top: -1em;
   text-align: right;
-  font-weight:300;
+  font-weight: 300;
   padding: 0% 7%;
-  line-height:20px;
+  line-height: 20px;
   font-size: 1.2em;
   color: var(--Gray);
 }
@@ -84,65 +79,52 @@ header nav i {
   color: var(--Gray);
   font-weight: 800;
 }
-.stats .number{
+.stats .number {
   color: var(--Black);
 }
 
+.review,
+.guests,
+.services {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 .review {
   grid-area: review;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   border-right: 1px solid black;
 }
-
 .guests {
   grid-area: guests;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   border-right: 1px solid black;
 }
-
 .services {
   grid-area: services;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 }
-.services, .guests, .review p{
-  font-size: .8em;
+.services,
+.guests,
+.review p {
+  font-size: 0.8em;
   font-weight: 300;
 }
 
 .introIMG img {
-  width: 40vh;
-  height: max-content;
+  width: 90vw;
+  max-width: 100%;
+  height: auto;
   padding: 2%;
 }
 
 .introIMG {
   margin-top: 12%;
   width: 100%;
-  padding: 0% 0%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.number {
-  font-size: 1.5em;
-}
-
-.subtitle {
-  font-size: 1em;
-}
-
 /* Service section */
-
 .ServTop {
   display: flex;
   align-items: center;
@@ -172,17 +154,19 @@ header nav i {
   text-align: justify;
   padding: 6%;
 }
+
 .ServIMG {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   width: 100%;
   margin-top: 10%;
 }
 
 .ServIMG img {
   width: 85vw;
-  height: 47vw;
+  max-width: 100%;
+  height: auto;
   display: block;
   border-radius: 30px;
 }
@@ -195,61 +179,17 @@ header nav i {
   width: 100%;
   margin-top: 3%;
 }
-.Servunder h2{
+.Servunder h2 {
   font-weight: 400;
   letter-spacing: -1px;
 }
-.Servunder p{
+.Servunder p {
   font-weight: 400;
   color: var(--Gray);
 }
-.yoga {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
 
-.iconyoga svg {
-  width: 7vh;
-  height: 15vw;
-  margin-top: 15%;
-}
-
-.TitleYoga {
-  font-weight: 800;
-}
-
-.DescYoga {
-  text-align: center;
-  margin: 4% 8%;
-  margin-top: 1%;
-}
-
-.restaurant {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.iconrestaurant svg {
-  width: 7vh;
-  height: 15vw;
-  margin-top: 15%;
-}
-
-.Titlerestaurant {
-  font-weight: 800;
-  text-align: center;
-}
-
-.DescRestaurant {
-  text-align: center;
-  margin: 4% 8%;
-  margin-top: 1%;
-}
-
+.yoga,
+.restaurant,
 .clean {
   display: flex;
   justify-content: center;
@@ -257,16 +197,23 @@ header nav i {
   width: 100%;
 }
 
+.iconyoga svg,
+.iconrestaurant svg,
 .iconclean svg {
-  width: 7vh;
-  height: 15vw;
+  width: 12vw;
+  height: auto;
   margin-top: 15%;
 }
 
+.TitleYoga,
+.Titlerestaurant,
 .TitleClean {
   font-weight: 800;
+  text-align: center;
 }
 
+.DescYoga,
+.DescRestaurant,
 .DescClean {
   text-align: center;
   margin: 4% 8%;
@@ -278,7 +225,6 @@ header nav i {
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin: 0.5%;
   margin-bottom: 6%;
 }
 .containerwhats {
@@ -286,7 +232,6 @@ header nav i {
   display: flex;
   justify-content: left;
   margin: 3.8%;
-  
 }
 .containerwhats i {
   font-size: 2.4vh;
@@ -310,18 +255,13 @@ header nav i {
 }
 
 /* Secction Choose Rooms */
-
 .titleanddesc {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   margin-top: 8.5%;
-  margin: 1% 5%;                    
-}
-
-.titlerooms {
-  width: 100%;
+  margin: 1% 5%;
 }
 
 .titlerooms h1 {
@@ -332,17 +272,13 @@ header nav i {
   letter-spacing: -2px;
 }
 
-.descrooms {
-  width: 100%;
-}
 .descrooms p {
   font-weight: 400;
-  width: 100%;
   font-size: 1.3em;
   text-align: center;
 }
 
-.container-father2{
+.container-father2 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -365,6 +301,7 @@ header nav i {
   border-radius: 15px;
   margin-top: 8%;
 }
+
 .RoomsImg {
   width: 100%;
   display: flex;
@@ -375,42 +312,22 @@ header nav i {
 }
 
 .RoomsImg img {
-  width: 100%;                    
-  height: auto;
+  width: 93%; 
+  height: 400px;
   display: block;
   border-radius: 30px;
-}
-.subtitlerooms {
-  width: 100%;
-}
-.subtitlerooms h2 {
-  text-align: left;
-  font-weight: bold;
-  font-size: 1.5em;
-  letter-spacing: -2px;
-  padding: 0% 0% 0% 6%;            
-}
-.CostRooms {
-  width: 100%;
-}
-.CostRooms p {
-  font-weight: 400;
-  width: 100%;
-  font-size: 1em;
-  text-align: left;
-  padding: 0% 0% 0% 6%;            
+  margin-bottom: 2.5%;
 }
 
-.DescRooms {
-  width: 100%;
+.subtitlerooms h2,
+.CostRooms p {
+  padding-left: 6%;
 }
 .DescRooms p {
-  font-weight: 400;
-  width: 100%;
   font-size: 1em;
   text-align: justify;
   margin-top: 10%;
-  padding: 0% 6% 0% 6%;           
+  padding: 0% 6%;
 }
 
 .Btnreserve {
@@ -418,19 +335,18 @@ header nav i {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: none;
   padding: 5%;
 }
 .Btnreserve input {
   color: var(--Black);
-  width: 85%;                     
-  height: 52px;                    
+  width: 85%; 
+  height: 52px;
   border-radius: 10px;
   font-weight: 900;
 }
 
+/* Flechas */
 .ToChangeRooms {
-  background-color: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -438,42 +354,33 @@ header nav i {
   width: 90%;
   padding-bottom: 10px;
   margin-bottom: 10%;
-  gap: 0;                          
-  overflow: hidden;
+  gap: 0;                    
+  overflow: hidden;        
 }
 
 .BeforeRooms {
   background-color: var(--White);
   transform: rotate(180deg);
   width: 50%;
+  height: 6.5vh;            
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 20px 0 0 20px;
-  border: 1.5px solid var(--Black);
-  border-right: none;              
-  height: 48px;
-  box-sizing: border-box;
+  border-radius: 0px 20px 20px 0px;
+  border: 2px solid var(--Black);
+  border-right: none;       
 }
+
 .AfterRooms {
   background-color: var(--White);
   width: 50%;
+  height: 6.5vh;            
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 0 20px 20px 0;
-  border: 1.5px solid var(--Black);
-  border-left: none;               
-  height: 48px;
-  box-sizing: border-box;
-}
-
-
-.BeforeRooms svg,
-.AfterRooms svg {
-  width: 20px;
-  height: 20px;
-  fill: #e3e3e3;
+  border-radius: 0px 20px 20px 0px;
+  border: 2px solid var(--Black);
+  border-left: none;        
 }
 
 /* Section Location */
@@ -486,41 +393,29 @@ header nav i {
   color: var(--White);
 }
 
-.titlelocation {
-  width: 100%;
-}
-
 .titlelocation h2 {
-  text-align: left;
   font-weight: bold;
   font-size: 2em;
-  margin: 7% 0%;
-  margin-bottom: -1%;
+  padding-left: 5%;
+  margin: 7% 0% -1%;
   letter-spacing: -2px;
 }
 
-.desclocation {
-  width: 100%;
+.linklocation{
+  width: 88%;
+  
 }
+
 .desclocation p {
-  font-weight: 400;
-  width: 100%;
+  text-align: left;
   font-size: 1em;
-  text-align: justify;
+  padding: 0% 6%;
   margin-top: 4%;
-  padding: 0% 6% 0% 6%;            
 }
 
-.linklocaion {
-  width: 100%;
-  text-align: justify;
-  margin-top: 4%;
-  padding: 0% 6% 0% 6%;           
-}
-
-.linklocaion a {
+.linklocation a {
+  width: 50%;
   font-weight: bold;
-  font-size: 1em;
   color: var(--White);
 }
 
@@ -529,38 +424,36 @@ header nav i {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 7%;
-  margin-bottom: 15%;
+  margin: 7% 0 18%;
 }
 .locationmaps iframe {
+  width: 90%; 
+  height: 350px;
   border-radius: 20px;
-  width: 100%;                     
-  height: 300px;                   
 }
 
 /* Section Reservation */
 .titleReservation {
   width: 100%;
-  padding-bottom: -1px;
   margin-top: 10%;
+  background-color: var(--White);
 }
 .titleReservation h1 {
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: -2px;
-  font-size: 2.5em;
+  font-size: 3em;
   text-align: left;
   padding-left: 10%;
 }
 
 .FormsReservation {
-  background-color: #ffffff;
+  background-color: var(--White);
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
   padding: 30px 0%;
   width: 100%;
-  height: fit-content;
 }
 
 .Name,
@@ -577,10 +470,9 @@ header nav i {
   border-radius: 5.5px;
   height: 45px;
   width: 100%;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 0 15px;
   border: none;
-  color: white;
+  color: var(--Gray);
   font-size: 1.1em;
   outline-color: #94e790;
   margin-bottom: 12px;
@@ -594,24 +486,12 @@ header nav i {
   color: var(--Black);
   font-weight: 900;
   border: 2px solid var(--Black);
-  padding: 8px 0%;
-}
-
-.Button {
-  display: flex;
-  justify-content: center;
-  width: 100%;
+  padding: 8px 0;
 }
 
 input::placeholder {
   color: var(--placeholdercolor);
-  font-weight: bold;
-}
-input {
-  outline-color: #94e790;
-  color: white;
-  font-size: 1.1em;
-  text-indent: 4%;
+  font-weight: light;
 }
 
 /* Section footers */
@@ -621,41 +501,37 @@ input {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  box-shadow: border-box;
   gap: 10px;
 }
 
-.FooterLeft {
-  width: 45%;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: justify;
-  
-
-}
-.Email{
-  font-size: 1.4em;
-  font-weight: bold;
-  color: var(--Black);
-}
-
-.Phone,
-.Location {
-
-  color: var(--Black);
-  font-size: 0.7em;
-  font-weight: 900;
-}
-
-
+.FooterLeft,
 .FooterRight {
   width: 45%;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
   gap: 10px;
-  
+}
+.FooterLeft {
+  align-items: flex-start;
+}
+.FooterRight {
+  align-items: flex-end;
+}
+
+.Email {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: var(--Black);
+}
+.Phone {
+  color: var(--Black);
+  font-size: 1em;
+  font-weight: bold;
+}
+.Location {
+  color: var(--Black);
+  font-size: 0.7em;
+  font-weight: 500;
 }
 
 .FooterIcons {
@@ -663,24 +539,17 @@ input {
   padding-top: 28%;
   gap: 15px;
 }
-
 #IconSvg {
   width: 30px;
   height: 30px;
   border-radius: 6px;
 }
-
 .Hours {
   text-align: right;
   font-size: 0.9em;
   color: var(--Black);
   font-weight: 500;
 }
-
-
-
-
-
 
 
 
