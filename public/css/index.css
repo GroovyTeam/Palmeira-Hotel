@@ -41,10 +41,11 @@ header nav i {
   position: relative;
   top: -45px;
   text-align: right;
-  font-size: 4.6em;
+  font-size: 5em;
   color: var(--Black);
-  font-weight: bolder;
-  line-height: 85%;
+  font-weight: 800;
+  padding: 0%;
+  line-height: 75%;
   letter-spacing: -5px;
 }
 
@@ -53,14 +54,19 @@ header nav i {
   padding: 0% 4%;
 }
 
+.Title .desc{
+    padding-top: 7%;
+  padding-right: 2%;
+}
+
 .desc {
   position: relative;
   top: -1em;
   text-align: right;
-  font-weight: 300;
+  font-size: 1em;
   padding: 0% 7%;
-  line-height: 20px;
-  font-size: 1.2em;
+  text-indent: 1em;
+  font-weight: 400;
   color: var(--Gray);
 }
 
@@ -71,7 +77,7 @@ header nav i {
 /* intro section */
 .stats {
   width: 100%;
-  margin-top: 2vh;
+  margin-top: 10%;
   padding: 0% 2%;
   display: grid;
   grid-template-columns: repeat(3, auto);
@@ -83,6 +89,8 @@ header nav i {
   color: var(--Black);
 }
 
+
+
 .review,
 .guests,
 .services {
@@ -90,10 +98,12 @@ header nav i {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  
 }
 .review {
   grid-area: review;
   border-right: 1px solid black;
+  
 }
 .guests {
   grid-area: guests;
@@ -132,27 +142,38 @@ header nav i {
   flex-direction: column;
   width: 100%;
   margin-top: 6%;
+  border-right: 1px solid black;
+}
+
+.title1{
+  width: 100%;
+  text-align: center;
 }
 .title1 h1 {
   font-weight: 600;
-  font-size: 2.5em;
+  font-size: 2.4em;
   margin: 4%;
   letter-spacing: -2px;
 }
 
+.services {
+  grid-area: services;
+}
+
 .ServDesc {
   width: 100%;
-  padding: 3% 6vw;
+  padding: 3% 7vw;
 }
 
 .ServDesc p {
-  font-weight: 300;
+  font-weight: 400;
   width: 100%;
-  font-size: 1.3em;
-  line-height: 130%;
+  font-size: 1.2em;
+  line-height: 130%; 
   color: var(--Gray);
   text-align: justify;
-  padding: 6%;
+  padding: 0%;
+
 }
 
 .ServIMG {
@@ -262,6 +283,7 @@ header nav i {
   flex-direction: column;
   margin-top: 8.5%;
   margin: 1% 5%;
+  text-align: center;
 }
 
 .titlerooms h1 {
@@ -275,7 +297,6 @@ header nav i {
 .descrooms p {
   font-weight: 400;
   font-size: 1.3em;
-  text-align: center;
 }
 
 .container-father2 {
@@ -358,6 +379,16 @@ header nav i {
   overflow: hidden;        
 }
 
+.BeforeRooms svg{
+  width: 50%;
+  height: 40px;
+}
+.AfterRooms svg{
+  width: 100%;
+  height: 40px;
+  color: var(--Black);
+}
+
 .BeforeRooms {
   background-color: var(--White);
   transform: rotate(180deg);
@@ -426,10 +457,14 @@ header nav i {
   align-items: center;
   margin: 7% 0 18%;
 }
+.maps2{
+  width: 90%;
+  height: 230px;
+}
 .locationmaps iframe {
-  width: 90%; 
-  height: 350px;
-  border-radius: 20px;
+  width: 100%; 
+  height: 100%;
+  border-radius: 25px;
 }
 
 /* Section Reservation */
@@ -472,10 +507,18 @@ header nav i {
   width: 100%;
   padding: 0 15px;
   border: none;
-  color: var(--Gray);
+  color: var(--White);
   font-size: 1.1em;
   outline-color: #94e790;
   margin-bottom: 12px;
+  font-weight: 200;
+}
+
+.Button{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #Bttn {
@@ -485,8 +528,9 @@ header nav i {
   background-color: var(--White);
   color: var(--Black);
   font-weight: 900;
-  border: 2px solid var(--Black);
+  border: 3px solid var(--Black);
   padding: 8px 0;
+  border-radius: 13px;
 }
 
 input::placeholder {
@@ -546,8 +590,8 @@ input::placeholder {
 }
 .Hours {
   text-align: right;
-  font-size: 0.9em;
   color: var(--Black);
+  font-size: 0.7em;
   font-weight: 500;
 }
 
