@@ -620,7 +620,7 @@ input::placeholder {
     justify-content: space-around;
     align-items: center;
     padding-top: 2%;
-    margin-bottom: 10%;
+    margin-bottom: 2%;
   }
 
   #desk ul {
@@ -674,7 +674,103 @@ input::placeholder {
     grid-template-columns: repeat(3, auto);
     grid-template-areas: "review    guests  services";
   }
+
+  /* Presentation section or intro */
+  .Presentation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5.5%;
+    width: 100%;
+    margin-top: -5%;
+  }
+  .containertemporaly {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 97%;
+  }
+  .containertemporaly .Title{
+    width: 100%;
+    margin-left: 10%;
+    
+  }
+
+  .containertemporaly .Title p{
+    margin-left: 1%;
+    font-size: 1.2em;
+  }
+
+  .containertemporaly .desc{
+    width: 100%;
+    margin-left: 10%;
+    
+  }
+  .containertemporaly .desc p{
+    font-size: 0.8em;
+    margin-left: 20%;
+  }
+  .containertemporaly .stats{
+    width: 100%;
+    margin-left: 5%;
+    margin-top: 20%;
+  }
+  .containertemporaly .stats .review{
+    font-size: 1.21em;
+    margin-left: 17%;
+  }
+  .containertemporaly .stats .subtitle{
+    font-size: .8em;
+  }
+  .containertemporaly .stats .guests{
+    font-size: 1.1em;
+    
+  }
+  .containertemporaly .stats .services{
+    font-size: 1.1em;
+  }
+
+  .introIMG{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .introIMG img{
+    width: 100%;
+    height: 100%;
+    margin-right: 10%;
+    padding: 0%;
+    margin-bottom: 36%;
+  }
+
+ 
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* DESKTOP section */
 @media screen and (min-width: 992px) {
