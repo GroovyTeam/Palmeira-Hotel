@@ -943,7 +943,61 @@ input::placeholder {
     font-weight: 900;
   }
 
-  
+
+
+  /* Section location */
+  .location{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    gap: 5%;
+  }
+  .locationtitletolink{
+    width: 100%;
+    margin-bottom: 9%;
+    margin-left: 2.5%;
+  }
+  .locationtitletolink .titlelocation{
+    width: 100%;
+    text-align: left;
+  }
+  .titlelocation h2{
+    padding-top : 2%;
+    font-size: 2.1em;
+  }
+  .locationtitletolink .desclocation{
+    width: 100%;
+    text-align: justify;
+    font-size: .8em;
+  }
+  .locationtitletolink .linklocation{
+    width: 100%;
+    text-align: left;
+    margin-left: 5%;
+    margin-bottom: 10%;
+  }
+  .locationmaps{
+    width: 100%;
+    height: 100%;
+    margin: 2% 0%;
+    margin-right: 3%;
+  }
+  .maps2{
+    width: 100%;
+    height: 100%;
+  }
+  .maps2 iframe{
+    height: 34vw;
+  }
+
+
+
+
+
+
+
 
 
 
