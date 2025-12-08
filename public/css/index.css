@@ -992,6 +992,46 @@ input::placeholder {
     height: 34vw;
   }
 
+  /* Section Reservation*/
+  .ReservationNow{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    background-color: var(--White);
+  }
+  .titleReservation{
+    width: 100%;
+    margin: 0% 1%;
+    padding: 0% 1%;
+  }
+  .titleReservation h1{
+    text-align: left;
+    font-size: 3em;
+  }
+  .FormsReservation{
+    width: 100%;
+    margin: 6%;
+  }
+  .Name, .emails, .Number{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3%; 
+    width: 60vh;
+    margin-top: 4.5%;
+  }
+  #name, #Apellidos, #email, #phones{
+    border-radius: 13px;
+  }
+  .Button{
+    margin-top: 2%;
+    width: 100%;
+  }
+  #Bttn{
+    width: 100%;
+  }
+  
 
 
 
@@ -1005,6 +1045,10 @@ input::placeholder {
 
 
 }
+
+
+
+
 
 /* DESKTOP section */
 @media screen and (min-width: 992px) {
