@@ -646,10 +646,10 @@ prev-btn:hover, .next-btn:hover {
     width: 100%;
     padding: 0%;
     height: auto;
-    margin-top: 2.5%;
+    margin-top: 2%;
   }
   .desk .leftZone{
-    width: 60%;
+    width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -675,47 +675,6 @@ prev-btn:hover, .next-btn:hover {
     padding: 0% 5%;
     font-size: .7em;
   }
-/* SLIDER */
-.slider-container {
-  width: 100%;
- /* Ancho máximo del slider */
-  margin: 0 auto ;
-  overflow: hidden; /* **Oculta los elementos que no caben** */
-  position: relative;
-}
-
-.slider {
-  display: flex; /* Mantiene los items uno al lado del otro */
-  transition: transform 0.5s ease-in-out; /* Animación de desplazamiento */
-  /* El ancho total debe ser: (Número de slides * 100%) */
-  width: 300%;
-}
-
-.slide-item {
-  min-width: 33.33%; /* Ancho de cada slide (100% / 3 slides) */
-  box-sizing: border-box;
-  height: 30vh; /* Altura del slider */
-  border-radius: 25px;
-  padding: 2%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.slide-item:nth-child(1) {
-  background-image: url(/public/img/room1.jpeg);
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position:center;
-  
-}
-.slide-item:nth-child(2) {
-  background-color: #33ff57;
-}
-.slide-item:nth-child(3) {
-  background-color: #3357ff;
-}
 #ZONE{
   padding:0% 2%;
   /* Lo agregue para que estuviera a la par del icono de reservar o whats */
