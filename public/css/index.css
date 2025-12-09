@@ -761,8 +761,8 @@ input::placeholder {
 
   .ServIMG img {
     padding: 0;
-    width: 100%;
-    height: 100%;
+    width: 46vh;
+    height: 30vh;
     border-radius: 10%;
     display: block;
   }
@@ -787,31 +787,22 @@ input::placeholder {
   /* Aqui se tendra pendiente */
   .Servunder {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     flex-direction: row;
     width: 100%;
-    margin: 10% auto 0 auto;
-    gap: 3%;
     padding: 0;
+    background-color: #94e790;
   }
 
   .Servunder .yoga,
   .Servunder .restaurant,
   .Servunder .clean {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 20px;
-    text-align: center;
-    width: 30%;
+    
   }
 
   /* Section Choose Room */
-
-  .ToChangeRooms {
-    display: none;
+  .ToChangeRooms{
+    background-color: #94e790;
+    margin-top: 2%;
   }
 
   .titlerooms {
@@ -835,32 +826,18 @@ input::placeholder {
     width: 100%;
     padding: 0% 2%;
   }
-  .chooserooms,
-  .chooserooms2,
-  .chooserooms3,
-  .chooserooms4,
-  .chooserooms5,
-  .chooserooms6,
-  .chooserooms7,
-  .chooserooms8 {
+  .chooserooms {
     background-color: var(--Black);
-    width: 47%;
+    width: 100%;
     height: auto;
     border-radius: 15px;
-    margin: 10% 0%;
+    margin: 2% 0% 5% 0%;
     display: flex;
     flex-direction: column;
     min-width: 280px;
   }
 
-  .RoomsImg,
-  .RoomsImg2,
-  .RoomsImg3,
-  .RoomsImg4,
-  .RoomsImg5,
-  .RoomsImg6,
-  .RoomsImg7,
-  .RoomsImg8{
+  .RoomsImg{
     width: 100%;
     display: flex;
     justify-content: center;
@@ -868,74 +845,30 @@ input::placeholder {
     flex-direction: column;
     margin-top: 5%;
   }
-  .RoomsImg img,
-  .RoomsImg2 img,
-  .RoomsImg3 img,
-  .RoomsImg4 img,
-  .RoomsImg5 img,
-  .RoomsImg6 img,
-  .RoomsImg7 img,
-  .RoomsImg8 img {
-    width: 93%;
-    height: 400px;
+  .RoomsImg img {
+    width: 90%;
+    height: 60vh;
     display: block;
     border-radius: 30px;
     margin-bottom: 2.5%;
   }
-  .subtitlerooms h2,
-  .subtitlerooms2 h2,
-  .subtitlerooms3 h2,
-  .subtitlerooms4 h2,
-  .subtitlerooms5 h2,
-  .subtitlerooms6 h2,
-  .subtitlerooms7 h2,
-  .subtitlerooms8 h2,
-  .subtitlerooms8,
-  .CostRooms p,
-  .CostRooms2 p,
-  .CostRooms3 p,
-  .CostRooms4 p,
-  .CostRooms5 p,
-  .CostRooms6 p,
-  .CostRooms7 p,
-  .CostRooms8 p {
+  .subtitlerooms h2 {
     padding-left: 6%;
   }
-  .DescRooms p,
-  .DescRooms2 p,
-  .DescRooms3 p,
-  .DescRooms4 p,
-  .DescRooms5 p,
-  .DescRooms6 p,
-  .DescRooms7 p,
-  .DescRooms8 p {
+  .DescRooms p {
     font-size: 1em;
     text-align: justify;
     margin-top: 4%;
     padding: 0% 6%;
   }
-  .Btnreserve,
-  .Btnreserve2,
-  .Btnreserve3,
-  .Btnreserve4,
-  .Btnreserve5,
-  .Btnreserve6,
-  .Btnreserve7,
-  .Btnreserve8 {
+  .Btnreserve{
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 5%;
   }
-  .Btnreserve input,
-  .Btnreserve2 input,
-  .Btnreserve3 input,
-  .Btnreserve4 input,
-  .Btnreserve5 input,
-  .Btnreserve6 input,
-  .Btnreserve7 input,
-  .Btnreserve8 input {
+  .Btnreserve input {
     color: var(--Black);
     width: 85%;
     height: 52px;

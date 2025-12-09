@@ -34,13 +34,26 @@
       </nav>
     </header>
     <article class="mobile">
-      <div class="slider-container">
-        <div class="slider" id="autoSlider">
-            <div class="slide-item"></div>
-            <div class="slide-item">Slide 2</div>
-            <div class="slide-item">Slide 3</div>
+        <div class="SLIDER">
+               <div class="slider-container">
+        <div class="slider">
+            <!-- Imágenes del slider -->
+            <img src="/public/img/room1.jpeg" alt="Imagen 1">
+            <img src="https://picsum.photos/seed/slide2/800/400.jpg" alt="Imagen 2">
+            <img src="https://picsum.photos/seed/slide3/800/400.jpg" alt="Imagen 3">
+            <img src="https://picsum.photos/seed/slide4/800/400.jpg" alt="Imagen 4">
+            <img src="https://picsum.photos/seed/slide5/800/400.jpg" alt="Imagen 5">
         </div>
+        
+        <!-- Controles de navegación -->
+        <button class="prev-btn">&lt;</button>
+        <button class="next-btn">&gt;</button>
+        
+        <!-- Indicadores -->
+        <div class="indicators"></div>
     </div>
+    
+        </div>
         <div class="container-father">
         <div class="title">
           <h1>Habitacion Sencilla</h1>
@@ -92,15 +105,29 @@
 
     <article class="desk">
         <div class="leftZone">
-              <div class="slider-container">
-        <div class="slider" id="autoSlider">
-            <div class="slide-item">
-            </div>
-            <div class="slide-item">Slide 2</div>
-            <div class="slide-item">Slide 3</div>
+           <div class="SLIDER">
+               <div class="slider-container">
+        <div class="slider">
+            <!-- Imágenes del slider -->
+            <img src="/public/img/room1.jpeg" alt="Imagen 1">
+            <img src="https://picsum.photos/seed/slide2/800/400.jpg" alt="Imagen 2">
+            <img src="https://picsum.photos/seed/slide3/800/400.jpg" alt="Imagen 3">
+            <img src="https://picsum.photos/seed/slide4/800/400.jpg" alt="Imagen 4">
+            <img src="https://picsum.photos/seed/slide5/800/400.jpg" alt="Imagen 5">
         </div>
-          </div>
-          <div class="Title">
+        
+        <!-- Controles de navegación -->
+        <button class="prev-btn">&lt;</button>
+        <button class="next-btn">&gt;</button>
+        
+        <!-- Indicadores -->
+        <div class="indicators"></div>
+    </div>
+    
+        </div>
+        <div class="ROOM">
+            <div class="roominfo">
+                    <div class="Title">
             <h1>Perla Negra</h1>
           </div>
           <div class="cost">
@@ -112,6 +139,8 @@
             </p>
           </div>
         </div>
+        </div>
+        </div>
         <div id="ZONE"  class="righZone">
             <div class="formTitle">
               <h1>
@@ -122,7 +151,7 @@
               <form action="" method="post">
                   <div class="name">
                     <input type="text" name=""  id="Names" placeholder="Nombres">
-                    <input type="text" name="" id="apellidos" placeholder="Apellidos">
+                    <input type="text" name="" id="apellidos" placeholder="Apellido Paterno">
                   </div>
                   <div class="correo">
                     <input type="email" name="" id="correo" placeholder="Correo electronico">

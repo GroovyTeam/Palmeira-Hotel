@@ -5,6 +5,12 @@
   --Gray: #626262;
   --bodyGray: #ebebeb;
   --placeholdercolor:#e0e0e0;
+
+    /* Variables para modificar fácilmente el tamaño del slider */
+    --slider-width:90%;
+    --slider-height: 30vh;
+    --transition-duration: 0.5s;
+    --auto-play-interval: 3000ms; /* Tiempo entre cambios automáticos */
 }
 
 /* MOBILE DEVELOPMENT */
@@ -83,44 +89,88 @@ nav .fa-bars {
 }
 
 /* SLIDER */
-.slider-container {
+.SLIDER{
   width: 100%;
-  max-width: 340px; /* Ancho máximo del slider */
-  margin: 0 auto ;
-  overflow: hidden; /* **Oculta los elementos que no caben** */
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slider-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    position: relative;
+    width: var(--slider-width);
+    height: var(--slider-height);
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 0% 3%;
 }
 
 .slider {
-  display: flex; /* Mantiene los items uno al lado del otro */
-  transition: transform 0.5s ease-in-out; /* Animación de desplazamiento */
-  /* El ancho total debe ser: (Número de slides * 100%) */
-  width: 300%;
+    display: flex;
+    background-color: #3357ff;
+    width: 150%;
+    height:100%;
+    transition: transform var(--transition-duration) ease-in-out;
+}
+.slider img {
+    min-width: 100%;
+    height: 100%;
+    flex-shrink: 1;
 }
 
-.slide-item {
-  min-width: 33.33%; /* Ancho de cada slide (100% / 3 slides) */
-  box-sizing: border-box;
-  height: 24vh; /* Altura del slider */
-  border-radius: 25px;
-  padding: 2%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #333;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 13px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s;
+}
+prev-btn:hover, .next-btn:hover {
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
-.slide-item:nth-child(1) {
-  background-image: url(/public/img/room1.jpeg);
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
+.prev-btn {
+    left: 10px;
 }
-.slide-item:nth-child(2) {
-  background-color: #33ff57;
+
+.next-btn {
+    right: 10px;
 }
-.slide-item:nth-child(3) {
-  background-color: #3357ff;
+
+.indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
 }
+.indicator {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.indicator.active {
+    background-color: white;
+}
+
+
+
 /* Aqui inicia el relleno de informacion para que se contacte con el personal del hotel  */
 .container-father2{ 
    display: flex;
@@ -211,6 +261,14 @@ input{
 
 /* TABLET DEVELOPMENT */
 @media screen and (min-width:768px) {
+  :root{
+    
+    /* Variables para modificar fácilmente el tamaño del slider */
+    --slider-width:100%;
+    --slider-height: 35vh;
+    --transition-duration: 0.5s;
+    --auto-play-interval: 3000ms; /* Tiempo entre cambios automáticos */
+  }
 
     .navtablet{
       width: 100%;
@@ -282,7 +340,7 @@ input{
     height: auto;
   }
   .desk .leftZone{
-    width: 60%;
+    width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -308,47 +366,99 @@ input{
     padding: 0% 5%;
     font-size: .7em;
   }
+
 /* SLIDER */
+
+.SLIDER{
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .slider-container {
-  width: 100%;
- /* Ancho máximo del slider */
-  margin: 0 auto ;
-  overflow: hidden; /* **Oculta los elementos que no caben** */
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    position: relative;
+    width: var(--slider-width);
+    height: var(--slider-height);
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 0% 3%;
 }
 
 .slider {
-  display: flex; /* Mantiene los items uno al lado del otro */
-  transition: transform 0.5s ease-in-out; /* Animación de desplazamiento */
-  /* El ancho total debe ser: (Número de slides * 100%) */
-  width: 300%;
+    display: flex;
+    width: 150%;
+    height:100%;
+    transition: transform var(--transition-duration) ease-in-out;
+}
+.slider img {
+    min-width: 100%;
+    height: 100%;
+    flex-shrink: 1;
 }
 
-.slide-item {
-  min-width: 33.33%; /* Ancho de cada slide (100% / 3 slides) */
-  box-sizing: border-box;
-  height: 30vh; /* Altura del slider */
-  border-radius: 25px;
-  padding: 2%;
+.prev-btn, .next-btn2 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #333;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 13px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s;
+}
+prev-btn:hover, .next-btn:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+.indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
+.indicator {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.indicator.active {
+    background-color: white;
+}
+.ROOM .roominfo h1{
+  font-size: 1.2em;
+}
+.ROOM{
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+}
+.roominfo{
+  width: 80%;
 }
 
-.slide-item:nth-child(1) {
-  background-image: url(/public/img/room1.jpeg);
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position:center;
-  
-}
-.slide-item:nth-child(2) {
-  background-color: #33ff57;
-}
-.slide-item:nth-child(3) {
-  background-color: #3357ff;
-}
 #ZONE{
   padding:0% 2%;
 }
@@ -369,12 +479,12 @@ input{
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  margin-bottom: 15%;
+  margin-bottom: 10%;
 }
 #ZONE .form .name #Names,#apellidos {
   background-color:var(--Black);
-  width:50%;
-  padding:1.3%;
+  width:60%;
+  padding:3%;
   border-radius: 10px;
     font-weight: 600;
 }
@@ -385,7 +495,7 @@ input{
   width: 100%;
   background-color: var(--Black);
   border-radius: 10px;
-  padding:1.3%;
+  padding:3%;
   font-weight: 600;
 }
 #ZONE .form ,#Btn{
@@ -401,7 +511,7 @@ input{
   margin-right: 3%;
 }
 #ZONE .form .correo,.numero,.button{
-  margin-bottom: 15%;
+  margin-bottom: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
