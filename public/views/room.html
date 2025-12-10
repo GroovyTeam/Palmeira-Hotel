@@ -7,20 +7,53 @@
     <link rel="stylesheet" href="/public/css/room1.css">
   </head>
   <body>
+     <header class="tablet navtablet">
+      <nav id="desk">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Servicios</a></li>
+          <li><a href="#rooms">Habitaciones</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+        <div class="whatsBtn">
+          <div class="icon">
+            <i class="fa-brands fa-whatsapp" style="color: #ffffff"></i>
+          </div>
+          <div class="text">
+            <a href=""> Reservar ahora </a>
+          </div>
+        </div>
+      </nav>
+      </div>
+    
+    </header>
     <header>
-      <nav>
+      <nav class="mobile">
         <i class="fa-solid fa-reply"></i>
         <i class="fas fas fa-bars"></i>
       </nav>
     </header>
-    <article>
-      <div class="slider-container">
-        <div class="slider" id="autoSlider">
-            <div class="slide-item"></div>
-            <div class="slide-item">Slide 2</div>
-            <div class="slide-item">Slide 3</div>
+    <article class="mobile">
+        <div class="SLIDER">
+               <div class="slider-container">
+        <div class="slider">
+            <!-- Imágenes del slider -->
+            <img src="/public/img/room1.jpeg" alt="Imagen 1">
+            <img src="https://picsum.photos/seed/slide2/800/400.jpg" alt="Imagen 2">
+            <img src="https://picsum.photos/seed/slide3/800/400.jpg" alt="Imagen 3">
+            <img src="https://picsum.photos/seed/slide4/800/400.jpg" alt="Imagen 4">
+            <img src="https://picsum.photos/seed/slide5/800/400.jpg" alt="Imagen 5">
         </div>
+        
+        <!-- Controles de navegación -->
+        <button class="prev-btn">&lt;</button>
+        <button class="next-btn">&gt;</button>
+        
+        <!-- Indicadores -->
+        <div class="indicators"></div>
     </div>
+    
+        </div>
         <div class="container-father">
         <div class="title">
           <h1>Habitacion Sencilla</h1>
@@ -36,13 +69,108 @@
             combinando atencion personalizada, confot y calidad en cada detalle.
           </p>
         </div>
+        
       </div>
+     <form action="" method="post">
+       <div class="container-father2">
+          <div class="TitleContact">
+            <h2>Te contactaremos</h2>
+          </div>
+          <div class="Name">
+            <input type="text" name="name" id="name" placeholder="Nombres">
+          </div>
+          <div class="LastName">
+            <input type="text" name="last" id="last" placeholder="Apellidos">
+          </div>
+          <div class="Email">
+            <input type="email" name="email" id="email" placeholder="Correo electronico">
+          </div>
+          <div class="Number">
+            <input type="number" name="number" id="number" placeholder="Numero telefonico">
+          </div>
+          <div class="ButtonSend">
+          <input type="button" id="button" value="ENVIAR INFORMACION">
+          </div>
+        </div>
+     </form>
       </div>
     </article>
-    <script src="/public/js/room.js"></script>
+
+
+
+
+
+
+
+
+    <article class="desk">
+        <div class="leftZone">
+           <div class="SLIDER">
+               <div class="slider-container">
+        <div class="slider">
+            <!-- Imágenes del slider -->
+            <img src="/public/img/room1.jpeg" alt="Imagen 1">
+            <img src="https://picsum.photos/seed/slide2/800/400.jpg" alt="Imagen 2">
+            <img src="https://picsum.photos/seed/slide3/800/400.jpg" alt="Imagen 3">
+            <img src="https://picsum.photos/seed/slide4/800/400.jpg" alt="Imagen 4">
+            <img src="https://picsum.photos/seed/slide5/800/400.jpg" alt="Imagen 5">
+        </div>
+        
+        <!-- Controles de navegación -->
+        <button class="prev-btn">&lt;</button>
+        <button class="next-btn">&gt;</button>
+        
+        <!-- Indicadores -->
+        <div class="indicators"></div>
+    </div>
+    
+        </div>
+        <div class="ROOM">
+            <div class="roominfo">
+                    <div class="Title">
+            <h1>Perla Negra</h1>
+          </div>
+          <div class="cost">
+            <p>$189MXN por noche</p>
+          </div>
+          <div class="desc">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur explicabo dolorum laboriosam perspiciatis molestiae blanditiis harum excepturi ipsa vero cum! Doloribus ducimus totam deleniti optio. Possimus eius assumenda omnis eveniet?
+            </p>
+          </div>
+        </div>
+        </div>
+        </div>
+        <div id="ZONE"  class="righZone">
+            <div class="formTitle">
+              <h1>
+                Te contactaremos
+              </h1>
+            </div>
+            <div class="form">
+              <form action="" method="post">
+                  <div class="name">
+                    <input type="text" name=""  id="Names" placeholder="Nombres">
+                    <input type="text" name="" id="apellidos" placeholder="Apellido Paterno">
+                  </div>
+                  <div class="correo">
+                    <input type="email" name="" id="correo" placeholder="Correo electronico">
+                  </div>
+                  <div class="numero">
+                    <input type="number" name="number" placeholder="Numero Telefonico" id="phone">
+                  </div>
+                  <div class="button">
+                    <input id="Btn" type="button" value="ENVIAR INFORMACION ">
+                  </div>
+              </form>
+            </div>
+          </div>
+    </article>
     <script
       src="https://kit.fontawesome.com/e073821f55.js"
       crossorigin="anonymous"
     ></script>
+        <script src="/public/js/room.js"></script>
+
   </body>
 </html>

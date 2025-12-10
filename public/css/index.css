@@ -1,19 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Jersey+10&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+/* MOBILE DESIGN */
+
+.desktopDesign, .tabletDesign{
+  display: none;
+}
+.mobileDesign{
+  display: block;
+}
 * {
-  font-family: "DM Sans", sans-serif;
-  box-sizing: content-box;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
-  text-indent: -75;
 }
-
+html,
 body {
-  background-color: var(--bodyGray);
+  overflow-x: hidden;
+  background-color: violet;
 }
 
 :root {
-  /* COLOR VALUES */
   --Black: #0e0e0e;
   --White: #ededed;
   --Gray: #626262;
@@ -26,7 +33,7 @@ header {
 }
 
 header nav {
-  padding-top: 5%;
+  padding-top: 8%;
   width: 100%;
   display: flex;
   justify-content: flex-start;
@@ -39,30 +46,40 @@ header nav i {
 }
 
 .Title #titlep1 {
+  position: relative;
+  top: -45px;
   text-align: right;
   font-size: 5em;
   color: var(--Black);
   font-weight: 800;
   padding: 0%;
   line-height: 75%;
+  letter-spacing: -5px;
 }
 
 .Title {
   margin-right: 5%;
+  padding: 0% 4%;
 }
 
 .Title .desc {
   padding-top: 7%;
   padding-right: 2%;
-  text-align: right;
-  font-size: 1em;
-  padding-left: 0%;
-  text-indent: 1em;
-  font-weight: 400;
 }
 
-#desk{
-    display: none;
+.desc {
+  position: relative;
+  top: -1em;
+  text-align: right;
+  font-size: 1em;
+  padding: 0% 7%;
+  text-indent: 1em;
+  font-weight: 400;
+  color: var(--Gray);
+}
+
+#desk {
+  display: none;
 }
 
 /* intro section */
@@ -73,63 +90,553 @@ header nav i {
   display: grid;
   grid-template-columns: repeat(3, auto);
   grid-template-areas: "review    guests  services";
+  color: var(--Gray);
+  font-weight: 800;
+}
+.stats .number {
+  color: var(--Black);
 }
 
+.review,
+.guests,
+.services {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 .review {
   grid-area: review;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   border-right: 1px solid black;
 }
-
 .guests {
   grid-area: guests;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   border-right: 1px solid black;
 }
-
 .services {
   grid-area: services;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+}
+.services,
+.guests,
+.review p {
+  font-size: 0.8em;
+  font-weight: 300;
 }
 
 .introIMG img {
-  width: 40vh;
-  height: max-content;
+  width: 90vw;
+  max-width: 100%;
+  height: auto;
   padding: 2%;
 }
 
 .introIMG {
   margin-top: 12%;
   width: 100%;
-  padding: 0% 0%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.number {
-  font-size: 1.5em;
+/* Service section */
+.ServTop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 6%;
+  border-right: 1px solid black;
 }
 
-.subtitle {
+.title1 {
+  width: 100%;
+  text-align: center;
+}
+.title1 h1 {
+  font-weight: 600;
+  font-size: 2.4em;
+  margin: 4%;
+  letter-spacing: -2px;
+}
+
+.services {
+  grid-area: services;
+}
+
+.ServDesc {
+  width: 100%;
+  padding: 3% 7vw;
+}
+
+.ServDesc p {
+  font-weight: 400;
+  width: 100%;
+  font-size: 1.2em;
+  line-height: 130%;
+  color: var(--Gray);
+  text-align: justify;
+  padding: 0%;
+}
+
+.ServIMG {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 10%;
+}
+
+.ServIMG img {
+  width: 85vw;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 30px;
+}
+
+.Servunder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 3%;
+}
+.Servunder h2 {
+  font-weight: 400;
+  letter-spacing: -1px;
+}
+.Servunder p {
+  font-weight: 400;
+  color: var(--Gray);
+}
+
+.yoga,
+.restaurant,
+.clean {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.iconyoga svg,
+.iconrestaurant svg,
+.iconclean svg {
+  width: 12vw;
+  height: auto;
+  margin-top: 15%;
+}
+
+.TitleYoga,
+.Titlerestaurant,
+.TitleClean {
+  font-weight: 800;
+  text-align: center;
+}
+
+.DescYoga,
+.DescRestaurant,
+.DescClean {
+  text-align: center;
+  margin: 4% 8%;
+  margin-top: 1%;
+}
+
+.BtnTalk {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 6%;
+}
+.containerwhats {
+  background-color: var(--Black);
+  display: flex;
+  justify-content: left;
+  margin: 3.8%;
+}
+.containerwhats i {
+  font-size: 2.4vh;
+}
+
+.containertalk {
+  background-color: var(--Black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1% 6% 1%;
+  border-radius: 4px;
+}
+
+#btntalk {
+  background-color: var(--Black);
+  border: var(--Black);
+  color: var(--White);
+  font-weight: bold;
   font-size: 1em;
 }
 
-/* TABLET */
+/* Secction Choose Rooms */
+.titleanddesc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 8.5%;
+  margin: 1% 5%;
+  text-align: center;
+}
+
+.titlerooms h1 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 2em;
+  margin: 3.3% 0%;
+  letter-spacing: -2px;
+}
+
+.descrooms p {
+  font-weight: 400;
+  font-size: 1.3em;
+}
+
+.container-father2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.Chooseroom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  color: var(--White);
+}
+
+.chooserooms {
+  background-color: var(--Black);
+  width: 90%;
+  height: auto;
+  border-radius: 15px;
+  margin-top: 8%;
+}
+
+.RoomsImg {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 5%;
+}
+
+.RoomsImg img {
+  width: 93%;
+  height: 400px;
+  display: block;
+  border-radius: 30px;
+  margin-bottom: 2.5%;
+}
+
+.subtitlerooms h2,
+.CostRooms p {
+  padding-left: 6%;
+}
+.DescRooms p {
+  font-size: 1em;
+  text-align: justify;
+  margin-top: 10%;
+  padding: 0% 6%;
+}
+
+.Btnreserve {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
+}
+.Btnreserve input {
+  color: var(--Black);
+  width: 85%;
+  height: 52px;
+  border-radius: 10px;
+  font-weight: 900;
+}
+
+.chooserooms2,
+.chooserooms3,
+.chooserooms4,
+.chooserooms5,
+.chooserooms6,
+.chooserooms7,
+.chooserooms8 {
+  display: none;
+}
+
+/* Flechas */
+.ToChangeRooms {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 6%;
+  width: 90%;
+  padding-bottom: 10px;
+  margin-bottom: 10%;
+  gap: 0;
+  overflow: hidden;
+}
+
+.BeforeRooms svg {
+  width: 50%;
+  height: 40px;
+}
+.AfterRooms svg {
+  width: 100%;
+  height: 40px;
+  color: var(--Black);
+}
+
+.BeforeRooms {
+  background-color: var(--White);
+  transform: rotate(180deg);
+  width: 50%;
+  height: 6.5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0px 20px 20px 0px;
+  border: 2px solid var(--Black);
+  border-right: none;
+}
+
+.AfterRooms {
+  background-color: var(--White);
+  width: 50%;
+  height: 6.5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0px 20px 20px 0px;
+  border: 2px solid var(--Black);
+  border-left: none;
+}
+
+/* Section Location */
+.location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--Black);
+  color: var(--White);
+}
+
+.titlelocation h2 {
+  font-weight: bold;
+  font-size: 2em;
+  padding-left: 5%;
+  margin: 7% 0% -1%;
+  letter-spacing: -2px;
+}
+
+.linklocation {
+  width: 88%;
+}
+
+.desclocation p {
+  text-align: left;
+  font-size: 1em;
+  padding: 0% 6%;
+  margin-top: 4%;
+}
+
+.linklocation a {
+  width: 50%;
+  font-weight: bold;
+  color: var(--White);
+}
+
+.locationmaps {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 7% 0 18%;
+}
+.maps2 {
+  width: 90%;
+  height: 230px;
+}
+.locationmaps iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+}
+
+/* Section Reservation */
+.titleReservation {
+  width: 100%;
+  margin-top: 10%;
+  background-color: var(--White);
+}
+.titleReservation h1 {
+  font-weight: 800;
+  letter-spacing: -2px;
+  font-size: 3em;
+  text-align: left;
+  padding-left: 10%;
+}
+
+.FormsReservation {
+  background-color: var(--White);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px 0%;
+  width: 100%;
+}
+
+.Name,
+.emails,
+.Number {
+  width: 85%;
+}
+
+#name,
+#Apellidos,
+#email,
+#phones {
+  background-color: var(--Black);
+  border-radius: 5.5px;
+  height: 45px;
+  width: 100%;
+  padding: 0 15px;
+  border: none;
+  color: var(--White);
+  font-size: 1.1em;
+  outline-color: #94e790;
+  margin-bottom: 12px;
+  font-weight: 200;
+}
+
+.Button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#Bttn {
+  margin-top: 5px;
+  border-radius: 5.5px;
+  width: 85%;
+  background-color: var(--White);
+  color: var(--Black);
+  font-weight: 900;
+  border: 3px solid var(--Black);
+  padding: 8px 0;
+  border-radius: 13px;
+}
+
+input::placeholder {
+  color: var(--placeholdercolor);
+  font-weight: light;
+}
+
+/* Section footers */
+.FooterInfo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.FooterLeft,
+.FooterRight {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.FooterLeft {
+  align-items: flex-start;
+}
+.FooterRight {
+  align-items: flex-end;
+}
+
+.Email {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: var(--Black);
+}
+.Phone {
+  color: var(--Black);
+  font-size: 1em;
+  font-weight: bold;
+}
+.Location {
+  color: var(--Black);
+  font-size: 0.7em;
+  font-weight: 500;
+}
+
+.FooterIcons {
+  display: flex;
+  padding-top: 28%;
+  gap: 15px;
+}
+#IconSvg {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+}
+.Hours {
+  text-align: right;
+  color: var(--Black);
+  font-size: 0.7em;
+  font-weight: 500;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* TABLET DESIGN */
 @media screen and (min-width: 768px) {
+  .tabletDesign{
+    display: block;
+  }
+  .mobileDesign, .desktopDesign{
+    display:none;
+  }
   * {
     padding: 0%;
     margin: 0%;
     box-sizing: border-box;
+  }
+  body{
+    background-color: yellowgreen;
   }
 
   #hamburgerBtn {
@@ -142,7 +649,7 @@ header nav i {
     justify-content: space-around;
     align-items: center;
     padding-top: 2%;
-    margin-bottom: 10%;
+    margin-bottom: 2%;
   }
 
   #desk ul {
@@ -185,7 +692,7 @@ header nav i {
     width: 22%;
     gap: 10px;
     font-weight: bold;
-    font-size:.9em;
+    font-size: 0.9em;
   }
 
   .stats {
@@ -196,12 +703,355 @@ header nav i {
     grid-template-columns: repeat(3, auto);
     grid-template-areas: "review    guests  services";
   }
+
+  /* Presentation section or intro */
+  .Presentation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5.5%;
+    width: 100%;
+    margin-top: -5%;
+  }
+  .containertemporaly {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 97%;
+  }
+  .containertemporaly .Title {
+    width: 100%;
+    margin-left: 10%;
+  }
+
+  .containertemporaly .Title p {
+    margin-left: 1%;
+    font-size: 1.2em;
+  }
+
+  .containertemporaly .desc {
+    width: 100%;
+    margin-left: 10%;
+  }
+  .containertemporaly .desc p {
+    font-size: 0.8em;
+    margin-left: 20%;
+  }
+  .containertemporaly .stats {
+    width: 100%;
+    margin-left: 5%;
+    margin-top: 20%;
+  }
+  .containertemporaly .stats .review {
+    font-size: 1.21em;
+    margin-left: 17%;
+  }
+  .containertemporaly .stats .subtitle {
+    font-size: 0.8em;
+  }
+  .containertemporaly .stats .guests {
+    font-size: 1.1em;
+  }
+  .containertemporaly .stats .services {
+    font-size: 1.1em;
+  }
+
+  .introIMG {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .introIMG img {
+    width: 100%;
+    height: 100%;
+    margin-right: 10%;
+    padding: 0%;
+    margin-bottom: 36%;
+  }
+
+  .ServTop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 60px;
+  }
+
+  .Servleft {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ServIMG {
+    flex: 1;
+  }
+
+  .ServIMG img {
+    padding: 0;
+    width: 46vh;
+    height: 30vh;
+    border-radius: 10%;
+    display: block;
+  }
+
+  .title1 {
+    width: 100%;
+  }
+  .title1 h1 {
+    width: 100%;
+    text-align: left;
+    margin-left: 10%;
+  }
+  .ServDesc {
+    width: 100%;
+    padding: 0%;
+  }
+  .ServDesc p {
+    text-align: justify;
+    margin: 0% 8.9%;
+  }
+
+  /* Aqui se tendra pendiente */
+  .Servunder {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 0;
+    background-color: #94e790;
+  }
+
+  .Servunder .yoga,
+  .Servunder .restaurant,
+  .Servunder .clean {
+    
+  }
+
+  /* Section Choose Room */
+  .ToChangeRooms{
+    background-color: #94e790;
+    margin-top: 2%;
+  }
+
+  .titlerooms {
+    text-align: center;
+    font-size: 1.2em;
+  }
+  .descrooms {
+    width: 100%;
+  }
+  .descrooms p {
+    text-align: center;
+  }
+
+.Chooseroom {
+    display: flex ;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2%;
+    width: 100%;
+    padding: 0% 2%;
+  }
+  .chooserooms {
+    background-color: var(--Black);
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin: 2% 0% 5% 0%;
+    display: flex;
+    flex-direction: column;
+    min-width: 280px;
+  }
+
+  .RoomsImg{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5%;
+  }
+  .RoomsImg img {
+    width: 90%;
+    height: 60vh;
+    display: block;
+    border-radius: 30px;
+    margin-bottom: 2.5%;
+  }
+  .subtitlerooms h2 {
+    padding-left: 6%;
+  }
+  .DescRooms p {
+    font-size: 1em;
+    text-align: justify;
+    margin-top: 4%;
+    padding: 0% 6%;
+  }
+  .Btnreserve{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+  }
+  .Btnreserve input {
+    color: var(--Black);
+    width: 85%;
+    height: 52px;
+    border-radius: 10px;
+    font-weight: 900;
+  }
+
+
+
+  /* Section location */
+  .location{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    gap: 5%;
+  }
+  .locationtitletolink{
+    width: 100%;
+    margin-bottom: 9%;
+    margin-left: 2.5%;
+  }
+  .locationtitletolink .titlelocation{
+    width: 100%;
+    text-align: left;
+  }
+  .titlelocation h2{
+    padding-top : 2%;
+    font-size: 2.1em;
+  }
+  .locationtitletolink .desclocation{
+    width: 100%;
+    text-align: justify;
+    font-size: .8em;
+  }
+  .locationtitletolink .linklocation{
+    width: 100%;
+    text-align: left;
+    margin-left: 5%;
+    margin-bottom: 10%;
+  }
+  .locationmaps{
+    width: 100%;
+    height: 100%;
+    margin: 2% 0%;
+    margin-right: 3%;
+  }
+  .maps2{
+    width: 100%;
+    height: 100%;
+  }
+  .maps2 iframe{
+    height: 34vw;
+  }
+
+  /* Section Reservation*/
+  .ReservationNow{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    background-color: var(--White);
+  }
+  .titleReservation{
+    width: 100%;
+    margin: 0% 1%;
+    padding: 0% 1%;
+  }
+  .titleReservation h1{
+    text-align: left;
+    font-size: 3em;
+  }
+  .FormsReservation{
+    width: 100%;
+    margin: 6%;
+  }
+  .Name, .emails, .Number{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3%; 
+    width: 60vh;
+    margin-top: 4.5%;
+  }
+  #name, #Apellidos, #email, #phones{
+    border-radius: 13px;
+  }
+  .Button{
+    margin-top: 2%;
+    width: 100%;
+  }
+  #Bttn{
+    width: 100%;
+  }
+  
+
+
+  .FooterInfo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    padding: 5%;
+    margin: 0%;
+  }
+  .FooterLeft{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+  }
+  .Hours{
+    width: 100%;
+  }
+  .Hours p{
+    text-align: justify;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
-/* DESKTOP section */
-@media screen and (min-width: 992px) {
-  /* --- Tus estilos de escritorio van aquí --- */
 
+
+
+
+
+
+
+
+
+/* DESKTOP section */
+@media screen and (min-width: 900px) {
+
+  .mobileDesign, .tabletDesign{
+    display: none;
+  }
+  .desktopDesign{
+    display: block;
+  }
   body {
     font-size: 16px;
     background-color: aqua;
