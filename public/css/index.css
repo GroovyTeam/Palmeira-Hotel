@@ -1,5 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Jersey+10&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+/* MOBILE DESIGN */
+
+.desktopDesign, .tabletDesign{
+  display: none;
+}
+.mobileDesign{
+  display: block;
+}
 * {
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
@@ -9,6 +17,7 @@
 html,
 body {
   overflow-x: hidden;
+  background-color: violet;
 }
 
 :root {
@@ -598,12 +607,36 @@ input::placeholder {
   font-weight: 500;
 }
 
-/* TABLET */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* TABLET DESIGN */
 @media screen and (min-width: 768px) {
+  .tabletDesign{
+    display: block;
+  }
+  .mobileDesign, .desktopDesign{
+    display:none;
+  }
   * {
     padding: 0%;
     margin: 0%;
     box-sizing: border-box;
+  }
+  body{
+    background-color: yellowgreen;
   }
 
   #hamburgerBtn {
@@ -1005,10 +1038,20 @@ input::placeholder {
 
 
 
-/* DESKTOP section */
-@media screen and (min-width: 992px) {
-  /* --- Tus estilos de escritorio van aquí --- */
 
+
+
+
+
+/* DESKTOP section */
+@media screen and (min-width: 900px) {
+
+  .mobileDesign, .tabletDesign{
+    display: none;
+  }
+  .desktopDesign{
+    display: block;
+  }
   body {
     font-size: 16px;
     background-color: aqua;
