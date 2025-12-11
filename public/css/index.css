@@ -714,69 +714,58 @@ input::placeholder {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5.5%;
     width: 100%;
-    margin-top: -5%;
+    height: 80vh;
   }
-  .containertemporaly {
+    .tabletDesign .Presentation  .containertemporaly {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 97%;
+    width: 100%;
+    height:80vh ;
   }
-  .containertemporaly .Title {
+    .tabletDesign .Presentation .containertemporaly .Title {
     width: 100%;
     margin-left: 10%;
   }
 
-  .containertemporaly .Title p {
+    .tabletDesign .Presentation .containertemporaly .Title p {
     margin-left: 1%;
     font-size: 1.2em;
   }
 
-  .containertemporaly .desc {
+    .tabletDesign .Presentation .containertemporaly .desc {
     width: 100%;
     margin-left: 10%;
   }
-  .containertemporaly .desc p {
+   .tabletDesign .Presentation  .containertemporaly .desc p {
     font-size: 0.8em;
     margin-left: 20%;
   }
-  .containertemporaly .stats {
+    .tabletDesign .Presentation .containertemporaly .stats {
     width: 100%;
-    margin-left: 5%;
-    margin-top: 20%;
-  }
-  .containertemporaly .stats .review {
-    font-size: 1.21em;
-    margin-left: 17%;
-    border-right: solid 1px black;
-  }
-  .containertemporaly .stats .subtitle {
-    font-size: 0.8em;
-  }
-  .containertemporaly .stats .guests {
-    font-size: 1.1em;
-  }
-  .containertemporaly .stats .services {
-    font-size: 1.1em;
   }
 
+  .tabletDesign .Presentation .containertemporaly .stats .subtitle {
+    font-size: 1em;
+  }
+      .tabletDesign .Presentation .containertemporaly .stats .review , .guests, .services {
+    border-right: solid 1px black;
+  }
+
+
   .introIMG {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     width: 90%;
+    margin-top: 0%;
+    margin-bottom: 6%;
+    padding: 0% 2%;
   }
 
   .introIMG img {
     width: 100%;
     height: 100%;
-    margin-right: 10%;
     padding: 0%;
-    margin-bottom: 36%;
   }
 
 
@@ -788,6 +777,7 @@ input::placeholder {
     align-items: center;
     justify-content: center;
     width: 100%;
+    margin-top: 5%;
   }
 
   .Servleft {
@@ -845,7 +835,7 @@ input::placeholder {
     align-items: center;
     width: 100%;
     flex-direction:row;
-    margin-bottom: 15%;
+    margin-bottom: 10%;
   }
   .Yogas, .Restaurants,.Cleans{
     flex-direction: column;
@@ -876,20 +866,41 @@ input::placeholder {
     
   }
   
-
-
   
+  .tabletDesign .container-father2{
+        margin-bottom: 10%;
 
-
-
-  
-    
-  
+  }
 
   /* Section Choose Room */
-  .ToChangeRooms{
-    margin-top: 2%;
+  .behaivor{
+    width: 100%;
   }
+  .ToChangeRooms{
+    margin-top: 0%;
+    width: 100%;
+    margin-bottom: 2%;
+    display: flex;
+    align-items: center;
+  }
+  /* BUTTONS */
+  .back {
+  background-color: var(--White);
+  transform: rotate(180deg);
+  width: 50%;
+  height: 6.5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: none;
+}
+.behaivor .Btnreserve{
+  width: 30%;
+}
+.behaivor .Btnreserve input{
+  width: 80%;
+  border-radius: 35px;
+}
 
   .titlerooms {
     text-align: center;
@@ -900,68 +911,90 @@ input::placeholder {
   }
   .descrooms p {
     text-align: center;
+    font-size: 1em;
   }
 
-.Chooseroom {
+.Container2 .chooserooms {
     display: flex ;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 2%;
+    justify-content:center;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    padding: 0% 2%;
+    border-radius:none;
+    color: var(--White);
+    margin-top: 5%;
   }
-  .chooserooms {
+  .Container2 {
     background-color: var(--Black);
     width: 100%;
-    height: auto;
-    border-radius: 15px;
-    margin: 2% 0% 5% 0%;
+    margin: 2% 0% 3% 0%;
     display: flex;
     flex-direction: column;
-    min-width: 280px;
+    padding: 0%;
   }
 
+  .CostRooms{
+    text-align: center;
+    padding: 0%;
+  }
+  .CostRooms p{
+    padding: 0%;
+  }
   .RoomsImg{
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 5%;
+    margin-top: 2%;
+    padding: 2%;
+    border-radius: none;
   }
   .RoomsImg img {
-    width: 83.7%;
-    height: 51vh;
-    display: block;
+    width:80vw;
+    height: 50vh;
     border-radius: 30px;
-    margin-bottom: 2.5%;
+    margin-bottom: 2%;
+  }
+  .subtitlerooms{
+    width: 100%;
   }
   .subtitlerooms h2 {
-    padding-left: 6%;
+    text-align: center;
   }
+   .tabletDesign .container-father2.titleanddesc .descrooms{
+    background-color: yellow;
+   }
   .DescRooms p {
     font-size: 1em;
-    text-align: justify;
-    margin-top: 4%;
+    margin-top: 1.2%;
     padding: 0% 6%;
+    text-align: center;
   }
   .Btnreserve{
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 5%;
+    padding: 3%;
   }
   .Btnreserve input {
     color: var(--Black);
-    width: 85%;
+    width: 40%;
     height: 52px;
     border-radius: 10px;
     font-weight: 900;
   }
 
+  .tabletDesign .back , .next{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 1%;
+    width: 15%;
+    border-radius: 35px;
+  }
 
 
   /* Section location */
@@ -1014,10 +1047,11 @@ input::placeholder {
   /* Section Reservation*/
   .ReservationNow{
     display: flex;
-    justify-content: space-around;
+    justify-content:center;
     align-items: center;
     flex-direction: row;
     background-color: var(--White);
+    margin-top: 6%;
   }
   .titleReservation{
     width: 100%;
@@ -1030,8 +1064,10 @@ input::placeholder {
      letter-spacing: -.06em;
   }
   .FormsReservation{
-    width: 100%;
-    margin: 6%;
+    width: 100%;  
+  }
+   #formulario{
+    padding: 4%;
   }
   .Name, .emails, .Number{
     display: flex;
