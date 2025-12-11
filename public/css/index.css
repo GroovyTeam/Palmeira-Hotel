@@ -835,7 +835,7 @@ input::placeholder {
     align-items: center;
     width: 100%;
     flex-direction:row;
-    margin-bottom: 15%;
+    margin-bottom: 10%;
   }
   .Yogas, .Restaurants,.Cleans{
     flex-direction: column;
@@ -866,20 +866,41 @@ input::placeholder {
     
   }
   
-
-
   
+  .tabletDesign .container-father2{
+        margin-bottom: 10%;
 
-
-
-  
-    
-  
+  }
 
   /* Section Choose Room */
-  .ToChangeRooms{
-    margin-top: 2%;
+  .behaivor{
+    width: 100%;
   }
+  .ToChangeRooms{
+    margin-top: 0%;
+    width: 100%;
+    margin-bottom: 2%;
+    display: flex;
+    align-items: center;
+  }
+  /* BUTTONS */
+  .back {
+  background-color: var(--White);
+  transform: rotate(180deg);
+  width: 50%;
+  height: 6.5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: none;
+}
+.behaivor .Btnreserve{
+  width: 30%;
+}
+.behaivor .Btnreserve input{
+  width: 80%;
+  border-radius: 35px;
+}
 
   .titlerooms {
     text-align: center;
@@ -890,68 +911,90 @@ input::placeholder {
   }
   .descrooms p {
     text-align: center;
+    font-size: 1em;
   }
 
-.Chooseroom {
+.Container2 .chooserooms {
     display: flex ;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 2%;
+    justify-content:center;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    padding: 0% 2%;
+    border-radius:none;
+    color: var(--White);
+    margin-top: 5%;
   }
-  .chooserooms {
+  .Container2 {
     background-color: var(--Black);
     width: 100%;
-    height: auto;
-    border-radius: 15px;
-    margin: 2% 0% 5% 0%;
+    margin: 2% 0% 3% 0%;
     display: flex;
     flex-direction: column;
-    min-width: 280px;
+    padding: 0%;
   }
 
+  .CostRooms{
+    text-align: center;
+    padding: 0%;
+  }
+  .CostRooms p{
+    padding: 0%;
+  }
   .RoomsImg{
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 5%;
+    margin-top: 2%;
+    padding: 2%;
+    border-radius: none;
   }
   .RoomsImg img {
-    width: 83.7%;
-    height: 51vh;
-    display: block;
+    width:80vw;
+    height: 50vh;
     border-radius: 30px;
-    margin-bottom: 2.5%;
+    margin-bottom: 2%;
+  }
+  .subtitlerooms{
+    width: 100%;
   }
   .subtitlerooms h2 {
-    padding-left: 6%;
+    text-align: center;
   }
+   .tabletDesign .container-father2.titleanddesc .descrooms{
+    background-color: yellow;
+   }
   .DescRooms p {
     font-size: 1em;
-    text-align: justify;
-    margin-top: 4%;
+    margin-top: 1.2%;
     padding: 0% 6%;
+    text-align: center;
   }
   .Btnreserve{
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 5%;
+    padding: 3%;
   }
   .Btnreserve input {
     color: var(--Black);
-    width: 85%;
+    width: 40%;
     height: 52px;
     border-radius: 10px;
     font-weight: 900;
   }
 
+  .tabletDesign .back , .next{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 1%;
+    width: 15%;
+    border-radius: 35px;
+  }
 
 
   /* Section location */
@@ -1004,10 +1047,11 @@ input::placeholder {
   /* Section Reservation*/
   .ReservationNow{
     display: flex;
-    justify-content: space-around;
+    justify-content:center;
     align-items: center;
     flex-direction: row;
     background-color: var(--White);
+    margin-top: 6%;
   }
   .titleReservation{
     width: 100%;
@@ -1020,8 +1064,10 @@ input::placeholder {
      letter-spacing: -.06em;
   }
   .FormsReservation{
-    width: 100%;
-    margin: 6%;
+    width: 100%;  
+  }
+   #formulario{
+    padding: 4%;
   }
   .Name, .emails, .Number{
     display: flex;
