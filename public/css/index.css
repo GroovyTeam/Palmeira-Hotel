@@ -26,7 +26,7 @@ body {
   --Gray: #626262;
   --bodyGray: #ebebeb;
 }
-
+ 
 /* HEADER */
 header {
   width: 100%;
@@ -630,13 +630,19 @@ input::placeholder {
   .mobileDesign, .desktopDesign{
     display:none;
   }
+  :root{
+  --Black: #0e0e0e;
+  --White: #ededed;
+  --Gray: #626262;
+  --bodyGray: #ebebeb;
+  }
   * {
     padding: 0%;
     margin: 0%;
     box-sizing: border-box;
   }
   body{
-    background-color: yellowgreen;
+    background-color: var(--White);
   }
 
   #hamburgerBtn {
@@ -774,31 +780,37 @@ input::placeholder {
     margin-bottom: 36%;
   }
 
+
+
+  /* Section about service */
   .ServTop {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
     width: 100%;
-    gap: 60px;
   }
 
   .Servleft {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+  width: 80%;
+  padding: 0% 2%;
   }
 
   .ServIMG {
-    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 5% 1.7%;
+    margin: 0%;
   }
 
   .ServIMG img {
     padding: 0;
-    width: 46vh;
-    height: 30vh;
+    width: 62vh;
+    height: 40vh;
     border-radius: 10%;
-    display: block;
+    display: block; 
   }
 
   .title1 {
@@ -807,7 +819,8 @@ input::placeholder {
   .title1 h1 {
     width: 100%;
     text-align: left;
-    margin-left: 10%;
+    padding: 0%;
+    margin: 0%;
   }
   .ServDesc {
     width: 100%;
@@ -815,21 +828,67 @@ input::placeholder {
   }
   .ServDesc p {
     text-align: justify;
-    margin: 0% 8.9%;
+    font-size: .8em;
+    font-weight: 500;
   }
 
-  /* Aqui se tendra pendiente */
-  .Servunder {
-    display: flex;
-    flex-direction: row;
+
+  .containertalk{
+    margin-top: 4.8%;
     width: 100%;
-    padding: 0;
-    background-color: #94e790;
+    border-radius: 10.5px;
   }
+
+
+  .Servunder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction:row;
+    margin-bottom: 15%;
+  }
+  .Yogas, .Restaurants,.Cleans{
+    flex-direction: column;
+    width: 100%;
+    
+  }
+  .yoga, .restaurant, .clean{
+    width: 100%;
+    padding-right: 70%;
+  }
+  .TitleYoga, .Titlerestaurant, .Titleclean{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: left;
+  }
+  .TitleYoga h2, .Titlerestaurant h2, .Titleclean h2{
+    text-align: left;
+    width: 100%;
+    padding:0% 7% ;
+  }
+
+  .DescYoga p, .DescRestaurant p,.DescClean p{
+    width: 100%;
+    text-align: justify;
+    font-size: .8em;
+    font-weight:300; 
+    
+  }
+  
+
+
+  
+
+
+
+  
+    
+  
 
   /* Section Choose Room */
   .ToChangeRooms{
-    background-color: #94e790;
     margin-top: 2%;
   }
 
@@ -874,8 +933,8 @@ input::placeholder {
     margin-top: 5%;
   }
   .RoomsImg img {
-    width: 90%;
-    height: 60vh;
+    width: 83.7%;
+    height: 51vh;
     display: block;
     border-radius: 30px;
     margin-bottom: 2.5%;
@@ -969,6 +1028,7 @@ input::placeholder {
   .titleReservation h1{
     text-align: left;
     font-size: 3em;
+     letter-spacing: -.06em;
   }
   .FormsReservation{
     width: 100%;
@@ -984,6 +1044,7 @@ input::placeholder {
   }
   #name, #Apellidos, #email, #phones{
     border-radius: 13px;
+    font-weight: 300;
   }
   .Button{
     margin-top: 2%;
@@ -994,7 +1055,7 @@ input::placeholder {
   }
   
 
-
+/* Section footers */
   .FooterInfo{
     display: flex;
     justify-content: space-between;
