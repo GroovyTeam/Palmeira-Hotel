@@ -17,7 +17,6 @@
 html,
 body {
   overflow-x: hidden;
-  background-color: violet;
 }
 
 :root {
@@ -715,69 +714,58 @@ input::placeholder {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5.5%;
     width: 100%;
-    margin-top: -5%;
+    height: 80vh;
   }
-  .containertemporaly {
+    .tabletDesign .Presentation  .containertemporaly {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 97%;
+    width: 100%;
+    height:80vh ;
   }
-  .containertemporaly .Title {
+    .tabletDesign .Presentation .containertemporaly .Title {
     width: 100%;
     margin-left: 10%;
   }
 
-  .containertemporaly .Title p {
+    .tabletDesign .Presentation .containertemporaly .Title p {
     margin-left: 1%;
     font-size: 1.2em;
   }
 
-  .containertemporaly .desc {
+    .tabletDesign .Presentation .containertemporaly .desc {
     width: 100%;
     margin-left: 10%;
   }
-  .containertemporaly .desc p {
+   .tabletDesign .Presentation  .containertemporaly .desc p {
     font-size: 0.8em;
     margin-left: 20%;
   }
-  .containertemporaly .stats {
+    .tabletDesign .Presentation .containertemporaly .stats {
     width: 100%;
-    margin-left: 5%;
-    margin-top: 20%;
-  }
-  .containertemporaly .stats .review {
-    font-size: 1.21em;
-    margin-left: 17%;
-    border-right: solid 1px black;
-  }
-  .containertemporaly .stats .subtitle {
-    font-size: 0.8em;
-  }
-  .containertemporaly .stats .guests {
-    font-size: 1.1em;
-  }
-  .containertemporaly .stats .services {
-    font-size: 1.1em;
   }
 
+  .tabletDesign .Presentation .containertemporaly .stats .subtitle {
+    font-size: 1em;
+  }
+      .tabletDesign .Presentation .containertemporaly .stats .review , .guests, .services {
+    border-right: solid 1px black;
+  }
+
+
   .introIMG {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     width: 90%;
+    margin-top: 0%;
+    margin-bottom: 6%;
+    padding: 0% 2%;
   }
 
   .introIMG img {
     width: 100%;
     height: 100%;
-    margin-right: 10%;
     padding: 0%;
-    margin-bottom: 36%;
   }
 
 
@@ -789,6 +777,7 @@ input::placeholder {
     align-items: center;
     justify-content: center;
     width: 100%;
+    margin-top: 5%;
   }
 
   .Servleft {
