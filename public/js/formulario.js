@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
   // Navegación (si existe el elemento)
   /* if (home) {
-        home.addEventListener('click', () => window.location.href = "/index.html");
+        home.addEventListener('click', () => window.location.href = "/");
     } */
 
   // Función mostrar errores
