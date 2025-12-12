@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
     };
 
     if (home) {
-        home.addEventListener('click', () => window.location.href = "/index.html");
+        home.addEventListener('click', () => window.location.href = "../index.html");
     }
 
     const mostrarError = (mensaje) => {
