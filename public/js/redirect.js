@@ -8,7 +8,7 @@ function redirect() {
 }
 function asesoramiento() {
   window.location.href =
-    " https://wa.me/7731716714?text=Hola me interesa reservar una habitacion y quisiera hablar con un asesor.";
+    " https://wa.me/5545034306?text=Hola me interesa reservar una habitacion y quisiera hablar con un asesor.";
 }
 
 document.addEventListener("DOMContentLoaded", (e) => {
