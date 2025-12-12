@@ -657,6 +657,10 @@ input::placeholder {
   letter-spacing:-1px;
   color: var(--Black);
 }
+.Email a{
+  text-decoration: none;
+  color: var(--Black);
+}
 .Phone {
   color: var(--Black);
   font-size: 1.1em;
