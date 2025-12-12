@@ -17,6 +17,7 @@
 html,
 body {
   overflow-x: hidden;
+  user-select: none;
 }
 
 :root {
@@ -48,17 +49,17 @@ header nav i {
   position: relative;
   top: -45px;
   text-align: right;
-  font-size: 5em;
+  font-size: 4.74em;
   color: var(--Black);
-  font-weight: 800;
+  font-weight: 700;
   padding: 0%;
-  line-height: 75%;
+  line-height: 85%;
   letter-spacing: -5px;
 }
 
 .Title {
   margin-right: 5%;
-  padding: 0% 4%;
+  padding: 0% 2%;
 }
 
 .Title .desc {
@@ -67,14 +68,18 @@ header nav i {
 }
 
 .desc {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
   position: relative;
   top: -1em;
   text-align: right;
-  font-size: 1em;
-  padding: 0% 7%;
-  text-indent: 1em;
-  font-weight: 400;
+  font-size: .94em;
+  font-weight: 300;
+  line-height: 16px;
+  padding: 0% 7% 0% 3%;
   color: var(--Gray);
+  text-indent: 1.21em;
 }
 
 #desk {
@@ -84,8 +89,8 @@ header nav i {
 /* intro section */
 .stats {
   width: 100%;
-  margin-top: 10%;
-  padding: 0% 2%;
+  margin-top: 2%;
+  padding: 0% 8%;
   display: grid;
   grid-template-columns: repeat(3, auto);
   grid-template-areas: "review    guests  services";
@@ -93,7 +98,12 @@ header nav i {
   font-weight: 800;
 }
 .stats .number {
-  color: var(--Black);
+  color: var(--Gray);
+  font-size: 1.5em;
+
+}
+.stats .subtitle{
+  font-size: .8em;
 }
 
 .review,
@@ -106,11 +116,11 @@ header nav i {
 }
 .mobileDesign .review {
   grid-area: review;
-  border-right: 1px solid black;
+  border-right: 1px solid var(--Gray);
 }
 .guests {
   grid-area: guests;
-  border-right: 1px solid black;
+  border-right: 1px solid var(--Gray);
 }
 .services {
   grid-area: services;
@@ -130,7 +140,7 @@ header nav i {
 }
 
 .introIMG {
-  margin-top: 12%;
+  margin-top: 8%;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -154,7 +164,7 @@ header nav i {
 }
 .title1 h1 {
   font-weight: 600;
-  font-size: 2.4em;
+  font-size: 2em;
   margin: 4%;
   letter-spacing: -2px;
 }
@@ -165,17 +175,24 @@ header nav i {
 
 .ServDesc {
   width: 100%;
-  padding: 3% 7vw;
+  padding: 0% 8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .ServDesc p {
-  font-weight: 400;
-  width: 100%;
-  font-size: 1.2em;
-  line-height: 130%;
+  font-weight: 300;
+  font-size:1em;
+  line-height: 1.2em;
   color: var(--Gray);
-  text-align: justify;
-  padding: 0%;
+  flex: 1;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  text-align: justify;       /* Justifica el texto */
+  -webkit-hyphens: auto;     /* Soporte para Safari/iOS */
+  hyphens: auto;             /* Estándar para romper palabras */
 }
 
 .ServIMG {
@@ -183,13 +200,12 @@ header nav i {
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: 10%;
+  margin-top: 7%;
 }
 
 .ServIMG img {
   width: 85vw;
-  max-width: 100%;
-  height: auto;
+  height: 30vh;
   display: block;
   border-radius: 30px;
 }
@@ -218,12 +234,13 @@ header nav i {
   justify-content: center;
   align-items: center;
   width: 100%;
+  margin-top: 2%;
 }
 
 .iconyoga svg,
 .iconrestaurant svg,
 .iconclean svg {
-  width: 12vw;
+  width: 13vw;
   height: auto;
   margin-top: 15%;
 }
@@ -239,8 +256,13 @@ header nav i {
 .DescRestaurant,
 .DescClean {
   text-align: center;
-  margin: 4% 8%;
-  margin-top: 1%;
+  margin: 2% 6%;
+  line-height: 1.2em;
+  font-size: .85em;
+}
+.mobileDesign .mobileServices
+p{
+  font-weight: 300;
 }
 
 .BtnTalk {
@@ -248,7 +270,7 @@ header nav i {
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-bottom: 6%;
+  margin:8% 0%;
 }
 .containerwhats {
   background-color: var(--Black);
@@ -257,7 +279,7 @@ header nav i {
   margin: 3.8%;
 }
 .containerwhats i {
-  font-size: 2.4vh;
+  font-size: 3.5vh;
 }
 
 .containertalk {
@@ -283,24 +305,25 @@ header nav i {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 8.5%;
-  margin: 1% 5%;
   text-align: center;
+  padding:0% 6%;
 }
 
 .titlerooms h1 {
   text-align: center;
-  font-weight: bold;
-  font-size: 2em;
-  margin: 3.3% 0%;
+  font-weight: 600;
+  font-size: 1.8em;
   letter-spacing: -2px;
+  margin-bottom: 6%;
 }
 
 .descrooms p {
-  font-weight: 400;
-  font-size: 1.3em;
+  font-weight: 300;
+  font-size: 1em;
+  line-height: 1.1em;
 }
 
+/* CARD */
 .container-father2 {
   display: flex;
   align-items: center;
@@ -319,10 +342,10 @@ header nav i {
 
 .chooserooms {
   background-color: var(--Black);
-  width: 90%;
+  width: 92%;
   height: auto;
   border-radius: 15px;
-  margin-top: 8%;
+  margin: 10% 0%;
 }
 
 .RoomsImg {
@@ -335,48 +358,91 @@ header nav i {
 }
 
 .RoomsImg img {
-  width: 93%;
-  height: 400px;
+  width: 90%;
+  height:50vh;
   display: block;
   border-radius: 30px;
   margin-bottom: 2.5%;
 }
 
-.subtitlerooms h2,
+.subtitlerooms h2{
+  padding-left: 6%;
+  font-weight: 600;
+  font-size: 1.3em;
+}
 .CostRooms p {
   padding-left: 6%;
+  font-size: .9em;
+  font-weight: 300;
+  
 }
 .DescRooms p {
-  font-size: 1em;
-  text-align: justify;
-  margin-top: 10%;
+  font-size: .8em;
+  font-weight: 200;
+  margin-top: 8%;
   padding: 0% 6%;
+  text-align: justify;       /* Justifica el texto */
+  -webkit-hyphens: auto;     /* Soporte para Safari/iOS */
+  hyphens: auto;             /* Estándar para romper palabras */
 }
-
+/* BUTTON */
+ /* Section Choose Room */
+  .behaivor{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .ToChangeRooms{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0%;
+    width: 100%;
+  }
+  /* BUTTONS */
+  .back {
+  background-color: var(--White);
+  transform: rotate(180deg);
+  width: 20%;
+  height:3.5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+}
+.next{
+  background-color: var(--White);
+    width: 20%;
+  height:3.5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+}
+.behaivor .Btnreserve{
+  width: 80%;
+}
+.behaivor .Btnreserve input{
+  width: 90%;
+  border-radius: 35px;
+  border-style: none;
+}
 .Btnreserve {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5%;
+  padding: 0%;
 }
 .Btnreserve input {
   color: var(--Black);
-  width: 85%;
-  height: 52px;
-  border-radius: 10px;
-  font-weight: 900;
+  height: 5vh;
+  font-size: .8em;
+  font-weight: 700;
 }
 
-.chooserooms2,
-.chooserooms3,
-.chooserooms4,
-.chooserooms5,
-.chooserooms6,
-.chooserooms7,
-.chooserooms8 {
-  display: none;
-}
+
 
 /* Flechas */
 .ToChangeRooms {
@@ -384,7 +450,7 @@ header nav i {
   justify-content: center;
   align-items: center;
   margin-top: 6%;
-  width: 90%;
+  width: 70%;
   padding-bottom: 10px;
   margin-bottom: 10%;
   gap: 0;
@@ -437,27 +503,35 @@ header nav i {
 }
 
 .titlelocation h2 {
-  font-weight: bold;
+  font-weight:700;
   font-size: 2em;
   padding-left: 5%;
-  margin: 7% 0% -1%;
-  letter-spacing: -2px;
+  line-height: 1em;
+  margin: 10% 0% 1%;
+  letter-spacing: -1px;
 }
 
 .linklocation {
   width: 88%;
+  padding-left:6%;
 }
 
 .desclocation p {
   text-align: left;
-  font-size: 1em;
+  font-size: .9em;
   padding: 0% 6%;
-  margin-top: 4%;
+  margin: 5% 0%;
+  font-weight: 300;
 }
-
+.linklocation{
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
 .linklocation a {
   width: 50%;
-  font-weight: bold;
+  font-weight: 600;
   color: var(--White);
 }
 
@@ -482,30 +556,32 @@ header nav i {
 .titleReservation {
   width: 100%;
   margin-top: 10%;
-  background-color: var(--White);
 }
 .titleReservation h1 {
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -2px;
   font-size: 3em;
+  line-height:.8em;
   text-align: left;
   padding-left: 10%;
 }
 
 .FormsReservation {
-  background-color: var(--White);
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  padding: 30px 0%;
+  padding: 10% 0%;
+  padding-bottom:5%;
   width: 100%;
+  margin:0%;
 }
 
 .Name,
 .emails,
 .Number {
   width: 85%;
+  margin-top: 2%;
 }
 
 #name,
@@ -513,15 +589,15 @@ header nav i {
 #email,
 #phones {
   background-color: var(--Black);
-  border-radius: 5.5px;
-  height: 45px;
+  border-radius: 10px;
+  height: 9vh;
   width: 100%;
-  padding: 0 15px;
+  padding: 0 5%;
   border: none;
   color: var(--White);
-  font-size: 1.1em;
+  font-size: 1em;
   outline-color: #94e790;
-  margin-bottom: 12px;
+  margin-bottom: 5%;
   font-weight: 200;
 }
 
@@ -530,17 +606,17 @@ header nav i {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 5%;
 }
 
 #Bttn {
   margin-top: 5px;
-  border-radius: 5.5px;
   width: 85%;
   background-color: var(--White);
   color: var(--Black);
-  font-weight: 900;
+  font-weight: 700;
   border: 3px solid var(--Black);
-  padding: 8px 0;
+  padding: 2% 0;
   border-radius: 13px;
 }
 
@@ -556,7 +632,9 @@ input::placeholder {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  padding: 3%;
   gap: 10px;
+  margin-bottom: 5%;
 }
 
 .FooterLeft,
@@ -574,25 +652,31 @@ input::placeholder {
 }
 
 .Email {
-  font-size: 1.4em;
-  font-weight: bold;
+  font-size: 1.5em;
+  font-weight: 700;
+  letter-spacing:-1px;
+  color: var(--Black);
+}
+.Email a{
+  text-decoration: none;
   color: var(--Black);
 }
 .Phone {
   color: var(--Black);
-  font-size: 1em;
+  font-size: 1.1em;
   font-weight: bold;
 }
 .Location {
   color: var(--Black);
   font-size: 0.7em;
-  font-weight: 500;
+  font-weight: 400;
+  line-height: 1.3em;
 }
 
 .FooterIcons {
   display: flex;
   padding-top: 28%;
-  gap: 15px;
+  gap: 8%;
 }
 #IconSvg {
   width: 30px;
@@ -603,7 +687,8 @@ input::placeholder {
   text-align: right;
   color: var(--Black);
   font-size: 0.7em;
-  font-weight: 500;
+  font-weight: 400;
+  line-height:1.2em;
 }
 
 
@@ -1145,7 +1230,7 @@ input::placeholder {
   }
   body {
     font-size: 16px;
-    background-color: white;
+    background-color: var(--White);
   }
 /* STYLES FOR NAV BAR */
   .desktopDesign #desk{
@@ -1246,9 +1331,7 @@ input::placeholder {
 
 /* ARTICLE */
 
-.desktopDesign .container{
-  background-color: wheat;
-}
+
 
 .desktopDesign .stats2{
   display: flex;
@@ -1276,7 +1359,367 @@ input::placeholder {
   font-size: .8em;
   color: #626262;
 }
+
+
+
+/* Section about service */
+.desktopDesign .container{
+
+  margin-top: -20%;
 }
+.desktopDesign .ServTop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin: -3% 0%;
+}
+.desktopDesign .ServTop .ServIMG img{
+  width: 69vh;
+  height: 42vh;
+  padding: 0%;
+  display: block;
+}
+.desktopDesign .ServTop .Servleft{
+  padding: 0% 2%;
+  width: 100%;
+  margin-bottom: 5%;
+}
+.desktopDesign .ServTop .Servleft .title1{
+  width: 100%;
+  margin-bottom: 2.5%;
+  
+}
+.desktopDesign .ServTop .Servleft .title1 h1{
+  text-align: left;
+  font-size: 2.7em;
+}
+.desktopDesign .ServTop .Servleft .ServDesc{
+  width: 100%;
+}
+.desktopDesign .ServTop .Servleft .ServDesc p{
+  font-size: .8em;
+  font-weight: 300;
+}
+.desktopDesign .ServTop .Servleft .containertalk{
+  padding: 0%;
+
+}
+
+.desktopDesign .ServTop .Servleft .BtnTalk{
+  width: 100%;
+  margin-top: 4%;
+}
+
+
+
+.desktopDesign .Servunder{
+    display: flex;
+    justify-content: space-around;
+    align-items:flex-start;
+    width: 100%;
+    flex-direction:row;
+    margin-bottom: 10%;
+  }
+.desktopDesign .Yogas, .Restaurants,.Cleans{
+    flex-direction: column;    
+  }
+.desktopDesign .yoga, .restaurant, .clean{
+    width: 100%;
+    padding-right: 70%;
+  }
+.desktopDesign .TitleYoga, .Titlerestaurant, .Titleclean{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+.desktopDesign .TitleYoga h2, .Titlerestaurant h2, .Titleclean h2{
+  text-align: left;
+  width: 100%;
+  padding:0% 7% ;
+}
+
+.desktopDesign .DescYoga p, .DescRestaurant p,.DescClean p{
+  width: 100%;
+  text-align: justify;
+  font-size: .7em;
+  font-weight:300;     
+}
+
+
+
+/* Choose rooms */
+
+
+  .desktopDesign .chooserooms .titlerooms {
+    text-align: center;
+    font-size: 1.2em;
+  }
+  .desktopDesign .chooserooms .descrooms {
+    width: 100%;
+  }
+  .desktopDesign .chooserooms .descrooms p {
+    text-align: center;
+    font-size: 1em;
+  }
+
+.desktopDesign .Container2 .chooserooms {
+    display: flex ;
+    justify-content:center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    border-radius:none;
+    color: var(--White);
+    margin-top: 5%;
+  }
+  .desktopDesign .Container2 {
+    background-color: var(--Black);
+    width: 100%;
+    margin: 2% 0% 3% 0%;
+    display: flex;
+    flex-direction: column;
+    padding: 0%;
+  }
+
+  .desktopDesign .CostRooms{
+    text-align: center;
+    padding: 0%;
+  }
+  .desktopDesign .CostRooms p{
+    padding: 0%;
+  }
+  .desktopDesign .RoomsImg{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2%;
+    padding: 2%;
+    border-radius: none;
+  }
+  .desktopDesign .RoomsImg img {
+    width:70vw;
+    height: 57.5vh;
+    border-radius: 30px;
+    margin-bottom: 2%;
+  }
+  .desktopDesign .subtitlerooms{
+    width: 100%;
+  }
+  .desktopDesign .subtitlerooms h2 {
+    padding: .4%;
+    text-align: center;
+  }
+
+  .desktopDesign .DescRooms p {
+    font-size: 1em;
+    margin-top: 1.2%;
+    text-align: center;
+  }
+  .desktopDesign .chooserooms .Btnreserve{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3%;
+  }
+  .desktopDesign .Btnreserve input {
+    color: var(--Black);
+    width: 40%;
+    height: 52px;
+    border-radius: 10px;
+    font-weight: 900;
+  }
+
+  .desktopDesign .back,.next{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--White);
+    padding: 1%;
+    width: 22%;
+    border-radius: 35px;
+  }
+  .desktopDesign .chooserooms .behaivor{
+    width: 100%;
+  }
+  .desktopDesign .chooserooms .ToChangeRooms{
+    margin-top: 0%;
+    width: 100%;
+    margin-bottom: 2%;
+    display: flex;
+    align-items: center;
+  }
+  .desktopDesign .chooserooms .back {
+  background-color: var(--White);
+  transform: rotate(180deg);
+  height: 7.5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: none;
+}
+.desktopDesign .behaivor .Btnreserve{
+  width: 39%;
+  padding: 2% 1%;
+}
+.desktopDesign .behaivor .Btnreserve input{
+  width: 89%;
+  border-radius: 35px;
+}
+.desktopDesign .container-father2{
+  margin-bottom: 5%;
+}
+
+
+
+/* Section location */
+.desktopDesign .locationtitletolink{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.desktopDesign .locationtitletolink .titlelocation{
+  width: 100%;
+  
+}
+.desktopDesign .locationtitletolink .titlelocation h2{
+  width: 100%;
+  font-size: 2.7em;
+  letter-spacing: -.1em;
+  margin: 0%;
+  padding: 0%;
+  line-height: 1em;
+}
+.desktopDesign .locationtitletolink .desclocation{
+  width: 100%;
+
+}
+.desktopDesign .locationtitletolink .desclocation p{
+  font-size: 1em;
+  text-align: justify;
+  padding: 0%;
+  margin: 2% 0%;
+}
+
+.desktopDesign .locationtitletolink .linklocation{
+  width: 100%;
+  margin: 2% 0%;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+.desktopDesign .locationmaps{
+  margin: 4%;
+}
+.desktopDesign .locationmaps .maps2{
+  width: 100%;
+}
+.desktopDesign .locationmaps .maps2 iframe{
+  width: 50vw;
+}
+
+
+
+
+/* Section reservation */
+.ReservationNow{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: row;
+    background-color: var(--White);
+    margin-top: 6%;
+  }
+  .titleReservation{
+    width: 100%;
+    margin: 0% 1%;
+    padding: 0% 1%;
+  }
+  .titleReservation h1{
+    text-align: left;
+    font-size: 3.9em;
+    font-weight: 700;
+    line-height:1em;
+  }
+  .FormsReservation{
+    width: 100%;  
+  }
+   #formulario{
+    padding: 4%;
+  }
+  .Name, .emails, .Number{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3%; 
+    width: 78vh;
+    margin-top: 4.5%;
+  }
+  #name, #Apellidos, #email, #phones{
+    border-radius: 13px;
+    font-weight: 300;
+    padding: 5%;
+  }
+  .Button{
+    margin-top: 2%;
+    width: 100%;
+  }
+  #Bttn{
+    width: 100%;
+    border-radius: 20px;
+    padding: 3.5%;
+  }
+
+  .desktopDesign .FooterInfo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0%;
+  }
+
+  .desktopDesign .FooterLeft{
+    width: 50%;
+    margin: 1%;
+  }
+
+  .desktopDesign .FooterRight{
+   width:40%;
+  }
+  .desktopDesign .FooterRight .FooterIcons,.Hours{
+    padding: 2.5%;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
 @media screen and (min-width: 1126px) {
 
   /* NAV */
