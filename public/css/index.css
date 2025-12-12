@@ -1339,7 +1339,7 @@ input::placeholder {
 
   /* Section about service */
   .desktopDesign .container {
-    margin-top: -20%;
+    margin-top: -25%;
   }
   .desktopDesign .ServTop {
     display: flex;
@@ -1357,7 +1357,7 @@ input::placeholder {
   .desktopDesign .ServTop .Servleft {
     padding: 0% 2%;
     width: 100%;
-    margin-bottom: 5%;
+    margin-bottom: 1.8%;
   }
   .desktopDesign .ServTop .Servleft .title1 {
     width: 100%;
@@ -1429,9 +1429,13 @@ input::placeholder {
 
   /* Choose rooms */
 
-  .desktopDesign .chooserooms .titlerooms {
+  .desktopDesign .titlerooms {
+    margin: 2% 0%;
+  }
+  .desktopDesign .titlerooms h1{
     text-align: center;
-    font-size: 1.2em;
+    font-size: 2em;
+    margin: 0%;
   }
   .desktopDesign .chooserooms .descrooms {
     width: 100%;
@@ -1450,6 +1454,7 @@ input::placeholder {
     border-radius: none;
     color: var(--White);
     margin-top: 5%;
+    margin-bottom: 5%;
   }
   .desktopDesign .Container2 {
     background-color: var(--Black);
@@ -1459,6 +1464,14 @@ input::placeholder {
     flex-direction: column;
     padding: 0%;
   }
+  .desktopDesign .subtitlerooms{
+    padding: 0%;
+    width: 100%;
+  }
+  .desktopDesign .subtitlerooms h2{
+    padding: 0%;
+    font-size: 1.8em;
+  }
 
   .desktopDesign .CostRooms {
     text-align: center;
@@ -1466,6 +1479,7 @@ input::placeholder {
   }
   .desktopDesign .CostRooms p {
     padding: 0%;
+    font-size: 1em;
   }
   .desktopDesign .RoomsImg {
     width: 100%;
@@ -1478,8 +1492,8 @@ input::placeholder {
     border-radius: none;
   }
   .desktopDesign .RoomsImg img {
-    width: 70vw;
-    height: 57.5vh;
+    width: 62vw;
+    height: 55vh;
     border-radius: 30px;
     margin-bottom: 2%;
   }
@@ -1527,7 +1541,7 @@ input::placeholder {
   .desktopDesign .chooserooms .ToChangeRooms {
     margin-top: 0%;
     width: 100%;
-    margin-bottom: 2%;
+    margin-bottom: 0%;
     display: flex;
     align-items: center;
   }
@@ -1539,6 +1553,10 @@ input::placeholder {
     justify-content: center;
     align-items: center;
     border-right: none;
+  }
+  .desktopDesign .chooserooms .next{
+    background-color: var(--White);
+    height: 7.5vh;
   }
   .desktopDesign .behaivor .Btnreserve {
     width: 39%;
@@ -1562,14 +1580,15 @@ input::placeholder {
   }
   .desktopDesign .locationtitletolink .titlelocation {
     width: 100%;
+    margin: 0%;
   }
   .desktopDesign .locationtitletolink .titlelocation h2 {
-    width: 100%;
-    font-size: 2.7em;
-    letter-spacing: -0.1em;
-    margin: 0%;
-    padding: 0%;
+    font-size: 2.4em;
     line-height: 1em;
+    font-weight: 700;
+    letter-spacing: -.06em;
+    padding: 0%;
+    margin: 0%;
   }
   .desktopDesign .locationtitletolink .desclocation {
     width: 100%;
@@ -1584,9 +1603,14 @@ input::placeholder {
   .desktopDesign .locationtitletolink .linklocation {
     width: 100%;
     margin: 2% 0%;
-    display: flex;
-    align-items: center;
-    justify-content: left;
+    padding: 0%;
+  }
+  .desktopDesign .locationtitletolink .linklocation a{
+    text-align: left;
+  }
+  .desktopDesign .locationtitletolink .linklocation svg{
+    padding: 0%;
+    padding-left: 1%;
   }
   .desktopDesign .locationmaps {
     margin: 4%;
@@ -1605,18 +1629,20 @@ input::placeholder {
     align-items: center;
     flex-direction: row;
     background-color: var(--White);
-    margin-top: 6%;
+    margin-top: 0%;
   }
   .titleReservation {
     width: 100%;
-    margin: 0% 1%;
-    padding: 0% 1%;
+    margin: 0% .5%;
+    padding: 0%;
+
   }
   .titleReservation h1 {
     text-align: left;
-    font-size: 3.9em;
+    font-size: 4.3em;
     font-weight: 700;
-    line-height: 1em;
+    line-height: .8em;
+    padding-left: 6%;
   }
   .FormsReservation {
     width: 100%;
@@ -1632,7 +1658,7 @@ input::placeholder {
     align-items: center;
     gap: 3%;
     width: 78vh;
-    margin-top: 4.5%;
+    margin-top: 2%;
   }
   #name_desk,
   #apellidos_desk,
@@ -1640,20 +1666,28 @@ input::placeholder {
   #phones_desk {
     background-color: var(--Black);
     border-radius: 10px;
-    height: 9vh;
+    height: 8.6vh;
     width: 100%;
     padding: 0 5%;
     border: none;
     color: var(--White);
     font-size: 1em;
-    outline-color: #94e790;
     margin-bottom: 5%;
-    font-weight: 200;
+    font-weight: 300;
   }
-  .Button {
-    margin-top: 2%;
+  .desktopDesign .Button {
+    margin-top: 0%;
     width: 100%;
   }
+  .desktopDesign .Button #Bttn2{
+    width: 100%;
+    border-radius: 20px;
+    padding: 3.5;
+    font-size: 1em;
+    font-weight:700;
+  }
+
+
   #Bttn,
   #Bttn2,
   #Bttn3 {
@@ -1661,6 +1695,7 @@ input::placeholder {
     border-radius: 20px;
     padding: 3.5%;
   }
+  /* Footer section */
 
   .desktopDesign .FooterInfo {
     display: flex;
