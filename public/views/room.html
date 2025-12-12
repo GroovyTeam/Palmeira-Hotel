@@ -29,7 +29,7 @@
     </header>
     <header>
       <nav class="mobile">
-        <i class="fa-solid fa-reply"></i>
+        <i id="home" class="fa-solid fa-reply"></i>
         <i class="fas fas fa-bars"></i>
       </nav>
     </header>
@@ -77,19 +77,19 @@
             <h2>Te contactaremos</h2>
           </div>
           <div class="Name">
-            <input type="text" name="name" id="name" placeholder="Nombres">
+            <input maxlength="30" type="text" name="name" id="name" placeholder="Nombres">
           </div>
           <div class="LastName">
-            <input type="text" name="last" id="last" placeholder="Apellidos">
+            <input maxlength="30" type="text" name="last" id="last" placeholder="Apellidos">
           </div>
           <div class="Email">
-            <input type="email" name="email" id="email" placeholder="Correo electronico">
+            <input maxlength="30" type="email" name="email" id="email" placeholder="Correo electronico">
           </div>
           <div class="Number">
-            <input type="number" name="number" id="number" placeholder="Numero telefonico">
+            <input maxlength="10" type="number" name="number" id="number" placeholder="Numero telefonico">
           </div>
           <div class="ButtonSend">
-          <input type="button" id="button" value="ENVIAR INFORMACION">
+             <a id="button" href="">ENVIAR INFORMACION </a>
           </div>
         </div>
      </form>
@@ -150,28 +150,30 @@
             <div class="form">
               <form action="" method="post">
                   <div class="name">
-                    <input type="text" name=""  id="Names" placeholder="Nombres">
-                    <input type="text" name="" id="apellidos" placeholder="Apellido Paterno">
+                    <input maxlength="30" type="text" name=""  id="Names" placeholder="Nombres">
+                    <input maxlength="30" type="text" name="" id="apellidos" placeholder="Apellido Paterno">
                   </div>
                   <div class="correo">
-                    <input type="email" name="" id="correo" placeholder="Correo electronico">
+                    <input maxlength="30" type="email" name="" id="correo" placeholder="Correo electronico">
                   </div>
                   <div class="numero">
-                    <input type="number" name="number" placeholder="Numero Telefonico" id="phone">
+                    <input maxlength="10" type="number" name="number" placeholder="Numero Telefonico" id="phone">
                   </div>
                   <div class="button">
-                    <input id="Btn" type="button" value="ENVIAR INFORMACION ">
+                    <input id="button2" type="button" value="ENVIAR INFORMACION ">
                   </div>
               </form>
             </div>
           </div>
     </article>
+            <script src="/public/js/habitacion.js"></script>
+
     <script
       src="https://kit.fontawesome.com/e073821f55.js"
       crossorigin="anonymous"
     ></script>
         <script src="/public/js/room.js"></script>
-
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 </html>
 <!-- XD -->
