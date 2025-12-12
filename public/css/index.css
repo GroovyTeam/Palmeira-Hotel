@@ -1145,7 +1145,7 @@ input::placeholder {
   }
   body {
     font-size: 16px;
-    background-color: white;
+    background-color: var(--White);
   }
 /* STYLES FOR NAV BAR */
   .desktopDesign #desk{
@@ -1246,9 +1246,7 @@ input::placeholder {
 
 /* ARTICLE */
 
-.desktopDesign .container{
-  background-color: wheat;
-}
+
 
 .desktopDesign .stats2{
   display: flex;
@@ -1276,7 +1274,367 @@ input::placeholder {
   font-size: .8em;
   color: #626262;
 }
+
+
+
+/* Section about service */
+.desktopDesign .container{
+
+  margin-top: -20%;
 }
+.desktopDesign .ServTop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin: -3% 0%;
+}
+.desktopDesign .ServTop .ServIMG img{
+  width: 69vh;
+  height: 42vh;
+  padding: 0%;
+  display: block;
+}
+.desktopDesign .ServTop .Servleft{
+  padding: 0% 2%;
+  width: 100%;
+  margin-bottom: 5%;
+}
+.desktopDesign .ServTop .Servleft .title1{
+  width: 100%;
+  margin-bottom: 2.5%;
+  
+}
+.desktopDesign .ServTop .Servleft .title1 h1{
+  text-align: left;
+  font-size: 2.7em;
+}
+.desktopDesign .ServTop .Servleft .ServDesc{
+  width: 100%;
+}
+.desktopDesign .ServTop .Servleft .ServDesc p{
+  font-size: .8em;
+  font-weight: 300;
+}
+.desktopDesign .ServTop .Servleft .containertalk{
+  padding: 0%;
+
+}
+
+.desktopDesign .ServTop .Servleft .BtnTalk{
+  width: 100%;
+  margin-top: 4%;
+}
+
+
+
+.desktopDesign .Servunder{
+    display: flex;
+    justify-content: space-around;
+    align-items:flex-start;
+    width: 100%;
+    flex-direction:row;
+    margin-bottom: 10%;
+  }
+.desktopDesign .Yogas, .Restaurants,.Cleans{
+    flex-direction: column;    
+  }
+.desktopDesign .yoga, .restaurant, .clean{
+    width: 100%;
+    padding-right: 70%;
+  }
+.desktopDesign .TitleYoga, .Titlerestaurant, .Titleclean{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+.desktopDesign .TitleYoga h2, .Titlerestaurant h2, .Titleclean h2{
+  text-align: left;
+  width: 100%;
+  padding:0% 7% ;
+}
+
+.desktopDesign .DescYoga p, .DescRestaurant p,.DescClean p{
+  width: 100%;
+  text-align: justify;
+  font-size: .7em;
+  font-weight:300;     
+}
+
+
+
+/* Choose rooms */
+
+
+  .desktopDesign .chooserooms .titlerooms {
+    text-align: center;
+    font-size: 1.2em;
+  }
+  .desktopDesign .chooserooms .descrooms {
+    width: 100%;
+  }
+  .desktopDesign .chooserooms .descrooms p {
+    text-align: center;
+    font-size: 1em;
+  }
+
+.desktopDesign .Container2 .chooserooms {
+    display: flex ;
+    justify-content:center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    border-radius:none;
+    color: var(--White);
+    margin-top: 5%;
+  }
+  .desktopDesign .Container2 {
+    background-color: var(--Black);
+    width: 100%;
+    margin: 2% 0% 3% 0%;
+    display: flex;
+    flex-direction: column;
+    padding: 0%;
+  }
+
+  .desktopDesign .CostRooms{
+    text-align: center;
+    padding: 0%;
+  }
+  .desktopDesign .CostRooms p{
+    padding: 0%;
+  }
+  .desktopDesign .RoomsImg{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2%;
+    padding: 2%;
+    border-radius: none;
+  }
+  .desktopDesign .RoomsImg img {
+    width:70vw;
+    height: 57.5vh;
+    border-radius: 30px;
+    margin-bottom: 2%;
+  }
+  .desktopDesign .subtitlerooms{
+    width: 100%;
+  }
+  .desktopDesign .subtitlerooms h2 {
+    padding: .4%;
+    text-align: center;
+  }
+
+  .desktopDesign .DescRooms p {
+    font-size: 1em;
+    margin-top: 1.2%;
+    text-align: center;
+  }
+  .desktopDesign .chooserooms .Btnreserve{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3%;
+  }
+  .desktopDesign .Btnreserve input {
+    color: var(--Black);
+    width: 40%;
+    height: 52px;
+    border-radius: 10px;
+    font-weight: 900;
+  }
+
+  .desktopDesign .back,.next{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--White);
+    padding: 1%;
+    width: 22%;
+    border-radius: 35px;
+  }
+  .desktopDesign .chooserooms .behaivor{
+    width: 100%;
+  }
+  .desktopDesign .chooserooms .ToChangeRooms{
+    margin-top: 0%;
+    width: 100%;
+    margin-bottom: 2%;
+    display: flex;
+    align-items: center;
+  }
+  .desktopDesign .chooserooms .back {
+  background-color: var(--White);
+  transform: rotate(180deg);
+  height: 7.5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: none;
+}
+.desktopDesign .behaivor .Btnreserve{
+  width: 39%;
+  padding: 2% 1%;
+}
+.desktopDesign .behaivor .Btnreserve input{
+  width: 89%;
+  border-radius: 35px;
+}
+.desktopDesign .container-father2{
+  margin-bottom: 5%;
+}
+
+
+
+/* Section location */
+.desktopDesign .locationtitletolink{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.desktopDesign .locationtitletolink .titlelocation{
+  width: 100%;
+  
+}
+.desktopDesign .locationtitletolink .titlelocation h2{
+  width: 100%;
+  font-size: 2.7em;
+  letter-spacing: -.1em;
+  margin: 0%;
+  padding: 0%;
+  line-height: 1em;
+}
+.desktopDesign .locationtitletolink .desclocation{
+  width: 100%;
+
+}
+.desktopDesign .locationtitletolink .desclocation p{
+  font-size: 1em;
+  text-align: justify;
+  padding: 0%;
+  margin: 2% 0%;
+}
+
+.desktopDesign .locationtitletolink .linklocation{
+  width: 100%;
+  margin: 2% 0%;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+.desktopDesign .locationmaps{
+  margin: 4%;
+}
+.desktopDesign .locationmaps .maps2{
+  width: 100%;
+}
+.desktopDesign .locationmaps .maps2 iframe{
+  width: 50vw;
+}
+
+
+
+
+/* Section reservation */
+.ReservationNow{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: row;
+    background-color: var(--White);
+    margin-top: 6%;
+  }
+  .titleReservation{
+    width: 100%;
+    margin: 0% 1%;
+    padding: 0% 1%;
+  }
+  .titleReservation h1{
+    text-align: left;
+    font-size: 3.9em;
+    font-weight: 700;
+    line-height:1em;
+  }
+  .FormsReservation{
+    width: 100%;  
+  }
+   #formulario{
+    padding: 4%;
+  }
+  .Name, .emails, .Number{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3%; 
+    width: 78vh;
+    margin-top: 4.5%;
+  }
+  #name, #Apellidos, #email, #phones{
+    border-radius: 13px;
+    font-weight: 300;
+    padding: 5%;
+  }
+  .Button{
+    margin-top: 2%;
+    width: 100%;
+  }
+  #Bttn{
+    width: 100%;
+    border-radius: 20px;
+    padding: 3.5%;
+  }
+
+  .desktopDesign .FooterInfo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0%;
+  }
+
+  .desktopDesign .FooterLeft{
+    width: 50%;
+    margin: 1%;
+  }
+
+  .desktopDesign .FooterRight{
+   width:40%;
+  }
+  .desktopDesign .FooterRight .FooterIcons,.Hours{
+    padding: 2.5%;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
 @media screen and (min-width: 1126px) {
 
   /* NAV */
