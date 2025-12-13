@@ -6,15 +6,18 @@
 .tabletDesign {
   display: none;
 }
+
 .mobileDesign {
   display: block;
 }
+
 * {
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
+
 html,
 body {
   overflow-x: hidden;
@@ -98,10 +101,12 @@ header nav i {
   color: var(--Gray);
   font-weight: 800;
 }
+
 .stats .number {
   color: var(--Gray);
   font-size: 1.5em;
 }
+
 .stats .subtitle {
   font-size: 0.8em;
 }
@@ -114,17 +119,21 @@ header nav i {
   align-items: center;
   flex-direction: column;
 }
+
 .mobileDesign .review {
   grid-area: review;
   border-right: 1px solid var(--Gray);
 }
+
 .guests {
   grid-area: guests;
   border-right: 1px solid var(--Gray);
 }
+
 .services {
   grid-area: services;
 }
+
 .services,
 .guests,
 .review p {
@@ -162,6 +171,7 @@ header nav i {
   width: 100%;
   text-align: center;
 }
+
 .title1 h1 {
   font-weight: 600;
   font-size: 2em;
@@ -190,9 +200,12 @@ header nav i {
   margin: 0;
   width: 100%;
   height: 100%;
-  text-align: justify; /* Justifica el texto */
-  -webkit-hyphens: auto; /* Soporte para Safari/iOS */
-  hyphens: auto; /* Estándar para romper palabras */
+  text-align: justify;
+  /* Justifica el texto */
+  -webkit-hyphens: auto;
+  /* Soporte para Safari/iOS */
+  hyphens: auto;
+  /* Estándar para romper palabras */
 }
 
 .ServIMG {
@@ -218,10 +231,12 @@ header nav i {
   width: 100%;
   margin-top: 3%;
 }
+
 .Servunder h2 {
   font-weight: 400;
   letter-spacing: -1px;
 }
+
 .Servunder p {
   font-weight: 400;
   color: var(--Gray);
@@ -260,6 +275,7 @@ header nav i {
   line-height: 1.2em;
   font-size: 0.85em;
 }
+
 .mobileDesign .mobileServices p {
   font-weight: 300;
 }
@@ -271,12 +287,14 @@ header nav i {
   width: 100%;
   margin: 8% 0%;
 }
+
 .containerwhats {
   background-color: var(--Black);
   display: flex;
   justify-content: left;
   margin: 3.8%;
 }
+
 .containerwhats i {
   font-size: 3.5vh;
 }
@@ -369,20 +387,26 @@ header nav i {
   font-weight: 600;
   font-size: 1.3em;
 }
+
 .CostRooms p {
   padding-left: 6%;
   font-size: 0.9em;
   font-weight: 300;
 }
+
 .DescRooms p {
   font-size: 0.8em;
   font-weight: 200;
   margin-top: 8%;
   padding: 0% 6%;
-  text-align: justify; /* Justifica el texto */
-  -webkit-hyphens: auto; /* Soporte para Safari/iOS */
-  hyphens: auto; /* Estándar para romper palabras */
+  text-align: justify;
+  /* Justifica el texto */
+  -webkit-hyphens: auto;
+  /* Soporte para Safari/iOS */
+  hyphens: auto;
+  /* Estándar para romper palabras */
 }
+
 /* BUTTON */
 /* Section Choose Room */
 .behaivor {
@@ -391,6 +415,7 @@ header nav i {
   justify-content: center;
   align-items: center;
 }
+
 .ToChangeRooms {
   display: flex;
   justify-content: center;
@@ -398,6 +423,7 @@ header nav i {
   margin-top: 0%;
   width: 100%;
 }
+
 /* BUTTONS */
 .back {
   background-color: var(--White);
@@ -409,6 +435,7 @@ header nav i {
   align-items: center;
   border-radius: 25px;
 }
+
 .next {
   background-color: var(--White);
   width: 20%;
@@ -418,14 +445,17 @@ header nav i {
   align-items: center;
   border-radius: 25px;
 }
+
 .behaivor .Btnreserve {
   width: 80%;
 }
+
 .behaivor .Btnreserve input {
   width: 90%;
   border-radius: 35px;
   border-style: none;
 }
+
 .Btnreserve {
   width: 100%;
   display: flex;
@@ -433,6 +463,7 @@ header nav i {
   align-items: center;
   padding: 0%;
 }
+
 .Btnreserve input {
   color: var(--Black);
   height: 5vh;
@@ -457,6 +488,7 @@ header nav i {
   width: 50%;
   height: 40px;
 }
+
 .AfterRooms svg {
   width: 100%;
   height: 40px;
@@ -519,12 +551,14 @@ header nav i {
   margin: 5% 0%;
   font-weight: 300;
 }
+
 .linklocation {
   width: 100%;
   display: flex;
   justify-content: left;
   align-items: center;
 }
+
 .linklocation a {
   width: 50%;
   font-weight: 600;
@@ -538,10 +572,12 @@ header nav i {
   align-items: center;
   margin: 7% 0 18%;
 }
+
 .maps2 {
   width: 90%;
   height: 230px;
 }
+
 .locationmaps iframe {
   width: 100%;
   height: 100%;
@@ -553,6 +589,7 @@ header nav i {
   width: 100%;
   margin-top: 10%;
 }
+
 .titleReservation h1 {
   font-weight: 700;
   letter-spacing: -2px;
@@ -642,9 +679,11 @@ input::placeholder {
   flex-direction: column;
   gap: 10px;
 }
+
 .FooterLeft {
   align-items: flex-start;
 }
+
 .FooterRight {
   align-items: flex-end;
 }
@@ -655,15 +694,18 @@ input::placeholder {
   letter-spacing: -1px;
   color: var(--Black);
 }
+
 .Email a {
   text-decoration: none;
   color: var(--Black);
 }
+
 .Phone {
   color: var(--Black);
   font-size: 1.1em;
   font-weight: bold;
 }
+
 .Location {
   color: var(--Black);
   font-size: 0.7em;
@@ -676,11 +718,13 @@ input::placeholder {
   padding-top: 28%;
   gap: 8%;
 }
+
 #IconSvg {
   width: 30px;
   height: 30px;
   border-radius: 6px;
 }
+
 .Hours {
   text-align: right;
   color: var(--Black);
@@ -694,21 +738,25 @@ input::placeholder {
   .tabletDesign {
     display: block;
   }
+
   .mobileDesign,
   .desktopDesign {
     display: none;
   }
+
   :root {
     --Black: #0e0e0e;
     --White: #ededed;
     --Gray: #626262;
     --bodyGray: #ebebeb;
   }
+
   * {
     padding: 0%;
     margin: 0%;
     box-sizing: border-box;
   }
+
   body {
     background-color: var(--White);
   }
@@ -786,6 +834,7 @@ input::placeholder {
     width: 100%;
     height: 80vh;
   }
+
   .tabletDesign .Presentation .containertemporaly {
     display: flex;
     justify-content: center;
@@ -794,6 +843,7 @@ input::placeholder {
     width: 100%;
     height: 80vh;
   }
+
   .tabletDesign .Presentation .containertemporaly .Title {
     width: 100%;
     margin-left: 10%;
@@ -808,10 +858,12 @@ input::placeholder {
     width: 100%;
     margin-left: 10%;
   }
+
   .tabletDesign .Presentation .containertemporaly .desc p {
     font-size: 0.8em;
     margin-left: 20%;
   }
+
   .tabletDesign .Presentation .containertemporaly .stats {
     width: 100%;
   }
@@ -819,6 +871,7 @@ input::placeholder {
   .tabletDesign .Presentation .containertemporaly .stats .subtitle {
     font-size: 1em;
   }
+
   .tabletDesign .Presentation .containertemporaly .stats .review,
   .guests,
   .services {
@@ -873,16 +926,19 @@ input::placeholder {
   .title1 {
     width: 100%;
   }
+
   .title1 h1 {
     width: 100%;
     text-align: left;
     padding: 0%;
     margin: 0%;
   }
+
   .ServDesc {
     width: 100%;
     padding: 0%;
   }
+
   .ServDesc p {
     text-align: justify;
     font-size: 0.8em;
@@ -903,18 +959,21 @@ input::placeholder {
     flex-direction: row;
     margin-bottom: 10%;
   }
+
   .Yogas,
   .Restaurants,
   .Cleans {
     flex-direction: column;
     width: 100%;
   }
+
   .yoga,
   .restaurant,
   .clean {
     width: 100%;
     padding-right: 70%;
   }
+
   .TitleYoga,
   .Titlerestaurant,
   .Titleclean {
@@ -923,6 +982,7 @@ input::placeholder {
     align-items: center;
     text-align: left;
   }
+
   .TitleYoga h2,
   .Titlerestaurant h2,
   .Titleclean h2 {
@@ -948,6 +1008,7 @@ input::placeholder {
   .behaivor {
     width: 100%;
   }
+
   .ToChangeRooms {
     margin-top: 0%;
     width: 100%;
@@ -955,6 +1016,7 @@ input::placeholder {
     display: flex;
     align-items: center;
   }
+
   /* BUTTONS */
   .back {
     background-color: var(--White);
@@ -966,9 +1028,11 @@ input::placeholder {
     align-items: center;
     border-right: none;
   }
+
   .behaivor .Btnreserve {
     width: 30%;
   }
+
   .behaivor .Btnreserve input {
     width: 80%;
     border-radius: 35px;
@@ -978,9 +1042,11 @@ input::placeholder {
     text-align: center;
     font-size: 1.2em;
   }
+
   .descrooms {
     width: 100%;
   }
+
   .descrooms p {
     text-align: center;
     font-size: 1em;
@@ -996,6 +1062,7 @@ input::placeholder {
     color: var(--White);
     margin-top: 5%;
   }
+
   .Container2 {
     background-color: var(--Black);
     width: 100%;
@@ -1009,9 +1076,11 @@ input::placeholder {
     text-align: center;
     padding: 0%;
   }
+
   .CostRooms p {
     padding: 0%;
   }
+
   .RoomsImg {
     width: 100%;
     display: flex;
@@ -1022,27 +1091,33 @@ input::placeholder {
     padding: 2%;
     border-radius: none;
   }
+
   .RoomsImg img {
     width: 80vw;
     height: 50vh;
     border-radius: 30px;
     margin-bottom: 2%;
   }
+
   .subtitlerooms {
     width: 100%;
   }
+
   .subtitlerooms h2 {
     text-align: center;
   }
+
   .tabletDesign .container-father2.titleanddesc .descrooms {
     background-color: yellow;
   }
+
   .DescRooms p {
     font-size: 1em;
     margin-top: 1.2%;
     padding: 0% 6%;
     text-align: center;
   }
+
   .Btnreserve {
     width: 100%;
     display: flex;
@@ -1050,6 +1125,7 @@ input::placeholder {
     align-items: center;
     padding: 3%;
   }
+
   .Btnreserve input {
     color: var(--Black);
     width: 40%;
@@ -1078,40 +1154,48 @@ input::placeholder {
     width: 100%;
     gap: 5%;
   }
+
   .locationtitletolink {
     width: 100%;
     margin-bottom: 9%;
     margin-left: 2.5%;
   }
+
   .locationtitletolink .titlelocation {
     width: 100%;
     text-align: left;
   }
+
   .titlelocation h2 {
     padding-top: 2%;
     font-size: 2.1em;
   }
+
   .locationtitletolink .desclocation {
     width: 100%;
     text-align: justify;
     font-size: 0.8em;
   }
+
   .locationtitletolink .linklocation {
     width: 100%;
     text-align: left;
     margin-left: 5%;
     margin-bottom: 10%;
   }
+
   .locationmaps {
     width: 100%;
     height: 100%;
     margin: 2% 0%;
     margin-right: 3%;
   }
+
   .maps2 {
     width: 100%;
     height: 100%;
   }
+
   .maps2 iframe {
     height: 34vw;
   }
@@ -1125,22 +1209,27 @@ input::placeholder {
     background-color: var(--White);
     margin-top: 6%;
   }
+
   .titleReservation {
     width: 100%;
     margin: 0% 1%;
     padding: 0% 1%;
   }
+
   .titleReservation h1 {
     text-align: left;
     font-size: 3em;
     letter-spacing: -0.06em;
   }
+
   .FormsReservation {
     width: 100%;
   }
+
   #formulario {
     padding: 4%;
   }
+
   .Name,
   .emails,
   .Number {
@@ -1151,6 +1240,7 @@ input::placeholder {
     width: 60vh;
     margin-top: 4.5%;
   }
+
   #name_tablet,
   #apellidos_tablet,
   #email_tablet,
@@ -1167,10 +1257,12 @@ input::placeholder {
     margin-bottom: 5%;
     font-weight: 200;
   }
+
   .Button {
     margin-top: 2%;
     width: 100%;
   }
+
   #Bttn,
   #Bttn2,
   #Bttn3 {
@@ -1187,14 +1279,17 @@ input::placeholder {
     padding: 5%;
     margin: 0%;
   }
+
   .FooterLeft {
     width: 50%;
     display: flex;
     flex-direction: column;
   }
+
   .Hours {
     width: 100%;
   }
+
   .Hours p {
     text-align: justify;
   }
@@ -1202,17 +1297,21 @@ input::placeholder {
 
 /* DESKTOP section */
 @media screen and (min-width: 900px) {
+
   .mobileDesign,
   .tabletDesign {
     display: none;
   }
+
   .desktopDesign {
     display: block;
   }
+
   body {
     font-size: 16px;
     background-color: var(--White);
   }
+
   /* STYLES FOR NAV BAR */
   .desktopDesign #desk {
     width: 100%;
@@ -1227,16 +1326,19 @@ input::placeholder {
     width: 80%;
     list-style: none;
   }
+
   .desktopDesign #desk .button {
     width: 100%;
     display: flex;
     justify-content: flex-end;
   }
+
   .desktopDesign #desk .button .whatsBtn {
     width: 17vw;
     font-size: 1em;
     margin-right: 2%;
   }
+
   /* STYLES FOR ARTICLE */
 
   .intro {
@@ -1247,15 +1349,18 @@ input::placeholder {
     justify-content: center;
     align-items: start;
   }
+
   .intro .imageSide img {
     width: 33vw;
   }
+
   .intro .imageSide {
     margin-left: 2%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
   .intro .textSide {
     width: 50%;
     height: 70.49vh;
@@ -1264,21 +1369,25 @@ input::placeholder {
     align-items: flex-end;
     flex-direction: column;
   }
+
   .intro .textSide .title {
     display: flex;
     width: fit-content;
     flex-direction: column;
   }
+
   .intro .textSide .title h1 {
     font-size: 6em;
     line-height: 80%;
     letter-spacing: -6px;
   }
+
   .intro .textSide .title .t1 {
     display: flex;
     font-size: 1.3em;
     justify-content: right;
   }
+
   .intro .textSide .title .t2 {
     display: flex;
     justify-content: right;
@@ -1286,6 +1395,7 @@ input::placeholder {
     font-size: 1.3em;
     width: 100%;
   }
+
   .intro .textSide .title .desc {
     display: flex;
     justify-content: right;
@@ -1294,13 +1404,16 @@ input::placeholder {
     padding: 0%;
     text-align: right;
   }
+
   .intro .textSide .title .desc p {
     width: 60%;
   }
+
   .desktopDesign .stats2 .number {
     color: #626262;
     font-size: 1.5em;
   }
+
   .desktopDesign .stats2 .text2 {
     font-size: 1em;
     color: #626262;
@@ -1315,6 +1428,7 @@ input::placeholder {
     margin-top: 10%;
     width: 100%;
   }
+
   .desktopDesign .stats2 .reseñas,
   .huespedes,
   .activities {
@@ -1325,13 +1439,16 @@ input::placeholder {
     border-right: 1px solid #626262;
     padding: 0% 2%;
   }
+
   .desktopDesign .stats2 .activities {
     border: none;
   }
+
   .desktopDesign .stats2 .number {
     color: #626262;
     font-size: 1.5em;
   }
+
   .desktopDesign .stats2 .text2 {
     font-size: 0.8em;
     color: #626262;
@@ -1341,6 +1458,7 @@ input::placeholder {
   .desktopDesign .container {
     margin-top: -20%;
   }
+
   .desktopDesign .ServTop {
     display: flex;
     justify-content: center;
@@ -1348,32 +1466,39 @@ input::placeholder {
     flex-direction: row;
     margin: -3% 0%;
   }
+
   .desktopDesign .ServTop .ServIMG img {
     width: 69vh;
     height: 42vh;
     padding: 0%;
     display: block;
   }
+
   .desktopDesign .ServTop .Servleft {
     padding: 0% 2%;
     width: 100%;
     margin-bottom: 5%;
   }
+
   .desktopDesign .ServTop .Servleft .title1 {
     width: 100%;
     margin-bottom: 2.5%;
   }
+
   .desktopDesign .ServTop .Servleft .title1 h1 {
     text-align: left;
     font-size: 2.7em;
   }
+
   .desktopDesign .ServTop .Servleft .ServDesc {
     width: 100%;
   }
+
   .desktopDesign .ServTop .Servleft .ServDesc p {
     font-size: 0.8em;
     font-weight: 300;
   }
+
   .desktopDesign .ServTop .Servleft .containertalk {
     padding: 0%;
   }
@@ -1391,17 +1516,20 @@ input::placeholder {
     flex-direction: row;
     margin-bottom: 10%;
   }
+
   .desktopDesign .Yogas,
   .Restaurants,
   .Cleans {
     flex-direction: column;
   }
+
   .desktopDesign .yoga,
   .restaurant,
   .clean {
     width: 100%;
     padding-right: 70%;
   }
+
   .desktopDesign .TitleYoga,
   .Titlerestaurant,
   .Titleclean {
@@ -1410,6 +1538,7 @@ input::placeholder {
     align-items: center;
     text-align: left;
   }
+
   .desktopDesign .TitleYoga h2,
   .Titlerestaurant h2,
   .Titleclean h2 {
@@ -1433,9 +1562,11 @@ input::placeholder {
     text-align: center;
     font-size: 1.2em;
   }
+
   .desktopDesign .chooserooms .descrooms {
     width: 100%;
   }
+
   .desktopDesign .chooserooms .descrooms p {
     text-align: center;
     font-size: 1em;
@@ -1451,6 +1582,7 @@ input::placeholder {
     color: var(--White);
     margin-top: 5%;
   }
+
   .desktopDesign .Container2 {
     background-color: var(--Black);
     width: 100%;
@@ -1464,9 +1596,11 @@ input::placeholder {
     text-align: center;
     padding: 0%;
   }
+
   .desktopDesign .CostRooms p {
     padding: 0%;
   }
+
   .desktopDesign .RoomsImg {
     width: 100%;
     display: flex;
@@ -1477,15 +1611,18 @@ input::placeholder {
     padding: 2%;
     border-radius: none;
   }
+
   .desktopDesign .RoomsImg img {
     width: 70vw;
     height: 57.5vh;
     border-radius: 30px;
     margin-bottom: 2%;
   }
+
   .desktopDesign .subtitlerooms {
     width: 100%;
   }
+
   .desktopDesign .subtitlerooms h2 {
     padding: 0.4%;
     text-align: center;
@@ -1496,6 +1633,7 @@ input::placeholder {
     margin-top: 1.2%;
     text-align: center;
   }
+
   .desktopDesign .chooserooms .Btnreserve {
     width: 100%;
     display: flex;
@@ -1503,6 +1641,7 @@ input::placeholder {
     align-items: center;
     padding: 3%;
   }
+
   .desktopDesign .Btnreserve input {
     color: var(--Black);
     width: 40%;
@@ -1521,9 +1660,11 @@ input::placeholder {
     width: 22%;
     border-radius: 35px;
   }
+
   .desktopDesign .chooserooms .behaivor {
     width: 100%;
   }
+
   .desktopDesign .chooserooms .ToChangeRooms {
     margin-top: 0%;
     width: 100%;
@@ -1531,6 +1672,7 @@ input::placeholder {
     display: flex;
     align-items: center;
   }
+
   .desktopDesign .chooserooms .back {
     background-color: var(--White);
     transform: rotate(180deg);
@@ -1540,14 +1682,17 @@ input::placeholder {
     align-items: center;
     border-right: none;
   }
+
   .desktopDesign .behaivor .Btnreserve {
     width: 39%;
     padding: 2% 1%;
   }
+
   .desktopDesign .behaivor .Btnreserve input {
     width: 89%;
     border-radius: 35px;
   }
+
   .desktopDesign .container-father2 {
     margin-bottom: 5%;
   }
@@ -1560,9 +1705,11 @@ input::placeholder {
     flex-direction: column;
     width: 100%;
   }
+
   .desktopDesign .locationtitletolink .titlelocation {
     width: 100%;
   }
+
   .desktopDesign .locationtitletolink .titlelocation h2 {
     width: 100%;
     font-size: 2.7em;
@@ -1571,9 +1718,11 @@ input::placeholder {
     padding: 0%;
     line-height: 1em;
   }
+
   .desktopDesign .locationtitletolink .desclocation {
     width: 100%;
   }
+
   .desktopDesign .locationtitletolink .desclocation p {
     font-size: 1em;
     text-align: justify;
@@ -1588,12 +1737,15 @@ input::placeholder {
     align-items: center;
     justify-content: left;
   }
+
   .desktopDesign .locationmaps {
     margin: 4%;
   }
+
   .desktopDesign .locationmaps .maps2 {
     width: 100%;
   }
+
   .desktopDesign .locationmaps .maps2 iframe {
     width: 50vw;
   }
@@ -1607,23 +1759,28 @@ input::placeholder {
     background-color: var(--White);
     margin-top: 6%;
   }
+
   .titleReservation {
     width: 100%;
     margin: 0% 1%;
     padding: 0% 1%;
   }
+
   .titleReservation h1 {
     text-align: left;
     font-size: 3.9em;
     font-weight: 700;
     line-height: 1em;
   }
+
   .FormsReservation {
     width: 100%;
   }
+
   #formulario {
     padding: 4%;
   }
+
   .Name,
   .emails,
   .Number {
@@ -1634,6 +1791,7 @@ input::placeholder {
     width: 78vh;
     margin-top: 4.5%;
   }
+
   #name_desk,
   #apellidos_desk,
   #email_desk,
@@ -1650,10 +1808,12 @@ input::placeholder {
     margin-bottom: 5%;
     font-weight: 200;
   }
+
   .Button {
     margin-top: 2%;
     width: 100%;
   }
+
   #Bttn,
   #Bttn2,
   #Bttn3 {
@@ -1677,17 +1837,21 @@ input::placeholder {
   .desktopDesign .FooterRight {
     width: 40%;
   }
+
   .desktopDesign .FooterRight .FooterIcons,
   .Hours {
     padding: 2.5%;
   }
 }
 
+/* DESKTOP FULL SIZE */
 @media screen and (min-width: 1126px) {
+
   /* NAV */
   .desktopDesign .anchords ul li {
     margin-right: 4%;
   }
+
   /* ARTICLE */
   .intro {
     width: 100%;
@@ -1697,6 +1861,7 @@ input::placeholder {
     justify-content: center;
     align-items: start;
   }
+
   .intro .imageSide {
     margin-left: 10%;
     display: flex;
@@ -1712,6 +1877,7 @@ input::placeholder {
     margin-top: 10%;
     width: 100%;
   }
+
   .desktopDesign .stats2 .reseñas,
   .huespedes,
   .activities {
@@ -1722,15 +1888,321 @@ input::placeholder {
     border-right: 1px solid #626262;
     padding: 0% 2%;
   }
+
   .desktopDesign .stats2 .activities {
     border: none;
   }
+
   .desktopDesign .stats2 .number {
     color: #626262;
     font-size: 1.5em;
   }
+
   .desktopDesign .stats2 .text2 {
     font-size: 1em;
     color: #626262;
+  }
+}
+
+/* DESKTOP FULL SIZE 1440px ermi00 */
+@media (min-width: 1440px) {
+  #desk .anchords ul li {
+    margin: 0;
+    padding-right: 1px;
+  }
+
+  .intro .textSide {
+    justify-content: flex-start;
+  }
+
+  .intro .imageSide {
+    margin-left: 2%;
+  }
+
+  .intro .textSide .title h1 {
+    font-size: 6em;
+    line-height: 80%;
+    letter-spacing: -9px;
+  }
+
+  .intro .textSide .title .desc p {
+    width: 48%;
+  }
+
+  .number p {
+    letter-spacing: -2px;
+    font-size: 35px;
+  }
+
+  .text2 p {
+    letter-spacing: -1px;
+  }
+
+  .intro .textSide .title h1 {
+    font-size: 7em;
+    line-height: 75%;
+    letter-spacing: -12px;
+  }
+
+  .desktopDesign .stats2 {
+    justify-content: flex-end;
+  }
+
+  .intro .imageSide {
+    margin-right: 15%;
+  }
+
+  .desktopDesign .ServTop {
+    margin-top: 5%;
+    align-items: flex-start;
+  }
+
+  .ServIMG {
+    padding: 0% 2%;
+  }
+
+  .desktopDesign .ServTop .Servleft .ServDesc p {
+    font-size: 1.1em;
+    font-weight: 300;
+  }
+
+  .desktopDesign .ServTop .Servleft .title1 h1 {
+    font-size: 2.5em;
+  }
+
+  .containertalk {
+    height: 50px;
+    margin-top: 0;
+  }
+
+  .desktopDesign .ServTop .ServIMG img {
+    width: 550px;
+    height: 300px;
+    border-radius: 50px;
+    object-fit: cover;
+  }
+
+  .desktopDesign .ServTop .Servleft {
+    padding: 0% 6%;
+  }
+
+  .iconyoga svg,
+  .iconrestaurant svg,
+  .iconclean svg {
+    width: 120px;
+  }
+
+  .desktopDesign .TitleYoga h2,
+  .Titlerestaurant h2,
+  .Titleclean h2 {
+    text-align: left;
+    width: 100%;
+    padding: 0% 7%;
+    font-size: 20px;
+  }
+
+  .desktopDesign .Servunder {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+    flex-direction: row;
+    margin-bottom: 5%;
+    padding: 55px;
+  }
+
+  .desktopDesign .TitleYoga h2,
+  .Titlerestaurant h2,
+  .Titleclean h2 {
+    text-align: left;
+    width: 100%;
+    padding: 0% 6%;
+    font-size: 20px;
+  }
+
+  .titlerooms h1 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 2.5em;
+    letter-spacing: -3px;
+    margin-bottom: 15px;
+  }
+
+  .desktopDesign .RoomsImg img {
+    width: 800px;
+    border-radius: 50px;
+    margin-bottom: 0%;
+    object-fit: cover;
+    height: 350px;
+  }
+
+  .desktopDesign .Container2 .chooserooms {
+    margin-top: 0;
+  }
+
+  .subtitlerooms h2 {
+    font-size: 2.2em;
+  }
+
+  .desktopDesign .subtitlerooms {
+    width: 800px;
+  }
+
+  .desktopDesign .subtitlerooms h2 {
+    padding: 0.4%;
+    text-align: left;
+    width: 800px;
+  }
+
+  .desktopDesign .CostRooms {
+    width: 800px;
+    text-align: left;
+    font-size: 1.4em
+  }
+
+  .desktopDesign .DescRooms p {
+    font-size: 1em;
+    margin-top: 1.2%;
+    text-align: left;
+    width: 800px;
+    padding: 0;
+  }
+
+  .desktopDesign .chooserooms .ToChangeRooms {
+    margin-top: 0%;
+    width: 900px;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .desktopDesign .behaivor .Btnreserve input {
+    width: 90%;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 100px !important;
+  }
+
+  .desktopDesign .chooserooms .back {
+    background-color: var(--White);
+    transform: rotate(180deg);
+    height: 53px;
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    align-items: center;
+    border-right: none;
+    border-radius: 10px;
+  }
+
+  .desktopDesign .back,
+  .next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--White);
+    padding: 1%;
+    width: 30%;
+    height: 52px;
+    border-radius: 10px;
+  }
+
+  .desktopDesign .chooserooms .behaivor {
+    width: 800px;
+  }
+
+  .desktopDesign .Container2 {
+    background-color: var(--Black);
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 0%;
+  }
+
+  .descrooms p {
+    text-align: center;
+    font-size: 1em;
+    margin-bottom: 40px;
+  }
+
+  .desktopDesign .Container2 .chooserooms {
+    margin-top: 0;
+    margin-bottom: 100px;
+  }
+
+  .desktopDesign .container-father2 {
+    margin-bottom: 0;
+  }
+
+  .desktopDesign .locationmaps .maps2 {
+    width: 100%;
+    height: 320px;
+  }
+
+  .desktopDesign .locationmaps .maps2 iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 10px;
+  }
+
+  .location {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    padding: 62px;
+    gap: 0;
+  }
+
+  .desktopDesign .locationtitletolink .titlelocation h2 {
+    width: 100%;
+    font-size: 2.7em;
+    letter-spacing: -0.1em;
+    margin: 0%;
+    padding: 0%;
+    width: 400px;
+    line-height: 1em;
+  }
+
+  .desktopDesign .locationmaps {
+    margin: 4%;
+    margin-top: 0;
+  }
+
+  .ReservationNow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: var(--White);
+    margin-top: 0;
+  }
+
+  input {
+    margin: 0 !important;
+  }
+
+  .FormsReservation {
+    width: 100%;
+    padding: 0;
+  }
+
+  .titleReservation h1 {
+    text-align: left;
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 65px;
+    width: 460px;
+  }
+
+  .desktopDesign .FooterInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+    font-size: 1.6rem;
   }
 }
