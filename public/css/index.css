@@ -1953,7 +1953,7 @@ input::placeholder {
   }
 
   .desktopDesign .ServTop {
-    margin-top: 5%;
+    margin-top: 10%;
     align-items: flex-start;
   }
 
@@ -2009,6 +2009,7 @@ input::placeholder {
     flex-direction: row;
     margin-bottom: 5%;
     padding: 55px;
+    padding-top: 20px;
   }
 
   .desktopDesign .TitleYoga h2,
@@ -2018,6 +2019,10 @@ input::placeholder {
     width: 100%;
     padding: 0% 6%;
     font-size: 20px;
+  }
+  .desktopDesign .DescClean , .DescRestaurant, .DescYoga {
+    font-weight: 400;
+    font-size: 1em;
   }
 
   .titlerooms h1 {
@@ -2157,13 +2162,13 @@ input::placeholder {
     gap: 0;
   }
 
+
   .desktopDesign .locationtitletolink .titlelocation h2 {
     width: 100%;
-    font-size: 2.7em;
-    letter-spacing: -0.1em;
+    font-size: 3em;
+    letter-spacing: -2px;
     margin: 0%;
     padding: 0%;
-    width: 400px;
     line-height: 1em;
   }
 
