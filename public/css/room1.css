@@ -111,7 +111,7 @@ nav .fa-bars.active {
 }
 
 .ImgRoom img {
-  height: 50vw;
+  height: 20vh;
   border-radius: 25px;
 }
 .ImgRoom {
@@ -180,13 +180,13 @@ nav .fa-bars.active {
 .slider {
   display: flex;
   width: 150%;
-  height: 100%;
+  height: 100vh;
   transition: transform var(--transition-duration) ease-in-out;
 }
 .slider img {
   min-width: 100%;
   height: 100%;
-  flex-shrink: 1;
+  flex-shrink:1;
 }
 
 .prev-btn,
@@ -404,7 +404,7 @@ input {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-bottom: 2%;
+    margin-bottom: 2%;  
   }
   .desk .leftZone .Title {
     width: 100%;
@@ -435,7 +435,7 @@ input {
   /* SLIDER */
 
   .SLIDER {
-    width: 80%;
+    width: 95%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -446,7 +446,7 @@ input {
     align-items: center;
     position: relative;
     width: var(--slider-width);
-    height: var(--slider-height);
+    height:var(--slider-height);
     overflow: hidden;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -456,12 +456,12 @@ input {
   .slider {
     display: flex;
     width: 150%;
-    height: 100%;
+    height:100vh;
     transition: transform var(--transition-duration) ease-in-out;
   }
   .slider img {
     min-width: 100%;
-    height: 100%;
+    height:100vh;
     flex-shrink: 1;
   }
 
@@ -632,6 +632,90 @@ input {
   .text a {
     text-decoration: none;
     color: var(--White);
+  }
+  
+  /* SLIDER */
+
+  .SLIDER {
+    width:80%;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .slider-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: var(--slider-width);
+    height:40vh;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 0% 3%;
+  }
+
+  .slider {
+    display: flex;
+    width: 150%;
+    height:100vh;
+    transition: transform var(--transition-duration) ease-in-out;
+  }
+  .slider img {
+    min-width: 100%;
+    height:100vh;
+    flex-shrink: 1;
+  }
+
+  .prev-btn,
+  .next-btn2 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #333;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 13px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s;
+  }
+  prev-btn:hover,
+  .next-btn:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  .prev-btn {
+    left: 10px;
+  }
+
+  .next-btn {
+    right: 10px;
+  }
+
+  .indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+  }
+  .indicator {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .indicator.active {
+    background-color: white;
   }
 
   /* BUTTON */

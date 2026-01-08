@@ -7,11 +7,11 @@ const rooms = [
     price: "$189 MXN por noche",
     desc: "Habitación diseñada para parejas que buscan un ambiente íntimo y romántico, con decoración elegante y detalles especiales.",
     images: [
-      "../img/room1.jpeg",
-      "../img/room1_2.jpeg",
-      "../img/room1_3.jpeg",
-      "../img/room1_4.jpeg",
-      "../img/room1_5.jpeg"
+      "../img/room1/room1.jpeg",
+      "../img/room1/room1_2.jpeg",
+      "../img/room1/room1_3.jpg",
+      "../img/room1/room1_4.jpg",
+      "../img/room1/room1_5.jpg"
     ]
   },
   {
