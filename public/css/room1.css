@@ -38,6 +38,76 @@ nav .fa-reply {
 }
 nav .fa-bars {
   font-size: 2em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+nav .fa-bars.active {
+  transform: rotate(90deg);
+  color: #94e790;
+}
+
+/* MOBILE MENU STYLES */
+#hamburgerBtn {
+  cursor: pointer;
+  z-index: 1000;
+  position: relative;
+}
+
+.mobileMenu {
+  display: none;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background-color: var(--Black);
+  z-index: 999;
+  padding: 20px 0;
+  flex-direction: column;
+  max-height: calc(100vh - 60px);
+  overflow-y: auto;
+  animation: slideDown 0.3s ease-out;
+}
+
+.mobileMenu.active {
+  display: flex;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobileMenu ul {
+  list-style: none;
+  width: 100%;
+}
+
+.mobileMenu ul li {
+  width: 100%;
+  border-bottom: 1px solid var(--Gray);
+}
+
+.mobileMenu ul li a {
+  display: block;
+  color: var(--White);
+  text-decoration: none;
+  padding: 15px 20px;
+  font-size: 1em;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.mobileMenu ul li a:hover {
+  color: #94e790;
+  padding-left: 30px;
+  background-color: rgba(148, 231, 144, 0.1);
 }
 
 .ImgRoom img {
@@ -216,6 +286,7 @@ prev-btn:hover,
   font-weight: 700;
   border: 2.5px solid var(--Black);
   padding: 1.5% 0%;
+
 }
 .ButtonSend {
   display: flex;
@@ -223,6 +294,7 @@ prev-btn:hover,
   align-items: center;
   width: 100%;
 }
+
 .ButtonSend a {
   text-decoration: none;
   text-align: center;
@@ -263,6 +335,10 @@ input {
   }
   #hamburgerBtn {
     display: none;
+  }
+
+  .mobileMenu {
+    display: none !important;
   }
 
   .tablet #desk {
@@ -350,6 +426,12 @@ input {
     font-size: 0.7em;
   }
 
+  #button2{
+    font-size: 1em;
+    padding: 2%;
+    color: var(--Black);
+    font-weight: 700;
+  }
   /* SLIDER */
 
   .SLIDER {

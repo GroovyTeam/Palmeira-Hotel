@@ -5,22 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Palmeira Hotel</title>
     <link rel="stylesheet" href="./public/css/index.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   </head>
   <!-- SIMPLE CHANGE 2 -->
   <body>
     <div class="desktopDesign">
       <header>
-        <nav id="hamburgerBtn">
-          <i class="fas fas fa-bars"></i>
-        </nav>
         <nav id="desk">
           <div class="anchords">
             <ul>
               <li><a href="">Home</a></li>
-              <li><a href="#servicios">Servicios</a></li>
-              <li><a href="#habitaciones">Habitaciones</a></li>
-              <li><a href="#ubicacion">Ubicacion</a></li>
-              <li><a href="#contacto">Contacto</a></li>
+              <li><a href="/index.html#servicios">Servicios</a></li>
+              <li><a href="/index.html#habitaciones">Habitaciones</a></li>
+              <li><a href="/index.html#ubicacion">Ubicacion</a></li>
+              <li><a href="/index.html#contacto">Contacto</a></li>
             </ul>
           </div>
           <div class="button">
@@ -29,7 +27,7 @@
                 <i class="fa-brands fa-whatsapp" style="color: #ffffff"></i>
               </div>
               <div class="text">
-                <a href=""> Reservar ahora </a>
+                <a   href=" https://wa.me/525545034306?text=hola me interesa reservar una habitacion"> Reservar ahora </a>
               </div>
             </div>
           </div>
@@ -216,27 +214,23 @@
             <div class="Container2">
               <div class="chooserooms">
                 <div class="RoomsImg">
-                  <img src="./public/img/room1.jpeg" alt="" />
+                  <img id="habitacionDesktop" src="./public/img/prueba0.jpg" alt="" />
                 </div>
 
                 <div class="subtitlerooms">
-                  <h2>Habitacion Generica</h2>
+                  <h2 id="roomNameDesktop">Perla Negra</h2>
                 </div>
                 <div class="CostRooms">
-                  <p>$189 MXN por noche</p>
+                  <p id="costoDesktop">$189 MXN por noche</p>
                 </div>
                 <div class="DescRooms">
-                  <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Officiis accusantium ratione nihil sunt necessitatibus
-                    magni, rem pariatur distinctio a eius aliquid corporis
-                    exercitationem harum possimus explicabo. Adipisci eum quos
-                    rerum.
+                  <p id="descriptionDesktop">
+                    Habitación diseñada para parejas que buscan un ambiente íntimo y romántico, con decoración elegante y detalles especiales.
                   </p>
                 </div>
                 <div class="behaivor">
                   <div class="ToChangeRooms">
-                    <div class="back">
+                    <div id="backDesktop" class="back">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         height="30px"
@@ -250,9 +244,9 @@
                       </svg>
                     </div>
                     <div class="Btnreserve">
-                      <input id="btnreserve" type="button" value="Reservar" />
+                      <input id="reserveBtnDesktop" type="button" onclick="redirect()" value="Reservar" />
                     </div>
-                    <div class="next">
+                    <div id="nextbtnDesktop" class="next">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         height="30px"
@@ -413,16 +407,17 @@
         <nav id="desk">
           <ul>
             <li><a href="">Home</a></li>
-            <li><a href="">Servicios</a></li>
-            <li><a href="">Habitaciones</a></li>
-            <li><a href="">Contacto</a></li>
+            <li><a href="#serviciosTablet">Servicios</a></li>
+            <li><a href="#habitacionesTablet">Habitaciones</a></li>
+            <li><a href="#ubicacionTablet">Ubicación</a></li>
+            <li><a href="#contactoTablet">Contacto</a></li>
           </ul>
           <div class="whatsBtn">
             <div class="icon">
               <i class="fa-brands fa-whatsapp" style="color: #ffffff"></i>
             </div>
             <div class="text">
-              <a href=""> Reservar ahora </a>
+              <a href=" https://wa.me/525545034306?text=hola me interesa reservar una habitacion"> Reservar ahora </a>
             </div>
           </div>
         </nav>
@@ -464,13 +459,14 @@
               </div>
             </div>
           </div>
+          <!--  -->
           <div class="introIMG">
             <img src="./public/img/pool-index-photo.png" alt="" srcset="" />
           </div>
         </div>
       </header>
       <article>
-        <div class="container-father1">
+        <div id="serviciosTablet" class="container-father1">
           <div class="ServTop">
             <div class="Servleft">
               <div class="title1">
@@ -586,7 +582,7 @@
               </div>
             </div>
           </div>
-          <div class="container-father2">
+          <div id="habitacionesTablet" class="container-father2">
             <div class="titleanddesc">
               <div class="titlerooms">
                 <h1>Habitaciones Comodas</h1>
@@ -603,27 +599,23 @@
             <div class="Container2">
               <div class="chooserooms">
                 <div class="RoomsImg">
-                  <img src="./public/img/room1.jpeg" alt="" />
+                  <img id="habitacionTablet" src="./public/img/prueba0.jpg" alt="" />
                 </div>
 
                 <div class="subtitlerooms">
-                  <h2>Habitaciones comodas</h2>
+                  <h2 id="roomNameTablet">Perla Negra</h2>
                 </div>
                 <div class="CostRooms">
-                  <p>$189 por noche</p>
+                  <p id="costoTablet">$189 por noche</p>
                 </div>
                 <div class="DescRooms">
-                  <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Officiis accusantium ratione nihil sunt necessitatibus
-                    magni, rem pariatur distinctio a eius aliquid corporis
-                    exercitationem harum possimus explicabo. Adipisci eum quos
-                    rerum.
+                  <p id="descriptionTablet">
+                  Habitación diseñada para parejas que buscan un ambiente íntimo y romántico, con decoración elegante y detalles especiales.
                   </p>
                 </div>
                 <div class="behaivor">
                   <div class="ToChangeRooms">
-                    <div class="back">
+                    <div id="backTablet" class="back">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         height="30px"
@@ -637,9 +629,9 @@
                       </svg>
                     </div>
                     <div class="Btnreserve">
-                      <input id="btnreserve" type="button" value="Reservar" />
+                      <input id="reserveBtnTablet" type="button" onclick="redirect()" value="Reservar" />
                     </div>
-                    <div class="next">
+                    <div id="nextbtnTablet" class="next">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         height="30px"
@@ -657,7 +649,7 @@
               </div>
             </div>
           </div>
-          <div class="containerfather3">
+          <div id="ubicacionTablet" class="containerfather3">
             <div class="location">
               <div class="locationtitletolink">
                 <div class="titlelocation">
@@ -704,7 +696,7 @@
               </div>
             </div>
           </div>
-          <div class="container4">
+          <div id="contactoTablet" class="container4">
             <div class="ReservationNow">
               <div class="titleReservation">
                 <h1>haz una reservacion ahora</h1>
@@ -798,8 +790,16 @@
 
     <div class="mobileDesign">
       <header>
-        <nav id="hamburgerBtn">
-          <i class="fas fas fa-bars"></i>
+        <nav id="hamburgerBtnContainer">
+          <i id="hamburgerBtn" class="fas fas fa-bars"></i>
+        </nav>
+        <nav id="mobileMenu" class="mobileMenu">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#habitaciones">Habitaciones</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
         </nav>
         <nav id="desk">
           <ul>
@@ -814,7 +814,7 @@
             </div>
             <div class="text">
               <a
-                href=" https://wa.me/7731716714?text=hola me interesa reservar una habitacion"
+                href=" https://wa.me/525545034306?text=hola me interesa reservar una habitacion"
               >
                 Reservar ahora
               </a>
@@ -882,7 +882,7 @@
               </div>
             </div>
             <div class="ServIMG">
-              <img src="./public/img/prueba.jpg" alt="" />
+              <img src="./public/img/prueba6.jpg" alt="" />
             </div>
           </div>
           <div class="Servunder">
@@ -982,32 +982,29 @@
               </div>
               <div class="descrooms">
                 <p>
-                  Descubre nuestras habitaciones, diseñadas para ofrecer el
-                  maximo confort y una experiencia inolvidable.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab illo vitae autem aut facere ut, minima nesciunt repellendus ullam hic quos, cumque vel laudantium, atque doloremque quia voluptas ipsum sequi!
                 </p>
               </div>
             </div>
             <div class="Chooseroom">
               <div class="chooserooms">
                 <div class="RoomsImg">
-                  <img id="habitacion" src="./public/img/prueba2.jpg" alt="" />
+                  <img id="habitacion" src="./public/img/prueba0.jpg" alt="" />
                 </div>
                 <div class="subtitlerooms">
-                  <h2>Habitacion Generica</h2>
+                  <h2 id="roomNameMobile">Perla Negra</h2>
                 </div>
                 <div class="CostRooms">
-                  <p>$189 por noche</p>
+                  <p id="costoMobile">$189 por noche</p>
                 </div>
                 <div class="DescRooms">
-                  <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Officiis accusantium ratione nihil sunt necessitatibus
-                    magni, rem pariatur distinctio a eius aliquid corporis
+                  <p id="descriptionMobile">
+                 Habitación diseñada para parejas que buscan un ambiente íntimo y romántico, con decoración elegante y detalles especiales.
                   </p>
                 </div>
                 <div class="behaivor">
                   <div class="ToChangeRooms">
-                    <div class="back">
+                    <div id="backMobile" class="back">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         height="30px"
@@ -1022,13 +1019,13 @@
                     </div>
                     <div class="Btnreserve">
                       <input
-                        id="btnreserve"
+                        id="reserveBtnMobile"
                         type="button"
                         onclick="redirect()"
                         value="Reservar"
                       />
                     </div>
-                    <div id="nextbtn" class="next">
+                    <div id="nextbtnMobile" class="next">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         height="30px"
@@ -1192,6 +1189,7 @@
       src="https://kit.fontawesome.com/e073821f55.js"
       crossorigin="anonymous"
     ></script>
+    <script src="./public/js/navbar.js"></script>
     <script src="./public/js/redirect.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./public/js/formulario.js"></script>
