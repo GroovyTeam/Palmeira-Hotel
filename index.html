@@ -791,20 +791,21 @@
     <div class="mobileDesign">
       <header>
         <nav id="hamburgerBtnContainer">
-          <i id="hamburgerBtn" class="fas fas fa-bars"></i>
+          <i onclick="toggleMobileNav()" id="hamburgerBtnMobile" class="fas fas fa-bars"></i>
         </nav>
         <nav id="mobileMenu" class="mobileMenu">
           <ul>
             <li><a href="#home">Home</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#habitaciones">Habitaciones</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#serviciosMobile">Servicios</a></li>
+            <li><a href="#habitacionesMobile">Habitaciones</a></li>
+            <li><a href="#ubicacionMobile">Ubicacion</a></li>
+            <li><a href="#contactoMobile">Contacto</a></li>
           </ul>
         </nav>
         <nav id="desk">
           <ul>
             <li><a href="#home">Home</a></li>
-            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#serviciosMobile">Servicios</a></li>
             <li><a href="#habitaciones">Habitaciones</a></li>
             <li><a href="#contacto">Contacto</a></li>
           </ul>
@@ -849,7 +850,7 @@
                   <p>Huespedes Anuales</p>
                 </div>
               </div>
-              <div class="services">
+              <div id="servicios" class="services">
                 <div class="number">
                   <p>+10</p>
                 </div>
@@ -865,7 +866,7 @@
         </div>
       </header>
       <article>
-        <div class="container-father1">
+        <div id="serviciosMobile" class="container-father1">
           <div class="ServTop">
             <div class="Servleft">
               <div class="title1">
@@ -975,7 +976,7 @@
               </div>
             </div>
           </div>
-          <div class="container-father2">
+          <div id="habitacionesMobile" class="container-father2">
             <div class="titleanddesc">
               <div id="habitaciones" class="titlerooms">
                 <h1>Habitaciones Comodas</h1>
@@ -1043,7 +1044,7 @@
               </div>
             </div>
           </div>
-          <div class="containerfather3">
+          <div id="ubicacionMobile" class="containerfather3">
             <div class="location">
               <div class="locationtitletolink">
                 <div id="ubicacion" class="titlelocation">
@@ -1093,7 +1094,7 @@
               </div>
             </div>
           </div>
-          <div class="container4">
+          <div id="contactoMobile"  class="container4">
             <div class="ReservationNow">
               <div id="contacto" class="titleReservation">
                 <h1>haz una reservacion ahora</h1>

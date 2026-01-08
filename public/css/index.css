@@ -92,6 +92,11 @@ header nav i {
 }
 
 /* MOBILE MENU STYLES */
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
 #hamburgerBtn  {
   cursor: pointer;
   z-index: 1000;
@@ -105,22 +110,24 @@ header nav i {
   transition: all 0.3s ease;
 }
 
-#hamburgerBtn.active i {
+#hamburgerBtn.active i  {
   transform: rotate(90deg);
   color: #94e790;
 }
 
 .mobileMenu {
   display: none;
+  justify-content: center;
+  align-items: center;
   position: fixed;
-  top: 60px;
+  top: 85px;
   left: 0;
   width: 100%;
   background-color: var(--Black);
   z-index: 999;
   padding: 20px 0;
   flex-direction: column;
-  max-height: calc(100vh - 60px);
+  height: 90vh;
   overflow-y: auto;
   animation: slideDown 0.3s ease-out;
 }
@@ -143,6 +150,7 @@ header nav i {
 .mobileMenu ul {
   list-style: none;
   width: 100%;
+  text-align: center;
 }
 
 .mobileMenu ul li {
