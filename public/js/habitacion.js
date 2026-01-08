@@ -1,10 +1,13 @@
-
+    function homeRedirect() {
+        window.location.href = " https://groovyteam.github.io/Palmeira-Hotel/";
+    }
 document.addEventListener('DOMContentLoaded', (e) => {
     
     const home = document.getElementById('home');
     const infobtn = document.getElementById('button'); 
     const infobtn2 = document.getElementById('button2'); 
     
+
     // Configuración de colores (Negro Room1)
     const swalColors = {
         confirmButtonColor: '#0e0e0e', 
