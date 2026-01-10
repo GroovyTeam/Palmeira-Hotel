@@ -31,8 +31,17 @@
     <header>
       <nav class="mobile">
         <i onclick="homeRedirect()" id="homeBtn" class="fa-solid fa-reply" style="cursor: pointer;"></i>
-        <i id="hamburgerBtn" class="fas fas fa-bars"></i>
+        <i onclick="toggleMobileNav()" id="hamburgerBtnMobile" class="fas fas fa-bars"></i>
       </nav>
+       <nav id="mobileMenu" class="mobileMenu">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#serviciosMobile">Servicios</a></li>
+            <li><a href="#habitacionesMobile">Habitaciones</a></li>
+            <li><a href="#ubicacionMobile">Ubicacion</a></li>
+            <li><a href="#contactoMobile">Contacto</a></li>
+          </ul>
+        </nav>
     </header>
     <article class="mobile">
         <div class="SLIDER">
@@ -176,6 +185,7 @@
         <script src="../js/room.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="../js/muestra.js"></script>
+        <script src="..js/navbar.js"></script>
       </body>
 </html>
 <!-- XD -->

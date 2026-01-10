@@ -116,18 +116,16 @@ header nav i {
 }
 
 .mobileMenu {
-  display: none;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 85px;
-  left: 0;
+  display:none;
+  justify-content:flex-start;
+  align-items: flex-start;
+  position:relative;
+  top:0vh;
   width: 100%;
   background-color: var(--Black);
   z-index: 999;
-  padding: 20px 0;
   flex-direction: column;
-  height: 90vh;
+  height:180vh;
   overflow-y: auto;
   animation: slideDown 0.3s ease-out;
 }
@@ -151,6 +149,7 @@ header nav i {
   list-style: none;
   width: 100%;
   text-align: center;
+  padding: 15% 0%;
 }
 
 .mobileMenu ul li {
