@@ -456,7 +456,11 @@ input {
     font-weight: bold;
     font-size: 0.9em;
   }
-
+  #asesoramientoRoom{
+   background-color:var(--Black);
+   border: none;
+   color: var(--White);
+  }
   /* ARTICLE */
   .desk {
     display: flex;

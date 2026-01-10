@@ -1445,10 +1445,10 @@ input::placeholder {
    }
      .desktopDesign .anchords ul li {
       margin-right:5% !important;
+        transition: all 0.3s ease;
      }
-  .desktopDesign .anchords ul li a:hover{
-
-    font-size: 1.1em;
+  .desktopDesign .anchords ul li:hover{
+    font-size: 1.02em;
   }
   .desktopDesign #desk .button {
     width: 100%;
@@ -1970,6 +1970,7 @@ input::placeholder {
 
 /* DESKTOP FULL SIZE 1440px ermi00 */
 @media (min-width: 1440px) {
+
   #desk .anchords ul li {
     margin: 0;
     padding-right: 1px;

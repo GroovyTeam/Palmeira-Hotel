@@ -1,8 +1,8 @@
+
 //Obteniendo elementos del DOM
 const hamburgerBtn = document.getElementById('hamburgerBtnMobile');
 const mobileNav = document.getElementById('mobileMenu');
 //Función para alternar la visibilidad del menú móvil
-
 function toggleMobileNav() {
     hamburgerBtn.classList.remove('fa-bars');
     hamburgerBtn.classList.add('fa-xmark');

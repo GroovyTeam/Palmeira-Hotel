@@ -108,8 +108,14 @@ function backRoom() {
 function redirect() {
   window.location.href = "./public/views/room.html?room=" + count;
 }
+function asesoramientoEspecifico(){
+  const roomName = roomNames[count];
+  const message = `Hola,%20me%20gustaría%20recibir%20asesoramiento%20sobre%20la%20habitación:%20${encodeURIComponent(roomName)}.`;
+  window.location.href = `https://wa.me/${numeroHotel}?text=${message}`;
+} 
+
 function asesoramiento(){
-  window.location.href = `https://wa.me/${numeroHotel}?text=Hola,%20me%20gustaría%20recibir%20asesoramiento%20sobre%20las%20habitaciones%20del%20hotel.`;
+  window.location.href = `https://wa.me/${numeroHotel}?text=Hola,%20me%20gustaría%20recibir%20asesoramiento%20sobre%20sus%20habitaciones.`;
 }
 
 
