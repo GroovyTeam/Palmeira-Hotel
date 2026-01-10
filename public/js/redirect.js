@@ -77,9 +77,9 @@ const costs = [
 // FUNCIONES PRINCIPALES
 // ============================
 function chooseRoom() {
-  img.src = "./public/img/prueba" + count + ".jpg";
-  imgDesktop.src = "./public/img/prueba" + count + ".jpg";
-  imgTablet.src = "./public/img/prueba" + count + ".jpg";
+  img.src = "./public/img/recursos/prueba" + count + ".jpg";
+  imgDesktop.src = "./public/img/recursos/prueba" + count + ".jpg";
+  imgTablet.src = "./public/img/recursos/prueba" + count + ".jpg";
 
   roomNameMobile.textContent = roomNames[count];
   roomNameDesktop.textContent = roomNames[count];

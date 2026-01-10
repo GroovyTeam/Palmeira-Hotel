@@ -19,11 +19,11 @@ const rooms = [
     price: "$899 MXN por noche",
     desc: "Enorme habitación con vista al mar, ideal para parejas que desean disfrutar de la tranquilidad y la privacidad.",
     images: [
-      "../img/room2.jpeg",
-      "../img/room2_2.jpeg",
-      "../img/room2_3.jpeg",
-      "../img/room2_4.jpeg",
-      "../img/room2_5.jpeg"
+      "../img/room2/room2.jpeg",
+      "../img/room2/room2_2.jpeg",
+      "../img/room2/room2_3.jpeg",
+      "../img/room2/room2_4.jpeg",
+      "../img/room2/room2_5.jpeg"
     ]
   },
   {
@@ -31,11 +31,11 @@ const rooms = [
     price: "$1,199 MXN por noche",
     desc: "Habitación con un diseño moderno y sofisticado, ideal para viajeros que buscan comodidad y estilo durante su estancia.",
     images: [
-      "../img/room3.jpeg",
-      "../img/room3_2.jpeg",
-      "../img/room3_3.jpeg",
-      "../img/room3_4.jpeg",
-      "../img/room3_5.jpeg"
+      "../img/room3/room3.jpeg",
+      "../img/room3/room3_2.jpeg",
+      "../img/room3/room3_3.jpeg",
+      "../img/room3/room3_4.jpeg",
+      "../img/room3/room3_5.jpeg"
     ]
   },
   {
@@ -43,11 +43,11 @@ const rooms = [
     price: "$199 MXN por noche",
     desc: "Habitación espaciosa con comodidades de lujo, perfecta para aquellos que desean una experiencia de alojamiento superior.",
     images: [
-      "../img/room4.jpeg",
-      "../img/room4_2.jpeg",
-      "../img/room4_3.jpeg",
-      "../img/room4_4.jpeg",
-      "../img/room4_5.jpeg"
+      "../img/room4/room4.jpeg",
+      "../img/room4/room4_2.jpeg",
+      "../img/room4/room4_3.jpeg",
+      "../img/room4/room4_4.jpeg",
+      "../img/room4/room4_5.jpeg"
     ]
   },
   {
@@ -55,11 +55,11 @@ const rooms = [
     price: "$799 MXN por noche",
     desc: "Suite exclusiva con áreas separadas para dormir y relajarse, equipada con servicios premium para una estancia inolvidable.",
     images: [
-      "../img/room5.jpeg",
-      "../img/room5_2.jpeg",
-      "../img/room5_3.jpeg",
-      "../img/room5_4.jpeg",
-      "../img/room5_5.jpeg"
+      "../img/room5/room5.jpeg",
+      "../img/room5/room5_2.jpeg",
+      "../img/room5/room5_3.jpeg",
+      "../img/room5/room5_4.jpeg",
+      "../img/room5/room5_5.jpeg"
     ]
   },
   {
@@ -67,11 +67,11 @@ const rooms = [
     price: "$299 MXN por noche",
     desc: "Habitación amplia y cómoda, ideal para familias que buscan un espacio acogedor y funcional durante su viaje.",
     images: [
-      "../img/room6.jpeg",
-      "../img/room6_2.jpeg",
-      "../img/room6_3.jpeg",
-      "../img/room6_4.jpeg",
-      "../img/room6_5.jpeg"
+      "../img/room6/room6.jpeg",
+      "../img/room6/room6_2.jpeg",
+      "../img/room6/room6_3.jpeg",
+      "../img/room6/room6_4.jpeg",
+      "../img/room6/room6_5.jpeg"
     ]
   },
   {
@@ -79,11 +79,11 @@ const rooms = [
     price: "$2,499 MXN por noche",
     desc: "Habitación elegante con todas las comodidades necesarias para una estancia placentera, perfecta para viajeros de negocios o placer.",
     images: [
-      "../img/room7.jpeg",
-      "../img/room7_2.jpeg",
-      "../img/room7_3.jpeg",
-      "../img/room7_4.jpeg",
-      "../img/room7_5.jpeg"
+      "../img/room7/room7.jpeg",
+      "../img/room7/room7_2.jpeg",
+      "../img/room7/room7_3.jpeg",
+      "../img/room7/room7_4.jpeg",
+      "../img/room7/room7_5.jpeg"
     ]
   },
   {
@@ -91,11 +91,11 @@ const rooms = [
     price: "$999 MXN por noche",
     desc: "Habitación con un diseño vibrante y moderno, equipada con todas las facilidades para una estancia confortable.",
     images: [
-      "../img/room8.jpeg",
-      "../img/room8_2.jpeg",
-      "../img/room8_3.jpeg",
-      "../img/room8_4.jpeg",
-      "../img/room8_5.jpeg"
+      "../img/room8/room8.jpeg",
+      "../img/room8/room8_2.jpeg",
+      "../img/room8/room8_3.jpeg",
+      "../img/room8/room8_4.jpeg",
+      "../img/room8/room8_5.jpeg"
     ]
   }
 ];
