@@ -30,6 +30,8 @@ body {
   --White: #ededed;
   --Gray: #626262;
   --bodyGray: #ebebeb;
+  --blue:#3E8996;
+  --gold:#C0AB80;
 }
 
 /* HEADER */
@@ -251,6 +253,7 @@ header nav i {
 }
 
 .title1 {
+  color: var(--blue);
   width: 100%;
   text-align: center;
 }
@@ -341,6 +344,7 @@ header nav i {
   width: 13vw;
   height: auto;
   margin-top: 15%;
+  color: var(--gold);
 }
 
 .TitleYoga,
@@ -374,7 +378,7 @@ header nav i {
   cursor: pointer;
 }
 .containerwhats {
-  background-color: var(--Black);
+  background-color: var(--gold);
   display: flex;
   justify-content: left;
   margin: 3.8%;
@@ -388,7 +392,7 @@ header nav i {
 }
 
 .containertalk {
-  background-color: var(--Black);
+  background-color: var(--gold);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -400,7 +404,7 @@ header nav i {
 }
 
 #btntalk {
-  background-color: var(--Black);
+  background-color: var(--gold);
   border: var(--Black);
   color: var(--White);
   font-weight: bold;
@@ -418,6 +422,7 @@ header nav i {
   flex-direction: column;
   text-align: center;
   padding: 0% 6%;
+  color: var(--Gray);
 }
 
 .titlerooms h1 {
@@ -426,6 +431,7 @@ header nav i {
   font-size: 1.8em;
   letter-spacing: -2px;
   margin-bottom: 6%;
+  color: var(--blue);
 }
 
 .descrooms p {
@@ -455,11 +461,11 @@ header nav i {
   align-items: center;
   flex-direction: column;
   width: 100%;
-  color: var(--White);
+  color: var(--Black);
 }
 
 .chooserooms {
-  background-color: var(--Black);
+  background-color: var(--blue);
   width: 92%;
   height: auto;
   border-radius: 15px;
@@ -487,6 +493,7 @@ header nav i {
   padding-left: 6%;
   font-weight: 600;
   font-size: 1.3em;
+  color: var(--gold);
 }
 
 .CostRooms p {
@@ -510,6 +517,9 @@ header nav i {
 
 /* BUTTON */
 /* Section Choose Room */
+.Container2 .chooserooms{
+  background-color: var(--blue);
+}
 .behaivor {
   width: 100%;
   display: flex;
@@ -527,7 +537,7 @@ header nav i {
 
 /* BUTTONS */
 .back {
-  background-color: var(--White);
+  background-color: var(--white);
   transform: rotate(180deg);
   width: 20%;
   height: 3.5vh;
@@ -548,7 +558,7 @@ header nav i {
 }
 .next:hover{
   cursor: pointer;
-  background-color: #c0c0c0;
+  background-color: var(--gold);
 }
 
 .behaivor .Btnreserve {
@@ -574,6 +584,10 @@ header nav i {
   height: 5vh;
   font-size: 0.8em;
   font-weight: 700;
+}
+.Btnreserve input:hover{
+  cursor: pointer;
+  background-color: var(--gold);
 }
 
 /* Flechas */
@@ -631,7 +645,7 @@ header nav i {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: var(--Black);
+  background-color: var(--gold);
   color: var(--White);
 }
 
@@ -1097,6 +1111,7 @@ input::placeholder {
     text-align: left;
     width: 100%;
     padding: 0% 7%;
+    color: var(--blue);
   }
 
   .DescYoga p,
@@ -1170,12 +1185,13 @@ input::placeholder {
     align-items: center;
     width: 100%;
     border-radius: none;
+    background-color: var(--blue);
     color: var(--White);
     margin-top: 5%;
   }
 
   .Container2 {
-    background-color: var(--Black);
+    background-color: var(--blue);
     width: 100%;
     margin: 2% 0% 3% 0%;
     display: flex;
