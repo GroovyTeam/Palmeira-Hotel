@@ -253,7 +253,7 @@ header nav i {
 }
 
 .title1 {
-  color: var(--blue);
+  color: var(--Black);
   width: 100%;
   text-align: center;
 }
@@ -393,6 +393,7 @@ header nav i {
 
 .containertalk {
   background-color: var(--gold);
+  border: var(--Black);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -431,7 +432,7 @@ header nav i {
   font-size: 1.8em;
   letter-spacing: -2px;
   margin-bottom: 6%;
-  color: var(--blue);
+  color: var(--Black);
 }
 
 .descrooms p {
@@ -454,7 +455,9 @@ header nav i {
   justify-content: center;
   flex-direction: column;
 }
-
+.Container2{
+  background-color: var(--blue);
+}
 .Chooseroom {
   display: flex;
   justify-content: center;
@@ -645,11 +648,11 @@ header nav i {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: var(--gold);
-  color: var(--White);
+  color: var(--Black);
 }
 
 .titlelocation h2 {
+  color: var(--gold);
   font-weight: 700;
   font-size: 2em;
   padding-left: 5%;
@@ -681,7 +684,7 @@ header nav i {
 .linklocation a {
   width: 50%;
   font-weight: 600;
-  color: var(--White);
+  color: var(--Black);
 }
 
 .locationmaps {
@@ -704,12 +707,18 @@ header nav i {
 }
 
 /* Section Reservation */
+
+
+.container4{
+  background-color: var(--blue);
+}
 .titleReservation {
   width: 100%;
   margin-top: 10%;
 }
 
 .titleReservation h1 {
+  color: var(--Black);
   font-weight: 700;
   letter-spacing: -2px;
   font-size: 3em;
@@ -740,15 +749,15 @@ header nav i {
 #apellidos_mobile,
 #email_mobile,
 #phones_mobile {
-  background-color: var(--Black);
+  background-color: var(--White);
   border-radius: 10px;
   height: 9vh;
   width: 100%;
   padding: 0 5%;
   border: none;
-  color: var(--White);
+  color: var(--Black);
   font-size: 1em;
-  outline-color: #94e790;
+  outline-color: var(--Black);
   margin-bottom: 5%;
   font-weight: 200;
 }
@@ -766,8 +775,8 @@ header nav i {
 #Bttn3 {
   margin-top: 5px;
   width: 85%;
-  background-color: var(--White);
-  color: var(--Black);
+  background-color: var(--gold);
+  color: var(--White);
   font-weight: 700;
   border: 3px solid var(--Black);
   padding: 2% 0;
@@ -926,7 +935,7 @@ input::placeholder {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    background-color: var(--Black);
+    background-color: var(--gold);
     color: var(--White);
     padding: 1%;
     border-radius: 10px;
@@ -1540,6 +1549,8 @@ input::placeholder {
 
   .intro .textSide .title .desc {
     display: flex;
+    flex-wrap: wrap;
+    gap: 2%;
     justify-content: right;
     margin-top: 6%;
     width: 100%;
@@ -1552,7 +1563,7 @@ input::placeholder {
   }
 
   .desktopDesign .stats2 .number {
-    color: #626262;
+    color: var(--Gray);
     font-size: 1.5em;
   }
 
@@ -1607,6 +1618,7 @@ input::placeholder {
     align-items: center;
     flex-direction: row;
     margin: -3% 0%;
+    background-color: var(--blue);
   }
 
   .desktopDesign .ServTop .ServIMG img {
@@ -1639,6 +1651,7 @@ input::placeholder {
   .desktopDesign .ServTop .Servleft .ServDesc p {
     font-size: 0.8em;
     font-weight: 300;
+    color: var(--White);
   }
 
   .desktopDesign .ServTop .Servleft .containertalk {
@@ -1657,6 +1670,7 @@ input::placeholder {
     width: 100%;
     flex-direction: row;
     margin-bottom: 10%;
+    background-color: var(--blue);
   }
 
   .desktopDesign .Yogas,
@@ -1684,6 +1698,7 @@ input::placeholder {
   .desktopDesign .TitleYoga h2,
   .Titlerestaurant h2,
   .Titleclean h2 {
+    color: var(--Black);
     text-align: left;
     width: 100%;
     padding: 0% 7%;
@@ -1696,10 +1711,16 @@ input::placeholder {
     text-align: justify;
     font-size: 0.9em;
     font-weight: 300;
+    color: var(--White);
   }
 
   /* Choose rooms */
-
+  .desktopDesign #contChoose{
+    background-color: var(--blue);
+  }
+  .desktopDesign .Container2 .chooserooms {
+    background-color: var(--blue);
+  }
   .desktopDesign .chooserooms .titlerooms {
     text-align: center;
     font-size: 1.2em;
@@ -1727,7 +1748,7 @@ input::placeholder {
   }
 
   .desktopDesign .Container2 {
-    background-color: var(--Black);
+    background-color: var(--blue);
     width: 100%;
     margin: 2% 0% 3% 0%;
     display: flex;
@@ -1860,6 +1881,7 @@ input::placeholder {
     margin: 0%;
     padding: 0%;
     line-height: 1em;
+    color: var(--Black);
   }
 
   .desktopDesign .locationtitletolink .desclocation {
@@ -1880,6 +1902,10 @@ input::placeholder {
     align-items: center;
     justify-content: left;
   }
+  .desktopDesign .locationtitletolink .linklocation a{
+    color: var(--gold);
+  }
+
 
   .desktopDesign .locationmaps {
     margin: 4%;
@@ -1899,7 +1925,7 @@ input::placeholder {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    background-color: var(--White);
+    background-color: var(--blue);
     margin-top: 6%;
   }
 
@@ -1939,15 +1965,15 @@ input::placeholder {
   #apellidos_desk,
   #email_desk,
   #phones_desk {
-    background-color: var(--Black);
+    background-color: var(--White);
     border-radius: 10px;
     height: 9vh;
     width: 100%;
     padding: 0 5%;
     border: none;
-    color: var(--White);
+    color: var(--Black);
     font-size: 1em;
-    outline-color: #94e790;
+    outline-color: var(--Black);
     margin-bottom: 5%;
     font-weight: 200;
   }
@@ -2275,7 +2301,7 @@ input::placeholder {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    background-color: var(--White);
+    background-color: var(--blue);
     margin-top: 0;
   }
 
