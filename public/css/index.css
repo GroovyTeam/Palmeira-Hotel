@@ -88,6 +88,7 @@ ul, ol { list-style: none; }
   background: var(--glass-bg); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
   border-radius: var(--radius-full); display: flex; justify-content: space-between; align-items: center;
   z-index: 100; box-shadow: 0 8px 32px rgba(57, 102, 99, 0.05);
+  transition: all var(--transition-base);
 }
 .nav-brand {
   font-family: var(--font-headline);
@@ -287,11 +288,18 @@ ul, ol { list-style: none; }
 
 /* ── 11. Custom Mobile Tweaks (<400px) ── */
 @media (max-width: 400px) {
-  .nav-glass { padding: 0.6rem 1rem; width: 92%; }
+  /* Safari/iOS floating capsule fix */
+  .nav-glass { 
+    top: 0; 
+    width: 100%; 
+    border-radius: 0 0 var(--radius-2xl) var(--radius-2xl); 
+    padding: calc(0.5rem + env(safe-area-inset-top)) 1.25rem 0.75rem;
+    box-shadow: 0 4px 24px rgba(57, 102, 99, 0.08);
+  }
   .nav-brand { font-size: 0.9rem; }
   .nav-cta { padding: 0.5rem 1rem; font-size: 10px; }
   .nav-right { gap: 0.5rem; }
-  .hero h1 { font-size: 2.2rem; }
+  .hero h1 { font-size: 2.2rem; margin-top: 1rem; }
   .hero-subtitle { font-size: 0.9rem; line-height: 1.5; }
 }
 
