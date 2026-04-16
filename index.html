@@ -1,1332 +1,426 @@
 <!doctype html>
-<html lang="es">
-  <!-- Checkpoint -->
+<html lang="es" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Palmeira Hotel</title>
-    <link rel="stylesheet" href="./public/css/index.css" />
+    <title>Hotel Palmeira's | La Veranda Tropical</title>
+    <meta
+      name="description"
+      content="Hotel Palmeira en Tuxpan, Veracruz. Sumérjase en un santuario de tranquilidad donde el lujo se encuentra con la naturaleza salvaje de la costa."
+    />
+    <meta
+      property="og:title"
+      content="Hotel Palmeira's | La Veranda Tropical"
+    />
+    <meta
+      property="og:description"
+      content="Habitaciones elegantes frente al mar en Tuxpan, Veracruz. Yoga, restaurante, piscina y más."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#396663" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,500;0,700;1,400&family=Manrope:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <link rel="stylesheet" href="./public/css/index.css" />
   </head>
   <body>
-    <div class="desktopDesign">
-      <header>
-        <nav id="desk">
-          <div class="anchords">
-            <ul>
+    <!-- ═══ NAVIGATION ═══ -->
+    <nav class="nav-glass" id="mainNav">
+      <div class="nav-brand">Hotel Palmeira's</div>
+      <div class="nav-links">
+        <a href="#inicio" class="active">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#habitaciones">Habitaciones</a>
+        <a href="#ubicacion">Ubicación</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <div class="nav-right">
+        <button class="nav-cta" id="navReservar">Reservar</button>
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- ═══ MOBILE MENU ═══ -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#inicio">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#habitaciones">Habitaciones</a>
+      <a href="#ubicacion">Ubicación</a>
+      <a href="#contacto">Contacto</a>
+      <button class="btn-gold" id="mobileReservar">Reservar Ahora</button>
+    </div>
+
+    <!-- ═══ HERO ═══ -->
+    <section class="hero" id="inicio">
+      <div class="hero-bg">
+        <img
+          src="./public/img/recursos/heroImage.jpeg"
+          alt="Alberca del Hotel Palmeira frente al mar en Tuxpan, Veracruz"
+        />
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-content">
+        <h1>Hotel<br /><em>Palmeira's Beach</em></h1>
+        <h2 class="hero-subtitle2">Tuxpan Veracruz</h2>
+        <p class="hero-subtitle">
+          Sumérjase en un santuario de tranquilidad donde el lujo se encuentra
+          con la naturaleza salvaje de la costa. Un refugio diseñado para el
+          descanso profundo.
+        </p>
+        <div class="hero-actions">
+          <button class="btn-gold" id="heroReservar">Reservar Ahora</button>
+          <a href="#servicios" class="btn-link">
+            Ver Servicios
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="stat-number">15mil</div>
+            <div class="stat-label">Buenas Reseñas</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-number">700</div>
+            <div class="stat-label">Huéspedes Anuales</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-number">+10</div>
+            <div class="stat-label">Servicios</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ SERVICES ═══ -->
+    <section class="services" id="servicios">
+      <div class="container">
+        <div class="services-header">
+          <div>
+            <h2>Amenidades imperdibles</h2>
+            <p>
+              Cada detalle ha sido cuidadosamente asegurado para elevar su
+              estancia. Desde la gastronomía local hasta clases de yoga de
+              excelente nivel, estamos listos para ofrecerte la mejor
+              experiencia durante tu estancia en Tuxpan.
+            </p>
+          </div>
+          <div class="services-explore">
+            <div class="services-line"></div>
+            <p class="label">Explorar Servicios</p>
+          </div>
+        </div>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">
+              <span class="material-symbols-outlined">pool</span>
+            </div>
+            <h3>Ubicación inmejorable</h3>
+            <p>
+              Disfruta de vistas increibles al mar en un espejo de agua
+              cristalina a solo 5 minutos de la playa Margaritas
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <span class="material-symbols-outlined">self_improvement</span>
+            </div>
+            <h3>Clases de Yoga</h3>
+            <p>
+              Relájese y renueve su energía con nuestras clases guiadas por
+              instructores expertos en un ambiente tranquilo.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <span class="material-symbols-outlined">restaurant</span>
+            </div>
+            <h3>Restaurante</h3>
+            <p>
+              Una fusión culinaria que celebra los sabores frescos del trópico
+              con ingredientes locales de primera calidad, preparados por
+              nuestro chef.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <span class="material-symbols-outlined">cleaning_services</span>
+            </div>
+            <h3>Estacionamiento</h3>
+            <p>
+              Contamos con amplio estacionamiento para la seguridad de tu
+              vehículo lo cual garantizara tu tranquilidad durante tu estancia.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ ROOMS ═══ -->
+    <section class="rooms" id="habitaciones">
+      <div class="container">
+        <div class="rooms-header">
+          <span class="rooms-label">Refugios Privados</span>
+          <h2>Nuestras Habitaciones</h2>
+        </div>
+        <div class="room-showcase">
+          <div class="room-slider">
+            <div class="slides" id="roomSlides">
+              <img
+                class="active"
+                src="./public/img/recursos/exterior.jpeg"
+                alt="Habitación del Hotel Palmeira"
+              />
+              <img
+                src="./public/img/recursos/prueba1.jpg"
+                alt="Habitación del Hotel Palmeira"
+              />
+              <img
+                src="./public/img/recursos/prueba2.jpg"
+                alt="Habitación del Hotel Palmeira"
+              />
+              <img
+                src="./public/img/recursos/prueba3.jpg"
+                alt="Habitación del Hotel Palmeira"
+              />
+              <img
+                src="./public/img/recursos/prueba4.jpg"
+                alt="Habitación del Hotel Palmeira"
+              />
+              <img
+                src="./public/img/recursos/prueba5.jpg"
+                alt="Habitación del Hotel Palmeira"
+              />
+              <img
+                src="./public/img/recursos/prueba6.jpg"
+                alt="Habitación del Hotel Palmeira"
+              />
+              <img
+                src="./public/img/recursos/prueba7.jpg"
+                alt="Habitación del Hotel Palmeira"
+              />
+            </div>
+            <button
+              class="slide-btn slide-prev"
+              id="slidePrev"
+              aria-label="Anterior"
+            >
+              <span class="material-symbols-outlined">chevron_left</span>
+            </button>
+            <button
+              class="slide-btn slide-next"
+              id="slideNext"
+              aria-label="Siguiente"
+            >
+              <span class="material-symbols-outlined">chevron_right</span>
+            </button>
+            <div class="slide-dots" id="slideDots"></div>
+          </div>
+          <div class="room-info">
+            <div class="room-price">Desde $189 MXN / noche</div>
+            <h3>Confort frente al mar</h3>
+            <p>
+              Nuestras 8 habitaciones han sido diseñadas para ofrecerle una
+              experiencia de hospedaje cómoda, tranquila y placentera. Cada
+              espacio combina funcionalidad, elegancia y confort.
+            </p>
+            <ul class="room-amenities">
               <li>
-                <a href="https://groovyteam.github.io/Palmeira-Hotel/"
-                  >Inicio</a
-                >
+                <span class="material-symbols-outlined">check_circle</span> Cama
+                amplia y acogedora
               </li>
               <li>
-                <a href="https://groovyteam.github.io/Palmeira-Hotel/#servicios"
-                  >Servicios</a
-                >
+                <span class="material-symbols-outlined">check_circle</span> Aire
+                acondicionado
               </li>
               <li>
-                <a
-                  href="https://groovyteam.github.io/Palmeira-Hotel/#habitaciones"
-                  >Habitaciónes</a
-                >
+                <span class="material-symbols-outlined">check_circle</span> Baño
+                privado completo
               </li>
               <li>
-                <a href="https://groovyteam.github.io/Palmeira-Hotel/#ubicacion"
-                  >Ubicación</a
-                >
-              </li>
-              <li>
-                <a href="https://groovyteam.github.io/Palmeira-Hotel/#contacto"
-                  >Contacto</a
-                >
+                <span class="material-symbols-outlined">check_circle</span>
+                Wi-Fi de alta velocidad
               </li>
             </ul>
-          </div>
-          <div class="button">
-            <div class="whatsBtn">
-              <div class="icon">
-                <i class="fa-brands fa-whatsapp" style="color: #ffffff"></i>
-              </div>
-              <div class="text">
-                <a
-                  href=" https://wa.me/525545034306?text=hola me interesa reservar una habitacion"
-                >
-                  Reservar ahora
-                </a>
-              </div>
-            </div>
-          </div>
-        </nav>
-        <div class="intro">
-          <div class="textSide">
-            <div class="title">
-              <div class="t1">
-                <h1>hotel</h1>
-              </div>
-              <div class="t2">
-                <h1>palmeira</h1>
-              </div>
-              <div class="desc">
-                <p>
-                  ¿Quieres disfrutar de el descanso que mereces frente al mar?.
-                  <br />
-                  <br />
-                  En Hotel Palmeira’s Tuxpan Beach, te esperamos para que
-                  disfrutes momentos inolvidables rodeado de hermosos paisajes,
-                  la suave brisa marina y el sonido relajante de las olas.
-                  <br />
-                  <br />
-                  Convierte cada instante en una experiencia única y deja que tu
-                  estancia se transforme en el descanso perfecto que siempre
-                  soñaste.
-                </p>
-              </div>
-            </div>
-            <div class="stats2">
-              <div class="reseñas">
-                <div class="number">
-                  <p>+500</p>
-                </div>
-                <div class="text2">
-                  <p>Buenas Reseñas</p>
-                </div>
-              </div>
-              <div class="huespedes">
-                <div class="number">
-                  <p>700</p>
-                </div>
-                <div class="text2">
-                  <p>Huespedes Anuales</p>
-                </div>
-              </div>
-              <div class="activities">
-                <div class="number">
-                  <p>+10</p>
-                </div>
-                <div class="text2">
-                  <p>Actividades Incluidas</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="imageSide">
-            <img
-              src="./public/img/recursos/pool-index-photo.png"
-              alt=""
-              srcset=""
-            />
+            <button class="btn-whatsapp" id="roomReservar">
+              <i class="fa-brands fa-whatsapp"></i>
+              Reservar por WhatsApp
+            </button>
           </div>
         </div>
-      </header>
-      <article>
-        <div class="container">
-          <div class="ServTop">
-            <div class="Servleft">
-              <div id="servicios" class="title1">
-                <h1>Nuestros servicios</h1>
-              </div>
-              <div class="ServDesc">
-                <p>
-                  En nuestro hotel nos enfocamos en brindar una experiencia
-                  cómoda y placentera para cada huésped. Ofrecemos una variedad
-                  de servicios pensados para satisfacer tus necesidades durante
-                  tu estancia, combinando atención personalizada, confort y
-                  calidad en cada detalle.
-                </p>
-              </div>
-              <div class="BtnTalk">
-                <div class="containertalk">
-                  <div class="containerwhats">
-                    <i class="fa-brands fa-whatsapp" style="color: #ffffff"></i>
-                  </div>
-                  <input
-                    id="btntalk"
-                    type="button"
-                    value="QUIERO HABLAR CON UN ASESOR"
-                    onclick="asesoramiento()"
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="ServIMG">
-              <img src="./public/img/recursos/servicios.jpg" alt="" />
-            </div>
-          </div>
-          <div class="Servunder">
-            <div class="Yogas">
-              <div class="yoga">
-                <div class="iconyoga">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="10px"
-                    viewBox="0 -960 960 960"
-                    width="24px"
-                    fill="#0e0e0e"
-                  >
-                    <path
-                      d="M272-160q-30 0-51-21t-21-51q0-21 12-39.5t32-26.5l156-62v-90q-54 63-125.5 96.5T120-320v-80q68 0 123.5-28T344-508l54-64q12-14 28-21t34-7h40q18 0 34 7t28 21l54 64q45 52 100.5 80T840-400v80q-83 0-154.5-33.5T560-450v90l156 62q20 8 32 26.5t12 39.5q0 30-21 51t-51 21H400v-20q0-26 17-43t43-17h120q9 0 14.5-5.5T600-260q0-9-5.5-14.5T580-280H460q-42 0-71 29t-29 71v20h-88Zm208-480q-33 0-56.5-23.5T400-720q0-33 23.5-56.5T480-800q33 0 56.5 23.5T560-720q0 33-23.5 56.5T480-640Z"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <div class="TitleYoga">
-                <h2>Clases de yoga</h2>
-              </div>
-              <div class="DescYoga">
-                <p>
-                  Relájate y renueva tu energía con nuestras clases de yoga,
-                  guiadas por instructores expertos en un entorno tranquilo y
-                  armonioso.
-                </p>
-              </div>
-            </div>
-            <div class="Restaurants">
-              <div class="restaurant">
-                <div class="iconrestaurant">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="10px"
-                    viewBox="0 -960 960 960"
-                    width="24px"
-                    fill="#0e0e0e"
-                  >
-                    <path
-                      d="M280-80v-366q-51-14-85.5-56T160-600v-280h80v280h40v-280h80v280h40v-280h80v280q0 56-34.5 98T360-446v366h-80Zm400 0v-320H560v-280q0-83 58.5-141.5T760-880v800h-80Z"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <div class="Titlerestaurant">
-                <h2>Restaurante</h2>
-              </div>
-              <div class="DescRestaurant">
-                <p>
-                  Disfruta de una experiencia gastronómica única en nuestro
-                  restaurante, con platillos preparados con ingredientes frescos
-                  y en un ambiente acogedor.
-                </p>
-              </div>
-            </div>
-            <div class="Cleans">
-              <div class="clean">
-                <div class="iconclean">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="10px"
-                    viewBox="0 -960 960 960"
-                    width="24px"
-                    fill="#0e0e0e"
-                  >
-                    <path
-                      d="M120-40v-280q0-83 58.5-141.5T320-520h40v-320q0-33 23.5-56.5T440-920h80q33 0 56.5 23.5T600-840v320h40q83 0 141.5 58.5T840-320v280H120Zm80-80h80v-120q0-17 11.5-28.5T320-280q17 0 28.5 11.5T360-240v120h80v-120q0-17 11.5-28.5T480-280q17 0 28.5 11.5T520-240v120h80v-120q0-17 11.5-28.5T640-280q17 0 28.5 11.5T680-240v120h80v-200q0-50-35-85t-85-35H320q-50 0-85 35t-35 85v200Zm320-400v-320h-80v320h80Zm0 0h-80 80Z"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <div class="Titleclean">
-                <h2>Limpieza</h2>
-              </div>
-              <div class="DescClean">
-                <p>
-                  Mantenemos cada espacio impecable con nuestro servicio de
-                  limpieza, garantizando confort, frescura y bienestar en cada
-                  momento de tu estancia.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="container-father2">
-            <div id="habitaciones" class="titleanddesc">
-              <div class="titlerooms">
-                <h1>Habitaciones Comodas</h1>
-              </div>
-              <div class="descrooms">
-                <p>
-                  Descansa y relájate en un espacio pensado especialmente para
-                  tu bienestar. Nuestras habitaciones han sido diseñadas para
-                  ofrecerte una
-                  <strong
-                    >experiencia de hospedaje cómoda, tranquila y placentera </strong
-                  >, ideal tanto para viajes en familia como para estancias de
-                  descanso o trabajo. Cada habitación combina
-                  <strong>funcionalidad, elegancia y confort</strong>, cuidando
-                  cada detalle para que te sientas como en casa desde el primer
-                  momento. Disfruta de camas amplias y acogedoras, espacios
-                  limpios y armoniosos, y un ambiente que invita a desconectarte
-                  del estrés del día a día. Aquí no solo encontrarás un lugar
-                  para dormir, sino un espacio donde
-                  <strong
-                    >recargar energías, relajarte y disfrutar de tu estancia con
-                    total tranquilidad</strong
-                  >, siempre cuidando tu comodidad y tu bolsillo.
-                </p>
-              </div>
-            </div>
-            <div id="contChoose" class="Container2">
-              <div class="chooserooms">
-                <div class="RoomsImg">
-                  <img
-                    id="habitacionDesktop"
-                    src="./public/img/recursos/prueba1.jpg"
-                    alt=""
-                  />
-                </div>
+      </div>
+    </section>
 
-                <div class="subtitlerooms">
-                  <h2 id="roomNameDesktop">Perla Negra</h2>
-                </div>
-                <div class="CostRooms">
-                  <p id="costoDesktop">$189 MXN por noche</p>
-                </div>
-                <div class="DescRooms">
-                  <p id="descriptionDesktop">
-                    Habitación diseñada para parejas que buscan un ambiente
-                    íntimo y romántico, con decoración elegante y detalles
-                    especiales.
-                  </p>
-                </div>
-                <div class="behaivor">
-                  <div class="ToChangeRooms">
-                    <div id="backDesktop" class="back">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="30px"
-                        viewBox="0 -960 960 960"
-                        width="30px"
-                        fill="#0e0e0e"
-                      >
-                        <path
-                          d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"
-                        />
-                      </svg>
-                    </div>
-                    <div class="Btnreserve">
-                      <input
-                        id="reserveBtnDesktop"
-                        type="button"
-                        onclick="redirect()"
-                        value="Reservar"
-                      />
-                    </div>
-                    <div id="nextbtnDesktop" class="next">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="30px"
-                        viewBox="0 -960 960 960"
-                        width="30px"
-                        fill="#0e0e0e"
-                      >
-                        <path
-                          d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div id="ubicacion" class="containerfather3">
-            <div class="location">
-              <div class="locationtitletolink">
-                <div class="titlelocation">
-                  <h2>Nos ubicamos donde todo sucede</h2>
-                </div>
-
-                <div class="desclocation">
-                  <p>
-                    Nos encontramos en una zona céntrica y de fácil acceso,
-                    sobre la calle Avenida Central 123, a pocos minutos de
-                    restaurantes, tiendas y los principales puntos de interés de
-                    la ciudad. Una ubicación perfecta para disfrutar al máximo
-                    tu estancia.
-                  </p>
-                </div>
-
-                <div class="linklocation">
-                  <a
-                    href="https://www.google.com/maps?q=20.992542266845703,-97.3204574584961&z=17&hl=es"
-                    >Abrir en Google Maps</a
-                  >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="24px"
-                    viewBox="0 -960 960 960"
-                    width="24px"
-                    fill="#C0AB80"
-                  >
-                    <path
-                      d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <div class="locationmaps">
-                <div class="maps2">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3725.002365874509!2d-97.32303242474438!3d20.99254228064772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjDCsDU5JzMzLjIiTiA5N8KwMTknMTMuNyJX!5e0!3m2!1ses!2smx!4v1773357726589!5m2!1ses!2smx"
-                    width="600"
-                    height="450"
-                    style="border: 0"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
-                  ></iframe>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div id="contacto" class="container4">
-            <div class="ReservationNow">
-              <div class="titleReservation">
-                <h1>haz una reservacion ahora</h1>
-              </div>
-              <form id="formulario" action="" method="get">
-                <div class="FormsReservation">
-                  <div class="Name">
-                    <input type="text" id="name_desk" placeholder="Nombres" />
-                    <input
-                      type="text"
-                      id="apellidos_desk"
-                      placeholder="Apellidos"
-                    />
-                  </div>
-
-                  <div class="emails">
-                    <input
-                      type="email"
-                      id="email_desk"
-                      placeholder="Correo electronico"
-                    />
-                  </div>
-
-                  <div class="Number">
-                    <input
-                      type="number"
-                      id="phones_desk"
-                      placeholder="Numero Telefonico"
-                    />
-                  </div>
-
-                  <div class="Button">
-                    <input
-                      type="button"
-                      class="Bttn"
-                      id="Bttn2"
-                      value="ENVIAR INFORMACION"
-                    />
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </article>
-      <footer class="Footer">
-        <div class="FooterInfo">
-          <div class="FooterLeft">
-            <p class="Email">contacto@hotelpalmeira.com</p>
-            <p class="Phone">(+52) 55 1415 9873</p>
-            <p class="Location">
-              CDMX, Ciudad de Mexico. <br />
-              © 2025 Hotel Palmeira. <br />
-              Todos los derechos reservados.
+    <!-- ═══ LOCATION ═══ -->
+    <section class="location" id="ubicacion">
+      <div class="container">
+        <div class="location-grid">
+          <div class="location-info">
+            <span class="location-label">Coordenadas del Edén</span>
+            <h2>Un Destino,<br />Mil Aventuras.</h2>
+            <p>
+              Estamos ubicados en el corazón de la costa de Tuxpan, Veracruz,
+              donde la selva abraza el mar. Un punto estratégico para explorar
+              lo inexplorado.
             </p>
-          </div>
-
-          <div class="FooterRight">
-            <div class="FooterIcons">
-              <svg
-                id="IconSvg"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path
-                  d="M12.001 9C10.3436 9 9.00098 10.3431 9.00098 12C9.00098 13.6573 10.3441 15 12.001 15C13.6583 15 15.001 13.6569 15.001 12C15.001 10.3427 13.6579 9 12.001 9ZM12.001 7C14.7614 7 17.001 9.2371 17.001 12C17.001 14.7605 14.7639 17 12.001 17C9.24051 17 7.00098 14.7629 7.00098 12C7.00098 9.23953 9.23808 7 12.001 7ZM18.501 6.74915C18.501 7.43926 17.9402 7.99917 17.251 7.99917C16.5609 7.99917 16.001 7.4384 16.001 6.74915C16.001 6.0599 16.5617 5.5 17.251 5.5C17.9393 5.49913 18.501 6.0599 18.501 6.74915ZM12.001 4C9.5265 4 9.12318 4.00655 7.97227 4.0578C7.18815 4.09461 6.66253 4.20007 6.17416 4.38967C5.74016 4.55799 5.42709 4.75898 5.09352 5.09255C4.75867 5.4274 4.55804 5.73963 4.3904 6.17383C4.20036 6.66332 4.09493 7.18811 4.05878 7.97115C4.00703 9.0752 4.00098 9.46105 4.00098 12C4.00098 14.4745 4.00753 14.8778 4.05877 16.0286C4.0956 16.8124 4.2012 17.3388 4.39034 17.826C4.5591 18.2606 4.7605 18.5744 5.09246 18.9064C5.42863 19.2421 5.74179 19.4434 6.17187 19.6094C6.66619 19.8005 7.19148 19.9061 7.97212 19.9422C9.07618 19.9939 9.46203 20 12.001 20C14.4755 20 14.8788 19.9934 16.0296 19.9422C16.8117 19.9055 17.3385 19.7996 17.827 19.6106C18.2604 19.4423 18.5752 19.2402 18.9074 18.9085C19.2436 18.5718 19.4445 18.2594 19.6107 17.8283C19.8013 17.3358 19.9071 16.8098 19.9432 16.0289C19.9949 14.9248 20.001 14.5389 20.001 12C20.001 9.52552 19.9944 9.12221 19.9432 7.97137C19.9064 7.18906 19.8005 6.66149 19.6113 6.17318C19.4434 5.74038 19.2417 5.42635 18.9084 5.09255C18.573 4.75715 18.2616 4.55693 17.8271 4.38942C17.338 4.19954 16.8124 4.09396 16.0298 4.05781C14.9258 4.00605 14.5399 4 12.001 4ZM12.001 2C14.7176 2 15.0568 2.01 16.1235 2.06C17.1876 2.10917 17.9135 2.2775 18.551 2.525C19.2101 2.77917 19.7668 3.1225 20.3226 3.67833C20.8776 4.23417 21.221 4.7925 21.476 5.45C21.7226 6.08667 21.891 6.81333 21.941 7.8775C21.9885 8.94417 22.001 9.28333 22.001 12C22.001 14.7167 21.991 15.0558 21.941 16.1225C21.8918 17.1867 21.7226 17.9125 21.476 18.55C21.2218 19.2092 20.8776 19.7658 20.3226 20.3217C19.7668 20.8767 19.2076 21.22 18.551 21.475C17.9135 21.7217 17.1876 21.89 16.1235 21.94C15.0568 21.9875 14.7176 22 12.001 22C9.28431 22 8.94514 21.99 7.87848 21.94C6.81431 21.8908 6.08931 21.7217 5.45098 21.475C4.79264 21.2208 4.23514 20.8767 3.67931 20.3217C3.12348 19.7658 2.78098 19.2067 2.52598 18.55C2.27848 17.9125 2.11098 17.1867 2.06098 16.1225C2.01348 15.0558 2.00098 14.7167 2.00098 12C2.00098 9.28333 2.01098 8.94417 2.06098 7.8775C2.11014 6.8125 2.27848 6.0875 2.52598 5.45C2.78014 4.79167 3.12348 4.23417 3.67931 3.67833C4.23514 3.1225 4.79348 2.78 5.45098 2.525C6.08848 2.2775 6.81348 2.11 7.87848 2.06C8.94514 2.0125 9.28431 2 12.001 2Z"
-                />
-              </svg>
-              <svg
-                id="IconSvg"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path
-                  d="M12.001 2C6.47813 2 2.00098 6.47715 2.00098 12C2.00098 16.9913 5.65783 21.1283 10.4385 21.8785V14.8906H7.89941V12H10.4385V9.79688C10.4385 7.29063 11.9314 5.90625 14.2156 5.90625C15.3097 5.90625 16.4541 6.10156 16.4541 6.10156V8.5625H15.1931C13.9509 8.5625 13.5635 9.33334 13.5635 10.1242V12H16.3369L15.8936 14.8906H13.5635V21.8785C18.3441 21.1283 22.001 16.9913 22.001 12C22.001 6.47715 17.5238 2 12.001 2Z"
-                />
-              </svg>
+            <div class="location-features">
+              <div class="location-feature">
+                <div class="feature-icon">
+                  <span class="material-symbols-outlined">beach_access</span>
+                </div>
+                <div>
+                  <h4>Playa Margaritas</h4>
+                  <p>A pasos del hotel, arena dorada y aguas cristalinas.</p>
+                </div>
+              </div>
+              <div class="location-feature">
+                <div class="feature-icon">
+                  <span class="material-symbols-outlined">explore</span>
+                </div>
+                <div>
+                  <h4>Centro de Tuxpan</h4>
+                  <p>A 15 minutos, gastronomía y cultura veracruzana.</p>
+                </div>
+              </div>
+              <div class="location-feature">
+                <div class="feature-icon">
+                  <span class="material-symbols-outlined">sailing</span>
+                </div>
+                <div>
+                  <h4>Río Tuxpan</h4>
+                  <p>Disfrute del río y el mar con paseos al atardecer.</p>
+                </div>
+              </div>
             </div>
+          </div>
+          <div class="location-map">
+            <div class="map-frame">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.006139807982!2d-97.3204391!3d20.992391!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d989e286132b19%3A0x8b533a8652e7eece!2sHotel%20Palmeira&#39;s%20Tuxpan%20Beach!5e0!3m2!1ses-419!2smx!4v1776278104306!5m2!1ses-419!2smx"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Ubicación del Hotel Palmeira en Google Maps"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <p class="Hours">
-              Horarios disponibles <br />
-              Lunes – Sabado <br />
-              6 AM – 11 PM
+    <!-- ═══ CONTACT ═══ -->
+    <section class="contact" id="contacto">
+      <div class="container">
+        <div class="contact-card">
+          <div class="contact-panel">
+            <h2>Hablemos.</h2>
+            <p>
+              Estamos aquí para diseñar su experiencia perfecta. ¿Dudas sobre su
+              reserva o peticiones especiales?
             </p>
-          </div>
-        </div>
-      </footer>
-    </div>
-    <div class="tabletDesign">
-      <header>
-        <nav id="hamburgerBtn">
-          <i class="fas fas fa-bars"></i>
-        </nav>
-        <nav id="desk">
-          <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="#serviciosTablet">Servicios</a></li>
-            <li><a href="#habitacionesTablet">Habitaciones</a></li>
-            <li><a href="#ubicacionTablet">Ubicación</a></li>
-            <li><a href="#contactoTablet">Contacto</a></li>
-          </ul>
-          <div class="whatsBtn">
-            <div class="icon">
-              <i class="fa-brands fa-whatsapp" style="color: #ffffff"></i>
+            <div class="contact-details">
+              <div class="detail-item">
+                <span class="material-symbols-outlined">call</span>
+                <span>(+52) 773 175 8654</span>
+              </div>
+              <div class="detail-item">
+                <span class="material-symbols-outlined">mail</span>
+                <span>contacto@hotelpalmeira.com</span>
+              </div>
+              <div class="detail-item">
+                <span class="material-symbols-outlined">location_on</span>
+                <span>Tuxpan, Veracruz, México</span>
+              </div>
             </div>
-            <div class="text">
-              <a
-                href=" https://wa.me/525545034306?text=hola me interesa reservar una habitacion"
-              >
-                Reservar ahora
-              </a>
+            <div class="contact-social">
+              <a href="#" aria-label="Instagram"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a href="#" aria-label="Facebook"
+                ><i class="fa-brands fa-facebook-f"></i
+              ></a>
             </div>
           </div>
-        </nav>
-        <div class="Presentation">
-          <div class="containertemporaly">
-            <div class="Title">
-              <p id="titlep1">hotel palmeira</p>
-            </div>
-            <div class="desc">
-              <p>
-                Un lugar donde quedarse durante la noche con una gran comodidad
-                para tu familia ademas de tu bolsillo
-              </p>
-            </div>
-            <div class="stats">
-              <div class="review">
-                <div class="number">
-                  <p>15mil</p>
-                </div>
-                <div class="subtitle">
-                  <p>Buenas reseñas</p>
-                </div>
-              </div>
-              <div class="guests">
-                <div class="number">
-                  <p>700</p>
-                </div>
-                <div class="subtitle">
-                  <p>Huespedes Anuales</p>
-                </div>
-              </div>
-              <div class="services">
-                <div class="number">
-                  <p>+10</p>
-                </div>
-                <div class="subtitle">
-                  <p>Servicios</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!--  -->
-          <div class="introIMG">
-            <img
-              src="./public/img/recursos/pool-index-photo.png"
-              alt=""
-              srcset=""
-            />
-          </div>
-        </div>
-      </header>
-      <article>
-        <div id="serviciosTablet" class="container-father1">
-          <div class="ServTop">
-            <div class="Servleft">
-              <div class="title1">
-                <h1>Nuestro servicios</h1>
-              </div>
-              <div class="ServDesc">
-                <p>
-                  En nuestro hotel nos enfocamos en brindar una experiencia
-                  comoda y placentera para cada huesped. Ofrecemos una variedad
-                  de servicios pensados para datisfacer tus necesidades durante
-                  tu estancia, combinando atencion personalizada, confort y
-                  calidad en caa detalle
-                </p>
-              </div>
-              <div class="BtnTalk">
-                <div class="containertalk">
-                  <div class="containerwhats">
-                    <i class="fa-brands fa-whatsapp" style="color: #ffffff"></i>
-                  </div>
-                  <input
-                    id="btntalk"
-                    type="button"
-                    value="QUIERO HABLAR CON UN ASESOR"
-                    onclick="asesoramiento()"
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="ServIMG">
-              <img src="./public/img/recursos/room1medida.jpeg" alt="" />
-            </div>
-          </div>
-          <div class="Servunder">
-            <div class="Yogas">
-              <div class="yoga">
-                <div class="iconyoga">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="10px"
-                    viewBox="0 -960 960 960"
-                    width="24px"
-                    fill="#0e0e0e"
-                  >
-                    <path
-                      d="M272-160q-30 0-51-21t-21-51q0-21 12-39.5t32-26.5l156-62v-90q-54 63-125.5 96.5T120-320v-80q68 0 123.5-28T344-508l54-64q12-14 28-21t34-7h40q18 0 34 7t28 21l54 64q45 52 100.5 80T840-400v80q-83 0-154.5-33.5T560-450v90l156 62q20 8 32 26.5t12 39.5q0 30-21 51t-51 21H400v-20q0-26 17-43t43-17h120q9 0 14.5-5.5T600-260q0-9-5.5-14.5T580-280H460q-42 0-71 29t-29 71v20h-88Zm208-480q-33 0-56.5-23.5T400-720q0-33 23.5-56.5T480-800q33 0 56.5 23.5T560-720q0 33-23.5 56.5T480-640Z"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <div class="TitleYoga">
-                <h2>Clases de yoga</h2>
-              </div>
-              <div class="DescYoga">
-                <p>
-                  Relajate y renueva tu energia con nuestra clases de yoga,
-                  guiadas por instructores expertos en un ambiente tranquilo y
-                  armonioso
-                </p>
-              </div>
-            </div>
-            <div class="Restaurants">
-              <div class="restaurant">
-                <div class="iconrestaurant">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="10px"
-                    viewBox="0 -960 960 960"
-                    width="24px"
-                    fill="#0e0e0e"
-                  >
-                    <path
-                      d="M280-80v-366q-51-14-85.5-56T160-600v-280h80v280h40v-280h80v280h40v-280h80v280q0 56-34.5 98T360-446v366h-80Zm400 0v-320H560v-280q0-83 58.5-141.5T760-880v800h-80Z"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <div class="Titlerestaurant">
-                <h2>Restaurante</h2>
-              </div>
-              <div class="DescRestaurant">
-                <p>
-                  Disfruta una experiencia gastronómica única en nuestro
-                  restaurante, con platiloos preparados con ingradientes frescos
-                  y un ambiente acogedor
-                </p>
-              </div>
-            </div>
-            <div class="Cleans">
-              <div class="clean">
-                <div class="iconclean">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="10px"
-                    viewBox="0 -960 960 960"
-                    width="24px"
-                    fill="#0e0e0e"
-                  >
-                    <path
-                      d="M120-40v-280q0-83 58.5-141.5T320-520h40v-320q0-33 23.5-56.5T440-920h80q33 0 56.5 23.5T600-840v320h40q83 0 141.5 58.5T840-320v280H120Zm80-80h80v-120q0-17 11.5-28.5T320-280q17 0 28.5 11.5T360-240v120h80v-120q0-17 11.5-28.5T480-280q17 0 28.5 11.5T520-240v120h80v-120q0-17 11.5-28.5T640-280q17 0 28.5 11.5T680-240v120h80v-200q0-50-35-85t-85-35H320q-50 0-85 35t-35 85v200Zm320-400v-320h-80v320h80Zm0 0h-80 80Z"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <div class="Titleclean">
-                <h2>Limpieza</h2>
-              </div>
-              <div class="DescClean">
-                <p>
-                  Mantenemos cada espacio impecable con nuestro servicio de
-                  limpieza, garantizando confort, frescura y bienestar durante
-                  tu estancia
-                </p>
-              </div>
-            </div>
-          </div>
-          <div id="habitacionesTablet" class="container-father2">
-            <div class="titleanddesc">
-              <div class="titlerooms">
-                <h1>Habitaciones Comodas</h1>
-              </div>
-              <div id="descRoomsTablet" class="descrooms">
-                <p>
-                  Descansa y relájate en un espacio pensado especialmente para
-                  tu bienestar. Nuestras habitaciones han sido diseñadas para
-                  ofrecerte una
-                  <strong
-                    >experiencia de hospedaje cómoda, tranquila y placentera </strong
-                  >, ideal tanto para viajes en familia como para estancias de
-                  descanso o trabajo. Cada habitación combina
-                  <strong>funcionalidad, elegancia y confort</strong>, cuidando
-                  cada detalle para que te sientas como en casa desde el primer
-                  momento. Disfruta de camas amplias y acogedoras, espacios
-                  limpios y armoniosos, y un ambiente que invita a desconectarte
-                  del estrés del día a día. Aquí no solo encontrarás un lugar
-                  para dormir, sino un espacio donde
-                  <strong
-                    >recargar energías, relajarte y disfrutar de tu estancia con
-                    total tranquilidad</strong
-                  >, siempre cuidando tu comodidad y tu bolsillo.
-                </p>
-              </div>
-            </div>
-            <div class="Container2">
-              <div class="chooserooms">
-                <div class="RoomsImg">
-                  <img
-                    id="habitacionTablet"
-                    src="./public/img/recursos/prueba0.jpg"
-                    alt=""
-                  />
-                </div>
-
-                <div class="subtitlerooms">
-                  <h2 id="roomNameTablet">Perla Negra</h2>
-                </div>
-                <div class="CostRooms">
-                  <p id="costoTablet">$189 por noche</p>
-                </div>
-                <div class="DescRooms">
-                  <p id="descriptionTablet">
-                    Habitación diseñada para parejas que buscan un ambiente
-                    íntimo y romántico, con decoración elegante y detalles
-                    especiales.
-                  </p>
-                </div>
-                <div class="behaivor">
-                  <div class="ToChangeRooms">
-                    <div id="backTablet" class="back">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="30px"
-                        viewBox="0 -960 960 960"
-                        width="30px"
-                        fill="#0e0e0e"
-                      >
-                        <path
-                          d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"
-                        />
-                      </svg>
-                    </div>
-                    <div class="Btnreserve">
-                      <input
-                        id="reserveBtnTablet"
-                        type="button"
-                        onclick="redirect()"
-                        value="Reservar"
-                      />
-                    </div>
-                    <div id="nextbtnTablet" class="next">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="30px"
-                        viewBox="0 -960 960 960"
-                        width="30px"
-                        fill="#0e0e0e"
-                      >
-                        <path
-                          d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div id="ubicacionTablet" class="containerfather3">
-            <div class="location">
-              <div class="locationtitletolink">
-                <div class="titlelocation">
-                  <h2>Nos ubicamos donde todo sucede</h2>
-                </div>
-
-                <div class="desclocation">
-                  <p>
-                    Nos encontramos en una zona céntrica y de fácil acceso,
-                    sobre la calle Avenida Central 123, a pocos minutos de
-                    restaurantes, tiendas y los principales puntos de interés de
-                    la ciudad. Una ubicación perfecta para disfrutar al máximo
-                    tu estancia.
-                  </p>
-                </div>
-
-                <div class="linklocation">
-                  <a href="https://www.google.com/maps">Abrir en Google Maps</a>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="24px"
-                    viewBox="0 -960 960 960"
-                    width="24px"
-                    fill="#e3e3e3"
-                  >
-                    <path
-                      d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <div class="locationmaps">
-                <div class="maps2">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.618!2d-58.381554!3d-34.603722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccacf1b2c7e77%3A0x8d8f9b1f1e1d9e2f!2sHotel%20Ejemplo!5e0!3m2!1ses!2sar!4v1234567890"
-                    width="100%"
-                    height="450"
-                    style="border: 0"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
-                  ></iframe>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div id="contactoTablet" class="container4">
-            <div class="ReservationNow">
-              <div class="titleReservation">
-                <h1>haz una reservacion ahora</h1>
-              </div>
-              <form id="formulario" action="" method="get">
-                <div class="FormsReservation">
-                  <div class="Name">
-                    <input type="text" id="name_tablet" placeholder="Nombres" />
-                    <input
-                      type="text"
-                      id="apellidos_tablet"
-                      placeholder="Apellidos"
-                    />
-                  </div>
-
-                  <div class="emails">
-                    <input
-                      type="email"
-                      id="email_tablet"
-                      placeholder="Correo electronico"
-                    />
-                  </div>
-
-                  <div class="Number">
-                    <input
-                      type="number"
-                      id="phones_tablet"
-                      placeholder="Numero Telefonico"
-                    />
-                  </div>
-
-                  <div class="Button">
-                    <input
-                      type="button"
-                      class="Bttn"
-                      id="Bttn3"
-                      value="ENVIAR INFORMACION"
-                    />
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </article>
-      <footer class="Footer">
-        <div class="FooterInfo">
-          <div class="FooterLeft">
-            <p class="Email">contacto@hotelpalmeira.com</p>
-            <p class="Phone">(+52) 55 1415 9873</p>
-            <p class="Location">
-              CDMX, Ciudad de Mexico. <br />
-              © 2025 Hotel Palmeira. <br />
-              Todos los derechos reservados.
-            </p>
-          </div>
-
-          <div class="FooterRight">
-            <div class="FooterIcons">
-              <svg
-                id="IconSvg"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path
-                  d="M12.001 9C10.3436 9 9.00098 10.3431 9.00098 12C9.00098 13.6573 10.3441 15 12.001 15C13.6583 15 15.001 13.6569 15.001 12C15.001 10.3427 13.6579 9 12.001 9ZM12.001 7C14.7614 7 17.001 9.2371 17.001 12C17.001 14.7605 14.7639 17 12.001 17C9.24051 17 7.00098 14.7629 7.00098 12C7.00098 9.23953 9.23808 7 12.001 7ZM18.501 6.74915C18.501 7.43926 17.9402 7.99917 17.251 7.99917C16.5609 7.99917 16.001 7.4384 16.001 6.74915C16.001 6.0599 16.5617 5.5 17.251 5.5C17.9393 5.49913 18.501 6.0599 18.501 6.74915ZM12.001 4C9.5265 4 9.12318 4.00655 7.97227 4.0578C7.18815 4.09461 6.66253 4.20007 6.17416 4.38967C5.74016 4.55799 5.42709 4.75898 5.09352 5.09255C4.75867 5.4274 4.55804 5.73963 4.3904 6.17383C4.20036 6.66332 4.09493 7.18811 4.05878 7.97115C4.00703 9.0752 4.00098 9.46105 4.00098 12C4.00098 14.4745 4.00753 14.8778 4.05877 16.0286C4.0956 16.8124 4.2012 17.3388 4.39034 17.826C4.5591 18.2606 4.7605 18.5744 5.09246 18.9064C5.42863 19.2421 5.74179 19.4434 6.17187 19.6094C6.66619 19.8005 7.19148 19.9061 7.97212 19.9422C9.07618 19.9939 9.46203 20 12.001 20C14.4755 20 14.8788 19.9934 16.0296 19.9422C16.8117 19.9055 17.3385 19.7996 17.827 19.6106C18.2604 19.4423 18.5752 19.2402 18.9074 18.9085C19.2436 18.5718 19.4445 18.2594 19.6107 17.8283C19.8013 17.3358 19.9071 16.8098 19.9432 16.0289C19.9949 14.9248 20.001 14.5389 20.001 12C20.001 9.52552 19.9944 9.12221 19.9432 7.97137C19.9064 7.18906 19.8005 6.66149 19.6113 6.17318C19.4434 5.74038 19.2417 5.42635 18.9084 5.09255C18.573 4.75715 18.2616 4.55693 17.8271 4.38942C17.338 4.19954 16.8124 4.09396 16.0298 4.05781C14.9258 4.00605 14.5399 4 12.001 4ZM12.001 2C14.7176 2 15.0568 2.01 16.1235 2.06C17.1876 2.10917 17.9135 2.2775 18.551 2.525C19.2101 2.77917 19.7668 3.1225 20.3226 3.67833C20.8776 4.23417 21.221 4.7925 21.476 5.45C21.7226 6.08667 21.891 6.81333 21.941 7.8775C21.9885 8.94417 22.001 9.28333 22.001 12C22.001 14.7167 21.991 15.0558 21.941 16.1225C21.8918 17.1867 21.7226 17.9125 21.476 18.55C21.2218 19.2092 20.8776 19.7658 20.3226 20.3217C19.7668 20.8767 19.2076 21.22 18.551 21.475C17.9135 21.7217 17.1876 21.89 16.1235 21.94C15.0568 21.9875 14.7176 22 12.001 22C9.28431 22 8.94514 21.99 7.87848 21.94C6.81431 21.8908 6.08931 21.7217 5.45098 21.475C4.79264 21.2208 4.23514 20.8767 3.67931 20.3217C3.12348 19.7658 2.78098 19.2067 2.52598 18.55C2.27848 17.9125 2.11098 17.1867 2.06098 16.1225C2.01348 15.0558 2.00098 14.7167 2.00098 12C2.00098 9.28333 2.01098 8.94417 2.06098 7.8775C2.11014 6.8125 2.27848 6.0875 2.52598 5.45C2.78014 4.79167 3.12348 4.23417 3.67931 3.67833C4.23514 3.1225 4.79348 2.78 5.45098 2.525C6.08848 2.2775 6.81348 2.11 7.87848 2.06C8.94514 2.0125 9.28431 2 12.001 2Z"
-                />
-              </svg>
-              <svg
-                id="IconSvg"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path
-                  d="M12.001 2C6.47813 2 2.00098 6.47715 2.00098 12C2.00098 16.9913 5.65783 21.1283 10.4385 21.8785V14.8906H7.89941V12H10.4385V9.79688C10.4385 7.29063 11.9314 5.90625 14.2156 5.90625C15.3097 5.90625 16.4541 6.10156 16.4541 6.10156V8.5625H15.1931C13.9509 8.5625 13.5635 9.33334 13.5635 10.1242V12H16.3369L15.8936 14.8906H13.5635V21.8785C18.3441 21.1283 22.001 16.9913 22.001 12C22.001 6.47715 17.5238 2 12.001 2Z"
-                />
-              </svg>
-            </div>
-
-            <p class="Hours">
-              Horarios disponibles <br />
-              Lunes – Sabado <br />
-              6 AM – 11 PM
-            </p>
-          </div>
-        </div>
-      </footer>
-    </div>
-
-    <div class="mobileDesign">
-      <header>
-        <nav id="hamburgerBtnContainer">
-          <i
-            onclick="toggleMobileNav()"
-            id="hamburgerBtnMobile"
-            class="fas fas fa-bars"
-          ></i>
-        </nav>
-        <nav id="desk">
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#serviciosMobile">Servicios</a></li>
-            <li><a href="#habitaciones">Habitaciones</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-          </ul>
-          <div class="whatsBtn">
-            <div class="icon">
-              <i class="fa-brands fa-whatsapp" style="color: #ffffff"></i>
-            </div>
-            <div class="text">
-              <a
-                href=" https://wa.me/525545034306?text=hola me interesa reservar una habitacion"
-              >
-                Reservar ahora
-              </a>
-            </div>
-          </div>
-        </nav>
-        <div id="home" class="Presentation">
-          <div class="containertemporaly">
-            <div class="Title">
-              <p id="titlep1">hotel palmeira</p>
-            </div>
-            <nav id="mobileMenu" class="mobileMenu">
-              <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#serviciosMobile">Servicios</a></li>
-                <li><a href="#habitacionesMobile">Habitaciones</a></li>
-                <li><a href="#ubicacionMobile">Ubicacion</a></li>
-                <li><a href="#contactoMobile">Contacto</a></li>
-              </ul>
-            </nav>
-            <div class="desc">
-              <p>
-                Un lugar donde quedarse durante la noche con una gran comodidad
-                para tu familia ademas de tu bolsillo
-              </p>
-            </div>
-            <div class="stats">
-              <div class="review">
-                <div class="number">
-                  <p>15mil</p>
-                </div>
-                <div class="subtitle">
-                  <p>Buenas reseñas</p>
-                </div>
-              </div>
-              <div class="guests">
-                <div class="number">
-                  <p>700</p>
-                </div>
-                <div class="subtitle">
-                  <p>Huespedes Anuales</p>
-                </div>
-              </div>
-              <div id="servicios" class="services">
-                <div class="number">
-                  <p>+10</p>
-                </div>
-                <div class="subtitle">
-                  <p>Servicios</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="introIMG">
-            <img
-              src="./public/img/recursos/pool-index-photo.png"
-              alt=""
-              srcset=""
-            />
-          </div>
-        </div>
-      </header>
-      <article>
-        <div id="serviciosMobile" class="container-father1">
-          <div class="ServTop">
-            <div class="Servleft">
-              <div class="title1">
-                <h1>Nuestros servicios</h1>
-              </div>
-              <div id="servicios" class="ServDesc">
-                <p>
-                  En nuestro hotel nos enfocamos en brindar una experiencia
-                  comoda y placentera para cada huesped. Ofrecemos una variedad
-                  de servicios pensados para satisfacer tus necesidades durante
-                  tu estancia, combinando atencion personalizada, confort y
-                  calidad en cada detalle
-                </p>
-              </div>
-            </div>
-            <div class="ServIMG">
-              <img src="./public/img/recursos/prueba6.jpg" alt="" />
-            </div>
-          </div>
-          <div class="Servunder">
-            <div class="yoga">
-              <div class="iconyoga">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24px"
-                  viewBox="0 -960 960 960"
-                  width="24px"
-                  fill="#0e0e0e"
-                >
-                  <path
-                    d="M272-160q-30 0-51-21t-21-51q0-21 12-39.5t32-26.5l156-62v-90q-54 63-125.5 96.5T120-320v-80q68 0 123.5-28T344-508l54-64q12-14 28-21t34-7h40q18 0 34 7t28 21l54 64q45 52 100.5 80T840-400v80q-83 0-154.5-33.5T560-450v90l156 62q20 8 32 26.5t12 39.5q0 30-21 51t-51 21H400v-20q0-26 17-43t43-17h120q9 0 14.5-5.5T600-260q0-9-5.5-14.5T580-280H460q-42 0-71 29t-29 71v20h-88Zm208-480q-33 0-56.5-23.5T400-720q0-33 23.5-56.5T480-800q33 0 56.5 23.5T560-720q0 33-23.5 56.5T480-640Z"
-                  />
-                </svg>
-              </div>
-            </div>
-            <div class="TitleYoga">
-              <h2>Clases de yoga</h2>
-            </div>
-            <div class="DescYoga mobileServices">
-              <p>
-                Relajate y renueva tu energia con nuestra clases de yoga,
-                guiadas por instructores expertos en un ambiente tranquilo y
-                armonioso
-              </p>
-            </div>
-            <div class="restaurant">
-              <div class="iconrestaurant">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24px"
-                  viewBox="0 -960 960 960"
-                  width="24px"
-                  fill="#0e0e0e"
-                >
-                  <path
-                    d="M280-80v-366q-51-14-85.5-56T160-600v-280h80v280h40v-280h80v280h40v-280h80v280q0 56-34.5 98T360-446v366h-80Zm400 0v-320H560v-280q0-83 58.5-141.5T760-880v800h-80Z"
-                  />
-                </svg>
-              </div>
-            </div>
-            <div class="Titlerestaurant">
-              <h2>Restaurante</h2>
-            </div>
-            <div class="DescRestaurant mobileServices">
-              <p>
-                Disfruta una experiencia gastronómica única en nuestro
-                restaurante, con platiloos preparados con ingradientes frescos y
-                un ambiente acogedor
-              </p>
-            </div>
-            <div class="clean">
-              <div class="iconclean">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24px"
-                  viewBox="0 -960 960 960"
-                  width="24px"
-                  fill="#0e0e0e"
-                >
-                  <path
-                    d="M120-40v-280q0-83 58.5-141.5T320-520h40v-320q0-33 23.5-56.5T440-920h80q33 0 56.5 23.5T600-840v320h40q83 0 141.5 58.5T840-320v280H120Zm80-80h80v-120q0-17 11.5-28.5T320-280q17 0 28.5 11.5T360-240v120h80v-120q0-17 11.5-28.5T480-280q17 0 28.5 11.5T520-240v120h80v-120q0-17 11.5-28.5T640-280q17 0 28.5 11.5T680-240v120h80v-200q0-50-35-85t-85-35H320q-50 0-85 35t-35 85v200Zm320-400v-320h-80v320h80Zm0 0h-80 80Z"
-                  />
-                </svg>
-              </div>
-            </div>
-            <div class="Titleclean">
-              <h2>Limpieza</h2>
-            </div>
-            <div class="DescClean mobileServices">
-              <p>
-                Mantenemos cada espacio impecable con nuestro servicio de
-                limpieza, garantizando confort, frescura y bienestar durante tu
-                estancia
-              </p>
-            </div>
-            <div class="BtnTalk">
-              <div class="containertalk">
-                <div class="containerwhats">
-                  <i class="fa-brands fa-whatsapp" style="color: #ffffff"></i>
-                </div>
+          <div class="contact-form-wrap">
+            <form id="contactForm">
+              <div class="form-group">
+                <label for="contact-name">Nombres</label>
                 <input
-                  id="btntalk"
-                  type="button"
-                  value="QUIERO HABLAR CON UN ASESOR"
-                  onclick="asesoramiento()"
+                  type="text"
+                  id="contact-name"
+                  maxlength="30"
+                  placeholder="Ej. Mariana"
+                  required
                 />
               </div>
-            </div>
-          </div>
-          <div id="habitacionesMobile" class="container-father2">
-            <div class="titleanddesc">
-              <div id="habitaciones" class="titlerooms">
-                <h1>Habitaciones Comodas</h1>
+              <div class="form-group">
+                <label for="contact-last">Apellidos</label>
+                <input
+                  type="text"
+                  id="contact-last"
+                  maxlength="30"
+                  placeholder="Ej. Rivera"
+                  required
+                />
               </div>
-              <div class="descrooms">
-                <p>
-                  Descansa y relájate en un espacio pensado especialmente para
-                  tu bienestar. Nuestras habitaciones han sido diseñadas para
-                  ofrecerte una
-                  <strong
-                    >experiencia de hospedaje cómoda, tranquila y placentera </strong
-                  >, ideal tanto para viajes en familia como para estancias de
-                  descanso o trabajo. Cada habitación combina
-                  <strong>funcionalidad, elegancia y confort</strong>, cuidando
-                  cada detalle para que te sientas como en casa desde el primer
-                  momento. Disfruta de camas amplias y acogedoras, espacios
-                  limpios y armoniosos, y un ambiente que invita a desconectarte
-                  del estrés del día a día. Aquí no solo encontrarás un lugar
-                  para dormir, sino un espacio donde
-                  <strong
-                    >recargar energías, relajarte y disfrutar de tu estancia con
-                    total tranquilidad</strong
-                  >, siempre cuidando tu comodidad y tu bolsillo.
-                </p>
+              <div class="form-group">
+                <label for="contact-email">Correo Electrónico</label>
+                <input
+                  type="email"
+                  id="contact-email"
+                  maxlength="40"
+                  placeholder="mariana@ejemplo.com"
+                  required
+                />
               </div>
-            </div>
-            <div class="Chooseroom">
-              <div class="chooserooms">
-                <div class="RoomsImg">
-                  <img
-                    id="habitacion"
-                    src="./public/img/recursos/prueba6.jpg"
-                    alt=""
-                  />
-                </div>
-                <div class="subtitlerooms">
-                  <h2 id="roomNameMobile">Perla Negra</h2>
-                </div>
-                <div class="CostRooms">
-                  <p id="costoMobile">$189 por noche</p>
-                </div>
-                <div class="DescRooms">
-                  <p id="descriptionMobile">
-                    Habitación diseñada para parejas que buscan un ambiente
-                    íntimo y romántico, con decoración elegante y detalles
-                    especiales.
-                  </p>
-                </div>
-                <div class="behaivor">
-                  <div class="ToChangeRooms">
-                    <div id="backMobile" class="back">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="30px"
-                        viewBox="0 -960 960 960"
-                        width="30px"
-                        fill="#0e0e0e"
-                      >
-                        <path
-                          d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"
-                        />
-                      </svg>
-                    </div>
-                    <div class="Btnreserve">
-                      <input
-                        id="reserveBtnMobile"
-                        type="button"
-                        onclick="redirect()"
-                        value="Reservar"
-                      />
-                    </div>
-                    <div id="nextbtnMobile" class="next">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="30px"
-                        viewBox="0 -960 960 960"
-                        width="30px"
-                        fill="#0e0e0e"
-                      >
-                        <path
-                          d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
+              <div class="form-group">
+                <label for="contact-phone">Número Telefónico</label>
+                <input
+                  type="tel"
+                  id="contact-phone"
+                  maxlength="10"
+                  placeholder="55 1234 5678"
+                  required
+                />
               </div>
-            </div>
-          </div>
-          <div id="ubicacionMobile" class="containerfather3">
-            <div class="location">
-              <div class="locationtitletolink">
-                <div id="ubicacion" class="titlelocation">
-                  <h2>Nos ubicamos donde todo sucede</h2>
-                </div>
-
-                <div class="desclocation">
-                  <p>
-                    Nos encontramos en una zona céntrica y de fácil acceso,
-                    sobre la calle Avenida Central 123, a pocos minutos de
-                    restaurantes, tiendas y los principales puntos de interés de
-                    la ciudad. Una ubicación perfecta para disfrutar al máximo
-                    tu estancia.
-                  </p>
-                </div>
-
-                <div class="linklocation">
-                  <a
-                    href="https://www.google.com/maps/place/Casa+lam+tuxpam+1.,+Progreso,+Vicente+Guerrero,+92840+T%C3%BAxpam+de+Rodr%C3%ADguez+Cano,+Ver./@20.9621795,-97.3864258,17z/data=!4m14!1m7!3m6!1s0x85d9f2b47590b421:0x548c81d0a47f5d68!2sT%C3%BAxpam+de+Rodr%C3%ADguez+Cano,+Ver.!8m2!3d20.9561149!4d-97.4063351!16s%2Fg%2F11h1vb2lt!3m5!1s0x85d98b3532c081c9:0x6b31d2fc0ee1d6c7!8m2!3d20.9621466!4d-97.3872324!16s%2Fg%2F11p9b667m3?g_ep=Eg1tbF8yMDI1MTIwOF8wIJvbDyoASAJQAQ%3D%3D"
-                    >Abrir en Google Maps</a
-                  >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="24px"
-                    viewBox="0 -0 960 960"
-                    width="24px"
-                    fill="#e3e3e3"
-                  >
-                    <path
-                      d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <div class="locationmaps">
-                <div class="maps2">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12216.299015716411!2d-97.407559539989!3d20.96212615612987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d9f2b47590b421%3A0x548c81d0a47f5d68!2sT%C3%BAxpam%20de%20Rodr%C3%ADguez%20Cano%2C%20Ver.!5e0!3m2!1ses-419!2smx!4v1765510715820!5m2!1ses-419!2smx"
-                    width="450"
-                    height="100%"
-                    style="border: 0"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
-                  ></iframe>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div id="contactoMobile" class="container4">
-            <div class="ReservationNow">
-              <div id="contacto" class="titleReservation">
-                <h1>haz una reservacion ahora</h1>
-              </div>
-              <div class="FormsReservation">
-                <div class="Name">
-                  <input type="text" id="name_mobile" placeholder="Nombres" />
-                  <input
-                    type="text"
-                    id="apellidos_mobile"
-                    placeholder="Apellidos"
-                  />
-                </div>
-
-                <div class="emails">
-                  <input
-                    type="email"
-                    id="email_mobile"
-                    maxlength="40"
-                    placeholder="Correo electronico"
-                  />
-                </div>
-
-                <div class="Number">
-                  <input
-                    type="number"
-                    id="phones_mobile"
-                    placeholder="Numero Telefonico"
-                  />
-                </div>
-
-                <div class="Button">
-                  <input
-                    class="Bttn"
-                    type="button"
-                    id="Bttn"
-                    value="ENVIAR INFORMACION"
-                  />
-                </div>
-              </div>
-            </div>
+              <button type="submit" class="btn-submit" id="contact-submit">
+                Enviar Información
+              </button>
+            </form>
           </div>
         </div>
-      </article>
-      <footer class="Footer">
-        <div class="FooterInfo">
-          <div class="FooterLeft">
-            <p class="Email">
-              <a href="mailto:contacto@gmail.com">contacto@hotelpalmeira.com</a>
-            </p>
-            <p class="Phone">(+52) 55 1415 9873</p>
-            <p class="Location">
-              CDMX, Ciudad de Mexico. <br />
-              © 2025 Hotel Palmeira. <br />
-              Todos los derechos reservados.
-            </p>
-          </div>
+      </div>
+    </section>
 
-          <div class="FooterRight">
-            <div class="FooterIcons">
-              <svg
-                id="IconSvg"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path
-                  d="M12.001 9C10.3436 9 9.00098 10.3431 9.00098 12C9.00098 13.6573 10.3441 15 12.001 15C13.6583 15 15.001 13.6569 15.001 12C15.001 10.3427 13.6579 9 12.001 9ZM12.001 7C14.7614 7 17.001 9.2371 17.001 12C17.001 14.7605 14.7639 17 12.001 17C9.24051 17 7.00098 14.7629 7.00098 12C7.00098 9.23953 9.23808 7 12.001 7ZM18.501 6.74915C18.501 7.43926 17.9402 7.99917 17.251 7.99917C16.5609 7.99917 16.001 7.4384 16.001 6.74915C16.001 6.0599 16.5617 5.5 17.251 5.5C17.9393 5.49913 18.501 6.0599 18.501 6.74915ZM12.001 4C9.5265 4 9.12318 4.00655 7.97227 4.0578C7.18815 4.09461 6.66253 4.20007 6.17416 4.38967C5.74016 4.55799 5.42709 4.75898 5.09352 5.09255C4.75867 5.4274 4.55804 5.73963 4.3904 6.17383C4.20036 6.66332 4.09493 7.18811 4.05878 7.97115C4.00703 9.0752 4.00098 9.46105 4.00098 12C4.00098 14.4745 4.00753 14.8778 4.05877 16.0286C4.0956 16.8124 4.2012 17.3388 4.39034 17.826C4.5591 18.2606 4.7605 18.5744 5.09246 18.9064C5.42863 19.2421 5.74179 19.4434 6.17187 19.6094C6.66619 19.8005 7.19148 19.9061 7.97212 19.9422C9.07618 19.9939 9.46203 20 12.001 20C14.4755 20 14.8788 19.9934 16.0296 19.9422C16.8117 19.9055 17.3385 19.7996 17.827 19.6106C18.2604 19.4423 18.5752 19.2402 18.9074 18.9085C19.2436 18.5718 19.4445 18.2594 19.6107 17.8283C19.8013 17.3358 19.9071 16.8098 19.9432 16.0289C19.9949 14.9248 20.001 14.5389 20.001 12C20.001 9.52552 19.9944 9.12221 19.9432 7.97137C19.9064 7.18906 19.8005 6.66149 19.6113 6.17318C19.4434 5.74038 19.2417 5.42635 18.9084 5.09255C18.573 4.75715 18.2616 4.55693 17.8271 4.38942C17.338 4.19954 16.8124 4.09396 16.0298 4.05781C14.9258 4.00605 14.5399 4 12.001 4ZM12.001 2C14.7176 2 15.0568 2.01 16.1235 2.06C17.1876 2.10917 17.9135 2.2775 18.551 2.525C19.2101 2.77917 19.7668 3.1225 20.3226 3.67833C20.8776 4.23417 21.221 4.7925 21.476 5.45C21.7226 6.08667 21.891 6.81333 21.941 7.8775C21.9885 8.94417 22.001 9.28333 22.001 12C22.001 14.7167 21.991 15.0558 21.941 16.1225C21.8918 17.1867 21.7226 17.9125 21.476 18.55C21.2218 19.2092 20.8776 19.7658 20.3226 20.3217C19.7668 20.8767 19.2076 21.22 18.551 21.475C17.9135 21.7217 17.1876 21.89 16.1235 21.94C15.0568 21.9875 14.7176 22 12.001 22C9.28431 22 8.94514 21.99 7.87848 21.94C6.81431 21.8908 6.08931 21.7217 5.45098 21.475C4.79264 21.2208 4.23514 20.8767 3.67931 20.3217C3.12348 19.7658 2.78098 19.2067 2.52598 18.55C2.27848 17.9125 2.11098 17.1867 2.06098 16.1225C2.01348 15.0558 2.00098 14.7167 2.00098 12C2.00098 9.28333 2.01098 8.94417 2.06098 7.8775C2.11014 6.8125 2.27848 6.0875 2.52598 5.45C2.78014 4.79167 3.12348 4.23417 3.67931 3.67833C4.23514 3.1225 4.79348 2.78 5.45098 2.525C6.08848 2.2775 6.81348 2.11 7.87848 2.06C8.94514 2.0125 9.28431 2 12.001 2Z"
-                />
-              </svg>
-              <svg
-                id="IconSvg"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path
-                  d="M12.001 2C6.47813 2 2.00098 6.47715 2.00098 12C2.00098 16.9913 5.65783 21.1283 10.4385 21.8785V14.8906H7.89941V12H10.4385V9.79688C10.4385 7.29063 11.9314 5.90625 14.2156 5.90625C15.3097 5.90625 16.4541 6.10156 16.4541 6.10156V8.5625H15.1931C13.9509 8.5625 13.5635 9.33334 13.5635 10.1242V12H16.3369L15.8936 14.8906H13.5635V21.8785C18.3441 21.1283 22.001 16.9913 22.001 12C22.001 6.47715 17.5238 2 12.001 2Z"
-                />
-              </svg>
-            </div>
+    <!-- ═══ FOOTER ═══ -->
+    <footer class="site-footer">
+      <div class="footer-brand">Palmeira's</div>
+      <div class="footer-links">
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <div class="footer-copy">
+        © 2025 Hotel Palmeira's. La Veranda Tropical.
+      </div>
+    </footer>
 
-            <p class="Hours">
-              Horarios disponibles <br />
-              Lunes – Sabado <br />
-              6 AM – 11 PM
-            </p>
-          </div>
-        </div>
-      </footer>
-    </div>
-
-    <script
-      src="https://kit.fontawesome.com/e073821f55.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="./public/js/navbar.js"></script>
-    <script src="./public/js/redirect.js"></script>
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./public/js/navbar.js"></script>
+    <script src="./public/js/slider.js"></script>
     <script src="./public/js/formulario.js"></script>
   </body>
 </html>

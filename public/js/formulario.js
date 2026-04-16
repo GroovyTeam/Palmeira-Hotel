@@ -1,149 +1,87 @@
-document.addEventListener("DOMContentLoaded", (e) => {
-  // Botones
-  const infobtnMobile = document.getElementById("Bttn"); // Móvil
-  const infobtnDesk = document.getElementById("Bttn2"); // Escritorio
-  const infobtnTablet = document.getElementById("Bttn3"); // Tablet
-  const home = document.getElementById("hamburgerBtn"); // Asumo que este es el botón home o menú
+// ════════════════════════════════════
+// Contact Form + WhatsApp Redirect
+// ════════════════════════════════════
 
-  // Colores
-  const swalColors = {
-    confirmButtonColor: "#0e0e0e",
-    cancelButtonColor: "#d33",
+const WHATSAPP_NUMBER = '525545034306';
+
+function asesoramiento() {
+  window.open(
+    `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Hola, me gustaría recibir asesoramiento sobre sus habitaciones.')}`,
+    '_self'
+  );
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  // All "Reservar" buttons → WhatsApp
+  const reservarBtns = ['navReservar', 'mobileReservar', 'heroReservar', 'roomReservar'];
+  reservarBtns.forEach(id => {
+    const btn = document.getElementById(id);
+    if (btn) btn.addEventListener('click', asesoramiento);
+  });
+
+  // Contact form
+  const form = document.getElementById('contactForm');
+  if (!form) return;
+
+  const swalTheme = {
+    confirmButtonColor: '#396663',
+    background: '#f9f9f8',
+    color: '#191c1c',
   };
 
-  // Navegación (si existe el elemento)
-  /* if (home) {
-        home.addEventListener('click', () => window.location.href = "/");
-    } */
-
-  // Función mostrar errores
-  const mostrarError = (mensaje) => {
+  const showError = (msg) => {
     Swal.fire({
-      icon: "warning",
-      title: "Atención",
-      text: mensaje,
-      confirmButtonText: "Entendido",
-      confirmButtonColor: swalColors.confirmButtonColor,
-      background: "#fff",
-      color: "#0e0e0e",
+      icon: 'warning',
+      title: 'Atención',
+      text: msg,
+      confirmButtonText: 'Entendido',
+      ...swalTheme,
     });
   };
 
-  /**
-   * Función DINÁMICA: Recibe los IDs específicos de cada formulario
-   */
-  const enviarFormulario = (e, ids) => {
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    // 1. Buscamos los inputs usando los IDs que recibimos como parámetro
-    const nameInput = document.getElementById(ids.name);
-    const lastInput = document.getElementById(ids.last);
-    const emailInput = document.getElementById(ids.email);
-    const numberInput = document.getElementById(ids.number);
+    const name = document.getElementById('contact-name').value.trim();
+    const last = document.getElementById('contact-last').value.trim();
+    const email = document.getElementById('contact-email').value.trim();
+    const phone = document.getElementById('contact-phone').value.trim();
 
-    // Debug: Verificamos si encontró los inputs
-    if (!nameInput || !lastInput || !emailInput || !numberInput) {
-      console.error(
-        "Error: No se encontraron los inputs con los IDs proporcionados:",
-        ids
-      );
-      return;
+    // Validations
+    if (!name || !last || !email || !phone) {
+      return showError('Por favor, completa todos los campos.');
     }
 
-    // 2. Obtenemos valores
-    const name = nameInput.value.trim();
-    const last = lastInput.value.trim();
-    const email = emailInput.value.trim();
-    const number = numberInput.value.trim();
-
-    // --- VALIDACIONES ---
-
-    // A. Campos Vacíos
-    if (name === "" || last === "" || email === "" || number === "") {
-      mostrarError("Por favor, completa todos los campos.");
-      return;
+    const nameRegex = /^[a-zA-ZÁ-ÿ\u00f1\u00d1\s]+$/;
+    if (!nameRegex.test(name) || !nameRegex.test(last)) {
+      return showError('El nombre y apellido no pueden contener números ni símbolos.');
     }
-
-    // B. Validación de Nombres (Sin números)
-    const soloLetrasRegex = /^[a-zA-ZÁ-ÿ\u00f1\u00d1\s]+$/;
-    if (!soloLetrasRegex.test(name) || !soloLetrasRegex.test(last)) {
-      mostrarError(
-        "El nombre y apellido no pueden contener números ni símbolos."
-      );
-      return;
-    }
-
     if (name.length < 3) {
-      mostrarError("El nombre es muy corto.");
-      return;
+      return showError('El nombre es muy corto.');
     }
 
-    // C. Correo
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      mostrarError("El correo electrónico no es válido.");
-      return;
+      return showError('El correo electrónico no es válido.');
     }
 
-    // D. Teléfono
-    if (isNaN(number) || number.length !== 10) {
-      mostrarError("El número telefónico debe tener 10 dígitos exactos.");
-      return;
+    if (isNaN(phone) || phone.length !== 10) {
+      return showError('El número telefónico debe tener 10 dígitos exactos.');
     }
 
-    // --- ÉXITO ---
+    // Success
     Swal.fire({
-      icon: "success",
-      title: "¡Todo listo!",
-      text: "Redirigiendo a WhatsApp...",
+      icon: 'success',
+      title: '¡Todo listo!',
+      text: 'Redirigiendo a WhatsApp...',
       timer: 2000,
       showConfirmButton: false,
+      ...swalTheme,
     });
 
     setTimeout(() => {
-      const mensaje = `Hola, soy ${name} ${last}. Me interesa reservar una habitacion Mi número de contacto es ${number} y mi correo es ${email}`;
-      const mensajeCodificado = encodeURIComponent(mensaje);
-      const numeroHotel = "525545034306";
-      const url = `https://wa.me/${numeroHotel}?text=${mensajeCodificado}`;
-      window.open(url, "_self");
+      const msg = `Hola, soy ${name} ${last}. Me interesa reservar una habitación. Mi número de contacto es ${phone} y mi correo es ${email}`;
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_self');
     }, 1500);
-  };
-
-  // --- ASIGNAR EVENTOS SEGÚN EL BOTÓN CLICKEADO ---
-
-  // 1. Formulario MÓVIL (Bttn)
-  if (infobtnMobile) {
-    infobtnMobile.addEventListener("click", (e) => {
-      enviarFormulario(e, {
-        name: "name_mobile",
-        last: "apellidos_mobile",
-        email: "email_mobile",
-        number: "phones_mobile",
-      });
-    });
-  }
-
-  // 2. Formulario ESCRITORIO (Bttn2)
-  if (infobtnDesk) {
-    infobtnDesk.addEventListener("click", (e) => {
-      enviarFormulario(e, {
-        name: "name_desk",
-        last: "apellidos_desk",
-        email: "email_desk",
-        number: "phones_desk",
-      });
-    });
-  }
-
-  // 3. Formulario TABLET (Bttn3)
-  if (infobtnTablet) {
-    infobtnTablet.addEventListener("click", (e) => {
-      enviarFormulario(e, {
-        name: "name_tablet",
-        last: "apellidos_tablet",
-        email: "email_tablet",
-        number: "phones_tablet",
-      });
-    });
-  }
+  });
 });
