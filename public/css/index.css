@@ -163,7 +163,7 @@ ul, ol { list-style: none; }
 .hero-stat .stat-label { font-size: var(--label-sm); color: var(--on-surface-variant); text-transform: uppercase; letter-spacing: 0.1em; }
 
 /* ── 6. Services ── */
-.services { padding: 8rem 0; background: var(--surface-container-low); }
+.services { padding: 5rem 0; background: var(--surface-container-low); }
 .services-header { display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 4rem; }
 .services-header h2 { font-family: var(--font-headline); font-size: clamp(2rem, 5vw, 3rem); color: var(--primary); line-height: 1.2; }
 .services-header > p { color: var(--on-surface-variant); line-height: 1.7; max-width: 40rem; font-size: 2rem; }
@@ -188,7 +188,7 @@ ul, ol { list-style: none; }
 .service-card:hover p { color: rgba(255,255,255,0.8); }
 
 /* ── 7. Rooms ── */
-.rooms { padding: 8rem 0; background: var(--surface); }
+.rooms { padding: 5rem 0; background: var(--surface); }
 .rooms-header { text-align: center; margin-bottom: 4rem; }
 .rooms-label { display: inline-block; font-size: var(--label-sm); font-weight: 700; text-transform: uppercase; letter-spacing: 0.4em; color: var(--tertiary); margin-bottom: 1rem; }
 .rooms-header h2 { font-family: var(--font-headline); font-size: clamp(2rem, 5vw, 3rem); color: var(--primary); }
@@ -300,7 +300,7 @@ ul, ol { list-style: none; }
   .nav-cta { padding: 0.5rem 1rem; font-size: 10px; }
   .nav-right { gap: 0.5rem; }
   .hero h1 { font-size: 2.2rem; margin-top: 1rem; }
-  .hero-subtitle { font-size: 0.9rem; line-height: 1.5; }
+  .hero-subtitle { font-size: 0.9rem; line-height: 1.5; padding: 0 1rem; }
 }
 
 /* ── 12. Animations ── */
