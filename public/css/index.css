@@ -89,7 +89,13 @@ ul, ol { list-style: none; }
   border-radius: var(--radius-full); display: flex; justify-content: space-between; align-items: center;
   z-index: 100; box-shadow: 0 8px 32px rgba(57, 102, 99, 0.05);
 }
-.nav-brand { font-family: var(--font-headline); font-size: 1.2rem; color: var(--primary); }
+.nav-brand {
+  font-family: var(--font-headline);
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  color: var(--primary);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
 .nav-links { display: none; align-items: center; gap: 2rem; }
 .nav-links a {
   font-size: var(--label-md); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;
@@ -117,9 +123,9 @@ ul, ol { list-style: none; }
   position: fixed; inset: 0; z-index: 90; background: var(--glass-bg);
   backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
   display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 2rem;
-  opacity: 0; pointer-events: none; transition: opacity var(--transition-base);
+  opacity: 0; pointer-events: none; visibility: hidden; transition: all var(--transition-base);
 }
-.mobile-menu.active { opacity: 1; pointer-events: auto; }
+.mobile-menu.active { opacity: 1; pointer-events: auto; visibility: visible; }
 .mobile-menu a { font-family: var(--font-headline); font-size: var(--headline-md); color: var(--primary); }
 .mobile-menu a:hover { color: var(--tertiary); }
 
@@ -286,10 +292,12 @@ body.no-scroll { overflow: hidden; }
 
 /* ── 12. Tablet (768px+) ── */
 @media (min-width: 768px) {
-  .container { padding: 0 2.5rem; }
-  .nav-glass { padding: .75rem 2rem;}
-  .nav-links { display: flex; }
-  .nav-toggle { display: none; }
+  .container { padding: 0 4rem; }
+  .nav-glass { padding: 0.75rem 2rem; width: 90%; }
+  /* Keep hamburger on tablet for a cleaner editorial look */
+  .nav-links { display: none; }
+  .nav-toggle { display: flex; }
+  
   .hero-overlay { background: linear-gradient(to right, rgba(249,249,248,0.8), rgba(249,249,248,0.4) 50%, rgba(249,249,248,0.8)); }
   .hero-actions { flex-direction: row; }
   .hero-stats { gap: 2rem; padding: 2rem 2rem; }
@@ -308,6 +316,11 @@ body.no-scroll { overflow: hidden; }
 
 /* ── 13. Desktop (1024px+) ── */
 @media (min-width: 1024px) {
+  .nav-glass { width: 95%; max-width: 80rem; padding: 0.75rem 2rem; }
+  .nav-links { display: flex; gap: 1.5rem; }
+  .nav-toggle { display: none; }
+  .mobile-menu { display: none; }
+  
   .services-grid { grid-template-columns: repeat(4, 1fr); }
   .room-slider .slides { aspect-ratio: 16 / 9; }
 }
