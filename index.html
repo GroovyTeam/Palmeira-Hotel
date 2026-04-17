@@ -3,21 +3,60 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hotel Palmeira's | La Veranda Tropical</title>
+    <title>Hotel Palmeira's | Habitaciones Frente al Mar en Tuxpan Veracruz</title>
     <meta
       name="description"
-      content="Hotel Palmeira en Tuxpan, Veracruz. Sumérjase en un santuario de tranquilidad donde el lujo se encuentra con la naturaleza salvaje de la costa."
+      content="Disfrute de la tranquilidad en Hotel Palmeira's. Habitaciones exclusivas frente al mar en la Playa de Tuxpan, Veracruz. El refugio perfecto para descansar."
     />
-    <meta
-      property="og:title"
-      content="Hotel Palmeira's | La Veranda Tropical"
-    />
-    <meta
-      property="og:description"
-      content="Habitaciones elegantes frente al mar en Tuxpan, Veracruz. Yoga, restaurante, piscina y más."
-    />
+    <link rel="canonical" href="https://groovyteam.github.io/Palmeira-Hotel/" />
+    
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://groovyteam.github.io/Palmeira-Hotel/" />
+    <meta property="og:title" content="Hotel Palmeira's | La Veranda Tropical" />
+    <meta property="og:description" content="Habitaciones elegantes frente al mar en Tuxpan, Veracruz. Yoga, restaurante, piscina y el mejor descanso." />
+    <meta property="og:image" content="https://groovyteam.github.io/Palmeira-Hotel/public/img/recursos/fachadaa.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://groovyteam.github.io/Palmeira-Hotel/" />
+    <meta property="twitter:title" content="Hotel Palmeira's | La Veranda Tropical" />
+    <meta property="twitter:description" content="Habitaciones elegantes frente al mar en Tuxpan, Veracruz. Reserva ahora." />
+    <meta property="twitter:image" content="https://groovyteam.github.io/Palmeira-Hotel/public/img/recursos/fachadaa.jpg" />
+
     <meta name="theme-color" content="#396663" />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Hotel",
+      "name": "Hotel Palmeira's Beach",
+      "description": "Hotel con habitaciones exclusivas frente al mar en Tuxpan, Veracruz.",
+      "image": "https://groovyteam.github.io/Palmeira-Hotel/public/img/recursos/fachadaa.jpg",
+      "url": "https://groovyteam.github.io/Palmeira-Hotel/",
+      "telephone": "+527731758654",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Playa de Tuxpan",
+        "addressLocality": "Tuxpan",
+        "addressRegion": "Veracruz",
+        "addressCountry": "MX"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 20.992391,
+        "longitude": -97.320439
+      },
+      "priceRange": "$$$",
+      "amenityFeature": [
+        { "@type": "LocationFeatureSpecification", "name": "Alberca", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Restaurante", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Estacionamiento", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Playa", "value": true }
+      ]
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -81,7 +120,8 @@
       <div class="hero-bg">
         <img
           src="./public/img/recursos/heroImage.jpeg"
-          alt="Alberca del Hotel Palmeira frente al mar en Tuxpan, Veracruz"
+          alt="Vista panorámica de la playa y el Hotel Palmeira en Tuxpan, Veracruz"
+          fetchpriority="high"
         />
         <div class="hero-overlay"></div>
       </div>
@@ -170,7 +210,7 @@
           </div>
           <div class="service-card">
             <div class="service-icon">
-              <span class="material-symbols-outlined">cleaning_services</span>
+              <span class="material-symbols-outlined">local_parking </span>
             </div>
             <h3>Estacionamiento</h3>
             <p>
@@ -195,35 +235,42 @@
               <img
                 class="active"
                 src="./public/img/recursos/fachadaa.jpg"
-                alt="Habitación del Hotel Palmeira"
+                alt="Fachada principal del Hotel Palmeira en la Playa de Tuxpan"
               />
               <img
                 src="./public/img/recursos/fachada2.png"
-                alt="Habitación del Hotel Palmeira"
+                alt="Vista exterior del Hotel Palmeira's Beach"
+                loading="lazy"
               />
               <img
                 src="./public/img/recursos/room1.png"
-                alt="Habitación del Hotel Palmeira"
+                alt="Habitación elegante con aire acondicionado y vista al mar"
+                loading="lazy"
               />
               <img
                 src="./public/img/recursos/room2.png"
-                alt="Habitación del Hotel Palmeira"
+                alt="Interiores confortables y modernos del Hotel Palmeira"
+                loading="lazy"
               />
               <img
                 src="./public/img/recursos/ENTRADA.png"
-                alt="Habitación del Hotel Palmeira"
+                alt="Entrada principal al Hotel Palmeira's"
+                loading="lazy"
               />
               <img
                 src="./public/img/recursos/logoimage.png"
-                alt="Habitación del Hotel Palmeira"
+                alt="Detalle del logotipo del Hotel"
+                loading="lazy"
               />
               <img
                 src="./public/img/recursos/aire.png"
-                alt="Habitación del Hotel Palmeira"
+                alt="Amenidades de confort: aire acondicionado en habitaciones"
+                loading="lazy"
               />
               <img
                 src="./public/img/recursos/alberca.png"
-                alt="Habitación del Hotel Palmeira"
+                alt="Alberca cristalina para huéspedes en el Hotel Palmeira"
+                loading="lazy"
               />
             </div>
             <button
