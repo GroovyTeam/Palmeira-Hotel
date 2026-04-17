@@ -11,8 +11,8 @@ Migración integral del sitio web de Hotel Palmeira hacia el sistema de diseño 
 - **Breakpoints de Navegación:** Se estableció el cambio de menú horizontal a menú de hamburguesa en los **1024px** para evitar solapamientos en dispositivos medianos.
 - **Design Tokens:** Uso de variables CSS para colores (Teal, Sand, Gold) y tipografías (Noto Serif y Manrope).
 - **Micro-Responsividad:** Se añadieron Media Queries para dispositivos ultra-pequeños (<400px).
-- **SEO & Metadatos:** Implementación de JSON-LD (Hotel Schema), etiquetas Open Graph/Twitter corregidas y URL canónica configurada.
-- **Optimización de Imágenes:** Aplicación de `loading="lazy"`, `fetchpriority` y atributos `alt` descriptivos para mejora de Core Web Vitals y accesibilidad.
+- **SEO & Metadatos:** Implementación de JSON-LD (Hotel Schema), etiquetas Open Graph/Twitter corregidas, URL canónica y Favicon (ubicado en `public/img/recursos/iconpalmeira.png`).
+- **Optimización de Imágenes:** Aplicación de `loading="lazy"`, `fetchpriority` y atributos `alt` descriptivos.
 - **Preloader de Activos:** Implementada pantalla de carga personalizada con sincronización.go oficial animado y sincronización de carga de activos (imágenes y mapas).
 - **Optimización Safari:** Se rediseñó el Nav para pantallas móviles.
 - **Lógica Unificada:** Consolidación de scripts en `formulario.js` y `slider.js`.
@@ -28,6 +28,7 @@ Migración integral del sitio web de Hotel Palmeira hacia el sistema de diseño 
 - [x] Solución de solapamiento en barra de navegación (iPhone SE Fix).
 - [x] Optimización de SEO e Imágenes.
 - [x] Limpieza técnica de archivos legacy.
+- [x] Implementación de Identidad de Pestaña (Favicon).
 - [x] Implementación del Preloader editorial.
 - [x] Ajuste de densidades: Reducción de espacios excesivos entre secciones.
 - [x] Optimización Safari iOS: Transición de Nav flotante a Nav anclado.
