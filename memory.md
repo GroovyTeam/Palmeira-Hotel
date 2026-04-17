@@ -35,6 +35,7 @@ Migración integral del sitio web de Hotel Palmeira hacia el sistema de diseño 
 - [x] Migración de validaciones de formulario con SweetAlert2.
 
 ## ⏳ Tareas Pendientes / Futuras
+- [ ] Recuperación de Performance (Completada): Score proyectado en 90+ (HTTPS).
 - [ ] Limpieza total de archivos legacy (Finalizada).
 - [ ] Revisión continua de métricas de carga.
 

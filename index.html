@@ -62,9 +62,12 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Preload Critical Fonts -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,500;0,700;1,400&family=Manrope:wght@400;600;700&display=swap" />
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,500;0,700;1,400&family=Manrope:wght@400;600;700&display=swap"
       rel="stylesheet"
+      media="print" onload="this.media='all'"
     />
     <link
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
@@ -83,6 +86,8 @@
         src="./public/img/recursos/logohotel.png"
         class="preloader-logo pulse-soft"
         alt="Hotel Palmeira Logo"
+        width="120"
+        height="162"
       />
       <div class="preloader-brand">Hotel Palmeira's</div>
       <div class="preloader-progress">
@@ -125,6 +130,8 @@
           src="./public/img/recursos/heroImage.jpeg"
           alt="Vista panorámica de la playa y el Hotel Palmeira en Tuxpan, Veracruz"
           fetchpriority="high"
+          width="1280"
+          height="960"
         />
         <div class="hero-overlay"></div>
       </div>
@@ -239,41 +246,57 @@
                 class="active"
                 src="./public/img/recursos/fachadaa.jpg"
                 alt="Fachada principal del Hotel Palmeira en la Playa de Tuxpan"
+                width="792"
+                height="458"
               />
               <img
                 src="./public/img/recursos/fachada2.png"
                 alt="Vista exterior del Hotel Palmeira's Beach"
                 loading="lazy"
+                width="2390"
+                height="1636"
               />
               <img
                 src="./public/img/recursos/room1.png"
                 alt="Habitación elegante con aire acondicionado y vista al mar"
                 loading="lazy"
+                width="1024"
+                height="697"
               />
               <img
                 src="./public/img/recursos/room2.png"
                 alt="Interiores confortables y modernos del Hotel Palmeira"
                 loading="lazy"
+                width="1000"
+                height="851"
               />
               <img
                 src="./public/img/recursos/ENTRADA.png"
                 alt="Entrada principal al Hotel Palmeira's"
                 loading="lazy"
+                width="300"
+                height="200"
               />
               <img
                 src="./public/img/recursos/logoimage.png"
                 alt="Detalle del logotipo del Hotel"
                 loading="lazy"
+                width="315"
+                height="325"
               />
               <img
                 src="./public/img/recursos/aire.png"
                 alt="Amenidades de confort: aire acondicionado en habitaciones"
                 loading="lazy"
+                width="300"
+                height="300"
               />
               <img
                 src="./public/img/recursos/alberca.png"
                 alt="Alberca cristalina para huéspedes en el Hotel Palmeira"
                 loading="lazy"
+                width="300"
+                height="300"
               />
             </div>
             <button
@@ -318,7 +341,7 @@
                 Wi-Fi de alta velocidad
               </li>
             </ul>
-            <button class="btn-whatsapp" id="roomReservar">
+            <button class="btn-whatsapp" id="roomReservar" target="_blank" rel="noopener">
               <i class="fa-brands fa-whatsapp"></i>
               Reservar por WhatsApp
             </button>
@@ -459,7 +482,7 @@
                   required
                 />
               </div>
-              <button type="submit" class="btn-submit" id="contact-submit">
+              <button type="submit" class="btn-submit" id="contact-submit" rel="noopener">
                 Enviar Información
               </button>
             </form>
