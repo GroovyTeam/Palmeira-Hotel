@@ -62,7 +62,8 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Preload Critical Fonts -->
+    <!-- Preload Critical Assets -->
+    <link rel="preload" as="image" href="./public/img/recursos/logohotel.png" />
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,500;0,700;1,400&family=Manrope:wght@400;600;700&display=swap" />
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,500;0,700;1,400&family=Manrope:wght@400;600;700&display=swap"
@@ -88,6 +89,7 @@
         alt="Hotel Palmeira Logo"
         width="120"
         height="162"
+        fetchpriority="high"
       />
       <div class="preloader-brand">Hotel Palmeira's</div>
       <div class="preloader-progress">
