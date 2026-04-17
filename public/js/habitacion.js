@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
         });
 
         setTimeout(() => {
-            const mensaje = `Hola, soy ${name} ${last}. Me interesa reservar la habitación ${rooms[index].name}. Mi número de contacto es ${number} y mi correo es ${email}`;
+            const mensaje = `Hola, soy ${name} ${last}. Me interesa reservar una habitación. Mi número de contacto es ${number} y mi correo es ${email}`;
             const mensajeCodificado = encodeURIComponent(mensaje);
             const numeroHotel = '525545034306'; 
             const url = `https://wa.me/${numeroHotel}?text=${mensajeCodificado}`;

@@ -35,6 +35,19 @@
     <link rel="stylesheet" href="./public/css/index.css" />
   </head>
   <body>
+    <!-- ═══ PRELOADER ═══ -->
+    <div class="preloader" id="preloader">
+      <img
+        src="./public/img/recursos/logohotel.png"
+        class="preloader-logo pulse-soft"
+        alt="Hotel Palmeira Logo"
+      />
+      <div class="preloader-brand">Hotel Palmeira's</div>
+      <div class="preloader-progress">
+        <div class="preloader-bar"></div>
+      </div>
+    </div>
+
     <!-- ═══ NAVIGATION ═══ -->
     <nav class="nav-glass" id="mainNav">
       <div class="nav-brand">Hotel Palmeira's</div>
@@ -112,9 +125,9 @@
             <h2>Amenidades imperdibles</h2>
             <p>
               Cada detalle ha sido cuidadosamente asegurado para elevar su
-              estancia. Desde la gastronomía local hasta clases de yoga de
-              excelente nivel, estamos listos para ofrecerte la mejor
-              experiencia durante tu estancia en Tuxpan.
+              estancia. Desde la gastronomía local hasta actividades para toda
+              la familia, estamos listos para ofrecerte la mejor experiencia
+              durante tu estancia en Tuxpan.
             </p>
           </div>
           <div class="services-explore">
@@ -125,7 +138,7 @@
         <div class="services-grid">
           <div class="service-card">
             <div class="service-icon">
-              <span class="material-symbols-outlined">pool</span>
+              <span class="material-symbols-outlined">location_on</span>
             </div>
             <h3>Ubicación inmejorable</h3>
             <p>
@@ -136,12 +149,12 @@
           </div>
           <div class="service-card">
             <div class="service-icon">
-              <span class="material-symbols-outlined">self_improvement</span>
+              <span class="material-symbols-outlined">pool</span>
             </div>
-            <h3>Clases de Yoga</h3>
+            <h3>Alberca</h3>
             <p>
-              Relájese y renueve su energía con nuestras clases guiadas por
-              instructores expertos en un ambiente tranquilo.
+              Disfruta de un refrescante chapuzón en nuestra alberca, el lugar
+              perfecto para relajarte y divertirte.
             </p>
           </div>
           <div class="service-card">
@@ -173,7 +186,7 @@
     <section class="rooms" id="habitaciones">
       <div class="container">
         <div class="rooms-header">
-          <span class="rooms-label">Refugios Privados</span>
+          <span class="rooms-label">Disfruta de....</span>
           <h2>Nuestras Habitaciones</h2>
         </div>
         <div class="room-showcase">
@@ -230,7 +243,7 @@
             <div class="slide-dots" id="slideDots"></div>
           </div>
           <div class="room-info">
-            <div class="room-price">Desde $189 MXN / noche</div>
+            <div class="room-price">Desde $1,599 MXN / noche</div>
             <h3>Confort frente al mar</h3>
             <p>
               Nuestras 8 habitaciones han sido diseñadas para ofrecerle una
@@ -420,6 +433,7 @@
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./public/js/preloader.js"></script>
     <script src="./public/js/navbar.js"></script>
     <script src="./public/js/slider.js"></script>
     <script src="./public/js/formulario.js"></script>

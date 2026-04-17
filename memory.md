@@ -11,8 +11,9 @@ Migración integral del sitio web de Hotel Palmeira hacia el sistema de diseño 
 - **Breakpoints de Navegación:** Se estableció el cambio de menú horizontal a menú de hamburguesa en los **1024px** para evitar solapamientos en dispositivos medianos.
 - **Design Tokens:** Uso de variables CSS para colores (Teal, Sand, Gold) y tipografías (Noto Serif y Manrope).
 - **Micro-Responsividad:** Se añadieron Media Queries para dispositivos ultra-pequeños (<400px), incluyendo padding de seguridad en el hero-subtitle.
-- **Densidad de Diseño:** Se redujo el padding vertical de las secciones de 8rem a 5rem para evitar espacios excesivos en pantallas grandes y mejorar el flujo visual.
-- **Optimización Safari:** Se rediseñó el Nav para pantallas móviles como una "pestaña" anclada al tope (`top: 0`, `100% width`) que respeta `env(safe-area-inset-top)`, eliminando el conflicto de cápsulas visuales con iOS.
+- **Densidad de Diseño:** Se redujo el padding vertical de las secciones.
+- **Preloader de Activos:** Implementada una pantalla de carga personalizada con fondo corporativo azul/teal, logo oficial animado y sincronización de carga de activos (imágenes y mapas).
+- **Optimización Safari:** Se rediseñó el Nav para pantallas móviles.
 - **Lógica Unificada:** Consolidación de scripts en `formulario.js` y `slider.js`.
 - **Politica de Memoria (2026-04-16):** Se establece la actualización este archivo tras cada interacción como eje central del desarrollo.
 
@@ -24,6 +25,7 @@ Migración integral del sitio web de Hotel Palmeira hacia el sistema de diseño 
 - [x] Implementación del nuevo Slider de habitaciones único.
 - [x] Solución de solapamiento en barra de navegación (Tablet Fix): Breakpoint movido a 1024px.
 - [x] Solución de solapamiento en barra de navegación (iPhone SE Fix).
+- [x] Implementación del Preloader editorial: Sincronización de imágenes y Google Maps finalizada.
 - [x] Ajuste de densidades: Reducción de espacios excesivos entre secciones.
 - [x] Optimización Safari iOS: Transición de Nav flotante a Nav anclado.
 - [x] Migración de validaciones de formulario con SweetAlert2.
@@ -34,6 +36,8 @@ Migración integral del sitio web de Hotel Palmeira hacia el sistema de diseño 
 - [ ] Revisión final de SEO y meta-tags.
 
 ## 📝 Notas de Versión
+- **Branding Preloader (2026-04-16):** Personalización del preloader con el logo oficial y colores corporativos (Azul/Teal).
+- **Asset Loader Implementation (2026-04-16):** Finalizada la pantalla de carga para garantizar la integridad visual del sitio.
 - **UI Density Polish (2026-04-16):** Ajuste de paddings en secciones y márgenes de seguridad en subtítulos hero.
 - **Safari iOS Optimization (2026-04-16):** Eliminación del conflicto de "doble cápsula" mediante el rediseño del Nav en móviles.
 - **Optimización iPhone SE (2026-04-16):** Se corrigió el desbordamiento de la barra de navegación en pantallas de 375px.

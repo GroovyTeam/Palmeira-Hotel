@@ -304,11 +304,25 @@ ul, ol { list-style: none; }
 }
 
 /* ── 12. Animations ── */
-@keyframes ping { 75%, 100% { transform: scale(2); opacity: 0; } }
-.animate-ping { animation: ping 1s cubic-bezier(0,0,0.2,1) infinite; }
-body.no-scroll { overflow: hidden; }
+@keyframes pulse-soft { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.6; transform: scale(1.02); } }
+@keyframes preloader-fade { from { opacity: 1; } to { opacity: 0; visibility: hidden; } }
+@keyframes progress-line { 0% { width: 0; left: 0; } 50% { width: 100%; left: 0; } 100% { width: 0; left: 100%; } }
 
-/* ── 12. Tablet (768px+) ── */
+.pulse-soft { animation: pulse-soft 3s ease-in-out infinite; }
+
+/* ── 13. Preloader ── */
+.preloader {
+  position: fixed; inset: 0; z-index: 9999; background: var(--primary);
+  display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 1rem;
+  transition: opacity 0.8s cubic-bezier(0.65, 0, 0.35, 1), visibility 0.8s;
+}
+.preloader.loaded { opacity: 0; visibility: hidden; pointer-events: none; }
+.preloader-logo { width: 120px; height: auto; margin-bottom: 0.5rem; }
+.preloader-brand { font-family: var(--font-headline); font-size: 2.2rem; color: #ffffff; font-style: italic; }
+.preloader-progress { width: 140px; height: 1px; background: rgba(255,255,255,0.2); position: relative; overflow: hidden; margin-top: 1rem; }
+.preloader-bar { position: absolute; height: 100%; background: #ffffff; animation: progress-line 2s infinite; }
+
+/* ── 14. Tablet (768px+) ── */
 @media (min-width: 768px) {
   .container { padding: 0 4rem; }
   .nav-glass { padding: 0.75rem 2rem; width: 90%; }

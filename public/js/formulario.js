@@ -2,7 +2,7 @@
 // Contact Form + WhatsApp Redirect
 // ════════════════════════════════════
 
-const WHATSAPP_NUMBER = '525545034306';
+const WHATSAPP_NUMBER = '527731758654';
 
 function asesoramiento() {
   window.open(
