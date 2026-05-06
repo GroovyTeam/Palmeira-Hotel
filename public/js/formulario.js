@@ -5,10 +5,14 @@
 const WHATSAPP_NUMBER = '527731758654';
 
 function asesoramiento() {
-  window.open(
-    `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Hola, me gustaría recibir asesoramiento sobre sus habitaciones.')}`,
-    '_self'
-  );
+  const contactSection = document.getElementById('contacto');
+  if (contactSection) {
+    contactSection.scrollIntoView({ behavior: 'smooth' });
+    setTimeout(() => {
+      const nameInput = document.getElementById('contact-name');
+      if (nameInput) nameInput.focus();
+    }, 800);
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {

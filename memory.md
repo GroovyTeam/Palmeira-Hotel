@@ -7,42 +7,26 @@ Este archivo actúa como la memoria central y conciencia del asistente. Se actua
 Migración integral del sitio web de Hotel Palmeira hacia el sistema de diseño **"Editorial Tranquility"**. El objetivo es modernizar la UI/UX, optimizar el rendimiento mediante la eliminación de layouts redundantes y mejorar la tasa de conversión para reservas.
 
 ## 🛠️ Decisiones Técnicas Clave
-- **Arquitectura Responsiva:** Se eliminaron los 3 layouts duplicados en `index.html`. Ahora el sitio usa un único layout basado en CSS Flexbox/Grid.
-- **Breakpoints de Navegación:** Se estableció el cambio de menú horizontal a menú de hamburguesa en los **1024px** para evitar solapamientos en dispositivos medianos.
+- **Arquitectura Híbrida (Nueva Fase):** El proyecto ahora se divide en dos componentes:
+  1. **Sitio Público Estático (`index.html`):** Optimizado para SEO y rendimiento extremo.
+  2. **Admin Panel (`/admin-panel`):** Inicializado con Next.js, Tailwind CSS y TypeScript para gestionar el sitio público de forma dinámica (futuro CRUD).
+- **Arquitectura Responsiva:** Se eliminaron los 3 layouts duplicados en `index.html`. Ahora el sitio usa un único layout basado en CSS Flexbox/Grid/Masonry.
+- **Breakpoints de Navegación:** Se estableció el cambio de menú horizontal a menú de hamburguesa en los **1024px**.
 - **Design Tokens:** Uso de variables CSS para colores (Teal, Sand, Gold) y tipografías (Noto Serif y Manrope).
-- **Micro-Responsividad:** Se añadieron Media Queries para dispositivos ultra-pequeños (<400px).
-- **SEO & Metadatos:** Implementación de JSON-LD (Hotel Schema), etiquetas Open Graph/Twitter corregidas, URL canónica y Favicon (ubicado en `public/img/recursos/iconpalmeira.png`).
-- **Optimización de Imágenes:** Aplicación de `loading="lazy"`, `fetchpriority` y atributos `alt` descriptivos.
-- **Preloader de Activos:** Implementada pantalla de carga personalizada con sincronización.go oficial animado y sincronización de carga de activos (imágenes y mapas).
-- **Optimización Safari:** Se rediseñó el Nav para pantallas móviles.
-- **Lógica Unificada:** Consolidación de scripts en `formulario.js` y `slider.js`.
-- **Politica de Memoria (2026-04-16):** Se establece la actualización este archivo tras cada interacción como eje central del desarrollo.
+- **Copywriting Editorial:** Transición a un tono de comunicación inspirador y poético para todas las secciones.
 
 ## ✅ Hitos Completados
-- [x] Auditoría de arquitectura inicial.
 - [x] Implementación del Sistema de Diseño (CSS Tokens).
 - [x] Refactorización de `index.html` a un layout único responsivo.
-- [x] Unificación de lógica de navegación (Scroll-spy y Mobile Toggle).
-- [x] Implementación del nuevo Slider de habitaciones único.
-- [x] Solución de solapamiento en barra de navegación (Tablet Fix): Breakpoint movido a 1024px.
-- [x] Solución de solapamiento en barra de navegación (iPhone SE Fix).
-- [x] Optimización de SEO e Imágenes.
-- [x] Limpieza técnica de archivos legacy.
-- [x] Implementación de Identidad de Pestaña (Favicon).
-- [x] Implementación del Preloader editorial.
-- [x] Ajuste de densidades: Reducción de espacios excesivos entre secciones.
-- [x] Optimización Safari iOS: Transición de Nav flotante a Nav anclado.
 - [x] Migración de validaciones de formulario con SweetAlert2.
+- [x] **Expansión Editorial:** Adición de secciones "Experiencias", "Testimonios" (Social Proof) y "Catálogo de Momentos" (Galería Masonry).
+- [x] **Optimización Visual:** Reutilización inteligente de imágenes del slider hacia la galería y textos premium.
+- [x] **Admin Panel Init:** Creación del proyecto Next.js y estructura del Dashboard.
 
 ## ⏳ Tareas Pendientes / Futuras
-- [ ] Recuperación de Performance (Completada): Score proyectado en 90+ (HTTPS).
-- [ ] Limpieza total de archivos legacy (Finalizada).
-- [ ] Revisión continua de métricas de carga.
+- [ ] Conectar el Admin Panel a una base de datos (e.g. Firebase) para que las actualizaciones se reflejen en el sitio estático (posible migración a SSG/ISR).
+- [ ] Desarrollo de las vistas CRUD completas para Textos, Imágenes y Testimonios.
 
 ## 📝 Notas de Versión
-- **SEO & Image Performance (2026-04-16):** Despliegue de datos estructurados y estrategias de carga diferida.
-- **Branding Preloader (2026-04-16):** Personalización del preloader con logo y colores corporativos.
-- **UI Density Polish (2026-04-16):** Ajuste de paddings en secciones y márgenes de seguridad en subtítulos hero.
-- **Safari iOS Optimization (2026-04-16):** Eliminación del conflicto de "doble cápsula" mediante el rediseño del Nav en móviles.
-- **Optimización iPhone SE (2026-04-16):** Se corrigió el desbordamiento de la barra de navegación en pantallas de 375px.
+- **v2.0 (2026-05-06):** Expansión de contenido (Experiencias, Galería, Testimonios) y mejora de copywriting. Inicialización del *Palmeira's Hotel Admin Panel* en Next.js.
 - **v1.0 (2026-04-15):** Lanzamiento oficial de la migración Editorial Tranquility.
