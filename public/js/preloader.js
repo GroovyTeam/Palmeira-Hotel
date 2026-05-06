@@ -6,7 +6,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const preloader = document.getElementById('preloader');
     const iframe = document.querySelector('.map-frame iframe');
-    const images = document.querySelectorAll('.room-slider img');
+    const images = document.querySelectorAll('img');
     
     let assetsLoaded = 0;
     const totalAssets = images.length + (iframe ? 1 : 0);
