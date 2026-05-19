@@ -21,6 +21,7 @@ Migración integral del sitio web de Hotel Palmeira hacia el sistema de diseño 
 - [x] Migración de validaciones de formulario con SweetAlert2.
 - [x] **Expansión Editorial:** Adición de secciones "Experiencias", "Testimonios" (Social Proof) y "Catálogo de Momentos" (Galería Masonry).
 - [x] **Optimización Visual:** Reutilización inteligente de imágenes del slider hacia la galería y textos premium.
+- [x] **Detalles Inigualables:** Integración de la sección detallando la Alberca de Chukum y el trato excepcional del personal.
 - [x] **Admin Panel Init:** Creación del proyecto Next.js y estructura del Dashboard.
 
 ## ⏳ Tareas Pendientes / Futuras
@@ -28,5 +29,6 @@ Migración integral del sitio web de Hotel Palmeira hacia el sistema de diseño 
 - [ ] Desarrollo de las vistas CRUD completas para Textos, Imágenes y Testimonios.
 
 ## 📝 Notas de Versión
+- **v2.1 (2026-05-18):** Adición de la sección de "Detalles Inigualables" (Chukum y Atención) con diseño responsivo premium.
 - **v2.0 (2026-05-06):** Expansión de contenido (Experiencias, Galería, Testimonios) y mejora de copywriting. Inicialización del *Palmeira's Hotel Admin Panel* en Next.js.
 - **v1.0 (2026-04-15):** Lanzamiento oficial de la migración Editorial Tranquility.

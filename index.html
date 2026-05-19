@@ -192,21 +192,23 @@
     <!-- ═══ HERO ═══ -->
     <section class="hero" id="inicio">
       <div class="hero-bg">
-        <img
-          src="./public/img/recursos/heroImage.jpeg"
-          alt="Vista panorámica de la playa y el Hotel Palmeira en Tuxpan, Veracruz"
+        <video
+          src="./public/img/recursos/heroVideo.mp4"
+          autoplay
+          loop
+          muted
+          playsinline
+          class="hero-video"
           fetchpriority="high"
-          width="1280"
-          height="960"
-        />
+        ></video>
         <div class="hero-overlay"></div>
       </div>
       <div class="hero-content">
         <h1>Hotel<br /><em>Palmeira's Tuxpan Beach</em></h1>
         <p class="hero-subtitle">
-          Descubra un refugio donde la brisa del Golfo y la elegancia se
-          encuentran. Un santuario de paz diseñado para desconectar del mundo y
-          reconectar con la naturaleza, bajo el cálido sol de Veracruz.
+          Te invita a su consorcio hotelero que la brisa del mar y del golfo de
+          México te ofrece en un santuario de paz y elegancia, que se han
+          diseñado para ti
         </p>
         <div class="hero-actions">
           <button class="btn-gold" id="heroReservar">Reservar Ahora</button>
@@ -217,16 +219,16 @@
         </div>
         <div class="hero-stats">
           <div class="hero-stat">
-            <div class="stat-number">+2000</div>
-            <div class="stat-label">Buenas Reseñas</div>
+            <div class="stat-number">50m</div>
+            <div class="stat-label">De la Playa</div>
           </div>
           <div class="hero-stat">
-            <div class="stat-number">700</div>
-            <div class="stat-label">Huéspedes Anuales</div>
+            <div class="stat-number">4</div>
+            <div class="stat-label">Servicios Estrella</div>
           </div>
           <div class="hero-stat">
-            <div class="stat-number">+7</div>
-            <div class="stat-label">Servicios</div>
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Relajación</div>
           </div>
         </div>
       </div>
@@ -239,10 +241,10 @@
           <div>
             <h2>El Arte del Buen Vivir</h2>
             <p>
-              Cada detalle ha sido meticulosamente cuidado para elevar su
-              estadía. Permítanos consentirle con experiencias excepcionales,
-              donde el confort absoluto se fusiona con la cálida hospitalidad
-              veracruzana.
+              Hacer conexión con la naturaleza de este cálido horizonte y
+              belleza del sol, que las playas de Tuxpan, nos brindan para
+              disfrutar con la familia, los amigos y con la tranquilidad de tu
+              ser.
             </p>
           </div>
           <div class="services-explore">
@@ -268,8 +270,8 @@
             </div>
             <h3>Alberca</h3>
             <p>
-              Disfruta de un refrescante chapuzón en nuestra alberca, el lugar
-              perfecto para relajarte y divertirte.
+              Disfruta de un chapuzón y nada a tu gusto para relajarte, sentirte
+              tranquilo y divertirte en el lugar perfecto
             </p>
           </div>
           <div class="service-card">
@@ -278,9 +280,10 @@
             </div>
             <h3>Restaurante</h3>
             <p>
-              Fusión culinaria que todos buscamos, el sabor de la comida
-              especial a nuestro paladar y que degustarás directamente elaborada
-              por el conocimiento y experiencia de nuestro Chef.
+              Es importante degustar la fusión culinaria y comida de autor,
+              preparada para disfrutar de una diversidad de sabores directamente
+              de la mesa a tu paladar, la que es elaborada con el conocimiento,
+              satisfacción y experiencia de nuestro Chef.
             </p>
           </div>
           <div class="service-card">
@@ -297,15 +300,64 @@
       </div>
     </section>
 
+    <!-- ═══ DETAILS ═══ -->
+    <section class="details" id="detalles">
+      <div class="container">
+        <div class="details-grid">
+          <div class="details-intro">
+            <span
+              class="label"
+              style="
+                color: var(--secondary-container);
+                margin-bottom: 1rem;
+                display: block;
+              "
+              >La Esencia</span
+            >
+            <h2>Cada uno de los detalles son inigualables.</h2>
+            <p>
+              Desde la belleza de nuestros espacios naturales hasta la calidez
+              incomparable de nuestra gente.
+            </p>
+          </div>
+          <div class="details-features">
+            <div class="detail-feature">
+              <h3>
+                <span class="material-symbols-outlined">pool</span> La Alberca
+              </h3>
+              <p>
+                Diseñada con el elemento natural (chukum), traído desde Mérida
+                Yucatán, para que el agua se asemeje a los senotes naturales de
+                ese lugar.
+              </p>
+            </div>
+            <div class="detail-feature">
+              <h3>
+                <span class="material-symbols-outlined"
+                  >volunteer_activism</span
+                >
+                La Atención
+              </h3>
+              <p>
+                La atención de su personal, que te ofrece y te hace sentir un
+                ser especial y único para nuestro Hotel Palmeira’s Tuxpan,
+                Beach.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ═══ EXPERIENCES ═══ -->
     <section class="experiences" id="experiencias">
       <div class="container">
         <div class="experiences-header text-center">
           <span class="experiences-label">Momentos Inolvidables</span>
-          <h2>Experiencias Palmeira's</h2>
+          <h2>Experiencias</h2>
           <p class="experiences-desc">
-            Vaya más allá de una simple estadía. Hemos diseñado instantes que
-            perdurarán en su memoria.
+            Totalmente diseñadas con momentos que perdurarán en la memoria de
+            nuestros huéspedes que han vivido tiempos inolvidables.
           </p>
         </div>
         <div class="experiences-grid">
@@ -318,8 +370,9 @@
             <div class="experience-content">
               <h3>Gastronomía de Autor</h3>
               <p>
-                Sabores locales e ingredientes frescos del mar, preparados con
-                maestría culinaria.
+                Aquí el chef diseña y muestra con los mejores ingredientes los
+                Platillos que darán a tu paladar la satisfacción de la maestría
+                culinaria.
               </p>
             </div>
           </div>
@@ -332,22 +385,22 @@
             <div class="experience-content">
               <h3>Días de Sol en la Alberca</h3>
               <p>
-                Refrésquese en aguas cristalinas y disfrute del sol tropical
-                desde la comodidad de nuestros elegantes camastros.
+                Sol tropical y aguas cristalinas, con temperatura agradable para
+                que cada huésped disfrute cómodamente.
               </p>
             </div>
           </div>
           <div class="experience-card">
             <img
-              src="./public/img/recursos/playa.png"
+              src="./public/img/recursos/playa_nueva.png"
               alt="Momentos en la Playa"
               class="experience-img"
             />
             <div class="experience-content">
               <h3>Momentos en la Playa</h3>
               <p>
-                Camine sobre la arena dorada, escuche el relajante oleaje y
-                déjese cautivar por los inigualables atardeceres frente al mar.
+                Oleaje del Mar por el inigualable amanecer y atardecer , que
+                forman parte de tu historia y espacio natural.
               </p>
             </div>
           </div>
@@ -359,8 +412,8 @@
     <section class="rooms" id="habitaciones">
       <div class="container">
         <div class="rooms-header">
-          <span class="rooms-label">Su Refugio Privado</span>
-          <h2>Habitaciones y Suites</h2>
+          <h2>Habitaciones</h2>
+          <span class="rooms-label">En nuestro Golfo de México </span>
         </div>
         <div class="room-showcase">
           <div class="room-slider">
@@ -405,23 +458,21 @@
             <div class="room-price">Desde $1,599 MXN / noche</div>
             <h3>Un santuario de serenidad</h3>
             <p>
-              Diseñadas para abrazar la belleza del océano, nuestras suites
-              combinan funcionalidad, elegancia y confort. Despierte con el
-              susurro de las olas en un ambiente de absoluta sofisticación
-              tropical.
+              Despertar y observar desde tu habitación la tropicalidad de las
+              aguas del golfo, en Tuxpan, Veracruz, México
             </p>
             <ul class="room-amenities">
               <li>
                 <span class="material-symbols-outlined">check_circle</span> Cama
-                amplia y acogedora
+                acogedora
               </li>
               <li>
-                <span class="material-symbols-outlined">check_circle</span> Aire
-                acondicionado
+                <span class="material-symbols-outlined">check_circle</span>
+                Limpieza sin igual
               </li>
               <li>
-                <span class="material-symbols-outlined">check_circle</span> Baño
-                privado completo
+                <span class="material-symbols-outlined">check_circle</span>
+                Vistas impresionantes
               </li>
               <li>
                 <span class="material-symbols-outlined">check_circle</span>
@@ -447,24 +498,22 @@
       <div class="container">
         <div class="testimonials-header text-center">
           <span class="testimonials-label">Voces de nuestros huéspedes</span>
-          <h2>Más de 15,000 Buenas Reseñas</h2>
+          <h2>Huéspedes Satisfechos</h2>
         </div>
         <div class="testimonials-grid">
           <div class="testimonial-card glass-card">
             <div class="stars">★★★★★</div>
             <p class="quote">
-              "Un verdadero paraíso terrenal. La paz que se respira al escuchar
-              las olas desde la habitación no tiene precio. El servicio es
-              impecable."
+              "Los platillos que el restaurante Xanat, ofrece son para que tu
+              paladar deguste las delicias que el Chef prepara."
             </p>
-            <div class="author">- María Fernanda L.</div>
+            <div class="author">- Luisa M.</div>
           </div>
           <div class="testimonial-card glass-card">
             <div class="stars">★★★★★</div>
             <p class="quote">
-              "La fusión perfecta entre lujo y naturaleza. Los platillos del
-              restaurante son una delicia y la ubicación es insuperable en
-              Tuxpan."
+              "En Hotel Palmeira’s Tuxpan Beach. Existe una fusión casi perfecta
+              entre tranquilidad y naturaleza, que el mar nos regala"
             </p>
             <div class="author">- Carlos M.</div>
           </div>
@@ -489,9 +538,10 @@
             <span class="location-label">El Corazón de la Costa</span>
             <h2>Un Paraíso<br />Por Descubrir.</h2>
             <p>
-              Ubicado donde la exuberante selva abraza las aguas del Golfo de
-              México, nuestro hotel es el punto de partida perfecto para
-              sumergirse en la inmensa riqueza cultural y natural de Tuxpan.
+              De la ubicación, nos complace decir que es insuperable, pues solo
+              nos encontramos a no más de 50 mts. De distancia a la playa. Aquí
+              en Tuxpan Veracruz, Mex Un lugar que todos deseamos para descansar
+              y desconectarnos del estrés.
             </p>
             <div class="location-features">
               <div class="location-feature">
@@ -568,6 +618,18 @@
             <img
               src="./public/img/recursos/heroImage.jpeg"
               alt="Vista panorámica"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="./public/img/recursos/Exterior.png"
+              alt="Vista Exterior del Hotel Palmeira"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="./public/img/recursos/poolNight.png"
+              alt="Alberca de noche iluminada"
             />
           </div>
         </div>
@@ -666,7 +728,7 @@
 
     <!-- ═══ FOOTER ═══ -->
     <footer class="site-footer">
-      <div class="footer-brand">Palmeira's</div>
+      <div class="footer-brand">Palmeira's Tuxpan Beach</div>
       <div class="footer-links">
         <a href="#inicio">Inicio</a>
         <a href="#servicios">Servicios</a>
