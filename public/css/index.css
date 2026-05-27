@@ -355,6 +355,90 @@ ul, ol { list-style: none; }
 .experience-content h3 { font-family: var(--font-headline); font-size: var(--title-lg); color: white; margin-bottom: 1rem; }
 .experience-content p { color: rgba(255,255,255,0.9); line-height: 1.7; }
 
+/* ── 10.5 Restaurant ── */
+.restaurant-section { padding: 4.5rem 0; background: var(--surface-container-low); }
+.restaurant-grid { display: grid; gap: 3rem; align-items: center; }
+.restaurant-image {
+  position: relative;
+  border-radius: var(--radius-4xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-editorial);
+  background: var(--surface-container-lowest);
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(57, 102, 99, 0.05);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+.restaurant-image:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 32px 64px rgba(57, 102, 99, 0.1);
+}
+.restaurant-img-real {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: var(--radius-2xl);
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+.restaurant-image:hover .restaurant-img-real {
+  transform: scale(1.02);
+}
+.restaurant-label {
+  display: block;
+  font-size: var(--label-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  color: var(--tertiary);
+  margin-bottom: 1rem;
+}
+.restaurant-info h2 {
+  font-family: var(--font-headline);
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+.restaurant-desc {
+  color: var(--on-surface-variant);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  font-size: var(--body-md);
+}
+.restaurant-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.restaurant-detail-item {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+.restaurant-detail-item .material-symbols-outlined {
+  background: var(--surface-container-lowest);
+  padding: 0.75rem;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-subtle);
+  color: var(--primary);
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+.restaurant-detail-item h4 {
+  font-family: var(--font-headline);
+  color: var(--primary);
+  font-size: 1.125rem;
+  margin-bottom: 0.25rem;
+}
+.restaurant-detail-item p {
+  font-size: var(--body-md);
+  color: var(--on-surface-variant);
+  opacity: 0.8;
+}
+
 /* ── 11. Testimonials ── */
 .testimonials { padding: 4.5rem 0; background: var(--surface-container-low); }
 .testimonials-header { margin-bottom: 4rem; }
@@ -462,6 +546,7 @@ ul, ol { list-style: none; }
   .room-showcase { flex-direction: row; gap: 4rem; align-items: center; }
   .room-slider { flex: 3; }
   .room-info { flex: 2; text-align: left; }
+  .restaurant-grid { grid-template-columns: 1fr 1.2fr; gap: 4rem; }
   .location-grid { grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
   .contact-card { grid-template-columns: 1fr 1fr; }
   .contact-panel { padding: 5rem; }
