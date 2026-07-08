@@ -1,0 +1,47 @@
+[
+  {
+    "firstName": "Juan",
+    "lastName": "Perez",
+    "email": "juan.perez@example.com",
+    "phone": "1234567890",
+    "id": "res_rcmlpe49b",
+    "status": "contacted",
+    "createdAt": "2026-07-08T17:20:45.652Z"
+  },
+  {
+    "id": "res_1",
+    "firstName": "Sofía",
+    "lastName": "Rodríguez",
+    "email": "sofia.rod@example.com",
+    "phone": "5512345678",
+    "status": "contacted",
+    "createdAt": "2026-07-08T13:49:47.637Z"
+  },
+  {
+    "id": "res_2",
+    "firstName": "Alejandro",
+    "lastName": "Gómez",
+    "email": "a.gomez@example.com",
+    "phone": "5598765432",
+    "status": "contacted",
+    "createdAt": "2026-07-07T15:49:47.637Z"
+  },
+  {
+    "id": "res_3",
+    "firstName": "María",
+    "lastName": "del Carmen",
+    "email": "mcarmen@example.com",
+    "phone": "5545678901",
+    "status": "pending",
+    "createdAt": "2026-07-06T15:49:47.637Z"
+  },
+  {
+    "id": "res_4",
+    "firstName": "Roberto",
+    "lastName": "Sánchez",
+    "email": "roberto.s@example.com",
+    "phone": "5532109876",
+    "status": "cancelled",
+    "createdAt": "2026-07-05T15:49:47.637Z"
+  }
+]

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import SidebarNav from "../components/SidebarNav";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,20 +24,9 @@ export default function RootLayout({
           <div className="p-6 border-b border-slate-800">
             <h1 className="text-xl font-bold tracking-wider italic text-emerald-400">Palmeira's Admin</h1>
           </div>
-          <nav className="flex-1 p-4 space-y-2 overflow-y-auto">
-            <Link href="/" className="block px-4 py-3 rounded bg-slate-800 text-emerald-400 font-medium">
-              Dashboard
-            </Link>
-            <Link href="#" className="block px-4 py-3 rounded hover:bg-slate-800 transition-colors">
-              Textos Públicos
-            </Link>
-            <Link href="#" className="block px-4 py-3 rounded hover:bg-slate-800 transition-colors">
-              Galería
-            </Link>
-            <Link href="#" className="block px-4 py-3 rounded hover:bg-slate-800 transition-colors">
-              Testimonios
-            </Link>
-          </nav>
+          
+          <SidebarNav />
+          
           <div className="p-4 border-t border-slate-800">
             <button className="w-full px-4 py-2 bg-slate-800 rounded hover:bg-slate-700 transition-colors text-sm">
               Cerrar Sesión
