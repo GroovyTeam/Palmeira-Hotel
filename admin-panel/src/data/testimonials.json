@@ -1,0 +1,20 @@
+[
+  {
+    "id": "t_1",
+    "stars": 5,
+    "author": "Mariana Rivera",
+    "quote": "La comida en el restaurante Xanat está riquísima, de verdad. Pedí los camarones al coco y el sabor es de otro nivel, aparte comes con la vista directa al mar. Nos gustó tanto que fuimos dos veces en la misma semana."
+  },
+  {
+    "id": "t_2",
+    "stars": 5,
+    "author": "Carlos Delgado",
+    "quote": "Un hotel excelente para relajarse. Literalmente cruzas la calle y ya estás en la arena. La alberca de Chukum es súper cómoda y el agua templada se siente riquísima de noche. Muy recomendado si buscas tranquilidad."
+  },
+  {
+    "id": "t_3",
+    "stars": 5,
+    "author": "Familia Gómez",
+    "quote": "Súper limpio todo y las camas comodísimas. Lo mejor de todo es el trato del personal, todos son súper atentos y amables desde que llegas. El aire acondicionado enfría excelente, indispensable por el calor de Tuxpan. Volveremos pronto."
+  }
+]

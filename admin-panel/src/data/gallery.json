@@ -1,0 +1,65 @@
+[
+  {
+    "id": "g_1",
+    "src": "./public/img/recursos/fachadaa.jpg",
+    "alt": "Fachada principal del Hotel Palmeira's en la Playa de Tuxpan",
+    "category": "general",
+    "spanClass": "span-2-2"
+  },
+  {
+    "id": "g_2",
+    "src": "./public/img/recursos/fachada2.png",
+    "alt": "Vista exterior del Hotel Palmeira's Beach",
+    "category": "general",
+    "spanClass": "span-1-2"
+  },
+  {
+    "id": "g_3",
+    "src": "./public/img/recursos/ENTRADA.png",
+    "alt": "Entrada principal al Hotel Palmeira's",
+    "category": "general",
+    "spanClass": "span-1-1"
+  },
+  {
+    "id": "g_4",
+    "src": "./public/img/recursos/heroImage.jpeg",
+    "alt": "Vista panorámica",
+    "category": "playa",
+    "spanClass": "span-2-1"
+  },
+  {
+    "id": "g_5",
+    "src": "./public/img/recursos/Exterior.png",
+    "alt": "Vista Exterior del Hotel Palmeira's",
+    "category": "general",
+    "spanClass": "span-1-2"
+  },
+  {
+    "id": "g_6",
+    "src": "./public/img/recursos/poolNight.png",
+    "alt": "Alberca de noche iluminada",
+    "category": "alberca",
+    "spanClass": "span-2-2"
+  },
+  {
+    "id": "g_7",
+    "src": "./public/img/recursos/demo-alberca.jpg",
+    "alt": "Perspectiva de la Alberca de Chukum (Demo)",
+    "category": "alberca",
+    "spanClass": "span-1-1"
+  },
+  {
+    "id": "g_8",
+    "src": "./public/img/recursos/demo-habitacion.jpg",
+    "alt": "Ángulo detallado de Habitación Premium (Demo)",
+    "category": "habitaciones",
+    "spanClass": "span-1-1"
+  },
+  {
+    "id": "g_9",
+    "src": "./public/img/recursos/demo-restaurante.jpg",
+    "alt": "Detalle del Restaurante Xanat (Demo)",
+    "category": "restaurante",
+    "spanClass": "span-1-1"
+  }
+]

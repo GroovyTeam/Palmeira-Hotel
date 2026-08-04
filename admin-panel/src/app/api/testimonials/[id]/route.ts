@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { updateReservationStatus, deleteReservation } from '../../../../lib/reservations';
+import { deleteTestimonial, updateTestimonial } from '../../../../lib/testimonials';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -7,7 +7,6 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'Content-Type, Authorization',
 };
 
-// Handle CORS preflight
 export async function OPTIONS() {
   return new NextResponse(null, {
     status: 204,
@@ -15,7 +14,6 @@ export async function OPTIONS() {
   });
 }
 
-// PATCH update status
 export async function PATCH(
   request: Request,
   { params }: { params: Promise<{ id: string }> }
@@ -23,59 +21,48 @@ export async function PATCH(
   try {
     const { id } = await params;
     const body = await request.json();
-    const { status } = body;
-
-    if (!status || !['pending', 'contacted', 'cancelled', 'confirmed'].includes(status)) {
-      return NextResponse.json(
-        { error: 'Estado inválido.' },
-        { status: 400, headers: corsHeaders }
-      );
-    }
-
-    const updated = await updateReservationStatus(id, status);
+    
+    const updated = await updateTestimonial(id, body);
     if (!updated) {
       return NextResponse.json(
-        { error: 'Reservación no encontrada.' },
+        { error: 'Testimonio no encontrado.' },
         { status: 404, headers: corsHeaders }
       );
     }
 
-    return NextResponse.json(updated, {
-      headers: corsHeaders,
-    });
+    return NextResponse.json(updated, { headers: corsHeaders });
   } catch (error) {
-    console.error('API PATCH Reservation Error:', error);
+    console.error('API PATCH Testimonial Error:', error);
     return NextResponse.json(
-      { error: 'Error al actualizar la reservación.' },
+      { error: 'Error al actualizar testimonio.' },
       { status: 500, headers: corsHeaders }
     );
   }
 }
 
-// DELETE reservation
 export async function DELETE(
   request: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const { id } = await params;
-    const success = await deleteReservation(id);
+    const success = await deleteTestimonial(id);
     
     if (!success) {
       return NextResponse.json(
-        { error: 'Reservación no encontrada.' },
+        { error: 'Testimonio no encontrado.' },
         { status: 404, headers: corsHeaders }
       );
     }
 
     return NextResponse.json(
-      { message: 'Reservación eliminada correctamente.' },
+      { message: 'Testimonio eliminado correctamente.' },
       { headers: corsHeaders }
     );
   } catch (error) {
-    console.error('API DELETE Reservation Error:', error);
+    console.error('API DELETE Testimonial Error:', error);
     return NextResponse.json(
-      { error: 'Error al eliminar la reservación.' },
+      { error: 'Error al eliminar testimonio.' },
       { status: 500, headers: corsHeaders }
     );
   }

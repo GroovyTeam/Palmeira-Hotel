@@ -8,8 +8,14 @@ interface Reservation {
   lastName: string;
   email: string;
   phone: string;
-  status: 'pending' | 'contacted' | 'cancelled';
+  status: 'pending' | 'contacted' | 'cancelled' | 'confirmed';
   createdAt: string;
+  roomType?: string;
+  guests?: number;
+  checkIn?: string;
+  checkOut?: string;
+  nights?: number;
+  totalPrice?: string;
 }
 
 export default function ReservationsPage() {
@@ -19,7 +25,7 @@ export default function ReservationsPage() {
   
   // Filters and search
   const [searchQuery, setSearchQuery] = useState('');
-  const [statusFilter, setStatusFilter] = useState<'all' | 'pending' | 'contacted' | 'cancelled'>('all');
+  const [statusFilter, setStatusFilter] = useState<'all' | 'pending' | 'contacted' | 'cancelled' | 'confirmed'>('all');
   
   // Feedback states
   const [updatingId, setUpdatingId] = useState<string | null>(null);
@@ -102,13 +108,17 @@ export default function ReservationsPage() {
   // Contact client via WhatsApp
   const contactClient = async (res: Reservation) => {
     // Format WhatsApp number
-    // Clean spaces, hyphens, and make sure we have country code (default to Mexico 52 if it looks like a 10-digit number)
     let cleanedPhone = res.phone.replace(/\D/g, '');
     if (cleanedPhone.length === 10) {
       cleanedPhone = `52${cleanedPhone}`;
     }
 
-    const message = `Hola *${res.firstName} ${res.lastName}*, te saludamos de *Hotel Palmeira*. Recibimos tu solicitud de información para una reserva y nos gustaría ayudarte a planificar tu estancia. ¿Hay alguna fecha o tipo de habitación en particular que te interese?`;
+    let message = '';
+    if (res.roomType) {
+      message = `Hola *${res.firstName} ${res.lastName}*, te saludamos de *Hotel Palmeira*. Recibimos tu solicitud para reservar la habitación *${res.roomType.toUpperCase()}* para *${res.guests}* persona(s) del *${res.checkIn}* al *${res.checkOut}* (Total: ${res.totalPrice}). Nos gustaría coordinar el pago para asegurar tu estancia. ¿Todo de acuerdo?`;
+    } else {
+      message = `Hola *${res.firstName} ${res.lastName}*, te saludamos de *Hotel Palmeira*. Recibimos tu solicitud de información para una reserva y nos gustaría ayudarte a planificar tu estancia. ¿Hay alguna fecha o tipo de habitación en particular que te interese?`;
+    }
     const encodedMessage = encodeURIComponent(message);
     const waUrl = `https://wa.me/${cleanedPhone}?text=${encodedMessage}`;
 
@@ -186,10 +196,11 @@ export default function ReservationsPage() {
 
         {/* Status Filters */}
         <div className="flex flex-wrap gap-2 w-full md:w-auto">
-          {(['all', 'pending', 'contacted', 'cancelled'] as const).map((filter) => {
+          {(['all', 'pending', 'confirmed', 'contacted', 'cancelled'] as const).map((filter) => {
             const labels = {
               all: 'Todos',
               pending: 'Pendientes',
+              confirmed: 'Confirmadas (Online)',
               contacted: 'Contactados',
               cancelled: 'Cancelados',
             };
@@ -249,6 +260,7 @@ export default function ReservationsPage() {
               <thead>
                 <tr className="bg-slate-50/75 border-b border-slate-100 text-slate-400 text-[10px] font-bold uppercase tracking-wider">
                   <th className="py-4 px-6">Cliente</th>
+                  <th className="py-4 px-6">Detalles de Reserva</th>
                   <th className="py-4 px-6">Contacto</th>
                   <th className="py-4 px-6">Fecha Registro</th>
                   <th className="py-4 px-6">Estado</th>
@@ -273,6 +285,22 @@ export default function ReservationsPage() {
                       </div>
                     </td>
                     <td className="py-5 px-6">
+                      {res.roomType ? (
+                        <div className="text-xs space-y-1">
+                          <p className="font-bold text-slate-700 uppercase">{res.roomType}</p>
+                          <p className="text-slate-500">
+                            👤 {res.guests} pers. • 🌙 {res.nights} n.
+                          </p>
+                          <p className="text-[10px] text-slate-400 font-medium">
+                            📆 {res.checkIn} al {res.checkOut}
+                          </p>
+                          <p className="font-semibold text-emerald-600 text-[11px]">{res.totalPrice}</p>
+                        </div>
+                      ) : (
+                        <span className="text-xs text-slate-400 italic">Contacto WhatsApp</span>
+                      )}
+                    </td>
+                    <td className="py-5 px-6">
                       <div className="text-sm">
                         <p className="text-slate-700">{res.phone}</p>
                         <p className="text-xs text-slate-400 mt-0.5">{res.email}</p>
@@ -286,6 +314,8 @@ export default function ReservationsPage() {
                         className={`inline-flex items-center gap-1.5 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider ${
                           res.status === 'pending'
                             ? 'bg-amber-50 text-amber-700 border border-amber-200/50'
+                            : res.status === 'confirmed'
+                            ? 'bg-emerald-500 text-white border border-emerald-600'
                             : res.status === 'contacted'
                             ? 'bg-emerald-50 text-emerald-700 border border-emerald-200/50'
                             : 'bg-slate-100 text-slate-600 border border-slate-200/50'
@@ -294,7 +324,16 @@ export default function ReservationsPage() {
                         {res.status === 'pending' && (
                           <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span>
                         )}
-                        {res.status === 'pending' ? 'Pendiente' : res.status === 'contacted' ? 'Contactado' : 'Cancelado'}
+                        {res.status === 'confirmed' && (
+                          <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
+                        )}
+                        {res.status === 'pending' 
+                          ? 'Pendiente' 
+                          : res.status === 'confirmed' 
+                          ? 'Confirmada (Online)' 
+                          : res.status === 'contacted' 
+                          ? 'Contactado' 
+                          : 'Cancelado'}
                       </span>
                     </td>
                     <td className="py-5 px-6 text-right">
@@ -390,6 +429,8 @@ export default function ReservationsPage() {
                     className={`inline-flex items-center gap-1.5 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider ${
                       res.status === 'pending'
                         ? 'bg-amber-50 text-amber-700 border border-amber-200/50'
+                        : res.status === 'confirmed'
+                        ? 'bg-emerald-500 text-white border border-emerald-600'
                         : res.status === 'contacted'
                         ? 'bg-emerald-50 text-emerald-700 border border-emerald-200/50'
                         : 'bg-slate-100 text-slate-600 border border-slate-200/50'
@@ -398,11 +439,26 @@ export default function ReservationsPage() {
                     {res.status === 'pending' && (
                       <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span>
                     )}
-                    {res.status === 'pending' ? 'Pendiente' : res.status === 'contacted' ? 'Contactado' : 'Cancelado'}
+                    {res.status === 'confirmed' && (
+                      <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
+                    )}
+                    {res.status === 'pending' 
+                      ? 'Pendiente' 
+                      : res.status === 'confirmed' 
+                      ? 'Confirmada' 
+                      : res.status === 'contacted' 
+                      ? 'Contactado' 
+                      : 'Cancelado'}
                   </span>
                 </div>
 
                 <div className="text-xs space-y-1 bg-slate-50 p-3 rounded-xl border border-slate-100">
+                  {res.roomType && (
+                    <div className="pb-2 mb-2 border-b border-slate-200/60 text-slate-750">
+                      <p className="font-bold uppercase text-[10px] text-emerald-700">{res.roomType} • {res.totalPrice}</p>
+                      <p className="text-[11px] text-slate-600">👤 {res.guests} pers. • {res.nights} n. • {res.checkIn} al {res.checkOut}</p>
+                    </div>
+                  )}
                   <p className="text-slate-600"><span className="font-medium text-slate-400">Tel:</span> {res.phone}</p>
                   <p className="text-slate-600"><span className="font-medium text-slate-400">Email:</span> {res.email}</p>
                   <p className="text-slate-400 text-[10px] mt-1"><span className="font-medium text-slate-400">Registro:</span> {formatDate(res.createdAt)}</p>

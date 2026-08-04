@@ -36,7 +36,19 @@ export async function GET() {
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { firstName, lastName, email, phone } = body;
+    const { 
+      firstName, 
+      lastName, 
+      email, 
+      phone, 
+      roomType, 
+      guests, 
+      checkIn, 
+      checkOut, 
+      nights, 
+      totalPrice,
+      status
+    } = body;
 
     // Basic validation
     if (!firstName || !lastName || !email || !phone) {
@@ -51,6 +63,13 @@ export async function POST(request: Request) {
       lastName: lastName.trim(),
       email: email.trim(),
       phone: phone.trim(),
+      roomType: roomType ? roomType.trim() : undefined,
+      guests: guests ? Number(guests) : undefined,
+      checkIn: checkIn ? checkIn.trim() : undefined,
+      checkOut: checkOut ? checkOut.trim() : undefined,
+      nights: nights ? Number(nights) : undefined,
+      totalPrice: totalPrice ? totalPrice.trim() : undefined,
+      status: status ? status.trim() : undefined,
     });
 
     return NextResponse.json(newRes, {

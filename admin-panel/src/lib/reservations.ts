@@ -1,5 +1,6 @@
 import fs from 'fs/promises';
 import path from 'path';
+import { sql, initDb } from './db';
 
 export interface Reservation {
   id: string;
@@ -7,61 +8,27 @@ export interface Reservation {
   lastName: string;
   email: string;
   phone: string;
-  status: 'pending' | 'contacted' | 'cancelled';
+  status: 'pending' | 'contacted' | 'cancelled' | 'confirmed';
   createdAt: string;
+  roomType?: string;
+  guests?: number;
+  checkIn?: string;
+  checkOut?: string;
+  nights?: number;
+  totalPrice?: string;
 }
 
 const DATA_DIR = path.join(process.cwd(), 'src/data');
 const DATA_FILE = path.join(DATA_DIR, 'reservations.json');
 
-const SEED_DATA: Reservation[] = [
-  {
-    id: 'res_1',
-    firstName: 'Sofía',
-    lastName: 'Rodríguez',
-    email: 'sofia.rod@example.com',
-    phone: '5512345678',
-    status: 'pending',
-    createdAt: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(), // 2 hours ago
-  },
-  {
-    id: 'res_2',
-    firstName: 'Alejandro',
-    lastName: 'Gómez',
-    email: 'a.gomez@example.com',
-    phone: '5598765432',
-    status: 'contacted',
-    createdAt: new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString(), // 1 day ago
-  },
-  {
-    id: 'res_3',
-    firstName: 'María',
-    lastName: 'del Carmen',
-    email: 'mcarmen@example.com',
-    phone: '5545678901',
-    status: 'pending',
-    createdAt: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000).toISOString(), // 2 days ago
-  },
-  {
-    id: 'res_4',
-    firstName: 'Roberto',
-    lastName: 'Sánchez',
-    email: 'roberto.s@example.com',
-    phone: '5532109876',
-    status: 'cancelled',
-    createdAt: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000).toISOString(), // 3 days ago
-  }
-];
-
-// Ensure the directory and file exist, initialized with seed data if needed
+// Ensure the directory and file exist (fallback context only)
 async function ensureDataFile() {
   try {
     await fs.mkdir(DATA_DIR, { recursive: true });
     try {
       await fs.access(DATA_FILE);
     } catch {
-      // File does not exist, create it with seed data
-      await fs.writeFile(DATA_FILE, JSON.stringify(SEED_DATA, null, 2), 'utf-8');
+      await fs.writeFile(DATA_FILE, JSON.stringify([], null, 2), 'utf-8');
     }
   } catch (error) {
     console.error('Error ensuring reservations data file:', error);
@@ -70,6 +37,16 @@ async function ensureDataFile() {
 
 // Get all reservations
 export async function getReservations(): Promise<Reservation[]> {
+  if (sql) {
+    try {
+      await initDb();
+      const result = await sql`SELECT * FROM reservations ORDER BY "createdAt" DESC`;
+      return result as Reservation[];
+    } catch (error) {
+      console.error('Error reading reservations from Neon, falling back to local file:', error);
+    }
+  }
+
   await ensureDataFile();
   try {
     const data = await fs.readFile(DATA_FILE, 'utf-8');
@@ -80,7 +57,7 @@ export async function getReservations(): Promise<Reservation[]> {
   }
 }
 
-// Save all reservations
+// Save all reservations (fallback context only)
 export async function saveReservations(reservations: Reservation[]): Promise<boolean> {
   await ensureDataFile();
   try {
@@ -93,21 +70,66 @@ export async function saveReservations(reservations: Reservation[]): Promise<boo
 }
 
 // Add a single reservation
-export async function addReservation(reservation: Omit<Reservation, 'id' | 'createdAt' | 'status'>): Promise<Reservation> {
+export async function addReservation(reservation: Omit<Reservation, 'id' | 'createdAt' | 'status'> & { status?: Reservation['status'] }): Promise<Reservation> {
+  const id = `res_${Math.random().toString(36).substr(2, 9)}`;
+  const status = reservation.status || 'pending';
+  const createdAt = new Date().toISOString();
+
+  if (sql) {
+    try {
+      await initDb();
+      await sql`
+        INSERT INTO reservations (
+          id, "firstName", "lastName", email, phone, status, 
+          "roomType", guests, "checkIn", "checkOut", nights, "totalPrice", "createdAt"
+        )
+        VALUES (
+          ${id}, ${reservation.firstName}, ${reservation.lastName}, ${reservation.email}, ${reservation.phone}, ${status},
+          ${reservation.roomType || null}, ${reservation.guests || null}, ${reservation.checkIn || null}, 
+          ${reservation.checkOut || null}, ${reservation.nights || null}, ${reservation.totalPrice || null}, ${createdAt}
+        )
+      `;
+      return {
+        id,
+        ...reservation,
+        status,
+        createdAt
+      } as Reservation;
+    } catch (error) {
+      console.error('Error adding reservation to Neon, falling back to local file:', error);
+    }
+  }
+
   const reservations = await getReservations();
   const newReservation: Reservation = {
     ...reservation,
-    id: `res_${Math.random().toString(36).substr(2, 9)}`,
-    status: 'pending',
-    createdAt: new Date().toISOString(),
+    id,
+    status,
+    createdAt,
   };
-  reservations.unshift(newReservation); // Add to the beginning of the list
+  reservations.unshift(newReservation);
   await saveReservations(reservations);
   return newReservation;
 }
 
 // Update a reservation's status
 export async function updateReservationStatus(id: string, status: Reservation['status']): Promise<Reservation | null> {
+  if (sql) {
+    try {
+      await initDb();
+      const current = await sql`SELECT * FROM reservations WHERE id = ${id} LIMIT 1`;
+      if (current.length === 0) return null;
+      
+      await sql`UPDATE reservations SET status = ${status} WHERE id = ${id}`;
+      return {
+        ...current[0],
+        status
+      } as Reservation;
+    } catch (error) {
+      console.error('Error updating reservation status on Neon, falling back to local file:', error);
+    }
+  }
+
   const reservations = await getReservations();
   const index = reservations.findIndex(r => r.id === id);
   if (index === -1) return null;
@@ -119,6 +141,16 @@ export async function updateReservationStatus(id: string, status: Reservation['s
 
 // Delete a reservation
 export async function deleteReservation(id: string): Promise<boolean> {
+  if (sql) {
+    try {
+      await initDb();
+      await sql`DELETE FROM reservations WHERE id = ${id}`;
+      return true;
+    } catch (error) {
+      console.error('Error deleting reservation from Neon, falling back to local file:', error);
+    }
+  }
+
   const reservations = await getReservations();
   const filtered = reservations.filter(r => r.id !== id);
   if (filtered.length === reservations.length) return false;

@@ -33,8 +33,9 @@ export default async function Dashboard() {
 
   const totalContacts = reservations.length;
   const pendingCount = reservations.filter((r) => r.status === 'pending').length;
+  const confirmedCount = reservations.filter((r) => r.status === 'confirmed').length;
   const contactedCount = reservations.filter((r) => r.status === 'contacted').length;
-  const contactRate = totalContacts > 0 ? Math.round((contactedCount / totalContacts) * 100) : 0;
+  const contactRate = totalContacts > 0 ? Math.round(((contactedCount + confirmedCount) / totalContacts) * 100) : 0;
 
   const recentReservations = reservations.slice(0, 5);
 
@@ -44,8 +45,19 @@ export default async function Dashboard() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col justify-between">
           <div>
-            <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Reservas Pendientes</h3>
-            <p className="text-3xl font-bold text-slate-800">{pendingCount}</p>
+            <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Confirmadas Online</h3>
+            <p className="text-3xl font-bold text-emerald-600">{confirmedCount}</p>
+          </div>
+          <div className="mt-4 flex items-center gap-1.5 text-xs font-medium text-emerald-600 bg-emerald-50 px-2 py-1 rounded-md w-fit">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            Venta cerrada en web
+          </div>
+        </div>
+
+        <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col justify-between">
+          <div>
+            <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Pendientes WhatsApp</h3>
+            <p className="text-3xl font-bold text-amber-600">{pendingCount}</p>
           </div>
           <div className="mt-4 flex items-center gap-1.5 text-xs font-medium text-amber-600 bg-amber-50 px-2 py-1 rounded-md w-fit">
             <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span>
@@ -55,31 +67,21 @@ export default async function Dashboard() {
 
         <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col justify-between">
           <div>
-            <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Total de Contactos</h3>
+            <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Total Solicitudes</h3>
             <p className="text-3xl font-bold text-slate-800">{totalContacts}</p>
           </div>
-          <div className="mt-4 text-xs font-medium text-slate-500">
-            Registrados por WhatsApp
+          <div className="mt-4 text-xs font-medium text-slate-505 bg-slate-50 px-2 py-1 rounded-md w-fit">
+            Registradas en total
           </div>
         </div>
 
         <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col justify-between">
           <div>
-            <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Tasa de Atención</h3>
+            <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Conversión Total</h3>
             <p className="text-3xl font-bold text-slate-800">{contactRate}%</p>
           </div>
           <div className="mt-4 flex items-center gap-1.5 text-xs font-medium text-emerald-600 bg-emerald-50 px-2 py-1 rounded-md w-fit">
-            {contactedCount} de {totalContacts} contactados
-          </div>
-        </div>
-
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col justify-between">
-          <div>
-            <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Estado del Sitio</h3>
-            <p className="text-3xl font-bold text-emerald-500">En Línea</p>
-          </div>
-          <div className="mt-4 text-xs font-medium text-slate-500">
-            Hotel Palmeira Web v2.1
+            {confirmedCount + contactedCount} de {totalContacts} cerrados
           </div>
         </div>
       </div>
@@ -126,6 +128,8 @@ export default async function Dashboard() {
                         className={`text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider ${
                           res.status === 'pending'
                             ? 'bg-amber-100 text-amber-700 border border-amber-200'
+                            : res.status === 'confirmed'
+                            ? 'bg-emerald-500 text-white border border-emerald-600'
                             : res.status === 'contacted'
                             ? 'bg-emerald-100 text-emerald-700 border border-emerald-200'
                             : 'bg-slate-100 text-slate-600 border border-slate-200'
@@ -133,6 +137,8 @@ export default async function Dashboard() {
                       >
                         {res.status === 'pending'
                           ? 'Pendiente'
+                          : res.status === 'confirmed'
+                          ? 'Confirmada'
                           : res.status === 'contacted'
                           ? 'Contactado'
                           : 'Cancelado'}
