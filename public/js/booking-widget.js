@@ -338,16 +338,36 @@ function setupBookingWidget() {
   const btnClose = document.getElementById('closeBookingBtn');
   const btnFinishBooking = document.getElementById('btnFinishBooking');
 
-  // Populate single room type dynamically from global settings
-  function populateRoomType() {
-    const settings = window.SITE_SETTINGS || { rooms: { title: "Habitación Estándar", priceFrom: "$1,599 MXN" } };
-    const roomTitle = (settings.rooms && settings.rooms.title) || "Habitación Estándar";
-    const roomPriceStr = (settings.rooms && settings.rooms.priceFrom) || "$1,599 MXN";
-    const priceNum = parseInt(roomPriceStr.replace(/[^0-9]/g, '')) || 1599;
+  // Active reservations cache to block booked days
+  let activeReservations = [];
+  async function loadActiveReservations() {
+    try {
+      const res = await fetch(`${window.API_BASE || 'https://system.groovy-team.com/api'}/reservations`);
+      if (res.ok) {
+        const data = await res.json();
+        activeReservations = data || [];
+      }
+    } catch (err) {
+      console.warn("Could not load reservations from server", err);
+    }
+  }
 
-    roomTypeSelect.innerHTML = `
-      <option value="${roomTitle} — ${roomPriceStr}/noche" data-price="${priceNum}">${roomTitle} — ${roomPriceStr}/noche</option>
-    `;
+  // Populate room types dynamically from global settings
+  function populateRoomType() {
+    const settings = window.SITE_SETTINGS || {};
+    let rooms = [];
+    if (settings.rooms && settings.rooms.list && settings.rooms.list.length > 0) {
+      rooms = settings.rooms.list;
+    } else {
+      const roomTitle = (settings.rooms && settings.rooms.title) || "Habitación Estándar";
+      const roomPriceStr = (settings.rooms && settings.rooms.priceFrom) || "$1,599 MXN";
+      rooms = [{ title: roomTitle, priceFrom: roomPriceStr }];
+    }
+
+    roomTypeSelect.innerHTML = rooms.map(room => {
+      const priceNum = parseInt(room.priceFrom.replace(/[^0-9]/g, '')) || 1599;
+      return `<option value="${room.title}" data-price="${priceNum}">${room.title} — ${room.priceFrom}/noche</option>`;
+    }).join('');
   }
   populateRoomType();
 
@@ -369,8 +389,12 @@ function setupBookingWidget() {
     if (btn) {
       btn.outerHTML = btn.outerHTML; // Removes prior listeners
       const newBtn = document.getElementById(id);
-      newBtn.addEventListener('click', (e) => {
+      newBtn.addEventListener('click', async (e) => {
         e.preventDefault();
+        
+        // Load live availability before modal shows up
+        await loadActiveReservations();
+        
         populateRoomType();
         resetToStep1();
         dialog.showModal();
@@ -465,6 +489,28 @@ function setupBookingWidget() {
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) || 1;
     const selectedOption = roomTypeSelect.options[roomTypeSelect.selectedIndex];
     const roomTypeName = selectedOption ? selectedOption.value.split(' — ')[0] : 'Habitación Estándar';
+
+    // Check for date availability / overlap
+    const hasOverlap = activeReservations.some(r => {
+      if (r.status === 'cancelled') return false;
+      if (r.roomType !== roomTypeName) return false;
+      
+      const rIn = new Date(r.checkIn);
+      const rOut = new Date(r.checkOut);
+      const selIn = new Date(checkin);
+      const selOut = new Date(checkout);
+      
+      return (selIn < rOut && selOut > rIn);
+    });
+    
+    if (hasOverlap) {
+      return Swal.fire({
+        icon: 'error',
+        title: 'Fechas No Disponibles',
+        text: 'Lo sentimos, esta habitación ya está reservada para las fechas seleccionadas. Por favor, elige otros días.',
+        confirmButtonColor: '#396663'
+      });
+    }
 
     // Generate random confirmation code
     const randomCode = 'PA-' + Math.random().toString(36).substring(2, 8).toUpperCase();

@@ -69,9 +69,8 @@ export async function saveReservations(reservations: Reservation[]): Promise<boo
   }
 }
 
-// Add a single reservation
-export async function addReservation(reservation: Omit<Reservation, 'id' | 'createdAt' | 'status'> & { status?: Reservation['status'] }): Promise<Reservation> {
-  const id = `res_${Math.random().toString(36).substr(2, 9)}`;
+export async function addReservation(reservation: Omit<Reservation, 'id' | 'createdAt' | 'status'> & { id?: string, status?: Reservation['status'] }): Promise<Reservation> {
+  const id = reservation.id || `res_${Math.random().toString(36).substr(2, 9)}`;
   const status = reservation.status || 'pending';
   const createdAt = new Date().toISOString();
 

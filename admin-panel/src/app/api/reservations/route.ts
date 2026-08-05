@@ -37,6 +37,7 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
     const { 
+      id,
       firstName, 
       lastName, 
       email, 
@@ -59,6 +60,7 @@ export async function POST(request: Request) {
     }
 
     const newRes = await addReservation({
+      id: id ? id.trim() : undefined,
       firstName: firstName.trim(),
       lastName: lastName.trim(),
       email: email.trim(),

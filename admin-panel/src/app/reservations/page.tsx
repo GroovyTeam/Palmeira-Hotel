@@ -31,6 +31,64 @@ export default function ReservationsPage() {
   const [updatingId, setUpdatingId] = useState<string | null>(null);
   const [deletingId, setDeletingId] = useState<string | null>(null);
 
+  // Manual reservation form states
+  const [roomsList, setRoomsList] = useState<any[]>([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [newRes, setNewRes] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    roomType: '',
+    guests: 2,
+    checkIn: '',
+    checkOut: '',
+    totalPrice: '',
+    status: 'confirmed' as const
+  });
+
+  // Load rooms from settings
+  useEffect(() => {
+    async function loadSettings() {
+      try {
+        const res = await fetch('/api/settings');
+        if (res.ok) {
+          const data = await res.json();
+          if (data.rooms && data.rooms.list) {
+            setRoomsList(data.rooms.list);
+            if (data.rooms.list.length > 0) {
+              setNewRes(prev => ({ ...prev, roomType: data.rooms.list[0].title }));
+            }
+          }
+        }
+      } catch (err) {
+        console.error('Error loading rooms settings:', err);
+      }
+    }
+    loadSettings();
+  }, []);
+
+  // Auto-calculate price for manual reservation
+  useEffect(() => {
+    if (!newRes.checkIn || !newRes.checkOut || !newRes.roomType) return;
+    const room = roomsList.find(r => r.title === newRes.roomType);
+    if (!room) return;
+    const priceStr = room.priceFrom || '$1,599 MXN';
+    const priceNum = parseInt(priceStr.replace(/[^0-9]/g, '')) || 1599;
+    
+    const d1 = new Date(newRes.checkIn);
+    const d2 = new Date(newRes.checkOut);
+    if (d2 <= d1) return;
+    
+    const diff = Math.abs(d2.getTime() - d1.getTime());
+    const nights = Math.ceil(diff / (1000 * 60 * 60 * 24)) || 1;
+    
+    setNewRes(prev => ({
+      ...prev,
+      totalPrice: `$${(priceNum * nights).toLocaleString('es-MX')} MXN`
+    }));
+  }, [newRes.checkIn, newRes.checkOut, newRes.roomType, roomsList]);
+
   // Fetch reservations
   const fetchReservations = async () => {
     try {
@@ -47,6 +105,71 @@ export default function ReservationsPage() {
       setError(err.message || 'Error de conexión con el servidor.');
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleCreateRes = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Check for overlap before registering
+    const hasOverlap = reservations.some(r => {
+      if (r.status === 'cancelled') return false;
+      if (r.roomType !== newRes.roomType) return false;
+      
+      const rIn = new Date(r.checkIn || '');
+      const rOut = new Date(r.checkOut || '');
+      const selIn = new Date(newRes.checkIn);
+      const selOut = new Date(newRes.checkOut);
+      
+      return (selIn < rOut && selOut > rIn);
+    });
+    
+    if (hasOverlap) {
+      if (!confirm('ATENCIÓN: Estas fechas se cruzan con una reservación activa existente para esta habitación. ¿Desea proceder y forzar el registro de todas formas?')) {
+        return;
+      }
+    }
+
+    try {
+      const d1 = new Date(newRes.checkIn);
+      const d2 = new Date(newRes.checkOut);
+      const diff = Math.abs(d2.getTime() - d1.getTime());
+      const nights = Math.ceil(diff / (1000 * 60 * 60 * 24)) || 1;
+      
+      const payload = {
+        ...newRes,
+        nights,
+        guests: Number(newRes.guests),
+        id: 'PA-' + Math.random().toString(36).substring(2, 8).toUpperCase()
+      };
+      
+      const res = await fetch('/api/reservations', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+      
+      if (!res.ok) throw new Error('Error al registrar reservación.');
+      
+      fetchReservations();
+      setIsModalOpen(false);
+      // Reset
+      setNewRes({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        roomType: roomsList[0]?.title || '',
+        guests: 2,
+        checkIn: '',
+        checkOut: '',
+        totalPrice: '',
+        status: 'confirmed'
+      });
+    } catch (err: any) {
+      alert(err.message || 'Error de conexión');
     }
   };
 
@@ -165,15 +288,23 @@ export default function ReservationsPage() {
             Administra los contactos de clientes que solicitaron asesoría por WhatsApp.
           </p>
         </div>
-        <button
-          onClick={fetchReservations}
-          className="flex items-center gap-2 px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-semibold rounded-xl transition-all cursor-pointer"
-        >
-          <svg className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 8H18" />
-          </svg>
-          Sincronizar
-        </button>
+        <div className="flex gap-2 shrink-0">
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="flex items-center gap-1.5 px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-semibold rounded-xl transition-all cursor-pointer shadow-sm"
+          >
+            <span>+</span> Registrar Manual
+          </button>
+          <button
+            onClick={fetchReservations}
+            className="flex items-center gap-2 px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-semibold rounded-xl transition-all cursor-pointer"
+          >
+            <svg className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 8H18" />
+            </svg>
+            Sincronizar
+          </button>
+        </div>
       </div>
 
       {/* Filter and Search Bar */}
@@ -513,6 +644,173 @@ export default function ReservationsPage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      )}
+
+      {/* Manual Reservation Dialog Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 backdrop-blur-sm p-4 animate-fadeIn">
+          <div className="bg-white rounded-2xl border border-slate-100 shadow-xl max-w-lg w-full p-6 space-y-6">
+            <div className="flex justify-between items-center border-b pb-3">
+              <h2 className="text-lg font-bold text-slate-800">Registrar Reservación Manual</h2>
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="text-slate-400 hover:text-slate-600 font-bold text-lg cursor-pointer"
+              >
+                ✕
+              </button>
+            </div>
+            
+            <form onSubmit={handleCreateRes} className="space-y-4">
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Nombre</label>
+                  <input
+                    type="text"
+                    required
+                    value={newRes.firstName}
+                    onChange={(e) => setNewRes({ ...newRes, firstName: e.target.value })}
+                    placeholder="Ej. Mariana"
+                    className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/20 text-slate-800"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Apellido</label>
+                  <input
+                    type="text"
+                    required
+                    value={newRes.lastName}
+                    onChange={(e) => setNewRes({ ...newRes, lastName: e.target.value })}
+                    placeholder="Ej. Rivera"
+                    className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/20 text-slate-800"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Correo</label>
+                  <input
+                    type="email"
+                    required
+                    value={newRes.email}
+                    onChange={(e) => setNewRes({ ...newRes, email: e.target.value })}
+                    placeholder="correo@ejemplo.com"
+                    className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none text-slate-800"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Teléfono</label>
+                  <input
+                    type="tel"
+                    required
+                    maxLength={10}
+                    value={newRes.phone}
+                    onChange={(e) => setNewRes({ ...newRes, phone: e.target.value.replace(/\D/g, '') })}
+                    placeholder="10 dígitos"
+                    className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none text-slate-800"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Habitación</label>
+                  <select
+                    value={newRes.roomType}
+                    onChange={(e) => setNewRes({ ...newRes, roomType: e.target.value })}
+                    className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-800 focus:outline-none"
+                  >
+                    {roomsList.map((room) => (
+                      <option key={room.id} value={room.title}>
+                        {room.title}
+                      </option>
+                    ))}
+                    {roomsList.length === 0 && (
+                      <option value="">Habitación Estándar</option>
+                    )}
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Huéspedes</label>
+                  <select
+                    value={newRes.guests}
+                    onChange={(e) => setNewRes({ ...newRes, guests: Number(e.target.value) })}
+                    className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-800 focus:outline-none"
+                  >
+                    <option value="1">1 Persona</option>
+                    <option value="2">2 Personas</option>
+                    <option value="3">3 Personas</option>
+                    <option value="4">4 Personas</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Entrada</label>
+                  <input
+                    type="date"
+                    required
+                    value={newRes.checkIn}
+                    onChange={(e) => setNewRes({ ...newRes, checkIn: e.target.value })}
+                    className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none text-slate-800"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Salida</label>
+                  <input
+                    type="date"
+                    required
+                    value={newRes.checkOut}
+                    onChange={(e) => setNewRes({ ...newRes, checkOut: e.target.value })}
+                    className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none text-slate-800"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4 items-center pt-2">
+                <div>
+                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Costo Estimado</label>
+                  <input
+                    type="text"
+                    required
+                    value={newRes.totalPrice}
+                    onChange={(e) => setNewRes({ ...newRes, totalPrice: e.target.value })}
+                    placeholder="$1,599 MXN"
+                    className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none text-slate-800"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Estado Inicial</label>
+                  <select
+                    value={newRes.status}
+                    onChange={(e) => setNewRes({ ...newRes, status: e.target.value as any })}
+                    className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm font-semibold text-emerald-700 focus:outline-none"
+                  >
+                    <option value="confirmed" className="text-emerald-600 font-semibold">Confirmada</option>
+                    <option value="pending" className="text-amber-600 font-semibold">Pendiente</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className="flex justify-end gap-3 pt-4 border-t">
+                <button
+                  type="button"
+                  onClick={() => setIsModalOpen(false)}
+                  className="px-4 py-2 border border-slate-200 hover:bg-slate-50 text-slate-500 rounded-xl text-sm font-bold tracking-wide uppercase cursor-pointer"
+                >
+                  Cancelar
+                </button>
+                <button
+                  type="submit"
+                  className="px-5 py-2 bg-emerald-500 hover:bg-emerald-600 text-white rounded-xl text-sm font-bold tracking-wide uppercase cursor-pointer shadow-md"
+                >
+                  Registrar
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       )}
