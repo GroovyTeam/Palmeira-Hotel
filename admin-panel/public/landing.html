@@ -198,7 +198,7 @@
           <p class="label">Explorar Servicios</p>
         </div>
       </div>
-      <div class="services-grid">
+      <div class="services-grid" id="services-grid">
         <div class="service-card">
           <div class="service-icon">
             <span class="material-symbols-outlined">location_on</span>
@@ -301,7 +301,7 @@
       </div>
       <div class="experiences-grid">
         <div class="experience-card">
-          <img src="./public/img/recursos/momento1.jpeg" alt="Gastronomía de Autor" class="experience-img" />
+          <img src="./public/img/recursos/momento1.jpeg" alt="Gastronomía de Autor" class="experience-img" id="experience-img-1" />
           <div class="experience-content">
             <h3>Gastronomía de Autor</h3>
             <p>
@@ -312,7 +312,7 @@
           </div>
         </div>
         <div class="experience-card">
-          <img src="./public/img/recursos/alberca.png" alt="Días de Sol en la Alberca" class="experience-img" />
+          <img src="./public/img/recursos/alberca.png" alt="Días de Sol en la Alberca" class="experience-img" id="experience-img-2" />
           <div class="experience-content">
             <h3>Días de Sol en la Alberca</h3>
             <p>
@@ -332,7 +332,7 @@
       <div class="restaurant-grid">
         <div class="restaurant-image">
           <img src="./public/img/recursos/restaurant.jpeg" alt="Restaurante Xanat - Hotel Palmeira's"
-            class="restaurant-img-real" />
+            class="restaurant-img-real" id="restaurant-img" />
         </div>
         <div class="restaurant-info">
           <span class="restaurant-label">Experiencia Culinaria</span>
@@ -398,7 +398,7 @@
         <div class="beach-moments-showcase">
           <div class="beach-moments-slider">
             <div class="slides" id="beachSlides">
-              <img class="active" src="./public/img/recursos/playa_nueva.png" alt="Playa y atardecer en Tuxpan" />
+              <img class="active" src="./public/img/recursos/playa_nueva.png" alt="Playa y atardecer en Tuxpan" id="beach-img" />
               <img src="./public/img/recursos/heroImage.jpeg" alt="Vista panorámica al amanecer" />
               <img src="./public/img/recursos/heroo.jpeg" alt="Disfrutando del sol" />
               <img src="./public/img/recursos/hero2.jpg" alt="Vista costera" />
@@ -423,56 +423,59 @@
         <h2>Habitaciones</h2>
         <span class="rooms-label">En nuestro Golfo de México </span>
       </div>
-      <div class="room-showcase">
-        <div class="room-slider">
-          <div class="slides" id="roomSlides">
-            <img class="active" src="./public/img/recursos/room1.png"
-              alt="Habitación elegante con aire acondicionado y vista al mar" width="1024" height="697" />
-            <img src="./public/img/recursos/room2.png" alt="Interiores confortables y modernos del Hotel Palmeira"
-              width="1000" height="851" />
-            <img src="./public/img/recursos/roomp.jpeg" alt="Habitaciones Duo" width="300" height="300" />
-          </div>
-          <button class="slide-btn slide-prev" id="slidePrev" aria-label="Anterior">
-            <span class="material-symbols-outlined">chevron_left</span>
-          </button>
-          <button class="slide-btn slide-next" id="slideNext" aria-label="Siguiente">
-            <span class="material-symbols-outlined">chevron_right</span>
-          </button>
-          <div class="slide-dots" id="slideDots"></div>
-        </div>
-        <div class="room-info">
-          <div class="room-price" id="room-price">Desde $1,599 MXN / noche</div>
-          <h3 id="room-title">Descanso y tranquilidad</h3>
-          <p id="room-desc">
-            Despertar y observar desde tu habitación la tropicalidad de las
-            aguas del golfo, en Tuxpan, Veracruz, México
-          </p>
-          <ul class="room-amenities" id="room-amenities-list">
-            <li>
-              <span class="material-symbols-outlined">check_circle</span> Cama
-              acogedora
-            </li>
-            <li>
-              <span class="material-symbols-outlined">check_circle</span>
-              Limpieza
-            </li>
-            <li>
-              <span class="material-symbols-outlined">check_circle</span>
-              Wi-Fi de alta velocidad
-            </li>
-          </ul>
-          <div class="room-schedules" style="margin: 1.2rem 0; display: flex; gap: 1.5rem; font-size: 0.9rem; color: var(--primary);">
-            <div>
-              <strong style="color: var(--tertiary);">Check-in:</strong> <span id="val-checkin">15:00 hrs</span>
+      <div id="rooms-container">
+        <div class="room-showcase">
+          <div class="room-slider">
+            <div class="slides" id="roomSlides">
+              <img class="active" src="./public/img/recursos/room1.png"
+                alt="Habitación elegante con aire acondicionado y vista al mar" width="1024" height="697" />
+              <img src="./public/img/recursos/room2.png" alt="Interiores confortables y modernos del Hotel Palmeira"
+                width="1000" height="851" />
+              <img src="./public/img/recursos/roomp.jpeg" alt="Habitaciones Duo" width="300" height="300" />
             </div>
-            <div>
-              <strong style="color: var(--tertiary);">Check-out:</strong> <span id="val-checkout">12:00 hrs</span>
-            </div>
+            <button class="slide-btn slide-prev" id="slidePrev" aria-label="Anterior">
+              <span class="material-symbols-outlined">chevron_left</span>
+            </button>
+            <button class="slide-btn slide-next" id="slideNext" aria-label="Siguiente">
+              <span class="material-symbols-outlined">chevron_right</span>
+            </button>
+            <div class="slide-dots" id="roomDots"></div>
           </div>
-          <button class="btn-whatsapp" id="roomReservar" target="_blank" rel="noopener">
-            <i class="fa-brands fa-whatsapp"></i>
-            Reservar por WhatsApp
-          </button>
+          <div class="room-info">
+            <div class="room-price">Desde $1,599 MXN / noche</div>
+            <h3>Descanso y tranquilidad</h3>
+            <p>
+              Despertar y observar desde tu habitación la tropicalidad de las
+              aguas del golfo, en Tuxpan, Veracruz, México
+            </p>
+            <ul class="room-amenities">
+              <li>
+                <span class="material-symbols-outlined">check_circle</span> Cama
+                acogedora
+              </li>
+              <li>
+                <span class="material-symbols-outlined">check_circle</span>
+                Limpieza
+              </li>
+              <li>
+                <span class="material-symbols-outlined">check_circle</span>
+                Wi-Fi de alta velocidad
+              </li>
+            </ul>
+            <div class="room-schedules"
+              style="margin: 1.2rem 0; display: flex; gap: 1.5rem; font-size: 0.9rem; color: var(--primary);">
+              <div>
+                <strong style="color: var(--tertiary);">Check-in:</strong> <span class="room-val-checkin">15:00 hrs</span>
+              </div>
+              <div>
+                <strong style="color: var(--tertiary);">Check-out:</strong> <span class="room-val-checkout">12:00 hrs</span>
+              </div>
+            </div>
+            <button class="btn-whatsapp" style="width:100%; border:none; outline:none; text-decoration:none; display:inline-flex; align-items:center; justify-content:center; gap:0.5rem; cursor:pointer;" onclick="document.getElementById('navReservar').click()">
+              <i class="fa-brands fa-whatsapp"></i>
+              Reservar por WhatsApp
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -489,23 +492,35 @@
         <div class="testimonial-card glass-card">
           <div class="stars">★★★★★</div>
           <p class="quote">
-            "La comida en el restaurante Xanat está riquísima, de verdad. Pedí los camarones al coco y el sabor es de otro nivel, aparte comes con la vista directa al mar. Nos gustó tanto que fuimos dos veces en la misma semana."
+            "La comida en el restaurante Xanat está riquísima, de verdad. Pedí los camarones al coco y el sabor es de
+            otro nivel, aparte comes con la vista directa al mar. Nos gustó tanto que fuimos dos veces en la misma
+            semana."
           </p>
-          <div class="author" style="margin-top: 1rem; font-size: 0.85rem; font-weight: 700; color: var(--tertiary); text-transform: uppercase; letter-spacing: 0.1em; text-align: right;">— Mariana Rivera</div>
+          <div class="author"
+            style="margin-top: 1rem; font-size: 0.85rem; font-weight: 700; color: var(--tertiary); text-transform: uppercase; letter-spacing: 0.1em; text-align: right;">
+            — Mariana Rivera</div>
         </div>
         <div class="testimonial-card glass-card">
           <div class="stars">★★★★★</div>
           <p class="quote">
-            "Un hotel excelente para relajarse. Literalmente cruzas la calle y ya estás en la arena. La alberca de Chukum es súper cómoda y el agua templada se siente riquísima de noche. Muy recomendado si buscas tranquilidad."
+            "Un hotel excelente para relajarse. Literalmente cruzas la calle y ya estás en la arena. La alberca de
+            Chukum es súper cómoda y el agua templada se siente riquísima de noche. Muy recomendado si buscas
+            tranquilidad."
           </p>
-          <div class="author" style="margin-top: 1rem; font-size: 0.85rem; font-weight: 700; color: var(--tertiary); text-transform: uppercase; letter-spacing: 0.1em; text-align: right;">— Carlos Delgado</div>
+          <div class="author"
+            style="margin-top: 1rem; font-size: 0.85rem; font-weight: 700; color: var(--tertiary); text-transform: uppercase; letter-spacing: 0.1em; text-align: right;">
+            — Carlos Delgado</div>
         </div>
         <div class="testimonial-card glass-card">
           <div class="stars">★★★★★</div>
           <p class="quote">
-            "Súper limpio todo y las camas comodísimas. Lo mejor de todo es el trato del personal, todos son súper atentos y amables desde que llegas. El aire acondicionado enfría excelente, indispensable por el calor de Tuxpan. Volveremos pronto."
+            "Súper limpio todo y las camas comodísimas. Lo mejor de todo es el trato del personal, todos son súper
+            atentos y amables desde que llegas. El aire acondicionado enfría excelente, indispensable por el calor de
+            Tuxpan. Volveremos pronto."
           </p>
-          <div class="author" style="margin-top: 1rem; font-size: 0.85rem; font-weight: 700; color: var(--tertiary); text-transform: uppercase; letter-spacing: 0.1em; text-align: right;">— Familia Gómez</div>
+          <div class="author"
+            style="margin-top: 1rem; font-size: 0.85rem; font-weight: 700; color: var(--tertiary); text-transform: uppercase; letter-spacing: 0.1em; text-align: right;">
+            — Familia Gómez</div>
         </div>
       </div>
     </div>
@@ -519,7 +534,9 @@
           <span class="location-label">El Corazón de la Costa</span>
           <h2 id="location-title">Ubicación</h2>
           <p id="location-desc">
-            De la ubicación, nos complace decir que es insuperable: nos encontramos a menos de 50 metros de la playa en Tuxpan, Veracruz, México. Un rincón pacífico ideal para descansar y desconectarse por completo del estrés cotidiano.
+            De la ubicación, nos complace decir que es insuperable: nos encontramos a menos de 50 metros de la playa en
+            Tuxpan, Veracruz, México. Un rincón pacífico ideal para descansar y desconectarse por completo del estrés
+            cotidiano.
           </p>
           <div class="location-features">
             <div class="location-feature">
@@ -621,7 +638,7 @@
             </div>
             <div class="detail-item">
               <span class="material-symbols-outlined">mail</span>
-              <span>contacto@hotelpalmeira.com</span>
+              <span id="contact-email-text">hotelpalmeira@gmail.com</span>
             </div>
             <div class="detail-item">
               <span class="material-symbols-outlined">location_on</span>
@@ -629,12 +646,15 @@
             </div>
             <div class="detail-item">
               <span class="material-symbols-outlined">schedule</span>
-              <span>Check-in: <span id="val-checkin-footer">15:00 hrs</span> • Check-out: <span id="val-checkout-footer">12:00 hrs</span></span>
+              <span>Check-in: <span id="val-checkin-footer">15:00 hrs</span> • Check-out: <span
+                  id="val-checkout-footer">12:00 hrs</span></span>
             </div>
           </div>
           <div class="contact-social">
-            <a href="https://instagram.com/hotelpalmeiras" id="social-instagram" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://facebook.com/hotelpalmeiras" id="social-facebook" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://instagram.com/hotelpalmeiras" id="social-instagram" target="_blank" rel="noopener"
+              aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/p/Hotel-Palmeiras-Tuxpan-Beach-61575476071781/" id="social-facebook"
+              target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
           </div>
         </div>
         <div class="contact-form-wrap">
@@ -666,14 +686,14 @@
 
   <!-- ═══ FOOTER ═══ -->
   <footer class="site-footer">
-    <div class="footer-brand">Palmeira's Tuxpan Beach, Veracruz, México</div>
+    <div class="footer-brand" id="footer-brand">Palmeira's Tuxpan Beach, Veracruz, México</div>
     <div class="footer-links">
       <a href="#inicio">Inicio</a>
       <a href="#servicios">Servicios</a>
       <a href="#restaurante">Restaurante</a>
       <a href="#contacto">Contacto</a>
     </div>
-    <div class="footer-copy">
+    <div class="footer-copy" id="footer-copy">
       © 2025 Hotel Palmeira's Tuxpan Beach, Veracruz, México. La Veranda Tropical.
     </div>
   </footer>

@@ -3,6 +3,7 @@ import path from 'path';
 import { sql, initDb } from './db';
 
 export interface Settings {
+  email: string;
   checkin: string;
   checkout: string;
   whatsapp: string;
@@ -22,38 +23,61 @@ export interface Settings {
       response: string;
     }>;
   };
-  hero?: {
+  hero: {
     titleLine1: string;
     titleLine2: string;
     subtitle: string;
+    bgImage?: string;
   };
-  about?: {
+  about: {
     poolTitle: string;
     poolDesc: string;
     serviceTitle: string;
     serviceDesc: string;
+    poolImage?: string;
+    serviceImage?: string;
   };
-  rooms?: {
-    priceFrom: string;
+  rooms: {
+    priceFrom?: string;
+    title?: string;
+    description?: string;
+    amenities?: string[];
+    list?: Array<{
+      id: string;
+      title: string;
+      priceFrom: string;
+      description: string;
+      amenities: string[];
+      imageSrc: string;
+    }>;
+  };
+  services: {
     title: string;
-    description: string;
-    amenities: string[];
+    desc: string;
+    list?: Array<{
+      id: string;
+      icon: string;
+      title: string;
+      description: string;
+    }>;
   };
-  location?: {
+  restaurant: {
+    title: string;
+    desc: string;
+    image?: string;
+  };
+  beach: {
+    title: string;
+    desc: string;
+    image?: string;
+  };
+  location: {
     title: string;
     desc: string;
   };
-  services?: {
-    title: string;
-    desc: string;
-  };
-  restaurant?: {
-    title: string;
-    desc: string;
-  };
-  beach?: {
-    title: string;
-    desc: string;
+  footer: {
+    brand: string;
+    copy: string;
   };
 }
 
@@ -61,6 +85,7 @@ const DATA_DIR = path.join(process.cwd(), 'src/data');
 const DATA_FILE = path.join(DATA_DIR, 'settings.json');
 
 const DEFAULT_SETTINGS: Settings = {
+  email: "hotelpalmeira@gmail.com",
   checkin: "15:00",
   checkout: "12:00",
   whatsapp: "527731758654",
@@ -115,22 +140,27 @@ const DEFAULT_SETTINGS: Settings = {
   hero: {
     titleLine1: "Hotel",
     titleLine2: "Palmeira's Tuxpan Beach",
-    subtitle: "Te invita a su consorcio hotelero que la brisa del mar y el golfo de México te ofrecen en un santuario de paz y elegancia, que se han diseñado para ti"
+    subtitle: "Te invita a su consorcio hotelero que la brisa del mar y el golfo de México te ofrecen en un santuario de paz y elegancia, que se han diseñado para ti",
+    bgImage: "./public/img/recursos/hero.png"
   },
   about: {
     poolTitle: "La Alberca",
     poolDesc: "Diseñada con el elemento natural (chukum), traído desde Mérida Yucatán, para que el agua se asemeje a los cenotes naturales de ese lugar.",
     serviceTitle: "Atención de su personal",
-    serviceDesc: "Desde la cálida bienvenida hasta el último momento de tu estancia, nuestro equipo está dedicado a tu bienestar. Estamos atentos a cada detalle para convertir tu visita en una experiencia inolvidable."
+    serviceDesc: "Desde la cálida bienvenida hasta el último momento de tu estancia, nuestro equipo está dedicado a tu bienestar. Estamos atentos a cada detalle para convertir tu visita en una experiencia inolvidable.",
+    poolImage: "./public/img/recursos/momento1.jpeg",
+    serviceImage: "./public/img/recursos/alberca.png"
   },
   rooms: {
-    priceFrom: "$1,599 MXN",
-    title: "Descanso y tranquilidad",
-    description: "Despertar y observar desde tu habitación la tropicalidad de las aguas del golfo, en Tuxpan, Veracruz, México",
-    amenities: [
-      "Cama acogedora",
-      "Limpieza",
-      "Wi-Fi de alta velocidad"
+    list: [
+      {
+        id: "room_default_1",
+        title: "Descanso y tranquilidad",
+        priceFrom: "$1,599 MXN",
+        description: "Despertar y observar desde tu habitación la tropicalidad de las aguas del golfo, en Tuxpan, Veracruz, México",
+        amenities: ["Cama acogedora", "Limpieza", "Wi-Fi de alta velocidad"],
+        imageSrc: "./public/img/recursos/room1.png"
+      }
     ]
   },
   location: {
@@ -139,15 +169,47 @@ const DEFAULT_SETTINGS: Settings = {
   },
   services: {
     title: "Vive y disfruta la naturaleza",
-    desc: "Hacer conexión con la naturaleza de este cálido horizonte y belleza del sol, que las playas de Tuxpan, nos brindan para disfrutar con la familia, los amigos y con la tranquilidad de tu ser."
+    desc: "Hacer conexión con la naturaleza de este cálido horizonte y belleza del sol, que las playas de Tuxpan, nos brindan para disfrutar con la familia, los amigos y con la tranquilidad de tu ser.",
+    list: [
+      {
+        id: "srv_default_1",
+        icon: "location_on",
+        title: "Ubicación",
+        description: "Estamos a 50 metros de la playa en donde el encanto que buscas te envolverá en su oleaje para que sigas disfrutando del maravilloso mar."
+      },
+      {
+        id: "srv_default_2",
+        icon: "pool",
+        title: "Alberca",
+        description: "Disfruta de un chapuzón y nada a tu gusto para relajarte, sentirte tranquilo y divertirte en el lugar perfecto."
+      },
+      {
+        id: "srv_default_3",
+        icon: "restaurant",
+        title: "Restaurante",
+        description: "Es importante degustar la fusión culinaria y comida de autor, preparada para disfrutar de una diversidad de sabores directamente de la mesa a tu paladar, la que es elaborada con el conocimiento, satisfacción y experiencia de nuestro chef en Xanat."
+      },
+      {
+        id: "srv_default_4",
+        icon: "local_parking",
+        title: "Estacionamiento",
+        description: "Contamos con un estacionamiento que garantiza la seguridad de tu vehículo durante tu estancia."
+      }
+    ]
   },
   restaurant: {
     title: "Restaurante Xanat, Beach & Food",
-    desc: "Descubra la fusión culinaria y de autor en el Restaurante Xanat, ubicado en las hermosas instalaciones de nuestro hotel. Deleite su paladar con una selecta variedad de platillos preparados con ingredientes frescos de la región y la maestría de nuestro chef, ofreciendo un viaje de sabores en un ambiente sofisticado y acogedor frente al mar."
+    desc: "Descubra la fusión culinaria y de autor en el Restaurante Xanat, ubicado en las hermosas instalaciones de nuestro hotel. Deleite su paladar con una selecta variedad de platillos preparados con ingredientes frescos de la región y la maestría de nuestro chef, ofreciendo un viaje de sabores en un ambiente sofisticado y acogedor frente al mar.",
+    image: "./public/img/recursos/restaurant.jpeg"
   },
   beach: {
     title: "Momentos en la Playa",
-    desc: "Sienta la calidez de la arena bajo sus pies y déjese envolver por el susurro constante de las olas. En el Hotel Palmeira's Tuxpan Beach, la playa no es solo un destino, sino un lugar donde el amanecer y el atardecer pintan el cielo de matices inolvidables que formarán parte de su historia y descanso."
+    desc: "Sienta la calidez de la arena bajo sus pies y déjese envolver por el susurro constante de las olas. En el Hotel Palmeira's Tuxpan Beach, la playa no es solo un destino, sino un lugar donde el amanecer y el atardecer pintan el cielo de matices inolvidables que formarán parte de su historia y descanso.",
+    image: "./public/img/recursos/playa_nueva.png"
+  },
+  footer: {
+    brand: "Palmeira's Tuxpan Beach, Veracruz, México",
+    copy: "© 2025 Hotel Palmeira's Tuxpan Beach, Veracruz, México. La Veranda Tropical."
   }
 };
 
@@ -171,7 +233,27 @@ export async function getSettings(): Promise<Settings> {
       const result = await sql`SELECT value FROM settings WHERE key = 'site_settings' LIMIT 1`;
       if (result.length > 0) {
         const value = typeof result[0].value === 'string' ? JSON.parse(result[0].value) : result[0].value;
-        return value as Settings;
+        
+        // Sanitize database objects to have array properties if undefined
+        const sanitized = {
+          ...DEFAULT_SETTINGS,
+          ...value,
+          chatbot: {
+            ...DEFAULT_SETTINGS.chatbot,
+            ...(value.chatbot || {})
+          },
+          services: {
+            ...DEFAULT_SETTINGS.services,
+            ...(value.services || {}),
+            list: (value.services && value.services.list) || DEFAULT_SETTINGS.services.list
+          },
+          rooms: {
+            ...DEFAULT_SETTINGS.rooms,
+            ...(value.rooms || {}),
+            list: (value.rooms && value.rooms.list) || DEFAULT_SETTINGS.rooms.list
+          }
+        };
+        return sanitized as Settings;
       }
       return DEFAULT_SETTINGS;
     } catch (error) {
@@ -182,7 +264,26 @@ export async function getSettings(): Promise<Settings> {
   await ensureDataFile();
   try {
     const data = await fs.readFile(DATA_FILE, 'utf-8');
-    return JSON.parse(data) as Settings;
+    const parsed = JSON.parse(data);
+    const sanitized = {
+      ...DEFAULT_SETTINGS,
+      ...parsed,
+      chatbot: {
+        ...DEFAULT_SETTINGS.chatbot,
+        ...(parsed.chatbot || {})
+      },
+      services: {
+        ...DEFAULT_SETTINGS.services,
+        ...(parsed.services || {}),
+        list: (parsed.services && parsed.services.list) || DEFAULT_SETTINGS.services.list
+      },
+      rooms: {
+        ...DEFAULT_SETTINGS.rooms,
+        ...(parsed.rooms || {}),
+        list: (parsed.rooms && parsed.rooms.list) || DEFAULT_SETTINGS.rooms.list
+      }
+    };
+    return sanitized as Settings;
   } catch (error) {
     console.error('Error reading settings file:', error);
     return DEFAULT_SETTINGS;
