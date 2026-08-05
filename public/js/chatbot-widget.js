@@ -129,28 +129,33 @@ window.initializeChatbot = function() {
 
   // Predefined keyword responses for text queries
   function respondToText(text) {
-    const normalized = text.toLowerCase();
+    const normalized = text.toLowerCase().trim();
     
-    if (normalized.includes('horario') || normalized.includes('check-in') || normalized.includes('checkin') || normalized.includes('checkout') || normalized.includes('check-out') || normalized.includes('hora')) {
-      respondToQuery('horarios');
-    } else if (normalized.includes('reservar') || normalized.includes('reserva') || normalized.includes('costo') || normalized.includes('precio') || normalized.includes('tarifa') || normalized.includes('noche') || normalized.includes('pagar')) {
-      respondToQuery('reservar');
-    } else if (normalized.includes('bot') || normalized.includes('whatsapp bot') || normalized.includes('asistente') || (normalized.includes('wa') && normalized.includes('bot'))) {
-      respondToQuery('wa-chatbot');
-    } else if (normalized.includes('alberca') || normalized.includes('piscina') || normalized.includes('chukum') || normalized.includes('wifi') || normalized.includes('internet') || normalized.includes('estacionamiento') || normalized.includes('aire')) {
-      respondToQuery('servicios');
-    } else if (normalized.includes('restaurante') || normalized.includes('comida') || normalized.includes('desayuno') || normalized.includes('chef') || normalized.includes('xanat') || normalized.includes('cenar')) {
-      respondToQuery('comida');
-    } else if (normalized.includes('ubicacion') || normalized.includes('donde') || normalized.includes('dirección') || normalized.includes('mapa') || normalized.includes('playa') || normalized.includes('oxxo') || normalized.includes('tuxpan')) {
-      respondToQuery('ubicacion');
-    } else if (normalized.includes('agente') || normalized.includes('humano') || normalized.includes('persona') || normalized.includes('whatsapp') || normalized.includes('llamar') || normalized.includes('telefono') || normalized.includes('atencion') || normalized.includes('atención') || normalized.includes('servicio')) {
-      respondToQuery('agente');
-    } else {
-      appendMessage(
-        `Gracias por tu mensaje. Para esa duda específica o consultas especiales, te recomiendo hablar directamente con nuestro personal en recepción. Clic aquí para contactar por WhatsApp:\n\n<a href="https://wa.me/${window.WHATSAPP_NUMBER || '527731758654'}?text=Hola,%20tengo%20una%20duda:%20${encodeURIComponent(text)}" class="btn-submit" style="display:inline-block; font-size: 0.8rem; padding: 0.5rem 0.8rem; margin-top: 0.5rem; text-decoration:none; text-align:center;" target="_blank">Contactar WhatsApp</a>`,
-        'bot'
-      );
+    // Check if dynamic Q&A has matching keywords
+    if (config.qna && Array.isArray(config.qna)) {
+      for (const item of config.qna) {
+        if (!item.keywords || !item.response) continue;
+        
+        // Split keywords by comma
+        const keywords = item.keywords.split(',').map(kw => kw.trim().toLowerCase());
+        const hasMatch = keywords.some(kw => kw !== '' && normalized.includes(kw));
+        
+        if (hasMatch) {
+          const hours = getHours();
+          const responseText = item.response
+            .replace(/{checkin}/g, hours.checkin)
+            .replace(/{checkout}/g, hours.checkout);
+          appendMessage(responseText, 'bot');
+          return;
+        }
+      }
     }
+    
+    // Default fallback if no match found
+    appendMessage(
+      `Gracias por tu mensaje. Para esa duda específica o consultas especiales, te recomiendo hablar directamente con nuestro personal en recepción. Clic aquí para contactar por WhatsApp:\n\n<a href="https://wa.me/${window.WHATSAPP_NUMBER || '527731758654'}?text=Hola,%20tengo%20una%20duda:%20${encodeURIComponent(text)}" class="btn-submit" style="display:inline-block; font-size: 0.8rem; padding: 0.5rem 0.8rem; margin-top: 0.5rem; text-decoration:none; text-align:center;" target="_blank">Contactar WhatsApp</a>`,
+      'bot'
+    );
   }
 
   // Helper to read current check-in/out times from the landing page
@@ -165,52 +170,33 @@ window.initializeChatbot = function() {
 
   // Predefined structured responses
   function respondToQuery(type) {
-    let response = '';
     const hours = getHours();
     
+    // If the reply matches a Q&A item keywords or id, resolve it
+    if (config.qna && Array.isArray(config.qna)) {
+      const matched = config.qna.find(item => {
+        const kws = (item.keywords || '').toLowerCase();
+        return kws.includes(type) || item.id === type;
+      });
+      
+      if (matched) {
+        let text = matched.response;
+        text = text.replace(/{checkin}/g, hours.checkin).replace(/{checkout}/g, hours.checkout);
+        appendMessage(text, 'bot');
+        return;
+      }
+    }
+    
+    // Fallback if not found in custom Q&A
+    let response = '';
     switch(type) {
-      case 'horarios':
-        response = `Nuestros horarios de estadía son:\n` +
-          `• 🔑 *Check-in:* a partir de las *${hours.checkin}*\n` +
-          `• 🚪 *Check-out:* límite a las *${hours.checkout}*\n\n` +
-          `Si requiere ingresar antes o salir después de estas horas, coméntelo al realizar su reservación.`;
-        break;
-      case 'reservar':
-        response = `¡Reservar en línea con nosotros es muy sencillo!\n\n` +
-          `1. Cierra este chat y haz clic en cualquier botón de *Reservar* de la página.\n` +
-          `2. Elige tu tipo de habitación, fechas de estadía y número de huéspedes para cotizar.\n` +
-          `3. Selecciona **Pago Seguro con Tarjeta en Línea** para confirmar de inmediato y recibir tu código de confirmación en pantalla, o **WhatsApp** para atención personalizada.`;
-        break;
-      case 'wa-chatbot':
-        response = `¡Sí! Contamos con un *Asistente Virtual en WhatsApp* activo las 24 horas.\n\n` +
-          `Si prefieres resolver dudas rápidas, cotizar estadías o gestionar pagos por mensajería automática, haz clic en el botón de abajo e inicia el chat con el bot de WhatsApp:\n\n` +
-          `<a href="https://wa.me/${window.WHATSAPP_NUMBER || '527731758654'}?text=Hola%20Palmeira%2520Bot,%20me%20gustar%25C3%25ADa%20conocer%20las%20tarifas%20y%20reservar." class="btn-submit" style="display:inline-block; font-size: 0.8rem; padding: 0.5rem 0.8rem; margin-top: 0.5rem; text-decoration:none; text-align:center;" target="_blank">🤖 Chatear con WhatsApp Bot</a>`;
-        break;
-      case 'servicios':
-        response = `Ofrecemos los siguientes servicios premium:\n` +
-          `• 🏊 *Alberca de Chukum:* Diseñada con arena natural de Mérida Yucatán para asemejarse a cenotes.\n` +
-          `• 📶 *Wi-Fi:* Conexión de alta velocidad en áreas comunes y habitaciones.\n` +
-          `• 🚗 *Estacionamiento:* Seguro y gratuito para nuestros huéspedes.\n` +
-          `• ❄️ *Aire acondicionado* en todas las habitaciones.`;
-        break;
-      case 'comida':
-        response = `Le invitamos a conocer el *Restaurante Xanat, Beach & Food* dentro de nuestras instalaciones:\n` +
-          `• 🍴 *Fusión culinaria y comida de autor* diseñada por nuestro chef.\n` +
-          `• 🕒 *Servicio:* Todos los días a partir de las *8:00 AM*.\n` +
-          `• 🌅 Terraza con vista espectacular directamente al Golfo de México.`;
-        break;
-      case 'ubicacion':
-        response = `¡Nuestra ubicación es inmejorable!\n` +
-          `• 🏖️ Estamos a solo *50 metros de la playa* en Tuxpan, Veracruz, México.\n` +
-          `• 🏪 Contamos con una tienda Oxxo a solo 30 metros del hotel.\n` +
-          `• 🚗 El centro de Tuxpan se localiza a 15 minutos en auto.`;
-        break;
       case 'agente':
         response = `Te estoy conectando con nuestro equipo. Haz clic en el botón de abajo para iniciar un chat directo de soporte con recepción por WhatsApp:\n\n` +
           `<a href="https://wa.me/${window.WHATSAPP_NUMBER || '527731758654'}?text=Hola,%20necesito%20atenci%25C3%25B3n%20personalizada%20de%20un%20agente." class="btn-submit" style="display:inline-block; font-size: 0.8rem; padding: 0.5rem 0.8rem; margin-top: 0.5rem; text-decoration:none; text-align:center;" target="_blank">Conversar con Agente</a>`;
         break;
+      default:
+        response = `Para esa duda o consulta especial, te recomiendo hablar directamente con recepción por WhatsApp: \n\n<a href="https://wa.me/${window.WHATSAPP_NUMBER || '527731758654'}?text=Hola,%20tengo%20una%20duda." class="btn-submit" style="display:inline-block; font-size: 0.8rem; padding: 0.5rem 0.8rem; margin-top: 0.5rem; text-decoration:none; text-align:center;" target="_blank">Contactar WhatsApp</a>`;
     }
-    
     appendMessage(response, 'bot');
   }
 };
