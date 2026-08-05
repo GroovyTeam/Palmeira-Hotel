@@ -16,6 +16,11 @@ export interface Settings {
     welcomeMsg: string;
     waBotEnabled?: boolean;
     waWelcomeMsg?: string;
+    qna?: Array<{
+      id: string;
+      keywords: string;
+      response: string;
+    }>;
   };
   hero?: {
     titleLine1: string;
@@ -68,7 +73,44 @@ const DEFAULT_SETTINGS: Settings = {
     botName: "Asistente Palmeira",
     welcomeMsg: "¡Hola! Bienvenido a Hotel Palmeira's. Soy tu asistente virtual. ¿En qué te puedo ayudar hoy?",
     waBotEnabled: true,
-    waWelcomeMsg: "¡Hola! Bienvenido al asistente de WhatsApp de Hotel Palmeira. Escribe 'reservar' para cotizar o 'horarios' para conocer los tiempos de check-in/out."
+    waWelcomeMsg: "¡Hola! Bienvenido al asistente de WhatsApp de Hotel Palmeira. Escribe 'reservar' para cotizar o 'horarios' para conocer los tiempos de check-in/out.",
+    qna: [
+      {
+        id: "qna_1",
+        keywords: "horario, check-in, checkin, checkout, check-out, hora",
+        response: "Nuestros horarios de estadía son:\n• 🔑 Check-in: a partir de las {checkin} hrs\n• 🚪 Check-out: límite a las {checkout} hrs\n\nSi requiere ingresar antes o salir después de estas horas, coméntelo al realizar su reservación."
+      },
+      {
+        id: "qna_2",
+        keywords: "reservar, reserva, costo, precio, tarifa, noche, pagar",
+        response: "¡Reservar en línea con nosotros es muy sencillo!\n\n1. Cierra este chat y haz clic en cualquier botón de Reservar de la página.\n2. Elige tus fechas de estadía y número de huéspedes para cotizar.\n3. Confirma tu solicitud de reservación y te redirigiremos a WhatsApp para finalizar con recepción."
+      },
+      {
+        id: "qna_3",
+        keywords: "bot, whatsapp bot, asistente, wa bot",
+        response: "Contamos con un Asistente Virtual en WhatsApp activo las 24 horas para cotizar y reservar de forma automática.\n\nEscribe 'reservar' al número oficial de WhatsApp para iniciar la simulación."
+      },
+      {
+        id: "qna_4",
+        keywords: "alberca, piscina, chukum, wifi, internet, estacionamiento, aire",
+        response: "Ofrecemos los siguientes servicios premium:\n• 🏊 Alberca de Chukum: Diseñada con arena natural de Mérida Yucatán para asemejarse a cenotes.\n• 📶 Wi-Fi: Conexión de alta velocidad en áreas comunes y habitaciones.\n• 🚗 Estacionamiento: Seguro y gratuito para nuestros huéspedes.\n• ❄️ Aire acondicionado en todas las habitaciones."
+      },
+      {
+        id: "qna_5",
+        keywords: "restaurante, comida, desayuno, chef, xanat, cenar",
+        response: "Le invitamos a conocer el Restaurante Xanat, Beach & Food dentro de nuestras instalaciones:\n• 🍴 Fusión culinaria y comida de autor diseñada por nuestro chef.\n• 🕒 Servicio: Todos los días a partir de las 8:00 AM.\n• 🌅 Terraza con vista espectacular directamente al Golfo de México."
+      },
+      {
+        id: "qna_6",
+        keywords: "ubicacion, donde, dirección, mapa, playa, oxxo, tuxpan",
+        response: "¡Nuestra ubicación es inmejorable!\n• 🏖️ Estamos a solo 50 metros de la playa en Tuxpan, Veracruz, México.\n• 🏪 Contamos con una tienda Oxxo a solo 30 metros del hotel.\n• 🚗 El centro de Tuxpan se localiza a 15 minutos en auto."
+      },
+      {
+        id: "qna_7",
+        keywords: "agente, humano, persona, whatsapp, llamar, telefono, recepcion",
+        response: "Puedes iniciar un chat directo de soporte con recepción por WhatsApp haciendo clic en el botón flotante o contactándonos al número de reservas oficial."
+      }
+    ]
   },
   hero: {
     titleLine1: "Hotel",

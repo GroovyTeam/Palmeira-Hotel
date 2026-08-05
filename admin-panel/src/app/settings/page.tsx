@@ -16,6 +16,11 @@ interface Settings {
     welcomeMsg: string;
     waBotEnabled?: boolean;
     waWelcomeMsg?: string;
+    qna?: Array<{
+      id: string;
+      keywords: string;
+      response: string;
+    }>;
   };
 }
 
@@ -32,7 +37,17 @@ export default function SettingsPage() {
         const res = await fetch('/api/settings');
         if (!res.ok) throw new Error('No se pudieron cargar los ajustes.');
         const data = await res.json();
-        setSettings(data);
+        const sanitized = {
+          ...data,
+          chatbot: {
+            enabled: true,
+            botName: 'Asistente Palmeira',
+            welcomeMsg: '',
+            qna: [],
+            ...(data.chatbot || {})
+          }
+        };
+        setSettings(sanitized);
       } catch (err: any) {
         setError(err.message || 'Error de conexión');
       } finally {
@@ -90,6 +105,52 @@ export default function SettingsPage() {
       chatbot: {
         ...settings.chatbot,
         waBotEnabled: !settings.chatbot.waBotEnabled
+      }
+    });
+  };
+
+  const handleAddQna = () => {
+    if (!settings) return;
+    const currentQna = settings.chatbot.qna || [];
+    const newQnaItem = {
+      id: `qna_${Math.random().toString(36).substr(2, 9)}`,
+      keywords: '',
+      response: ''
+    };
+    setSettings({
+      ...settings,
+      chatbot: {
+        ...settings.chatbot,
+        qna: [...currentQna, newQnaItem]
+      }
+    });
+  };
+
+  const handleRemoveQna = (index: number) => {
+    if (!settings) return;
+    const currentQna = settings.chatbot.qna || [];
+    const updatedQna = currentQna.filter((_, idx) => idx !== index);
+    setSettings({
+      ...settings,
+      chatbot: {
+        ...settings.chatbot,
+        qna: updatedQna
+      }
+    });
+  };
+
+  const handleQnaChange = (index: number, field: 'keywords' | 'response', value: string) => {
+    if (!settings) return;
+    const currentQna = [...(settings.chatbot.qna || [])];
+    currentQna[index] = {
+      ...currentQna[index],
+      [field]: value
+    };
+    setSettings({
+      ...settings,
+      chatbot: {
+        ...settings.chatbot,
+        qna: currentQna
       }
     });
   };
@@ -324,6 +385,69 @@ export default function SettingsPage() {
               </div>
             )}
           </div>
+          
+          {/* Chatbot Q&A Manager */}
+          {settings?.chatbot?.enabled && (
+            <div className="border-t border-slate-100 pt-6 mt-6 space-y-4">
+              <div className="flex justify-between items-center">
+                <div>
+                  <h3 className="text-lg font-bold text-slate-800">Preguntas Frecuentes y Respuestas (Asistente Web)</h3>
+                  <p className="text-xs text-slate-400 mt-0.5">Controla qué responde el bot según las palabras clave del usuario.</p>
+                </div>
+                <button
+                  type="button"
+                  onClick={handleAddQna}
+                  className="px-4 py-2 bg-slate-800 hover:bg-slate-900 text-white text-xs font-bold uppercase tracking-wider rounded-xl cursor-pointer flex items-center gap-1.5 shadow-sm"
+                >
+                  <span className="text-sm font-semibold">+</span> Agregar Respuesta
+                </button>
+              </div>
+              
+              <div className="space-y-4">
+                {(settings.chatbot.qna || []).map((item, idx) => (
+                  <div key={item.id || idx} className="bg-slate-50 p-4 rounded-2xl border border-slate-200 relative space-y-3">
+                    <button
+                      type="button"
+                      onClick={() => handleRemoveQna(idx)}
+                      className="absolute top-4 right-4 text-slate-400 hover:text-red-500 font-bold text-sm cursor-pointer transition-colors"
+                      title="Eliminar esta respuesta"
+                    >
+                      ✕
+                    </button>
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-4 pr-6">
+                      <div className="md:col-span-1">
+                        <label className="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Palabras Clave (por coma)</label>
+                        <input
+                          type="text"
+                          value={item.keywords}
+                          onChange={(e) => handleQnaChange(idx, 'keywords', e.target.value)}
+                          placeholder="ej. horario, hora, check-in"
+                          className="w-full px-4 py-2 bg-white border border-slate-200 rounded-xl text-sm focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 focus:outline-none"
+                          required
+                        />
+                      </div>
+                      <div className="md:col-span-3">
+                        <label className="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Respuesta Automática del Asistente</label>
+                        <textarea
+                          value={item.response}
+                          onChange={(e) => handleQnaChange(idx, 'response', e.target.value)}
+                          placeholder="Escribe lo que el bot responderá si detecta las palabras clave..."
+                          rows={2}
+                          className="w-full px-4 py-2 bg-white border border-slate-200 rounded-xl text-sm focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 focus:outline-none"
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                ))}
+                {(settings.chatbot.qna || []).length === 0 && (
+                  <div className="text-center py-6 bg-slate-50 border border-dashed border-slate-200 rounded-2xl">
+                    <p className="text-xs text-slate-400 italic">No hay respuestas personalizadas registradas. El bot redirigirá a WhatsApp por defecto.</p>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
         </div>
 
         <div className="lg:col-span-2 flex justify-end">
