@@ -83,6 +83,22 @@ document.addEventListener('DOMContentLoaded', () => {
       ...swalTheme,
     });
 
+    // Guardar reservación en el admin panel local en segundo plano (no bloqueante)
+    fetch('http://localhost:3000/api/reservations', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        firstName: name,
+        lastName: last,
+        email: email,
+        phone: phone,
+      }),
+    }).catch(err => {
+      console.warn('No se pudo conectar con el Admin Panel para guardar la reservación. Esto es normal si el panel de administración no está ejecutándose en http://localhost:3000.', err);
+    });
+
     setTimeout(() => {
       const msg = `Hola, soy ${name} ${last}. Me interesa reservar una habitación. Mi número de contacto es ${phone} y mi correo es ${email}`;
       window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_self');

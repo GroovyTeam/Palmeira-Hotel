@@ -1889,34 +1889,24 @@ ol {
     gap: 1.5rem;
   }
 
-  .gallery-item:nth-child(1) {
+  .gallery-item.span-2-2 {
     grid-column: span 2;
     grid-row: span 2;
   }
 
-  .gallery-item:nth-child(2) {
+  .gallery-item.span-1-2 {
     grid-column: span 1;
     grid-row: span 2;
   }
 
-  .gallery-item:nth-child(3) {
+  .gallery-item.span-1-1 {
     grid-column: span 1;
     grid-row: span 1;
   }
 
-  .gallery-item:nth-child(4) {
+  .gallery-item.span-2-1 {
     grid-column: span 2;
     grid-row: span 1;
-  }
-
-  .gallery-item:nth-child(5) {
-    grid-column: span 1;
-    grid-row: span 2;
-  }
-
-  .gallery-item:nth-child(6) {
-    grid-column: span 2;
-    grid-row: span 2;
   }
 
   .room-showcase {
@@ -1993,4 +1983,397 @@ ol {
   .room-slider .slides {
     aspect-ratio: 16 / 9;
   }
+}
+
+/* ── 14. Booking Widget Modal (Glassmorphism & Editorial) ── */
+.booking-dialog {
+  border: none;
+  background: transparent;
+  padding: 0;
+  max-width: 550px;
+  width: 90%;
+  border-radius: var(--radius-3xl);
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  margin: auto;
+}
+
+.booking-dialog::backdrop {
+  background: rgba(25, 28, 28, 0.4);
+  backdrop-filter: blur(8px);
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.booking-container {
+  background: rgba(249, 249, 248, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 2.5rem;
+  border-radius: var(--radius-3xl);
+  font-family: var(--font-sans);
+}
+
+.booking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(57, 102, 99, 0.1);
+  padding-bottom: 1rem;
+}
+
+.booking-header h3 {
+  font-family: var(--font-headline);
+  color: var(--primary);
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.booking-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--primary);
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.booking-close:hover {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.booking-form {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.booking-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 575px) {
+  .booking-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.booking-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.booking-group label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--primary);
+  opacity: 0.8;
+  text-align: left;
+}
+
+.booking-group input,
+.booking-group select {
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(57, 102, 99, 0.2);
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: var(--radius-xl);
+  font-size: 0.95rem;
+  color: var(--primary);
+  outline: none;
+  transition: all 0.3s;
+}
+
+.booking-group input:focus,
+.booking-group select:focus {
+  border-color: var(--tertiary);
+  box-shadow: 0 0 0 3px rgba(188, 151, 93, 0.1);
+  background: #ffffff;
+}
+
+.booking-summary {
+  background: rgba(57, 102, 99, 0.05);
+  border: 1px dashed rgba(57, 102, 99, 0.2);
+  padding: 1.2rem;
+  border-radius: var(--radius-2xl);
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.booking-price-label {
+  font-size: 0.85rem;
+  color: var(--primary);
+  opacity: 0.8;
+}
+
+.booking-price-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--tertiary);
+}
+
+.booking-submit {
+  background: var(--tertiary);
+  color: #ffffff;
+  border: none;
+  padding: 1rem;
+  border-radius: var(--radius-xl);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 10px rgba(188, 151, 93, 0.2);
+}
+
+.booking-submit:hover {
+  background: #a9804b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(188, 151, 93, 0.3);
+}
+
+.booking-submit:active {
+  transform: translateY(0);
+}
+
+/* ── 15. Chatbot Floating Widget (Glassmorphism) ── */
+.chatbot-toggle {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 60px;
+  height: 60px;
+  background: var(--primary);
+  color: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 10px 25px rgba(57, 102, 99, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 999;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.chatbot-toggle:hover {
+  transform: scale(1.1) rotate(5deg);
+  background: var(--tertiary);
+  box-shadow: 0 12px 30px rgba(188, 151, 93, 0.4);
+}
+
+.chatbot-toggle span {
+  font-size: 1.8rem;
+  transition: transform 0.3s;
+}
+
+.chatbot-toggle.open span {
+  transform: rotate(90deg);
+}
+
+.chatbot-window {
+  position: fixed;
+  bottom: 96px;
+  right: 24px;
+  width: 360px;
+  height: 480px;
+  background: rgba(249, 249, 248, 0.95);
+  border: 1px solid rgba(57, 102, 99, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-3xl);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 998;
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.chatbot-window.open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+@media (max-width: 480px) {
+  .chatbot-window {
+    width: calc(100% - 32px);
+    right: 16px;
+    left: 16px;
+    height: 70vh;
+    bottom: 88px;
+  }
+}
+
+.chatbot-header {
+  background: linear-gradient(135deg, var(--primary), #4c7d7a);
+  color: #ffffff;
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chatbot-header h4 {
+  margin: 0;
+  font-family: var(--font-headline);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.chatbot-header h4::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  animation: pulse-soft 2s infinite;
+}
+
+.chatbot-header-close {
+  background: none;
+  border: none;
+  color: #ffffff;
+  opacity: 0.8;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.chatbot-header-close:hover {
+  opacity: 1;
+}
+
+.chatbot-messages {
+  flex: 1;
+  padding: 1.2rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  scroll-behavior: smooth;
+}
+
+.chatbot-msg {
+  max-width: 80%;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-2xl);
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+.chatbot-msg.bot {
+  background: rgba(57, 102, 99, 0.06);
+  color: var(--primary);
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+
+.chatbot-msg.user {
+  background: var(--primary);
+  color: #ffffff;
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+
+.chatbot-quick-replies {
+  padding: 0.5rem 1.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.03);
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.chatbot-reply-btn {
+  background: #ffffff;
+  border: 1px solid rgba(57, 102, 99, 0.15);
+  color: var(--primary);
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.chatbot-reply-btn:hover {
+  background: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+}
+
+.chatbot-input-area {
+  padding: 0.8rem 1.2rem;
+  display: flex;
+  gap: 0.6rem;
+  border-top: 1px solid rgba(57, 102, 99, 0.08);
+  background: #ffffff;
+}
+
+.chatbot-input {
+  flex: 1;
+  border: 1px solid rgba(57, 102, 99, 0.15);
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-2xl);
+  font-size: 0.88rem;
+  outline: none;
+  background: var(--surface);
+  transition: all 0.3s;
+}
+
+.chatbot-input:focus {
+  border-color: var(--primary);
+  background: #ffffff;
+  box-shadow: 0 0 0 2px rgba(57, 102, 99, 0.05);
+}
+
+.chatbot-send-btn {
+  background: var(--primary);
+  color: #ffffff;
+  border: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.chatbot-send-btn:hover {
+  background: var(--tertiary);
+}
+
+.chatbot-send-btn span {
+  font-size: 1.2rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }

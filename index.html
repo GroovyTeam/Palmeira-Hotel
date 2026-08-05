@@ -19,7 +19,7 @@
   <meta property="og:url" content="https://groovyteam.github.io/Palmeira-Hotel/" />
   <meta property="og:title" content="Hotel Palmeira's | La Veranda Tropical" />
   <meta property="og:description"
-    content="Habitaciones confortables frente al mar en Tuxpan, Veracruz.  restaurante, piscina y el mejor descanso." />
+    content="Habitaciones confortables frente al mar en Tuxpan, Veracruz. Con restaurante, alberca y el mejor descanso." />
   <meta property="og:image" content="https://groovyteam.github.io/Palmeira-Hotel/public/img/recursos/fachadaa.jpg" />
 
   <!-- Twitter -->
@@ -150,8 +150,8 @@
       <div class="hero-overlay"></div>
     </div>
     <div class="hero-content">
-      <h1>Hotel<br /><em>Palmeira's Tuxpan Beach</em></h1>
-      <p class="hero-subtitle">
+      <h1 id="hero-title">Hotel<br /><em>Palmeira's Tuxpan Beach</em></h1>
+      <p class="hero-subtitle" id="hero-subtitle">
         Te invita a su consorcio hotelero que la brisa del mar y el golfo de
         México te ofrecen en un santuario de paz y elegancia, que se han
         diseñado para ti
@@ -185,8 +185,8 @@
     <div class="container">
       <div class="services-header">
         <div>
-          <h2>Vive y disfruta la naturaleza</h2>
-          <p>
+          <h2 id="services-title">Vive y disfruta la naturaleza</h2>
+          <p id="services-desc">
             Hacer conexión con la naturaleza de este cálido horizonte y
             belleza del sol, que las playas de Tuxpan, nos brindan para
             disfrutar con la familia, los amigos y con la tranquilidad de tu
@@ -264,24 +264,23 @@
         </div>
         <div class="details-features">
           <div class="detail-feature">
-            <h3>
+            <h3 id="about-pool-title">
               <span class="material-symbols-outlined">pool</span> La Alberca
             </h3>
-            <p>
+            <p id="about-pool-desc">
               Diseñada con el elemento natural (chukum), traído desde Mérida
-              Yucatán, para que el agua se asemeje a los senotes naturales de
+              Yucatán, para que el agua se asemeje a los cenotes naturales de
               ese lugar.
             </p>
           </div>
           <div class="detail-feature">
-            <h3>
+            <h3 id="about-service-title">
               <span class="material-symbols-outlined">volunteer_activism</span>
-              Atencion de su personal
+              Atención de su personal
             </h3>
-            <p>
+            <p id="about-service-desc">
               Desde la cálida bienvenida hasta el último momento de tu estancia, nuestro equipo está dedicado a tu
               bienestar. Estamos atentos a cada detalle para convertir tu visita en una experiencia inolvidable.
-
             </p>
           </div>
         </div>
@@ -337,8 +336,8 @@
         </div>
         <div class="restaurant-info">
           <span class="restaurant-label">Experiencia Culinaria</span>
-          <h2>Restaurante Xanat, Beach & Food</h2>
-          <p class="restaurant-desc">
+          <h2 id="restaurant-title">Restaurante Xanat, Beach & Food</h2>
+          <p class="restaurant-desc" id="restaurant-desc">
             Descubra la fusión culinaria y de autor en el Restaurante Xanat, ubicado en las hermosas instalaciones de
             nuestro hotel.
             Deleite su paladar con una selecta variedad de platillos preparados con ingredientes frescos de la región y
@@ -372,8 +371,8 @@
       <div class="beach-moments-grid">
         <div class="beach-moments-info">
           <span class="beach-moments-label">El Latido de Tuxpan</span>
-          <h2>Momentos en la Playa</h2>
-          <p class="beach-moments-desc">
+          <h2 id="beach-title">Momentos en la Playa</h2>
+          <p class="beach-moments-desc" id="beach-desc">
             Sienta la calidez de la arena bajo sus pies y déjese envolver por el susurro constante de las olas.
             En el Hotel Palmeira's Tuxpan Beach, la playa no es solo un destino, sino un lugar donde el amanecer y
             el atardecer
@@ -442,13 +441,13 @@
           <div class="slide-dots" id="slideDots"></div>
         </div>
         <div class="room-info">
-          <div class="room-price">Desde $1,599 MXN / noche</div>
-          <h3>Descanso y tranquilidad</h3>
-          <p>
+          <div class="room-price" id="room-price">Desde $1,599 MXN / noche</div>
+          <h3 id="room-title">Descanso y tranquilidad</h3>
+          <p id="room-desc">
             Despertar y observar desde tu habitación la tropicalidad de las
             aguas del golfo, en Tuxpan, Veracruz, México
           </p>
-          <ul class="room-amenities">
+          <ul class="room-amenities" id="room-amenities-list">
             <li>
               <span class="material-symbols-outlined">check_circle</span> Cama
               acogedora
@@ -462,6 +461,14 @@
               Wi-Fi de alta velocidad
             </li>
           </ul>
+          <div class="room-schedules" style="margin: 1.2rem 0; display: flex; gap: 1.5rem; font-size: 0.9rem; color: var(--primary);">
+            <div>
+              <strong style="color: var(--tertiary);">Check-in:</strong> <span id="val-checkin">15:00 hrs</span>
+            </div>
+            <div>
+              <strong style="color: var(--tertiary);">Check-out:</strong> <span id="val-checkout">12:00 hrs</span>
+            </div>
+          </div>
           <button class="btn-whatsapp" id="roomReservar" target="_blank" rel="noopener">
             <i class="fa-brands fa-whatsapp"></i>
             Reservar por WhatsApp
@@ -478,29 +485,27 @@
         <span class="testimonials-label">Voces de nuestros huéspedes</span>
         <h2>Huéspedes Satisfechos</h2>
       </div>
-      <div class="testimonials-grid">
+      <div class="testimonials-grid" id="testimonialsContainer">
         <div class="testimonial-card glass-card">
           <div class="stars">★★★★★</div>
           <p class="quote">
-            "Los platillos que el restaurante Xanat, Beach & Food en Hotel Palmeira's Tuxpan Beach, y su
-            chef, ofrecen las delicias y preferencias de los
-            platillos elaborados con pasion y entrega."
+            "La comida en el restaurante Xanat está riquísima, de verdad. Pedí los camarones al coco y el sabor es de otro nivel, aparte comes con la vista directa al mar. Nos gustó tanto que fuimos dos veces en la misma semana."
           </p>
+          <div class="author" style="margin-top: 1rem; font-size: 0.85rem; font-weight: 700; color: var(--tertiary); text-transform: uppercase; letter-spacing: 0.1em; text-align: right;">— Mariana Rivera</div>
         </div>
         <div class="testimonial-card glass-card">
           <div class="stars">★★★★★</div>
           <p class="quote">
-            "En Hotel Palmeira’s Tuxpan Beach. Existe una fusión casi perfecta
-            entre tranquilidad y naturaleza, que el mar nos regala"
+            "Un hotel excelente para relajarse. Literalmente cruzas la calle y ya estás en la arena. La alberca de Chukum es súper cómoda y el agua templada se siente riquísima de noche. Muy recomendado si buscas tranquilidad."
           </p>
+          <div class="author" style="margin-top: 1rem; font-size: 0.85rem; font-weight: 700; color: var(--tertiary); text-transform: uppercase; letter-spacing: 0.1em; text-align: right;">— Carlos Delgado</div>
         </div>
         <div class="testimonial-card glass-card">
           <div class="stars">★★★★★</div>
           <p class="quote">
-            "El mejor lugar para desconectar del estrés. Cada detalle, desde
-            la alberca hasta la atención del personal, te hace sentir
-            especial."
+            "Súper limpio todo y las camas comodísimas. Lo mejor de todo es el trato del personal, todos son súper atentos y amables desde que llegas. El aire acondicionado enfría excelente, indispensable por el calor de Tuxpan. Volveremos pronto."
           </p>
+          <div class="author" style="margin-top: 1rem; font-size: 0.85rem; font-weight: 700; color: var(--tertiary); text-transform: uppercase; letter-spacing: 0.1em; text-align: right;">— Familia Gómez</div>
         </div>
       </div>
     </div>
@@ -512,12 +517,9 @@
       <div class="location-grid">
         <div class="location-info">
           <span class="location-label">El Corazón de la Costa</span>
-          <h2>Ubicacion</h2>
-          <p>
-            De la ubicación, nos complace decir que es insuperable, pues solo
-            nos encontramos a no más de 50 metros de distancia a la playa. Aquí
-            en Tuxpan Veracruz, Mex Un lugar que todos deseamos para descansar
-            y desconectarnos del estrés.
+          <h2 id="location-title">Ubicación</h2>
+          <p id="location-desc">
+            De la ubicación, nos complace decir que es insuperable: nos encontramos a menos de 50 metros de la playa en Tuxpan, Veracruz, México. Un rincón pacífico ideal para descansar y desconectarse por completo del estrés cotidiano.
           </p>
           <div class="location-features">
             <div class="location-feature">
@@ -568,26 +570,34 @@
         <span class="gallery-label">Nuestra Esencia Visual</span>
         <h2>Catálogo de Momentos</h2>
       </div>
-      <div class="masonry-gallery">
-        <div class="gallery-item">
+      <div class="masonry-gallery" id="galleryContainer">
+        <div class="gallery-item span-2-2">
           <img src="./public/img/recursos/fachadaa.jpg"
             alt="Fachada principal del Hotel Palmeira's en la Playa de Tuxpan" />
         </div>
-        <div class="gallery-item">
+        <div class="gallery-item span-1-2">
           <img src="./public/img/recursos/fachada2.png" alt="Vista exterior del Hotel Palmeira's Beach" />
         </div>
-
-        <div class="gallery-item">
+        <div class="gallery-item span-1-1">
           <img src="./public/img/recursos/ENTRADA.png" alt="Entrada principal al Hotel Palmeira's" />
         </div>
-        <div class="gallery-item">
+        <div class="gallery-item span-2-1">
           <img src="./public/img/recursos/heroImage.jpeg" alt="Vista panorámica" />
         </div>
-        <div class="gallery-item">
+        <div class="gallery-item span-1-2">
           <img src="./public/img/recursos/Exterior.png" alt="Vista Exterior del Hotel Palmeira's" />
         </div>
-        <div class="gallery-item">
+        <div class="gallery-item span-2-2">
           <img src="./public/img/recursos/poolNight.png" alt="Alberca de noche iluminada" />
+        </div>
+        <div class="gallery-item span-1-1">
+          <img src="./public/img/recursos/demo-alberca.jpg" alt="Perspectiva de la Alberca de Chukum (Demo)" />
+        </div>
+        <div class="gallery-item span-1-1">
+          <img src="./public/img/recursos/demo-habitacion.jpg" alt="Ángulo detallado de Habitación Premium (Demo)" />
+        </div>
+        <div class="gallery-item span-1-1">
+          <img src="./public/img/recursos/demo-restaurante.jpg" alt="Detalle del Restaurante Xanat (Demo)" />
         </div>
       </div>
     </div>
@@ -617,10 +627,14 @@
               <span class="material-symbols-outlined">location_on</span>
               <span>Tuxpan, Veracruz, México</span>
             </div>
+            <div class="detail-item">
+              <span class="material-symbols-outlined">schedule</span>
+              <span>Check-in: <span id="val-checkin-footer">15:00 hrs</span> • Check-out: <span id="val-checkout-footer">12:00 hrs</span></span>
+            </div>
           </div>
           <div class="contact-social">
-            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://instagram.com/hotelpalmeiras" id="social-instagram" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://facebook.com/hotelpalmeiras" id="social-facebook" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
           </div>
         </div>
         <div class="contact-form-wrap">
@@ -670,6 +684,9 @@
   <script src="./public/js/navbar.js"></script>
   <script src="./public/js/slider.js"></script>
   <script src="./public/js/formulario.js"></script>
+  <script src="./public/js/admin-integration.js"></script>
+  <script src="./public/js/booking-widget.js"></script>
+  <script src="./public/js/chatbot-widget.js"></script>
 </body>
 
 </html>

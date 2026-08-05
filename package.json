@@ -1,0 +1,21 @@
+{
+  "name": "palmeira-hotel",
+  "version": "1.0.0",
+  "description": "Palmeira Hotel Web Site is a landing or static page (at the moment, because we have to adapt it to an administrative hotel system.)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GroovyTeam/Palmeira-Hotel.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/GroovyTeam/Palmeira-Hotel/issues"
+  },
+  "homepage": "https://github.com/GroovyTeam/Palmeira-Hotel#readme"
+}
