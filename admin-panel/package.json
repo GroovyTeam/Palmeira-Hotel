@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "rm -rf public/landing.html public/public && cp ../index.html public/landing.html && cp -r ../public public/public && next dev",
+    "build": "rm -rf public/landing.html public/public && cp ../index.html public/landing.html && cp -r ../public public/public && next build",
     "start": "next start",
     "lint": "eslint"
   },
