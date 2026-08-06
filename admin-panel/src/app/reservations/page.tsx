@@ -16,6 +16,7 @@ interface Reservation {
   checkOut?: string;
   nights?: number;
   totalPrice?: string;
+  assignedRoom?: string;
 }
 
 export default function ReservationsPage() {
@@ -44,7 +45,8 @@ export default function ReservationsPage() {
     checkIn: '',
     checkOut: '',
     totalPrice: '',
-    status: 'confirmed' as const
+    status: 'confirmed' as const,
+    assignedRoom: ''
   });
 
   // Load rooms from settings
@@ -166,10 +168,34 @@ export default function ReservationsPage() {
         checkIn: '',
         checkOut: '',
         totalPrice: '',
-        status: 'confirmed'
+        status: 'confirmed',
+        assignedRoom: ''
       });
     } catch (err: any) {
       alert(err.message || 'Error de conexión');
+    }
+  };
+
+  const updateAssignedRoom = async (id: string, assignedRoom: string) => {
+    try {
+      const res = await fetch(`/api/reservations/${id}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ assignedRoom }),
+      });
+
+      if (!res.ok) {
+        throw new Error('No se pudo actualizar la habitación asignada.');
+      }
+
+      const updated = await res.json();
+      setReservations((prev) =>
+        prev.map((r) => (r.id === id ? { ...r, assignedRoom: updated.assignedRoom } : r))
+      );
+    } catch (err: any) {
+      alert(err.message || 'Ocurrió un error al asignar la habitación.');
     }
   };
 
@@ -426,6 +452,25 @@ export default function ReservationsPage() {
                             📆 {res.checkIn} al {res.checkOut}
                           </p>
                           <p className="font-semibold text-emerald-600 text-[11px]">{res.totalPrice}</p>
+                          
+                          {/* Assigned Physical Room Selector */}
+                          <div className="pt-1.5 flex items-center gap-1.5">
+                            <span className="text-[9px] uppercase font-bold text-slate-400">Hab:</span>
+                            <select
+                              value={res.assignedRoom || ''}
+                              onChange={(e) => updateAssignedRoom(res.id, e.target.value)}
+                              className="px-2 py-0.5 bg-slate-50 border border-slate-200 rounded text-[10px] text-slate-700 focus:outline-none focus:ring-1 focus:ring-emerald-500 font-semibold cursor-pointer"
+                            >
+                              <option value="">-- Sin asignar --</option>
+                              {(() => {
+                                const roomObj = roomsList.find(r => r.title === res.roomType);
+                                const instances = roomObj?.roomInstances || [];
+                                return instances.map((inst: string) => (
+                                  <option key={inst} value={inst}>Hab. {inst}</option>
+                                ));
+                              })()}
+                            </select>
+                          </div>
                         </div>
                       ) : (
                         <span className="text-xs text-slate-400 italic">Contacto WhatsApp</span>
@@ -585,9 +630,28 @@ export default function ReservationsPage() {
 
                 <div className="text-xs space-y-1 bg-slate-50 p-3 rounded-xl border border-slate-100">
                   {res.roomType && (
-                    <div className="pb-2 mb-2 border-b border-slate-200/60 text-slate-750">
+                    <div className="pb-2 mb-2 border-b border-slate-200/60 text-slate-750 space-y-1">
                       <p className="font-bold uppercase text-[10px] text-emerald-700">{res.roomType} • {res.totalPrice}</p>
                       <p className="text-[11px] text-slate-600">👤 {res.guests} pers. • {res.nights} n. • {res.checkIn} al {res.checkOut}</p>
+                      
+                      {/* Assigned Physical Room Selector */}
+                      <div className="pt-1 flex items-center gap-1.5">
+                        <span className="text-[9px] uppercase font-bold text-slate-400">Hab. Asignada:</span>
+                        <select
+                          value={res.assignedRoom || ''}
+                          onChange={(e) => updateAssignedRoom(res.id, e.target.value)}
+                          className="px-2 py-0.5 bg-white border border-slate-200 rounded text-[10px] text-slate-700 focus:outline-none focus:ring-1 focus:ring-emerald-500 font-semibold cursor-pointer"
+                        >
+                          <option value="">-- Sin asignar --</option>
+                          {(() => {
+                            const roomObj = roomsList.find(r => r.title === res.roomType);
+                            const instances = roomObj?.roomInstances || [];
+                            return instances.map((inst: string) => (
+                              <option key={inst} value={inst}>Hab. {inst}</option>
+                            ));
+                          })()}
+                        </select>
+                      </div>
                     </div>
                   )}
                   <p className="text-slate-600"><span className="font-medium text-slate-400">Tel:</span> {res.phone}</p>
@@ -793,6 +857,24 @@ export default function ReservationsPage() {
                     <option value="pending" className="text-amber-600 font-semibold">Pendiente</option>
                   </select>
                 </div>
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Habitación Específica Asignada (Opcional)</label>
+                <select
+                  value={newRes.assignedRoom}
+                  onChange={(e) => setNewRes({ ...newRes, assignedRoom: e.target.value })}
+                  className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-800 focus:outline-none focus:ring-1 focus:ring-emerald-500/20"
+                >
+                  <option value="">-- Auto-asignar automáticamente --</option>
+                  {(() => {
+                    const roomObj = roomsList.find(r => r.title === newRes.roomType);
+                    const instances = roomObj?.roomInstances || [];
+                    return instances.map((inst: string) => (
+                      <option key={inst} value={inst}>Habitación {inst}</option>
+                    ));
+                  })()}
+                </select>
               </div>
 
               <div className="flex justify-end gap-3 pt-4 border-t">

@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { updateReservationStatus, deleteReservation } from '../../../../lib/reservations';
+import { updateReservationStatus, deleteReservation, updateReservationRoom } from '../../../../lib/reservations';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -15,7 +15,7 @@ export async function OPTIONS() {
   });
 }
 
-// PATCH update status
+// PATCH update status or assigned room
 export async function PATCH(
   request: Request,
   { params }: { params: Promise<{ id: string }> }
@@ -23,19 +23,27 @@ export async function PATCH(
   try {
     const { id } = await params;
     const body = await request.json();
-    const { status } = body;
+    const { status, assignedRoom } = body;
 
-    if (!status || !['pending', 'contacted', 'cancelled', 'confirmed'].includes(status)) {
-      return NextResponse.json(
-        { error: 'Estado inválido.' },
-        { status: 400, headers: corsHeaders }
-      );
+    let updated: any = null;
+
+    if (status) {
+      if (!['pending', 'contacted', 'cancelled', 'confirmed'].includes(status)) {
+        return NextResponse.json(
+          { error: 'Estado inválido.' },
+          { status: 400, headers: corsHeaders }
+        );
+      }
+      updated = await updateReservationStatus(id, status);
     }
 
-    const updated = await updateReservationStatus(id, status);
+    if (assignedRoom !== undefined) {
+      updated = await updateReservationRoom(id, assignedRoom);
+    }
+
     if (!updated) {
       return NextResponse.json(
-        { error: 'Reservación no encontrada.' },
+        { error: 'Reservación no encontrada o no se pudo actualizar.' },
         { status: 404, headers: corsHeaders }
       );
     }

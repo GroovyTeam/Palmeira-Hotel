@@ -82,7 +82,8 @@ const DEFAULT_SETTINGS = {
         priceFrom: "$1,599 MXN",
         description: "Despertar y observar desde tu habitación la tropicalidad de las aguas del golfo, en Tuxpan, Veracruz, México",
         amenities: ["Cama acogedora", "Limpieza", "Wi-Fi de alta velocidad"],
-        imageSrc: "./public/img/recursos/room1.png"
+        imageSrc: "./public/img/recursos/room1.png",
+        roomInstances: ["101", "102", "103"]
       }
     ]
   },
@@ -218,6 +219,13 @@ export async function initDb() {
         "createdAt" VARCHAR(50) NOT NULL
       );
     `;
+
+    // Ensure "assignedRoom" column exists
+    try {
+      await sql`ALTER TABLE reservations ADD COLUMN IF NOT EXISTS "assignedRoom" VARCHAR(50);`;
+    } catch (err) {
+      console.warn("Could not alter reservations table, assignedRoom might already exist.", err);
+    }
 
     dbInitialized = true;
     console.log('Database tables successfully verified and initialized in Neon PostgreSQL.');

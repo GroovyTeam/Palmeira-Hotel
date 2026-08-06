@@ -40,6 +40,7 @@ interface Settings {
       description: string;
       amenities: string[];
       imageSrc: string;
+      roomInstances?: string[];
     }>;
   };
   location: {
@@ -830,7 +831,23 @@ export default function LiveEditor() {
                           onChange={(e) => handleRoomChange(selectedRoomIndex, 'description', e.target.value)}
                           placeholder="Describe la habitación..."
                           rows={2.5}
-                          className="w-full px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-xs focus:outline-none"
+                          className="w-full px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-xs focus:outline-none text-slate-800"
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1">
+                          Habitaciones Físicas (separadas por comas, ej. 101, 102, 103)
+                        </label>
+                        <input
+                          type="text"
+                          value={(settings.rooms.list[selectedRoomIndex].roomInstances || []).join(', ')}
+                          onChange={(e) => {
+                            const arr = e.target.value.split(',').map(s => s.trim()).filter(Boolean);
+                            handleRoomChange(selectedRoomIndex, 'roomInstances', arr);
+                          }}
+                          placeholder="Ej. 101, 102, 103"
+                          className="w-full px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-xs focus:outline-none text-slate-800"
                         />
                       </div>
 

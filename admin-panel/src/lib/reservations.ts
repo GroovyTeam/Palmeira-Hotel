@@ -16,6 +16,7 @@ export interface Reservation {
   checkOut?: string;
   nights?: number;
   totalPrice?: string;
+  assignedRoom?: string;
 }
 
 const DATA_DIR = path.join(process.cwd(), 'src/data');
@@ -69,10 +70,44 @@ export async function saveReservations(reservations: Reservation[]): Promise<boo
   }
 }
 
-export async function addReservation(reservation: Omit<Reservation, 'id' | 'createdAt' | 'status'> & { id?: string, status?: Reservation['status'] }): Promise<Reservation> {
+export async function addReservation(reservation: Omit<Reservation, 'id' | 'createdAt' | 'status'> & { id?: string, status?: Reservation['status'], assignedRoom?: string }): Promise<Reservation> {
   const id = reservation.id || `res_${Math.random().toString(36).substr(2, 9)}`;
   const status = reservation.status || 'pending';
   const createdAt = new Date().toISOString();
+
+  // Auto-assign first free physical room instance if not provided
+  let assignedRoom: string | undefined = reservation.assignedRoom;
+  if (!assignedRoom && reservation.roomType) {
+    try {
+      const { getSettings } = require('./settings');
+      const settings = await getSettings();
+      const room = settings.rooms?.list?.find((r: any) => r.title === reservation.roomType);
+      const instances = room?.roomInstances || [];
+      
+      if (instances.length > 0) {
+        // Get all active reservations to find overlaps
+        const allRes = await getReservations();
+        const overlaps = allRes.filter((r: any) => {
+          if (r.status === 'cancelled') return false;
+          if (r.roomType !== reservation.roomType) return false;
+          if (!r.checkIn || !r.checkOut || !reservation.checkIn || !reservation.checkOut) return false;
+          
+          const rIn = new Date(r.checkIn);
+          const rOut = new Date(r.checkOut);
+          const selIn = new Date(reservation.checkIn);
+          const selOut = new Date(reservation.checkOut);
+          
+          return (selIn < rOut && selOut > rIn);
+        });
+        
+        const occupied = overlaps.map((r: any) => r.assignedRoom).filter(Boolean);
+        const freeInstance = instances.find((inst: string) => !occupied.includes(inst));
+        assignedRoom = freeInstance || instances[0];
+      }
+    } catch (err) {
+      console.error('Error auto-assigning physical room:', err);
+    }
+  }
 
   if (sql) {
     try {
@@ -80,19 +115,21 @@ export async function addReservation(reservation: Omit<Reservation, 'id' | 'crea
       await sql`
         INSERT INTO reservations (
           id, "firstName", "lastName", email, phone, status, 
-          "roomType", guests, "checkIn", "checkOut", nights, "totalPrice", "createdAt"
+          "roomType", guests, "checkIn", "checkOut", nights, "totalPrice", "createdAt", "assignedRoom"
         )
         VALUES (
           ${id}, ${reservation.firstName}, ${reservation.lastName}, ${reservation.email}, ${reservation.phone}, ${status},
           ${reservation.roomType || null}, ${reservation.guests || null}, ${reservation.checkIn || null}, 
-          ${reservation.checkOut || null}, ${reservation.nights || null}, ${reservation.totalPrice || null}, ${createdAt}
+          ${reservation.checkOut || null}, ${reservation.nights || null}, ${reservation.totalPrice || null}, ${createdAt},
+          ${assignedRoom || null}
         )
       `;
       return {
         id,
         ...reservation,
         status,
-        createdAt
+        createdAt,
+        assignedRoom
       } as Reservation;
     } catch (error) {
       console.error('Error adding reservation to Neon, falling back to local file:', error);
@@ -105,6 +142,7 @@ export async function addReservation(reservation: Omit<Reservation, 'id' | 'crea
     id,
     status,
     createdAt,
+    assignedRoom
   };
   reservations.unshift(newReservation);
   await saveReservations(reservations);
@@ -156,4 +194,31 @@ export async function deleteReservation(id: string): Promise<boolean> {
   
   await saveReservations(filtered);
   return true;
+}
+
+// Update a reservation's assigned physical room
+export async function updateReservationRoom(id: string, assignedRoom: string): Promise<Reservation | null> {
+  if (sql) {
+    try {
+      await initDb();
+      const current = await sql`SELECT * FROM reservations WHERE id = ${id} LIMIT 1`;
+      if (current.length === 0) return null;
+      
+      await sql`UPDATE reservations SET "assignedRoom" = ${assignedRoom} WHERE id = ${id}`;
+      return {
+        ...current[0],
+        assignedRoom
+      } as Reservation;
+    } catch (error) {
+      console.error('Error updating reservation room on Neon, falling back to local file:', error);
+    }
+  }
+
+  const reservations = await getReservations();
+  const index = reservations.findIndex(r => r.id === id);
+  if (index === -1) return null;
+  
+  reservations[index].assignedRoom = assignedRoom;
+  await saveReservations(reservations);
+  return reservations[index];
 }

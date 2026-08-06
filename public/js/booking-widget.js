@@ -490,24 +490,72 @@ function setupBookingWidget() {
     const selectedOption = roomTypeSelect.options[roomTypeSelect.selectedIndex];
     const roomTypeName = selectedOption ? selectedOption.value.split(' — ')[0] : 'Habitación Estándar';
 
-    // Check for date availability / overlap
-    const hasOverlap = activeReservations.some(r => {
-      if (r.status === 'cancelled') return false;
-      if (r.roomType !== roomTypeName) return false;
-      
-      const rIn = new Date(r.checkIn);
-      const rOut = new Date(r.checkOut);
-      const selIn = new Date(checkin);
-      const selOut = new Date(checkout);
-      
-      return (selIn < rOut && selOut > rIn);
-    });
+    // Check for date availability / overlap based on physical room instances
+    const roomObj = (window.SITE_SETTINGS?.rooms?.list || []).find(r => r.title === roomTypeName);
+    const instances = roomObj?.roomInstances || ["101", "102", "103"];
     
-    if (hasOverlap) {
+    let isFullyBooked = false;
+    const tempIn = new Date(checkin);
+    const tempOut = new Date(checkout);
+    
+    for (let d = new Date(tempIn); d < tempOut; d.setDate(d.getDate() + 1)) {
+      const dayStart = new Date(d);
+      const dayEnd = new Date(d);
+      dayEnd.setDate(dayEnd.getDate() + 1);
+      
+      const activeOverlaps = activeReservations.filter(r => {
+        if (r.status === 'cancelled') return false;
+        if (r.roomType !== roomTypeName) return false;
+        if (!r.checkIn || !r.checkOut) return false;
+        
+        const rIn = new Date(r.checkIn);
+        const rOut = new Date(r.checkOut);
+        
+        return (dayStart < rOut && dayEnd > rIn);
+      });
+      
+      if (activeOverlaps.length >= instances.length) {
+        isFullyBooked = true;
+        break;
+      }
+    }
+    
+    if (isFullyBooked) {
+      // Find the next available check-in date
+      let nextAvail = new Date(checkin);
+      let found = false;
+      for (let i = 0; i < 365; i++) {
+        nextAvail.setDate(nextAvail.getDate() + 1);
+        const dayStart = new Date(nextAvail);
+        const dayEnd = new Date(nextAvail);
+        dayEnd.setDate(dayEnd.getDate() + 1);
+        
+        const activeOverlaps = activeReservations.filter(r => {
+          if (r.status === 'cancelled') return false;
+          if (r.roomType !== roomTypeName) return false;
+          if (!r.checkIn || !r.checkOut) return false;
+          
+          const rIn = new Date(r.checkIn);
+          const rOut = new Date(r.checkOut);
+          
+          return (dayStart < rOut && dayEnd > rIn);
+        });
+        
+        if (activeOverlaps.length < instances.length) {
+          found = true;
+          break;
+        }
+      }
+      
+      const formattedNextDate = found 
+        ? nextAvail.toLocaleDateString('es-MX', { day: 'numeric', month: 'long', year: 'numeric' })
+        : 'Próximamente (consultar con recepción)';
+        
       return Swal.fire({
         icon: 'error',
-        title: 'Fechas No Disponibles',
-        text: 'Lo sentimos, esta habitación ya está reservada para las fechas seleccionadas. Por favor, elige otros días.',
+        title: 'Habitaciones Ocupadas',
+        html: `Lo sentimos, todas nuestras habitaciones de este tipo ya están ocupadas en el periodo seleccionado.<br><br>` +
+              `<strong>La próxima fecha con habitaciones desocupadas es el:</strong><br><span style="color:#bc975d; font-size:1.1rem; font-weight:700;">${formattedNextDate}</span>`,
         confirmButtonColor: '#396663'
       });
     }

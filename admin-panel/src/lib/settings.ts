@@ -49,6 +49,7 @@ export interface Settings {
       description: string;
       amenities: string[];
       imageSrc: string;
+      roomInstances?: string[];
     }>;
   };
   services: {
@@ -157,9 +158,10 @@ const DEFAULT_SETTINGS: Settings = {
         id: "room_default_1",
         title: "Descanso y tranquilidad",
         priceFrom: "$1,599 MXN",
-        description: "Despertar y observar desde tu habitación la tropicalidad de las aguas del golfo, en Tuxpan, Veracruz, México",
+        description: "Despertar and observar desde tu habitación la tropicalidad de las aguas del golfo, en Tuxpan, Veracruz, México",
         amenities: ["Cama acogedora", "Limpieza", "Wi-Fi de alta velocidad"],
-        imageSrc: "./public/img/recursos/room1.png"
+        imageSrc: "./public/img/recursos/room1.png",
+        roomInstances: ["101", "102", "103"]
       }
     ]
   },
